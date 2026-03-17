@@ -6,7 +6,7 @@
     <title>Monster Hunter Stories 3: Ultimate Master Guide | Premium Gaming Companion</title>
     
     <!-- Enhanced SEO Meta Tags -->
-    <meta name="description" content="The ultimate Monster Hunter Stories 3 guide with 60+ monsters, advanced search, meta team builds, comprehensive boss strategies, and professional gaming tools.">
+    <meta name="description" content="The ultimate Monster Hunter Stories 3 guide with 80+ monsters, advanced search, meta team builds, comprehensive boss strategies, and professional gaming tools.">
     <meta name="keywords" content="Monster Hunter Stories 3, MHS3, guide, monsters, teams, combat, strategies, bosses, weapons, builds, meta, tier list, comprehensive guide">
     <meta name="author" content="MHS3 Master Guide">
     <meta name="robots" content="index, follow">
@@ -50,1484 +50,1228 @@
       "description": "Professional Monster Hunter Stories 3 guide with comprehensive monster database, meta team builds, boss strategies, and advanced gaming tools.",
       "url": "https://yourgithubusername.github.io/MHS3-github-pages/",
       "author": {
-        "@type": "Organization", 
-        "name": "MHS3 Master Guide"
+        "@type": "Organization",
+        "name": "MHS3 Master Guide Team"
       },
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://yourgithubusername.github.io/MHS3-github-pages/#search={search_term_string}",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://yourgithubusername.github.io/MHS3-github-pages/#{search_term_string}"
+        },
         "query-input": "required name=search_term_string"
-      },
-      "keywords": ["Monster Hunter Stories 3", "MHS3", "gaming guide", "monster database", "team builds", "boss strategies"],
-      "inLanguage": "en-US",
-      "dateModified": "2026-03-17",
-      "publisher": {
-        "@type": "Organization",
-        "name": "MHS3 Master Guide"
       }
     }
     </script>
-    
+
     <style>
+        /* ===== CSS RESET & VARIABLES ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         :root {
-            /* Enhanced Color System */
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #1a1a2e;
-            --bg-tertiary: #16213e;
-            --bg-card: #1e1e3f;
-            --bg-elevated: #242449;
-            
-            /* Enhanced Accent Colors */
-            --accent-primary: #e94560;
-            --accent-secondary: #533483;
-            --accent-tertiary: #8b5a9f;
-            --accent-gold: #ffd700;
-            --accent-silver: #c0c0c0;
-            --accent-bronze: #cd7f32;
-            
-            /* Enhanced Text Colors */
-            --text-primary: #ffffff;
-            --text-secondary: #b8b8c8;
-            --text-muted: #8a8a9a;
-            --text-disabled: #666666;
-            
-            /* Status Colors */
-            --success: #44ff88;
-            --warning: #ff8c00;
-            --danger: #ff4444;
-            --info: #4488ff;
+            /* Colors */
+            --primary-bg: #0d1117;
+            --secondary-bg: #161b22;
+            --tertiary-bg: #21262d;
+            --accent-color: #e94560;
+            --accent-hover: #ff4570;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --text-muted: #656d76;
+            --border-color: #30363d;
+            --border-hover: #444c56;
+            --success-color: #238636;
+            --warning-color: #f85149;
+            --info-color: #0969da;
             
             /* Element Colors */
-            --fire: #ff6b47;
-            --water: #4fb3ff;
-            --thunder: #ffd93d;
-            --ice: #b3e5fc;
-            --dragon: #9c27b0;
-            --dark: #424242;
-            --none: #9e9e9e;
+            --fire: #ff6b6b;
+            --water: #4dabf7;
+            --thunder: #ffd43b;
+            --ice: #74c0fc;
+            --dragon: #845ef7;
+            --neutral: #868e96;
             
-            /* Threat Level Colors */
-            --threat-low: #4caf50;
-            --threat-medium: #ff9800;
-            --threat-high: #f44336;
-            --threat-elder: #9c27b0;
+            /* Spacing */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-xxl: 3rem;
             
-            /* Spacing System */
-            --space-xs: 0.25rem;
-            --space-sm: 0.5rem;
-            --space-md: 1rem;
-            --space-lg: 1.5rem;
-            --space-xl: 2rem;
-            --space-2xl: 3rem;
-            
-            /* Font Sizes */
+            /* Typography */
             --font-size-xs: 0.75rem;
             --font-size-sm: 0.875rem;
-            --font-size-base: 1rem;
+            --font-size-md: 1rem;
             --font-size-lg: 1.125rem;
             --font-size-xl: 1.25rem;
-            --font-size-2xl: 1.5rem;
-            --font-size-3xl: 2rem;
+            --font-size-xxl: 1.5rem;
+            --font-size-display: 2rem;
             
-            /* Border Radius */
-            --radius-sm: 0.375rem;
-            --radius-md: 0.5rem;
-            --radius-lg: 0.75rem;
-            --radius-xl: 1rem;
+            /* Layout */
+            --sidebar-width: 280px;
+            --header-height: 70px;
+            --max-content-width: 1400px;
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
             
-            /* Shadows */
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.16);
-            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
-            --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.3);
-            
-            /* Z-Index Scale */
-            --z-dropdown: 1000;
-            --z-sticky: 1020;
-            --z-fixed: 1030;
-            --z-modal-backdrop: 1040;
-            --z-modal: 1050;
-            --z-popover: 1060;
-            --z-tooltip: 1070;
-            
-            /* Transitions */
-            --transition-fast: 0.15s ease;
-            --transition-normal: 0.25s ease;
-            --transition-slow: 0.35s ease;
+            /* Effects */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --transition: all 0.2s ease-in-out;
         }
 
-        /* ===== RESET & BASE STYLES ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        /* ===== BASE STYLES ===== */
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--primary-bg);
             color: var(--text-primary);
             line-height: 1.6;
-            min-height: 100vh;
-            font-size: var(--font-size-base);
+            font-size: var(--font-size-md);
+            overflow-x: hidden;
         }
 
-        /* ===== UTILITY CLASSES ===== */
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 var(--space-lg); }
-        .container-fluid { width: 100%; padding: 0 var(--space-lg); }
-        
-        /* Flexbox utilities */
-        .flex { display: flex; }
-        .flex-col { flex-direction: column; }
-        .items-center { align-items: center; }
-        .items-start { align-items: flex-start; }
-        .items-end { align-items: flex-end; }
-        .justify-center { justify-content: center; }
-        .justify-between { justify-content: space-between; }
-        .justify-start { justify-content: flex-start; }
-        .justify-end { justify-content: flex-end; }
-        .flex-wrap { flex-wrap: wrap; }
-        .flex-1 { flex: 1; }
-        
-        /* Gap utilities */
-        .gap-xs { gap: var(--space-xs); }
-        .gap-sm { gap: var(--space-sm); }
-        .gap-md { gap: var(--space-md); }
-        .gap-lg { gap: var(--space-lg); }
-        .gap-xl { gap: var(--space-xl); }
-        
-        /* Grid utilities */
-        .grid { display: grid; }
-        .grid-2 { grid-template-columns: repeat(2, 1fr); }
-        .grid-3 { grid-template-columns: repeat(3, 1fr); }
-        .grid-4 { grid-template-columns: repeat(4, 1fr); }
-        .grid-5 { grid-template-columns: repeat(5, 1fr); }
-        .grid-6 { grid-template-columns: repeat(6, 1fr); }
-        
-        /* Spacing utilities */
-        .m-auto { margin: auto; }
-        .mt-sm { margin-top: var(--space-sm); }
-        .mt-md { margin-top: var(--space-md); }
-        .mt-lg { margin-top: var(--space-lg); }
-        .mb-sm { margin-bottom: var(--space-sm); }
-        .mb-md { margin-bottom: var(--space-md); }
-        .mb-lg { margin-bottom: var(--space-lg); }
-        .p-sm { padding: var(--space-sm); }
-        .p-md { padding: var(--space-md); }
-        .p-lg { padding: var(--space-lg); }
-        
-        /* Text utilities */
-        .text-center { text-align: center; }
-        .text-left { text-align: left; }
-        .text-right { text-align: right; }
-        .text-xs { font-size: var(--font-size-xs); }
-        .text-sm { font-size: var(--font-size-sm); }
-        .text-lg { font-size: var(--font-size-lg); }
-        .text-xl { font-size: var(--font-size-xl); }
-        .text-2xl { font-size: var(--font-size-2xl); }
-        .text-3xl { font-size: var(--font-size-3xl); }
-        .font-normal { font-weight: 400; }
-        .font-medium { font-weight: 500; }
-        .font-semibold { font-weight: 600; }
-        .font-bold { font-weight: 700; }
-        .text-primary { color: var(--text-primary); }
-        .text-secondary { color: var(--text-secondary); }
-        .text-muted { color: var(--text-muted); }
-        .text-accent { color: var(--accent-primary); }
-        .text-success { color: var(--success); }
-        .text-warning { color: var(--warning); }
-        .text-danger { color: var(--danger); }
-        .text-info { color: var(--info); }
-        
-        /* Background utilities */
-        .bg-primary { background: var(--bg-primary); }
-        .bg-secondary { background: var(--bg-secondary); }
-        .bg-tertiary { background: var(--bg-tertiary); }
-        .bg-card { background: var(--bg-card); }
-        .bg-elevated { background: var(--bg-elevated); }
-        
-        /* Border utilities */
-        .rounded { border-radius: var(--radius-md); }
-        .rounded-sm { border-radius: var(--radius-sm); }
-        .rounded-lg { border-radius: var(--radius-lg); }
-        .rounded-xl { border-radius: var(--radius-xl); }
-        .rounded-full { border-radius: 50%; }
-        
-        /* Shadow utilities */
-        .shadow-sm { box-shadow: var(--shadow-sm); }
-        .shadow-md { box-shadow: var(--shadow-md); }
-        .shadow-lg { box-shadow: var(--shadow-lg); }
-        .shadow-xl { box-shadow: var(--shadow-xl); }
-        
-        /* Visibility utilities */
-        .hidden { display: none; }
-        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-        
-        /* ===== COMPONENT STYLES ===== */
-        
-        /* Button Styles */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--space-sm);
-            padding: var(--space-sm) var(--space-lg);
-            font-size: var(--font-size-sm);
-            font-weight: 500;
-            line-height: 1.4;
+        a {
+            color: var(--accent-color);
             text-decoration: none;
-            border: 2px solid transparent;
-            border-radius: var(--radius-lg);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+        }
+
+        button {
+            background: none;
+            border: none;
+            color: inherit;
             cursor: pointer;
-            transition: all var(--transition-normal);
-            white-space: nowrap;
-            user-select: none;
+            font-family: inherit;
+            transition: var(--transition);
         }
-        
-        .btn:focus-visible {
-            outline: 2px solid var(--accent-primary);
-            outline-offset: 2px;
-        }
-        
-        .btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-            color: white;
-            border-color: var(--accent-primary);
-        }
-        
-        .btn-primary:hover:not(:disabled) {
-            background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-1px);
-        }
-        
-        .btn-secondary {
-            background: var(--bg-elevated);
-            color: var(--text-primary);
-            border-color: var(--bg-elevated);
-        }
-        
-        .btn-secondary:hover:not(:disabled) {
-            background: var(--bg-card);
-            border-color: var(--accent-primary);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: var(--accent-primary);
-            border-color: var(--accent-primary);
-        }
-        
-        .btn-outline:hover:not(:disabled) {
-            background: var(--accent-primary);
-            color: white;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .btn-ghost {
-            background: transparent;
-            color: var(--text-secondary);
-            border-color: transparent;
-        }
-        
-        .btn-ghost:hover:not(:disabled) {
-            background: var(--bg-elevated);
-            color: var(--text-primary);
-        }
-        
-        .btn-sm {
-            padding: var(--space-xs) var(--space-md);
-            font-size: var(--font-size-xs);
-        }
-        
-        .btn-lg {
-            padding: var(--space-md) var(--space-xl);
-            font-size: var(--font-size-lg);
-        }
-        
-        .btn-icon {
-            width: 2.5rem;
-            height: 2.5rem;
-            padding: 0;
-            border-radius: var(--radius-lg);
-        }
-        
-        /* Card Styles */
-        .card {
-            background: var(--bg-card);
-            border-radius: var(--radius-xl);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-normal);
-            overflow: hidden;
-        }
-        
-        .card:hover {
-            box-shadow: var(--shadow-xl);
-            transform: translateY(-2px);
-        }
-        
-        .card-header {
-            padding: var(--space-lg);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .card-title {
-            font-size: var(--font-size-xl);
-            font-weight: 700;
-            color: var(--text-primary);
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-        }
-        
-        .card-subtitle {
-            font-size: var(--font-size-sm);
-            color: var(--text-secondary);
-            margin-top: var(--space-xs);
-        }
-        
-        .card-content {
-            padding: var(--space-lg);
-        }
-        
-        .card-footer {
-            padding: var(--space-lg);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.02);
-        }
-        
-        /* Card Grid */
-        .card-grid {
+
+        /* ===== LAYOUT ===== */
+        .app-container {
             display: grid;
-            gap: var(--space-lg);
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: var(--sidebar-width) 1fr;
+            min-height: 100vh;
         }
-        
-        /* Input Styles */
-        .form-control {
-            display: block;
-            width: 100%;
-            padding: var(--space-sm) var(--space-md);
-            font-size: var(--font-size-base);
-            font-weight: 400;
-            line-height: 1.5;
-            color: var(--text-primary);
-            background: var(--bg-elevated);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: var(--radius-lg);
-            transition: all var(--transition-normal);
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
-        }
-        
-        .form-control::placeholder {
-            color: var(--text-muted);
-        }
-        
-        /* Select Styles */
-        .form-select {
-            display: block;
-            width: 100%;
-            padding: var(--space-sm) var(--space-xl) var(--space-sm) var(--space-md);
-            font-size: var(--font-size-base);
-            font-weight: 400;
-            line-height: 1.5;
-            color: var(--text-primary);
-            background: var(--bg-elevated) url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") no-repeat right var(--space-sm) center/1.5em 1.5em;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: var(--radius-lg);
-            transition: all var(--transition-normal);
-            cursor: pointer;
-            appearance: none;
-        }
-        
-        .form-select:focus {
-            outline: none;
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
-        }
-        
-        .form-select option {
-            background: var(--bg-elevated);
-            color: var(--text-primary);
-        }
-        
-        /* Badge Styles */
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
-            padding: var(--space-xs) var(--space-sm);
-            font-size: var(--font-size-xs);
-            font-weight: 600;
-            line-height: 1;
-            text-transform: uppercase;
-            letter-spacing: 0.025em;
-            border-radius: var(--radius-lg);
-            white-space: nowrap;
-        }
-        
-        /* Element Badges */
-        .monster-element {
-            padding: var(--space-xs) var(--space-sm);
-            font-size: var(--font-size-xs);
-            font-weight: 600;
-            text-transform: uppercase;
-            border-radius: var(--radius-lg);
-            color: white;
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
-        }
-        
-        .element-fire { background: linear-gradient(135deg, var(--fire) 0%, #e55100 100%); }
-        .element-water { background: linear-gradient(135deg, var(--water) 0%, #1976d2 100%); }
-        .element-thunder { background: linear-gradient(135deg, var(--thunder) 0%, #f57c00 100%); }
-        .element-ice { background: linear-gradient(135deg, var(--ice) 0%, #0288d1 100%); }
-        .element-dragon { background: linear-gradient(135deg, var(--dragon) 0%, #7b1fa2 100%); }
-        .element-dark { background: linear-gradient(135deg, var(--dark) 0%, #212121 100%); }
-        .element-none { background: linear-gradient(135deg, var(--none) 0%, #616161 100%); }
-        
-        /* Threat Level Badges */
-        .monster-threat {
-            padding: var(--space-xs) var(--space-sm);
-            font-size: var(--font-size-xs);
-            font-weight: 600;
-            text-transform: uppercase;
-            border-radius: var(--radius-lg);
-            color: white;
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
-        }
-        
-        .threat-low { background: linear-gradient(135deg, var(--threat-low) 0%, #388e3c 100%); }
-        .threat-medium { background: linear-gradient(135deg, var(--threat-medium) 0%, #f57c00 100%); }
-        .threat-high { background: linear-gradient(135deg, var(--threat-high) 0%, #d32f2f 100%); }
-        .threat-elder { background: linear-gradient(135deg, var(--threat-elder) 0%, #7b1fa2 100%); }
-        
-        /* Tier Badges */
-        .tier-badge {
-            padding: var(--space-sm) var(--space-md);
-            font-size: var(--font-size-sm);
-            font-weight: 700;
-            text-align: center;
-            border-radius: var(--radius-lg);
-            color: white;
-            min-width: 2.5rem;
-            min-height: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .tier-s { background: linear-gradient(135deg, var(--accent-gold) 0%, #ff8f00 100%); }
-        .tier-a { background: linear-gradient(135deg, var(--accent-silver) 0%, #757575 100%); }
-        .tier-b { background: linear-gradient(135deg, var(--accent-bronze) 0%, #8d6e63 100%); }
-        .tier-c { background: linear-gradient(135deg, #607d8b 0%, #455a64 100%); }
-        .tier-d { background: linear-gradient(135deg, #795548 0%, #5d4037 100%); }
-        
-        /* Attack Type Badges */
-        .attack-type {
-            padding: var(--space-xs) var(--space-sm);
-            font-size: var(--font-size-xs);
-            font-weight: 500;
-            text-transform: capitalize;
-            border-radius: var(--radius-sm);
-            color: white;
-        }
-        
-        .type-speed { background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%); }
-        .type-power { background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%); }
-        .type-technical { background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%); }
-        
-        /* ===== LAYOUT COMPONENTS ===== */
-        
-        /* Header */
-        #header {
+
+        .sidebar {
+            background: var(--secondary-bg);
+            border-right: 1px solid var(--border-color);
             position: fixed;
+            width: var(--sidebar-width);
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .main-content {
+            grid-column: 2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: var(--secondary-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: var(--spacing-md) var(--spacing-xl);
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            z-index: var(--z-fixed);
-            background: rgba(10, 10, 15, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all var(--transition-normal);
+            z-index: 90;
+            backdrop-filter: blur(10px);
+            background: rgba(22, 27, 34, 0.95);
         }
-        
-        #header.scrolled {
-            background: rgba(10, 10, 15, 0.98);
-            box-shadow: var(--shadow-lg);
-        }
-        
+
         .header-content {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: var(--space-md) 0;
-        }
-        
-        .logo {
-            display: flex;
             align-items: center;
-            gap: var(--space-md);
-            font-size: var(--font-size-xl);
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-        
-        .logo-icon {
-            font-size: var(--font-size-2xl);
-        }
-        
-        /* Navigation */
-        .nav {
-            display: flex;
-            align-items: center;
-            gap: var(--space-lg);
-        }
-        
-        .nav-link {
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-            padding: var(--space-sm) var(--space-md);
-            font-size: var(--font-size-sm);
-            font-weight: 500;
-            color: var(--text-secondary);
-            text-decoration: none;
-            border-radius: var(--radius-lg);
-            transition: all var(--transition-normal);
-            cursor: pointer;
-        }
-        
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--text-primary);
-            background: rgba(233, 69, 96, 0.1);
-        }
-        
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50%;
-            height: 2px;
-            background: var(--accent-primary);
-            border-radius: 2px;
-        }
-        
-        /* Main Content */
-        #main {
-            margin-top: 5rem;
-            min-height: calc(100vh - 5rem);
-            padding: var(--space-lg) 0;
-        }
-        
-        /* Search Section */
-        .search-section {
-            margin-bottom: var(--space-xl);
-        }
-        
-        .search-container {
-            position: relative;
-            max-width: 800px;
+            max-width: var(--max-content-width);
             margin: 0 auto;
         }
-        
-        .search-input-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
+
+        .logo {
+            font-size: var(--font-size-xl);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-color) 0%, #ff8a80 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
+
+        .search-container {
+            position: relative;
+            flex: 1;
+            max-width: 500px;
+            margin: 0 var(--spacing-lg);
+        }
+
         .search-input {
             width: 100%;
-            padding: var(--space-md) var(--space-xl) var(--space-md) 3.5rem;
-            font-size: var(--font-size-lg);
-            background: var(--bg-card);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-xl);
+            background: var(--tertiary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-sm) var(--spacing-md);
             color: var(--text-primary);
-            transition: all var(--transition-normal);
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
         }
-        
+
         .search-input:focus {
             outline: none;
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 4px rgba(233, 69, 96, 0.1);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
         }
-        
-        .search-icon {
-            position: absolute;
-            left: var(--space-lg);
-            color: var(--text-muted);
-            font-size: var(--font-size-lg);
-        }
-        
+
         .search-suggestions {
             position: absolute;
             top: 100%;
             left: 0;
             right: 0;
-            z-index: var(--z-dropdown);
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-xl);
-            margin-top: var(--space-sm);
-            overflow: hidden;
+            background: var(--tertiary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-xs);
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
-            transition: all var(--transition-normal);
+            transition: var(--transition);
         }
-        
+
         .search-suggestions.show {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-        
+
         .suggestion-item {
+            padding: var(--spacing-sm) var(--spacing-md);
+            cursor: pointer;
+            border-bottom: 1px solid var(--border-color);
             display: flex;
             align-items: center;
-            gap: var(--space-md);
-            padding: var(--space-md) var(--space-lg);
-            cursor: pointer;
-            transition: background var(--transition-fast);
+            gap: var(--spacing-sm);
+            transition: var(--transition);
         }
-        
+
         .suggestion-item:hover {
-            background: rgba(255, 255, 255, 0.05);
+            background: var(--secondary-bg);
         }
-        
+
         .suggestion-type {
-            padding: var(--space-xs) var(--space-sm);
-            font-size: var(--font-size-xs);
-            font-weight: 600;
-            text-transform: uppercase;
-            background: var(--accent-primary);
+            background: var(--accent-color);
             color: white;
-            border-radius: var(--radius-sm);
-        }
-        
-        /* Filters Section */
-        .filters-section {
-            margin-bottom: var(--space-xl);
-        }
-        
-        .filters-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-md);
-            align-items: center;
-            background: var(--bg-card);
-            padding: var(--space-lg);
-            border-radius: var(--radius-xl);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-xs);
-            min-width: 140px;
-        }
-        
-        .filter-label {
+            padding: 2px 6px;
+            border-radius: 4px;
             font-size: var(--font-size-xs);
-            font-weight: 600;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: var(--space-xs);
+            font-weight: 500;
         }
-        
-        .filter-actions {
-            display: flex;
-            gap: var(--space-md);
-            margin-left: auto;
+
+        /* ===== SIDEBAR ===== */
+        .sidebar-brand {
+            padding: var(--spacing-lg);
+            border-bottom: 1px solid var(--border-color);
         }
-        
-        /* Results Section */
-        .results-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: var(--space-lg);
-            flex-wrap: wrap;
-            gap: var(--space-md);
-        }
-        
-        .results-info {
-            display: flex;
-            align-items: center;
-            gap: var(--space-lg);
-        }
-        
-        .results-count {
+
+        .brand-title {
             font-size: var(--font-size-lg);
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        
-        .view-controls {
-            display: flex;
-            align-items: center;
-            gap: var(--space-md);
-        }
-        
-        .view-toggle {
-            display: flex;
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-lg);
-            padding: var(--space-xs);
-        }
-        
-        .view-btn {
-            padding: var(--space-sm) var(--space-md);
-            font-size: var(--font-size-sm);
-            background: transparent;
-            border: none;
-            color: var(--text-secondary);
-            cursor: pointer;
-            border-radius: var(--radius-md);
-            transition: all var(--transition-fast);
-        }
-        
-        .view-btn.active,
-        .view-btn:hover {
-            background: var(--accent-primary);
-            color: white;
-        }
-        
-        /* Content Grid */
-        .content-grid {
-            display: grid;
-            gap: var(--space-lg);
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        }
-        
-        .content-grid.list-view {
-            grid-template-columns: 1fr;
-        }
-        
-        .content-grid.list-view .monster-card {
-            display: flex;
-            align-items: center;
-            padding: var(--space-lg);
-        }
-        
-        .content-grid.list-view .monster-card .card-content {
-            display: flex;
-            align-items: center;
-            gap: var(--space-lg);
-            width: 100%;
-            padding: 0;
-        }
-        
-        /* Monster Card */
-        .monster-card {
-            position: relative;
-            background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            transition: all var(--transition-normal);
-            cursor: pointer;
-        }
-        
-        .monster-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--accent-primary);
-        }
-        
-        .monster-card .card-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: var(--space-lg);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .monster-name {
-            font-size: var(--font-size-xl);
             font-weight: 700;
-            color: var(--text-primary);
-            margin: 0;
+            margin-bottom: var(--spacing-xs);
         }
-        
-        .monster-species {
+
+        .brand-subtitle {
             font-size: var(--font-size-sm);
             color: var(--text-secondary);
-            margin-top: var(--space-xs);
         }
-        
-        .monster-badges {
-            display: flex;
-            gap: var(--space-sm);
-            align-items: center;
+
+        .nav-menu {
+            padding: var(--spacing-md);
         }
-        
-        .monster-card .card-content {
-            padding: var(--space-lg);
+
+        .nav-section {
+            margin-bottom: var(--spacing-lg);
         }
-        
-        .monster-stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-md);
-            margin-bottom: var(--space-lg);
-        }
-        
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-xs);
-            flex: 1;
-            min-width: 80px;
-        }
-        
-        .stat-label {
+
+        .nav-section-title {
             font-size: var(--font-size-xs);
+            font-weight: 600;
             color: var(--text-muted);
             text-transform: uppercase;
-            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--spacing-sm);
         }
-        
-        .stat-value {
-            font-size: var(--font-size-sm);
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        
-        .monster-actions {
-            display: flex;
-            gap: var(--space-sm);
-            margin-top: var(--space-md);
-        }
-        
-        /* Tab System */
-        .tabs-container {
-            margin-bottom: var(--space-xl);
-        }
-        
-        .tab-list {
-            display: flex;
-            background: var(--bg-card);
-            border-radius: var(--radius-xl);
-            padding: var(--space-sm);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            overflow-x: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        
-        .tab-list::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .tab-btn {
+
+        .nav-link {
             display: flex;
             align-items: center;
-            gap: var(--space-sm);
-            padding: var(--space-md) var(--space-lg);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            margin-bottom: var(--spacing-xs);
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            background: var(--tertiary-bg);
+        }
+
+        .nav-link.active {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .nav-link i {
+            margin-right: var(--spacing-sm);
+            width: 20px;
+            text-align: center;
+        }
+
+        .quick-links {
+            margin-top: var(--spacing-lg);
+        }
+
+        .quick-links a {
+            display: block;
+            padding: var(--spacing-xs) var(--spacing-md);
+            color: var(--text-secondary);
             font-size: var(--font-size-sm);
-            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .quick-links a:hover {
+            background: var(--tertiary-bg);
+            color: var(--text-primary);
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .content-area {
+            flex: 1;
+            padding: var(--spacing-xl);
+        }
+
+        .content-wrapper {
+            max-width: var(--max-content-width);
+            margin: 0 auto;
+        }
+
+        .page-header {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .page-title {
+            font-size: var(--font-size-display);
+            font-weight: 800;
+            margin-bottom: var(--spacing-sm);
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            color: var(--text-secondary);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* ===== TABS ===== */
+        .tab-navigation {
+            display: flex;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-xl);
+            background: var(--secondary-bg);
+            padding: var(--spacing-xs);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .tab-btn {
             background: transparent;
             border: none;
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: var(--border-radius);
             color: var(--text-secondary);
-            border-radius: var(--radius-lg);
+            font-weight: 500;
             cursor: pointer;
-            transition: all var(--transition-normal);
+            transition: var(--transition);
             white-space: nowrap;
         }
-        
-        .tab-btn:hover,
-        .tab-btn.active {
-            background: var(--accent-primary);
-            color: white;
-            box-shadow: var(--shadow-md);
+
+        .tab-btn:hover {
+            background: var(--tertiary-bg);
+            color: var(--text-primary);
         }
-        
+
+        .tab-btn.active {
+            background: var(--accent-color);
+            color: white;
+        }
+
         .tab-content {
             display: none;
         }
-        
+
         .tab-content.active {
             display: block;
+            animation: fadeIn 0.3s ease-in-out;
         }
-        
-        /* Loading States */
-        .loading-container {
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== FILTERS ===== */
+        .filters-container {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .filter-group {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: var(--space-2xl);
-            color: var(--text-secondary);
         }
-        
-        .loading-spinner {
-            width: 3rem;
-            height: 3rem;
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            border-top: 3px solid var(--accent-primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: var(--space-lg);
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .loading-text {
-            font-size: var(--font-size-lg);
+
+        .filter-label {
+            font-size: var(--font-size-sm);
             font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xs);
         }
-        
-        /* Empty States */
-        .empty-state {
+
+        .filter-select {
+            background: var(--tertiary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-sm);
+            color: var(--text-primary);
+            font-size: var(--font-size-sm);
+            cursor: pointer;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .filter-actions {
             display: flex;
-            flex-direction: column;
+            gap: var(--spacing-md);
             align-items: center;
-            justify-content: center;
-            padding: var(--space-2xl);
-            text-align: center;
+        }
+
+        .clear-filters-btn {
+            background: var(--tertiary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-sm) var(--spacing-md);
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .clear-filters-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .filter-stats {
+            color: var(--text-muted);
+            font-size: var(--font-size-sm);
+        }
+
+        /* ===== CARDS ===== */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .monster-card {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .monster-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .monster-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .monster-name {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .monster-species {
+            font-size: var(--font-size-sm);
             color: var(--text-secondary);
         }
-        
-        .empty-icon {
-            font-size: var(--font-size-3xl);
-            margin-bottom: var(--space-lg);
-            color: var(--text-muted);
+
+        .monster-actions {
+            display: flex;
+            gap: var(--spacing-xs);
         }
-        
-        .empty-title {
-            font-size: var(--font-size-xl);
+
+        .action-btn {
+            background: var(--tertiary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-xs);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .action-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .action-btn.active {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+        }
+
+        .monster-stats {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            font-size: var(--font-size-sm);
+        }
+
+        .stat-icon {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .element-fire { background: var(--fire); }
+        .element-water { background: var(--water); }
+        .element-thunder { background: var(--thunder); }
+        .element-ice { background: var(--ice); }
+        .element-dragon { background: var(--dragon); }
+        .element-none { background: var(--neutral); }
+
+        .threat-low { color: var(--success-color); }
+        .threat-medium { color: var(--warning-color); }
+        .threat-high { color: var(--warning-color); }
+        .threat-extreme { color: var(--warning-color); }
+
+        .tier-s { color: var(--accent-color); }
+        .tier-a { color: var(--info-color); }
+        .tier-b { color: var(--success-color); }
+        .tier-c { color: var(--text-secondary); }
+        .tier-d { color: var(--text-muted); }
+
+        .monster-location {
+            background: var(--tertiary-bg);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-sm);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .combat-preview {
+            border-top: 1px solid var(--border-color);
+            padding-top: var(--spacing-md);
+        }
+
+        .combat-title {
+            font-size: var(--font-size-sm);
             font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: var(--space-sm);
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-secondary);
         }
-        
-        .empty-description {
-            font-size: var(--font-size-base);
-            max-width: 400px;
+
+        .attack-patterns {
+            display: flex;
+            gap: var(--spacing-xs);
+            flex-wrap: wrap;
         }
-        
-        /* Modal System */
-        .modal-backdrop {
+
+        .pattern-tag {
+            background: var(--tertiary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 2px 8px;
+            font-size: var(--font-size-xs);
+            color: var(--text-secondary);
+        }
+
+        .pattern-speed { border-color: var(--success-color); color: var(--success-color); }
+        .pattern-power { border-color: var(--warning-color); color: var(--warning-color); }
+        .pattern-technical { border-color: var(--info-color); color: var(--info-color); }
+
+        /* ===== MODAL ===== */
+        .modal {
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: var(--z-modal-backdrop);
+            width: 100%;
+            height: 100%;
             background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(4px);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: var(--space-lg);
+            z-index: 1000;
             opacity: 0;
             visibility: hidden;
-            transition: all var(--transition-normal);
+            transition: var(--transition);
         }
-        
-        .modal-backdrop.show {
+
+        .modal.show {
             opacity: 1;
             visibility: visible;
         }
-        
-        .modal {
-            background: var(--bg-card);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-xl);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+
+        .modal-content {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
             max-width: 90vw;
             max-height: 90vh;
-            width: 100%;
-            max-width: 800px;
-            display: flex;
-            flex-direction: column;
-            transform: scale(0.95);
-            transition: all var(--transition-normal);
+            width: 800px;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: var(--transition);
         }
-        
-        .modal-backdrop.show .modal {
+
+        .modal.show .modal-content {
             transform: scale(1);
         }
-        
+
         .modal-header {
+            padding: var(--spacing-lg);
+            border-bottom: 1px solid var(--border-color);
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: var(--space-lg);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: center;
         }
-        
+
         .modal-title {
             font-size: var(--font-size-xl);
             font-weight: 700;
-            color: var(--text-primary);
-            margin: 0;
         }
-        
+
         .modal-close {
-            background: none;
-            border: none;
+            background: var(--tertiary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-xs);
             color: var(--text-secondary);
-            font-size: var(--font-size-lg);
             cursor: pointer;
-            padding: var(--space-sm);
-            border-radius: var(--radius-md);
-            transition: all var(--transition-fast);
+            transition: var(--transition);
         }
-        
+
         .modal-close:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-primary);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
         }
-        
+
         .modal-body {
-            flex: 1;
-            overflow-y: auto;
-            padding: var(--space-lg);
+            padding: var(--spacing-lg);
         }
-        
-        .modal-footer {
-            padding: var(--space-lg);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+        /* ===== CONTROL BUTTONS ===== */
+        .controls-row {
             display: flex;
-            gap: var(--space-md);
-            justify-content: flex-end;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 var(--space-md);
-            }
-            
-            .header-content {
-                padding: var(--space-sm) 0;
-            }
-            
-            .logo {
-                font-size: var(--font-size-lg);
-            }
-            
-            .nav {
-                gap: var(--space-sm);
-            }
-            
-            .nav-link {
-                padding: var(--space-xs) var(--space-sm);
-                font-size: var(--font-size-xs);
-            }
-            
-            .search-input {
-                padding: var(--space-md) var(--space-lg) var(--space-md) 3rem;
-                font-size: var(--font-size-base);
-            }
-            
-            .filters-container {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .filter-group {
-                min-width: auto;
-            }
-            
-            .filter-actions {
-                margin-left: 0;
-                justify-content: stretch;
-            }
-            
-            .results-header {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .tab-list {
-                padding: var(--space-xs);
-            }
-            
-            .tab-btn {
-                padding: var(--space-sm) var(--space-md);
-                font-size: var(--font-size-xs);
-            }
-            
-            .modal {
-                max-width: 95vw;
-                margin: var(--space-md);
-            }
-        }
-        
-        /* Additional Component Styles for Missing Elements */
-        
-        /* Quick Links Sidebar */
-        .quick-links {
-            position: fixed;
-            left: var(--space-lg);
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: var(--z-fixed);
-            background: var(--bg-card);
-            border-radius: var(--radius-xl);
-            padding: var(--space-md);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .quick-links a {
-            display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: var(--space-sm);
-            padding: var(--space-sm) var(--space-md);
-            color: var(--text-secondary);
-            text-decoration: none;
-            border-radius: var(--radius-md);
-            transition: all var(--transition-fast);
-            font-size: var(--font-size-sm);
-            margin-bottom: var(--space-xs);
-        }
-        
-        .quick-links a:hover {
-            background: rgba(233, 69, 96, 0.1);
-            color: var(--text-primary);
-        }
-        
-        @media (max-width: 1024px) {
-            .quick-links {
-                display: none;
-            }
-        }
-        
-        /* Active Filter Pills */
-        .active-filters {
-            display: flex;
+            margin-bottom: var(--spacing-lg);
             flex-wrap: wrap;
-            gap: var(--space-sm);
-            margin-bottom: var(--space-lg);
+            gap: var(--spacing-md);
         }
-        
-        .filter-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
-            background: rgba(233, 69, 96, 0.1);
-            color: var(--accent-primary);
-            padding: var(--space-xs) var(--space-sm);
-            border-radius: var(--radius-lg);
-            font-size: var(--font-size-xs);
-            font-weight: 500;
+
+        .view-controls {
+            display: flex;
+            gap: var(--spacing-xs);
         }
-        
-        .filter-pill-remove {
-            background: none;
-            border: none;
-            color: inherit;
+
+        .view-btn {
+            background: var(--tertiary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-sm);
+            color: var(--text-secondary);
             cursor: pointer;
-            padding: 0;
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 1rem;
-            height: 1rem;
+        }
+
+        .view-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .view-btn.active {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+        }
+
+        .sort-controls {
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+
+        .sort-btn, .export-btn {
+            background: var(--accent-color);
+            border: none;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-sm) var(--spacing-md);
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .sort-btn:hover, .export-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            .app-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            
+            .sidebar.show {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                grid-column: 1;
+            }
+            
+            .cards-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                padding: var(--spacing-sm);
+            }
+            
+            .search-container {
+                margin: 0 var(--spacing-sm);
+            }
+            
+            .content-area {
+                padding: var(--spacing-md);
+            }
+            
+            .tab-navigation {
+                overflow-x: auto;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+            
+            .tab-navigation::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .filters-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== LOADING STATES ===== */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: var(--spacing-xxl);
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--border-color);
+            border-top-color: var(--accent-color);
             border-radius: 50%;
-            transition: background var(--transition-fast);
+            animation: spin 1s linear infinite;
         }
-        
-        .filter-pill-remove:hover {
-            background: rgba(255, 255, 255, 0.2);
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
         }
+
+        /* ===== EMPTY STATES ===== */
+        .empty-state {
+            text-align: center;
+            padding: var(--spacing-xxl);
+            color: var(--text-secondary);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            opacity: 0.5;
+        }
+
+        .empty-state h3 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+        .hidden { display: none !important; }
+        .visible { display: block !important; }
+        .flex { display: flex; }
+        .flex-center { display: flex; align-items: center; justify-content: center; }
+        .gap-sm { gap: var(--spacing-sm); }
+        .gap-md { gap: var(--spacing-md); }
+        .gap-lg { gap: var(--spacing-lg); }
+        .mb-sm { margin-bottom: var(--spacing-sm); }
+        .mb-md { margin-bottom: var(--spacing-md); }
+        .mb-lg { margin-bottom: var(--spacing-lg); }
+        .p-sm { padding: var(--spacing-sm); }
+        .p-md { padding: var(--spacing-md); }
+        .p-lg { padding: var(--spacing-lg); }
     </style>
 </head>
 <body>
-    <!-- Enhanced Header -->
-    <header id="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">
-                    <span class="logo-icon">🐉</span>
-                    <span>MHS3 Master Guide</span>
-                </a>
-                
-                <nav class="nav">
-                    <a href="#monsters" class="nav-link active" data-tab="monsters">
-                        <i class="fas fa-dragon"></i>
-                        <span>Monster Database</span>
-                    </a>
-                    <a href="#teams" class="nav-link" data-tab="teams">
-                        <i class="fas fa-users"></i>
-                        <span>Team Builder</span>
-                    </a>
-                    <a href="#weapons" class="nav-link" data-tab="weapons">
-                        <i class="fas fa-sword"></i>
-                        <span>Weapons</span>
-                    </a>
-                    <a href="#strategies" class="nav-link" data-tab="strategies">
-                        <i class="fas fa-chess"></i>
-                        <span>Boss Strategies</span>
-                    </a>
-                    <a href="#content" class="nav-link" data-tab="content">
-                        <i class="fas fa-map"></i>
-                        <span>Side Content</span>
-                    </a>
-                    <a href="#guides" class="nav-link" data-tab="guides">
-                        <i class="fas fa-book"></i>
-                        <span>Expert Guides</span>
-                    </a>
-                </nav>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-title">🐉 MHS3 Guide</div>
+                <div class="brand-subtitle">Ultimate Master Guide</div>
             </div>
-        </div>
-    </header>
-
-    <!-- Quick Navigation Sidebar -->
-    <div class="quick-links">
-        <a href="#monsters" data-tab="monsters">
-            <i class="fas fa-dragon"></i>
-            <span>Monsters</span>
-        </a>
-        <a href="#teams" data-tab="teams">
-            <i class="fas fa-users"></i>
-            <span>Teams</span>
-        </a>
-        <a href="#weapons" data-tab="weapons">
-            <i class="fas fa-sword"></i>
-            <span>Weapons</span>
-        </a>
-        <a href="#strategies" data-tab="strategies">
-            <i class="fas fa-chess"></i>
-            <span>Bosses</span>
-        </a>
-        <a href="#content" data-tab="content">
-            <i class="fas fa-map"></i>
-            <span>Side Content</span>
-        </a>
-        <a href="#guides" data-tab="guides">
-            <i class="fas fa-book"></i>
-            <span>Guides</span>
-        </a>
-    </div>
-
-    <!-- Main Content -->
-    <main id="main">
-        <div class="container">
-            <!-- Global Search -->
-            <section class="search-section">
-                <div class="search-container">
-                    <div class="search-input-wrapper">
-                        <i class="fas fa-search search-icon"></i>
-                        <input type="text" id="globalSearch" class="search-input" 
-                               placeholder="Search monsters, weapons, strategies..." 
-                               aria-label="Search">
-                    </div>
-                    <div id="searchSuggestions" class="search-suggestions"></div>
+            
+            <div class="nav-menu">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main Sections</div>
+                    <a class="nav-link active" data-tab="monsters" href="#monsters">
+                        <i class="fas fa-dragon"></i>
+                        Monster Database
+                    </a>
+                    <a class="nav-link" data-tab="teams" href="#teams">
+                        <i class="fas fa-users"></i>
+                        Team Builder
+                    </a>
+                    <a class="nav-link" data-tab="weapons" href="#weapons">
+                        <i class="fas fa-sword"></i>
+                        Weapons & Builds
+                    </a>
+                    <a class="nav-link" data-tab="strategies" href="#strategies">
+                        <i class="fas fa-chess"></i>
+                        Boss Strategies
+                    </a>
+                    <a class="nav-link" data-tab="content" href="#content">
+                        <i class="fas fa-map"></i>
+                        Side Content
+                    </a>
+                    <a class="nav-link" data-tab="guides" href="#guides">
+                        <i class="fas fa-graduation-cap"></i>
+                        Expert Guides
+                    </a>
                 </div>
-            </section>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Quick Navigation</div>
+                    <div class="quick-links">
+                        <a href="#tier-list" data-scroll="tier-list">Tier Rankings</a>
+                        <a href="#meta-builds" data-scroll="meta-builds">Meta Teams</a>
+                        <a href="#combat-guide" data-scroll="combat-guide">Combat Mechanics</a>
+                        <a href="#breeding-guide" data-scroll="breeding-guide">Breeding Guide</a>
+                        <a href="#endgame-content" data-scroll="endgame-content">Endgame Content</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
-            <!-- Tab Content -->
-            <div class="tabs-container">
-                <!-- Monster Database Tab -->
-                <div id="monsters" class="tab-content active">
-                    <!-- Filters -->
-                    <section class="filters-section">
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-content">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                    <div class="logo">MHS3 Master Guide</div>
+                    
+                    <div class="search-container">
+                        <input 
+                            type="text" 
+                            class="search-input" 
+                            id="globalSearch" 
+                            placeholder="Search monsters, weapons, strategies... (Ctrl+K)"
+                            autocomplete="off"
+                        >
+                        <div class="search-suggestions" id="searchSuggestions"></div>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <button class="action-btn" title="Settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <div class="content-wrapper">
+                    <!-- Page Header -->
+                    <div class="page-header">
+                        <h1 class="page-title">Monster Hunter Stories 3</h1>
+                        <p class="page-subtitle">Ultimate Master Guide - Advanced Search, Meta Teams & Professional Strategies</p>
+                        
+                        <!-- Tab Navigation -->
+                        <div class="tab-navigation">
+                            <button class="tab-btn active" data-tab="monsters">
+                                <i class="fas fa-dragon"></i>
+                                Monster Database
+                            </button>
+                            <button class="tab-btn" data-tab="teams">
+                                <i class="fas fa-users"></i>
+                                Team Builder
+                            </button>
+                            <button class="tab-btn" data-tab="weapons">
+                                <i class="fas fa-sword"></i>
+                                Weapons & Builds
+                            </button>
+                            <button class="tab-btn" data-tab="strategies">
+                                <i class="fas fa-chess"></i>
+                                Boss Strategies
+                            </button>
+                            <button class="tab-btn" data-tab="content">
+                                <i class="fas fa-map"></i>
+                                Side Content
+                            </button>
+                            <button class="tab-btn" data-tab="guides">
+                                <i class="fas fa-graduation-cap"></i>
+                                Expert Guides
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    
+                    <!-- Monster Database Tab -->
+                    <div id="monsters" class="tab-content active">
+                        <!-- Filters -->
                         <div class="filters-container">
-                            <div class="filter-group">
-                                <label class="filter-label">Threat Level</label>
-                                <select id="threatFilter" class="form-select">
-                                    <option value="all">All Threats</option>
-                                    <option value="low">Low Threat</option>
-                                    <option value="medium">Medium Threat</option>
-                                    <option value="high">High Threat</option>
-                                    <option value="elder">Elder Dragon</option>
-                                </select>
-                            </div>
-                            
-                            <div class="filter-group">
-                                <label class="filter-label">Element</label>
-                                <select id="elementFilter" class="form-select">
-                                    <option value="all">All Elements</option>
-                                    <option value="fire">Fire</option>
-                                    <option value="water">Water</option>
-                                    <option value="thunder">Thunder</option>
-                                    <option value="ice">Ice</option>
-                                    <option value="dragon">Dragon</option>
-                                    <option value="dark">Dark</option>
-                                    <option value="none">Non-elemental</option>
-                                </select>
-                            </div>
-                            
-                            <div class="filter-group">
-                                <label class="filter-label">Species</label>
-                                <select id="typeFilter" class="form-select">
-                                    <option value="all">All Types</option>
-                                    <option value="bird-wyvern">Bird Wyvern</option>
-                                    <option value="flying-wyvern">Flying Wyvern</option>
-                                    <option value="fanged-wyvern">Fanged Wyvern</option>
-                                    <option value="brute-wyvern">Brute Wyvern</option>
-                                    <option value="leviathan">Leviathan</option>
-                                    <option value="elder-dragon">Elder Dragon</option>
-                                </select>
-                            </div>
-                            
-                            <div class="filter-group">
-                                <label class="filter-label">Tier</label>
-                                <select id="tierFilter" class="form-select">
-                                    <option value="all">All Tiers</option>
-                                    <option value="s">S Tier</option>
-                                    <option value="a">A Tier</option>
-                                    <option value="b">B Tier</option>
-                                    <option value="c">C Tier</option>
-                                    <option value="d">D Tier</option>
-                                </select>
+                            <div class="filters-grid">
+                                <div class="filter-group">
+                                    <label class="filter-label">Threat Level</label>
+                                    <select class="filter-select" id="threatFilter">
+                                        <option value="">All Threat Levels</option>
+                                        <option value="low">Low</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="high">High</option>
+                                        <option value="extreme">Extreme</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="filter-group">
+                                    <label class="filter-label">Element</label>
+                                    <select class="filter-select" id="elementFilter">
+                                        <option value="">All Elements</option>
+                                        <option value="fire">Fire</option>
+                                        <option value="water">Water</option>
+                                        <option value="thunder">Thunder</option>
+                                        <option value="ice">Ice</option>
+                                        <option value="dragon">Dragon</option>
+                                        <option value="none">Neutral</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="filter-group">
+                                    <label class="filter-label">Species Type</label>
+                                    <select class="filter-select" id="typeFilter">
+                                        <option value="">All Types</option>
+                                        <option value="Bird Wyvern">Bird Wyvern</option>
+                                        <option value="Flying Wyvern">Flying Wyvern</option>
+                                        <option value="Brute Wyvern">Brute Wyvern</option>
+                                        <option value="Fanged Wyvern">Fanged Wyvern</option>
+                                        <option value="Elder Dragon">Elder Dragon</option>
+                                        <option value="Leviathan">Leviathan</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="filter-group">
+                                    <label class="filter-label">Tier Rating</label>
+                                    <select class="filter-select" id="tierFilter">
+                                        <option value="">All Tiers</option>
+                                        <option value="S">S Tier</option>
+                                        <option value="A">A Tier</option>
+                                        <option value="B">B Tier</option>
+                                        <option value="C">C Tier</option>
+                                        <option value="D">D Tier</option>
+                                    </select>
+                                </div>
                             </div>
                             
                             <div class="filter-actions">
-                                <button id="clearFilters" class="btn btn-outline btn-sm">
+                                <button class="clear-filters-btn" id="clearFilters">
                                     <i class="fas fa-times"></i>
-                                    Clear All
+                                    Clear All Filters
                                 </button>
+                                <div class="filter-stats" id="filterStats">
+                                    Showing all monsters
+                                </div>
                             </div>
                         </div>
-                    </section>
 
-                    <!-- Active Filters Display -->
-                    <div id="activeFilters" class="active-filters"></div>
-
-                    <!-- Results Header -->
-                    <div class="results-header">
-                        <div class="results-info">
-                            <div id="monsterCount" class="results-count">Loading monsters...</div>
-                        </div>
-                        
-                        <div class="view-controls">
-                            <div class="view-toggle">
-                                <button class="view-btn active" data-view="grid">
+                        <!-- Controls -->
+                        <div class="controls-row">
+                            <div class="view-controls">
+                                <button class="view-btn active" data-view="cards" title="Card View">
                                     <i class="fas fa-th"></i>
                                 </button>
-                                <button class="view-btn" data-view="list">
+                                <button class="view-btn" data-view="list" title="List View">
                                     <i class="fas fa-list"></i>
                                 </button>
+                                <button class="view-btn" data-view="compact" title="Compact View">
+                                    <i class="fas fa-th-list"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="sort-controls">
+                                <button class="sort-btn" id="sortBtn">
+                                    <i class="fas fa-sort"></i>
+                                    Sort Options
+                                </button>
+                                <button class="export-btn" id="exportBtn">
+                                    <i class="fas fa-download"></i>
+                                    Export Data
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Monster Cards -->
+                        <div class="cards-container" id="monsterCards">
+                            <!-- Cards will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Team Builder Tab -->
+                    <div id="teams" class="tab-content">
+                        <div class="page-section">
+                            <h2>🛡️ Meta Team Builder</h2>
+                            <p>Build optimal teams with advanced synergy analysis and meta recommendations.</p>
+                            
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <h3>Team Composition</h3>
+                                    <p>Interactive team building with monster selection and synergy analysis.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Meta Analysis</h3>
+                                    <p>Current meta team recommendations for different content types.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Synergy Calculator</h3>
+                                    <p>Advanced team synergy calculations and optimization suggestions.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Loading State -->
-                    <div id="monstersLoading" class="loading-container">
-                        <div class="loading-spinner"></div>
-                        <div class="loading-text">Loading monster database...</div>
-                    </div>
-
-                    <!-- Monster Grid -->
-                    <div id="monstersGrid" class="content-grid" style="display: none;"></div>
-
-                    <!-- Empty State -->
-                    <div id="monstersEmpty" class="empty-state" style="display: none;">
-                        <div class="empty-icon">🔍</div>
-                        <div class="empty-title">No monsters found</div>
-                        <div class="empty-description">
-                            Try adjusting your search terms or filters to find the monsters you're looking for.
+                    <!-- Weapons & Builds Tab -->
+                    <div id="weapons" class="tab-content">
+                        <div class="page-section">
+                            <h2>⚔️ Weapons & Build Guide</h2>
+                            <p>Complete weapon evolution trees, build optimization, and equipment guides.</p>
+                            
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <h3>Weapon Evolution</h3>
+                                    <p>Complete evolution trees for all weapon categories with requirements.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Build Optimizer</h3>
+                                    <p>Advanced build optimization for different playstyles and content.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Equipment Guide</h3>
+                                    <p>Comprehensive equipment guides with stat comparisons and recommendations.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Team Builder Tab -->
-                <div id="teams" class="tab-content">
-                    <div class="loading-container">
-                        <div class="loading-spinner"></div>
-                        <div class="loading-text">Loading team builder...</div>
+                    <!-- Boss Strategies Tab -->
+                    <div id="strategies" class="tab-content">
+                        <div class="page-section">
+                            <h2>🏆 Boss Strategy Guide</h2>
+                            <p>Phase-by-phase strategies for all major bosses and challenging encounters.</p>
+                            
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <h3>Story Bosses</h3>
+                                    <p>Complete strategies for all main story boss encounters.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Elder Dragons</h3>
+                                    <p>Advanced strategies for Elder Dragon encounters and special mechanics.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Endgame Bosses</h3>
+                                    <p>Expert-level strategies for endgame and post-game content.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Weapons Tab -->
-                <div id="weapons" class="tab-content">
-                    <div class="loading-container">
-                        <div class="loading-spinner"></div>
-                        <div class="loading-text">Loading weapon guides...</div>
+                    <!-- Side Content Tab -->
+                    <div id="content" class="tab-content">
+                        <div class="page-section">
+                            <h2>🗺️ Side Content Guide</h2>
+                            <p>Mission guides, collectibles, and efficiency ratings for all side content.</p>
+                            
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <h3>Mission Guide</h3>
+                                    <p>Complete walkthrough for all side missions with efficiency ratings.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Collectibles</h3>
+                                    <p>Location guides for all collectibles, materials, and rare items.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Efficiency Routes</h3>
+                                    <p>Optimized routes for farming, leveling, and content completion.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Boss Strategies Tab -->
-                <div id="strategies" class="tab-content">
-                    <div class="loading-container">
-                        <div class="loading-spinner"></div>
-                        <div class="loading-text">Loading boss strategies...</div>
-                    </div>
-                </div>
-
-                <!-- Side Content Tab -->
-                <div id="content" class="tab-content">
-                    <div class="loading-container">
-                        <div class="loading-spinner"></div>
-                        <div class="loading-text">Loading side content...</div>
-                    </div>
-                </div>
-
-                <!-- Expert Guides Tab -->
-                <div id="guides" class="tab-content">
-                    <div class="loading-container">
-                        <div class="loading-spinner"></div>
-                        <div class="loading-text">Loading expert guides...</div>
+                    <!-- Expert Guides Tab -->
+                    <div id="guides" class="tab-content">
+                        <div class="page-section">
+                            <h2>🎓 Expert Guides</h2>
+                            <p>Advanced mechanics, meta strategies, and professional gaming techniques.</p>
+                            
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <h3>Combat Mechanics</h3>
+                                    <p>Deep dive into combat mechanics, frame data, and advanced techniques.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Meta Analysis</h3>
+                                    <p>Current meta analysis with tier lists and competitive strategies.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>Breeding Guide</h3>
+                                    <p>Advanced breeding mechanics, gene inheritance, and optimization.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </div>
 
     <!-- Modal -->
-    <div class="modal-backdrop" id="modalBackdrop">
-        <div class="modal" id="modal">
+    <div class="modal" id="modal">
+        <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="modalTitle"></h2>
+                <h2 class="modal-title" id="modalTitle">Monster Details</h2>
                 <button class="modal-close" id="modalClose">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div class="modal-body" id="modalBody"></div>
-            <div class="modal-footer" id="modalFooter"></div>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal content will be populated by JavaScript -->
+            </div>
         </div>
     </div>
 
-    <!-- Application JavaScript -->
     <script>
-        // ===== ENHANCED MHS3 GUIDE APPLICATION =====
         class MHS3Guide {
             constructor() {
                 this.data = {
@@ -1541,191 +1285,95 @@
                 
                 this.state = {
                     currentTab: 'monsters',
-                    currentView: 'grid',
-                    currentSort: 'name',
-                    filters: {
-                        threat: 'all',
-                        element: 'all',
-                        type: 'all',
-                        tier: 'all'
-                    },
                     searchQuery: '',
-                    isLoading: true,
-                    isInitialized: false
+                    filters: {
+                        threat: '',
+                        element: '',
+                        type: '',
+                        tier: ''
+                    },
+                    view: 'cards',
+                    sort: 'name'
                 };
 
                 this.init();
             }
 
             async init() {
-                console.log('🐉 Initializing MHS3 Master Guide...');
-                
                 try {
-                    // Load data first
                     await this.loadData();
-                    
-                    // Setup all event listeners
                     this.setupEventListeners();
                     this.setupTabs();
-                    this.setupSearch();
-                    this.setupFilters();
-                    this.setupViewControls();
-                    this.setupModals();
                     this.setupKeyboardNavigation();
-                    
-                    // Initial render
+                    this.loadUserPreferences();
                     this.updateDisplay();
-                    
-                    this.state.isInitialized = true;
-                    console.log('✅ MHS3 Master Guide initialized successfully');
-                    console.log(`📊 Loaded: ${this.data.monsters.length} monsters`);
+                    console.log('✅ MHS3Guide initialized successfully');
                 } catch (error) {
-                    console.error('❌ Failed to initialize:', error);
-                    this.showError('Failed to load game data. Please refresh the page.');
+                    console.error('❌ Failed to initialize MHS3Guide:', error);
+                    this.showError('Failed to load application data');
                 }
             }
 
-            // ===== DATA LOADING =====
             async loadData() {
-                this.state.isLoading = true;
-                this.showLoading();
-
                 try {
-                    console.log('📡 Fetching game data...');
+                    const loadPromises = [
+                        fetch('complete_monster_database.json').then(r => r.json()),
+                        fetch('complete_weapon_guide.json').then(r => r.json()),
+                        fetch('boss_strategies_guide.json').then(r => r.json()),
+                        fetch('side_content_guide.json').then(r => r.json())
+                    ];
+
+                    const [monsters, weapons, bosses, sideContent] = await Promise.all(loadPromises);
                     
-                    const [monsterResponse, weaponResponse, bossResponse, sideContentResponse] = await Promise.allSettled([
-                        fetch('complete_monster_database.json').catch(err => {
-                            console.warn('Monster data fetch failed:', err);
-                            return { ok: false };
-                        }),
-                        fetch('complete_weapon_guide.json').catch(err => {
-                            console.warn('Weapon data fetch failed:', err);
-                            return { ok: false };
-                        }),
-                        fetch('boss_strategies_guide.json').catch(err => {
-                            console.warn('Boss data fetch failed:', err);
-                            return { ok: false };
-                        }),
-                        fetch('side_content_guide.json').catch(err => {
-                            console.warn('Side content fetch failed:', err);
-                            return { ok: false };
-                        })
-                    ]);
-
-                    // Handle monster data (required)
-                    if (monsterResponse.status === 'fulfilled' && monsterResponse.value.ok) {
-                        const monsterData = await monsterResponse.value.json();
-                        this.data.monsters = monsterData.monsters || [];
-                        console.log(`✅ Loaded ${this.data.monsters.length} monsters`);
-                    } else {
-                        throw new Error('Failed to load monster data');
-                    }
-
-                    // Handle weapon data (optional)
-                    if (weaponResponse.status === 'fulfilled' && weaponResponse.value.ok) {
-                        this.data.weapons = await weaponResponse.value.json();
-                        console.log('✅ Loaded weapon data');
-                    } else {
-                        console.warn('⚠️ Weapon data not available');
-                    }
-
-                    // Handle boss data (optional)
-                    if (bossResponse.status === 'fulfilled' && bossResponse.value.ok) {
-                        this.data.bosses = await bossResponse.value.json();
-                        console.log('✅ Loaded boss data');
-                    } else {
-                        console.warn('⚠️ Boss data not available');
-                    }
-
-                    // Handle side content data (optional)
-                    if (sideContentResponse.status === 'fulfilled' && sideContentResponse.value.ok) {
-                        this.data.sideContent = await sideContentResponse.value.json();
-                        console.log('✅ Loaded side content data');
-                    } else {
-                        console.warn('⚠️ Side content data not available');
-                    }
-
-                    // Load user preferences
-                    this.loadUserPreferences();
-
+                    this.data.monsters = monsters.monsters || [];
+                    this.data.weapons = weapons;
+                    this.data.bosses = bosses;
+                    this.data.sideContent = sideContent;
+                    
+                    console.log(`📊 Loaded ${this.data.monsters.length} monsters`);
                 } catch (error) {
                     console.error('❌ Failed to load data:', error);
-                    throw error;
-                }
-
-                this.state.isLoading = false;
-                this.hideLoading();
-            }
-
-            loadUserPreferences() {
-                try {
-                    const saved = localStorage.getItem('mhs3_preferences');
-                    if (saved) {
-                        const prefs = JSON.parse(saved);
-                        this.data.favorites = new Set(prefs.favorites || []);
-                        this.state.currentView = prefs.view || 'grid';
-                        this.state.currentSort = prefs.sort || 'name';
-                        console.log('✅ Loaded user preferences');
-                    }
-                } catch (error) {
-                    console.warn('⚠️ Failed to load user preferences:', error);
+                    // Fallback to empty data
+                    this.data.monsters = [];
                 }
             }
 
-            saveUserPreferences() {
-                try {
-                    const prefs = {
-                        favorites: Array.from(this.data.favorites),
-                        view: this.state.currentView,
-                        sort: this.state.currentSort,
-                        filters: { ...this.state.filters }
-                    };
-                    localStorage.setItem('mhs3_preferences', JSON.stringify(prefs));
-                } catch (error) {
-                    console.warn('⚠️ Failed to save user preferences:', error);
-                }
-            }
-
-            // ===== EVENT LISTENERS =====
             setupEventListeners() {
                 // Header scroll effect
                 window.addEventListener('scroll', this.handleScroll.bind(this));
                 
+                // Mobile menu
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.addEventListener('click', this.toggleMobileMenu.bind(this));
+                }
+                
                 // Search functionality
-                const searchInput = document.getElementById('globalSearch');
-                if (searchInput) {
-                    searchInput.addEventListener('input', this.handleSearch.bind(this));
-                    searchInput.addEventListener('focus', this.showSearchSuggestions.bind(this));
-                    searchInput.addEventListener('blur', this.hideSearchSuggestions.bind(this));
+                const globalSearch = document.getElementById('globalSearch');
+                if (globalSearch) {
+                    globalSearch.addEventListener('input', this.handleSearch.bind(this));
+                    globalSearch.addEventListener('focus', () => this.showSearchSuggestions());
+                    globalSearch.addEventListener('blur', () => {
+                        // Delay hiding to allow clicking on suggestions
+                        setTimeout(() => this.hideSearchSuggestions(), 200);
+                    });
                 }
 
-                // Filter controls - FIXED: Added null checks
-                const threatFilter = document.getElementById('threatFilter');
-                if (threatFilter) {
-                    threatFilter.addEventListener('change', this.handleFilterChange.bind(this));
-                }
-
-                const elementFilter = document.getElementById('elementFilter');
-                if (elementFilter) {
-                    elementFilter.addEventListener('change', this.handleFilterChange.bind(this));
-                }
-
-                const typeFilter = document.getElementById('typeFilter');
-                if (typeFilter) {
-                    typeFilter.addEventListener('change', this.handleFilterChange.bind(this));
-                }
-
-                const tierFilter = document.getElementById('tierFilter');
-                if (tierFilter) {
-                    tierFilter.addEventListener('change', this.handleFilterChange.bind(this));
-                }
+                // Filter controls
+                const filterIds = ['threatFilter', 'elementFilter', 'typeFilter', 'tierFilter'];
+                filterIds.forEach(id => {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.addEventListener('change', this.handleFilterChange.bind(this));
+                    }
+                });
 
                 const clearFilters = document.getElementById('clearFilters');
                 if (clearFilters) {
                     clearFilters.addEventListener('click', this.clearAllFilters.bind(this));
                 }
 
-                // Navigation - FIXED: Added proper event binding
+                // Navigation
                 document.querySelectorAll('.nav-link').forEach(link => {
                     link.addEventListener('click', this.handleNavigation.bind(this));
                 });
@@ -1734,49 +1382,33 @@
                     link.addEventListener('click', this.handleQuickNavigation.bind(this));
                 });
 
-                // View controls - FIXED: Added proper event binding  
+                // Sort and view controls
+                const sortBtn = document.getElementById('sortBtn');
+                if (sortBtn) {
+                    sortBtn.addEventListener('click', this.toggleSortOptions.bind(this));
+                }
+
                 document.querySelectorAll('.view-btn').forEach(btn => {
                     btn.addEventListener('click', this.handleViewChange.bind(this));
                 });
 
-                // Window resize for responsive updates
-                window.addEventListener('resize', this.handleResize.bind(this));
-                
-                console.log('✅ Event listeners setup complete');
-            }
-
-            setupTabs() {
-                // Initial tab state from URL hash
-                const hash = window.location.hash.substring(1);
-                if (hash && ['monsters', 'teams', 'weapons', 'strategies', 'content', 'guides'].includes(hash)) {
-                    this.state.currentTab = hash;
+                // Export functionality
+                const exportBtn = document.getElementById('exportBtn');
+                if (exportBtn) {
+                    exportBtn.addEventListener('click', this.handleExport.bind(this));
                 }
-            }
 
-            setupSearch() {
-                console.log('✅ Search system ready');
-            }
-
-            setupFilters() {
-                this.updateActiveFilters();
-                console.log('✅ Filter system ready');
-            }
-
-            setupViewControls() {
-                this.updateViewControls();
-                console.log('✅ View controls ready');
-            }
-
-            setupModals() {
+                // Modal controls
                 const modalClose = document.getElementById('modalClose');
+                const modal = document.getElementById('modal');
+                
                 if (modalClose) {
                     modalClose.addEventListener('click', this.closeModal.bind(this));
                 }
-
-                const modalBackdrop = document.getElementById('modalBackdrop');
-                if (modalBackdrop) {
-                    modalBackdrop.addEventListener('click', (e) => {
-                        if (e.target === e.currentTarget) {
+                
+                if (modal) {
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) {
                             this.closeModal();
                         }
                     });
@@ -1789,7 +1421,17 @@
                     }
                 });
 
-                console.log('✅ Modal system ready');
+                // Window resize for responsive updates
+                window.addEventListener('resize', this.handleResize.bind(this));
+            }
+
+            setupTabs() {
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const targetTab = e.currentTarget.getAttribute('data-tab');
+                        this.switchTab(targetTab);
+                    });
+                });
             }
 
             setupKeyboardNavigation() {
@@ -1797,25 +1439,25 @@
                     // Ctrl/Cmd + K to focus search
                     if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
                         e.preventDefault();
-                        document.getElementById('globalSearch')?.focus();
+                        const searchInput = document.getElementById('globalSearch');
+                        if (searchInput) {
+                            searchInput.focus();
+                        }
                     }
                 });
             }
 
-            // ===== CORE FUNCTIONALITY =====
             switchTab(tabName) {
-                if (!tabName || this.state.currentTab === tabName) return;
-
-                console.log(`🔄 Switching to tab: ${tabName}`);
-
                 // Update tab buttons
-                document.querySelectorAll('.nav-link').forEach(btn => {
+                document.querySelectorAll('.tab-btn').forEach(btn => {
                     btn.classList.remove('active');
+                    btn.setAttribute('aria-selected', 'false');
                 });
                 
-                const activeNavLink = document.querySelector(`[data-tab="${tabName}"]`);
-                if (activeNavLink) {
-                    activeNavLink.classList.add('active');
+                const activeBtn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+                if (activeBtn) {
+                    activeBtn.classList.add('active');
+                    activeBtn.setAttribute('aria-selected', 'true');
                 }
 
                 // Update tab content
@@ -1828,49 +1470,39 @@
                     activeContent.classList.add('active');
                 }
 
+                // Update navigation active state
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                const activeNavLink = document.querySelector(`.nav-link[data-tab="${tabName}"]`);
+                if (activeNavLink) {
+                    activeNavLink.classList.add('active');
+                }
+
                 // Update state and URL
                 this.state.currentTab = tabName;
                 this.updateURL();
 
                 // Render content for active tab
-                setTimeout(() => {
-                    this.renderTabContent(tabName);
-                }, 50);
-            }
-
-            renderTabContent(tabName) {
-                switch (tabName) {
-                    case 'monsters':
-                        this.updateDisplay();
-                        break;
-                    case 'teams':
-                        this.renderTeams();
-                        break;
-                    case 'weapons':
-                        this.renderWeapons();
-                        break;
-                    case 'strategies':
-                        this.renderBosses();
-                        break;
-                    case 'content':
-                        this.renderSideContent();
-                        break;
-                    case 'guides':
-                        this.renderGuides();
-                        break;
+                if (tabName === 'monsters') {
+                    this.updateDisplay();
                 }
             }
 
-            performSearch(query) {
-                this.state.searchQuery = query.toLowerCase().trim();
-                console.log(`🔍 Searching for: "${query}"`);
+            handleSearch(e) {
+                this.state.searchQuery = e.target.value.toLowerCase().trim();
                 
                 if (this.state.searchQuery.length > 0) {
-                    this.generateSearchSuggestions(query);
+                    this.generateSearchSuggestions(e.target.value);
+                } else {
+                    this.hideSearchSuggestions();
                 }
                 
-                this.updateDisplay();
-                this.updateMonsterCount();
+                if (this.state.currentTab === 'monsters') {
+                    this.updateDisplay();
+                    this.updateFilterStats();
+                }
             }
 
             generateSearchSuggestions(query) {
@@ -1879,8 +1511,7 @@
 
                 // Search monsters
                 this.data.monsters.forEach(monster => {
-                    if (monster.name.toLowerCase().includes(lowerQuery) || 
-                        (monster.species && monster.species.toLowerCase().includes(lowerQuery))) {
+                    if (monster.name.toLowerCase().includes(lowerQuery)) {
                         suggestions.push({
                             type: 'Monster',
                             name: monster.name,
@@ -1903,43 +1534,42 @@
                     return;
                 }
 
-                if (suggestions.length === 0) {
-                    container.innerHTML = '<div class="suggestion-item"><span class="suggestion-type">Info</span><span>No suggestions found</span></div>';
-                } else {
-                    container.innerHTML = suggestions.map(suggestion => `
-                        <div class="suggestion-item" data-tab="${suggestion.tab}" data-name="${suggestion.name}">
-                            <span class="suggestion-type">${suggestion.type}</span>
-                            <span>${suggestion.name}</span>
-                            ${suggestion.element && suggestion.element !== 'none' ? `<span class="monster-element element-${suggestion.element}">${suggestion.element}</span>` : ''}
-                            ${suggestion.threat ? `<span class="monster-threat threat-${suggestion.threat}">${suggestion.threat.toUpperCase()}</span>` : ''}
-                        </div>
-                    `).join('');
+                container.innerHTML = suggestions.map(suggestion => `
+                    <div class="suggestion-item" data-tab="${suggestion.tab}" data-name="${suggestion.name}">
+                        <span class="suggestion-type">${suggestion.type}</span>
+                        <span>${suggestion.name}</span>
+                        ${suggestion.element ? `<span class="monster-element element-${suggestion.element}">${suggestion.element}</span>` : ''}
+                        ${suggestion.threat ? `<span style="color: var(--text-muted); font-size: var(--font-size-xs);">${suggestion.threat}</span>` : ''}
+                    </div>
+                `).join('');
 
-                    // Add click handlers to suggestions
-                    container.querySelectorAll('.suggestion-item').forEach(item => {
-                        item.addEventListener('click', () => {
-                            const name = item.getAttribute('data-name');
-                            document.getElementById('globalSearch').value = name;
-                            this.performSearch(name);
-                            this.hideSearchSuggestions();
-                        });
+                // Add click handlers to suggestions
+                container.querySelectorAll('.suggestion-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        const tab = item.getAttribute('data-tab');
+                        const name = item.getAttribute('data-name');
+                        
+                        this.switchTab(tab);
+                        document.getElementById('globalSearch').value = name;
+                        this.state.searchQuery = name.toLowerCase();
+                        this.hideSearchSuggestions();
+                        this.updateDisplay();
                     });
-                }
+                });
 
                 container.classList.add('show');
             }
 
             hideSearchSuggestions() {
-                setTimeout(() => {
-                    document.getElementById('searchSuggestions')?.classList.remove('show');
-                }, 150);
+                const container = document.getElementById('searchSuggestions');
+                if (container) {
+                    container.classList.remove('show');
+                }
             }
 
             handleFilterChange(e) {
                 const filterId = e.target.id;
                 const value = e.target.value;
-
-                console.log(`🔧 Filter changed: ${filterId} = ${value}`);
 
                 switch (filterId) {
                     case 'threatFilter':
@@ -1956,631 +1586,342 @@
                         break;
                 }
 
-                this.updateActiveFilters();
                 this.updateDisplay();
-                this.updateMonsterCount();
-                this.saveUserPreferences();
+                this.updateFilterStats();
             }
 
             clearAllFilters() {
-                console.log('🧹 Clearing all filters');
-                
                 this.state.filters = {
-                    threat: 'all',
-                    element: 'all',
-                    type: 'all',
-                    tier: 'all'
+                    threat: '',
+                    element: '',
+                    type: '',
+                    tier: ''
                 };
 
-                // Reset filter selects
-                document.getElementById('threatFilter').value = 'all';
-                document.getElementById('elementFilter').value = 'all';
-                document.getElementById('typeFilter').value = 'all';
-                document.getElementById('tierFilter').value = 'all';
+                // Reset filter dropdowns
+                document.getElementById('threatFilter').value = '';
+                document.getElementById('elementFilter').value = '';
+                document.getElementById('typeFilter').value = '';
+                document.getElementById('tierFilter').value = '';
 
-                // Clear search
-                document.getElementById('globalSearch').value = '';
-                this.state.searchQuery = '';
-
-                this.updateActiveFilters();
                 this.updateDisplay();
-                this.updateMonsterCount();
-                this.saveUserPreferences();
+                this.updateFilterStats();
             }
 
-            updateActiveFilters() {
-                const container = document.getElementById('activeFilters');
-                if (!container) return;
-
-                const activeFilters = [];
-
-                Object.entries(this.state.filters).forEach(([key, value]) => {
-                    if (value !== 'all') {
-                        const displayNames = {
-                            threat: 'Threat',
-                            element: 'Element', 
-                            type: 'Type',
-                            tier: 'Tier'
-                        };
-                        
-                        const displayName = displayNames[key] || key;
-                        activeFilters.push({
-                            key,
-                            value,
-                            display: `${displayName}: ${value.charAt(0).toUpperCase() + value.slice(1)}`
-                        });
-                    }
-                });
-
-                if (this.state.searchQuery) {
-                    activeFilters.push({
-                        key: 'search',
-                        value: this.state.searchQuery,
-                        display: `Search: ${this.state.searchQuery}`
-                    });
+            handleNavigation(e) {
+                e.preventDefault();
+                const tab = e.currentTarget.getAttribute('data-tab') || 
+                           e.currentTarget.getAttribute('href')?.substring(1);
+                if (tab) {
+                    this.switchTab(tab);
                 }
-
-                container.innerHTML = activeFilters.map(filter => `
-                    <div class="filter-pill">
-                        <span>${filter.display}</span>
-                        <button class="filter-pill-remove" data-filter="${filter.key}">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                `).join('');
-
-                // Add remove handlers
-                container.querySelectorAll('.filter-pill-remove').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        const filterKey = e.currentTarget.getAttribute('data-filter');
-                        this.removeFilter(filterKey);
-                    });
-                });
             }
 
-            removeFilter(filterKey) {
-                if (filterKey === 'search') {
-                    document.getElementById('globalSearch').value = '';
-                    this.state.searchQuery = '';
-                } else {
-                    this.state.filters[filterKey] = 'all';
-                    const filterId = filterKey + 'Filter';
-                    const filterElement = document.getElementById(filterId);
-                    if (filterElement) {
-                        filterElement.value = 'all';
-                    }
+            handleQuickNavigation(e) {
+                e.preventDefault();
+                const scrollTarget = e.currentTarget.getAttribute('data-scroll');
+                if (scrollTarget) {
+                    // For now, just scroll to top - could enhance with specific section scrolling
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
+            }
 
-                this.updateActiveFilters();
+            handleViewChange(e) {
+                const view = e.currentTarget.getAttribute('data-view');
+                this.state.view = view;
+
+                document.querySelectorAll('.view-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                e.currentTarget.classList.add('active');
+
                 this.updateDisplay();
-                this.updateMonsterCount();
-                this.saveUserPreferences();
             }
 
-            // ===== DATA PROCESSING =====
-            getFilteredData() {
-                let filtered = [...this.data.monsters];
-
-                // Apply search filter
-                if (this.state.searchQuery) {
-                    filtered = filtered.filter(monster => {
-                        const searchableText = `
-                            ${monster.name} 
-                            ${monster.species || ''} 
-                            ${monster.element || ''} 
-                            ${monster.threat_level || ''}
-                            ${monster.location || ''}
-                        `.toLowerCase();
-                        return searchableText.includes(this.state.searchQuery);
-                    });
-                }
-
-                // Apply filters
-                if (this.state.filters.threat !== 'all') {
-                    filtered = filtered.filter(monster => monster.threat_level === this.state.filters.threat);
-                }
-
-                if (this.state.filters.element !== 'all') {
-                    filtered = filtered.filter(monster => {
-                        const element = monster.element || 'none';
-                        return element === this.state.filters.element;
-                    });
-                }
-
-                if (this.state.filters.type !== 'all') {
-                    filtered = filtered.filter(monster => {
-                        const species = monster.species?.toLowerCase().replace(/\s+/g, '-') || '';
-                        return species === this.state.filters.type;
-                    });
-                }
-
-                if (this.state.filters.tier !== 'all') {
-                    filtered = filtered.filter(monster => {
-                        const tier = monster.tier?.toLowerCase() || '';
-                        return tier === this.state.filters.tier;
-                    });
-                }
-
-                return this.sortData(filtered);
-            }
-
-            sortData(data) {
-                const sorted = [...data];
-                switch (this.state.currentSort) {
-                    case 'name':
-                        return sorted.sort((a, b) => a.name.localeCompare(b.name));
-                    case 'tier':
-                        const tierOrder = { 's': 5, 'a': 4, 'b': 3, 'c': 2, 'd': 1 };
-                        return sorted.sort((a, b) => {
-                            const aTier = tierOrder[a.tier?.toLowerCase()] || 0;
-                            const bTier = tierOrder[b.tier?.toLowerCase()] || 0;
-                            return bTier - aTier;
-                        });
-                    case 'threat':
-                        const threatOrder = { 'elder': 4, 'high': 3, 'medium': 2, 'low': 1 };
-                        return sorted.sort((a, b) => {
-                            const aThreat = threatOrder[a.threat_level] || 0;
-                            const bThreat = threatOrder[b.threat_level] || 0;
-                            return bThreat - aThreat;
-                        });
-                    case 'element':
-                        return sorted.sort((a, b) => {
-                            const aElement = a.element || 'none';
-                            const bElement = b.element || 'none';
-                            return aElement.localeCompare(bElement);
-                        });
-                    default:
-                        return sorted;
-                }
-            }
-
-            // ===== DISPLAY METHODS =====
             updateDisplay() {
-                if (this.state.isLoading) return;
+                if (this.state.currentTab === 'monsters') {
+                    this.renderMonsters();
+                }
+            }
 
-                const filtered = this.getFilteredData();
-                const container = document.getElementById('monstersGrid');
-                const loadingContainer = document.getElementById('monstersLoading');
-                const emptyContainer = document.getElementById('monstersEmpty');
-
+            renderMonsters() {
+                const container = document.getElementById('monsterCards');
                 if (!container) return;
 
-                // Hide loading state
-                if (loadingContainer) {
-                    loadingContainer.style.display = 'none';
-                }
+                const filteredMonsters = this.getFilteredMonsters();
 
-                if (filtered.length === 0) {
-                    container.style.display = 'none';
-                    if (emptyContainer) {
-                        emptyContainer.style.display = 'block';
-                    }
+                if (filteredMonsters.length === 0) {
+                    container.innerHTML = `
+                        <div class="empty-state">
+                            <i class="fas fa-search"></i>
+                            <h3>No monsters found</h3>
+                            <p>Try adjusting your search or filter criteria</p>
+                        </div>
+                    `;
                     return;
                 }
 
-                // Hide empty state
-                if (emptyContainer) {
-                    emptyContainer.style.display = 'none';
+                container.innerHTML = filteredMonsters.map(monster => this.createMonsterCard(monster)).join('');
+
+                // Add event listeners for action buttons
+                container.querySelectorAll('.action-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const action = btn.getAttribute('data-action');
+                        const monsterName = btn.getAttribute('data-monster');
+                        
+                        switch (action) {
+                            case 'favorite':
+                                this.addToFavorites(monsterName);
+                                break;
+                            case 'compare':
+                                this.addToComparison(monsterName);
+                                break;
+                        }
+                    });
+                });
+
+                // Add event listeners for card clicks
+                container.querySelectorAll('.monster-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        const monsterName = card.getAttribute('data-monster');
+                        this.showMonsterDetails(monsterName);
+                    });
+                });
+            }
+
+            getFilteredMonsters() {
+                let filtered = this.data.monsters;
+
+                // Apply search filter
+                if (this.state.searchQuery) {
+                    filtered = filtered.filter(monster => 
+                        monster.name.toLowerCase().includes(this.state.searchQuery) ||
+                        monster.species.toLowerCase().includes(this.state.searchQuery) ||
+                        monster.location.toLowerCase().includes(this.state.searchQuery)
+                    );
                 }
 
-                // Update grid view class
-                container.className = `content-grid ${this.state.currentView === 'list' ? 'list-view' : ''}`;
+                // Apply filters
+                if (this.state.filters.threat) {
+                    filtered = filtered.filter(monster => monster.threat_level === this.state.filters.threat);
+                }
 
-                // Render monsters
-                container.innerHTML = filtered.map(monster => this.createMonsterCard(monster)).join('');
-                container.style.display = 'grid';
+                if (this.state.filters.element) {
+                    filtered = filtered.filter(monster => monster.element === this.state.filters.element);
+                }
 
-                // Add event handlers
-                this.addCardEventHandlers();
+                if (this.state.filters.type) {
+                    filtered = filtered.filter(monster => monster.species === this.state.filters.type);
+                }
 
-                console.log(`📊 Displaying ${filtered.length} monsters`);
+                if (this.state.filters.tier) {
+                    filtered = filtered.filter(monster => monster.tier === this.state.filters.tier);
+                }
+
+                // Sort monsters
+                filtered.sort((a, b) => {
+                    switch (this.state.sort) {
+                        case 'name':
+                            return a.name.localeCompare(b.name);
+                        case 'threat':
+                            const threatOrder = { 'low': 1, 'medium': 2, 'high': 3, 'extreme': 4 };
+                            return (threatOrder[b.threat_level] || 0) - (threatOrder[a.threat_level] || 0);
+                        case 'tier':
+                            const tierOrder = { 'S': 5, 'A': 4, 'B': 3, 'C': 2, 'D': 1 };
+                            return (tierOrder[b.tier] || 0) - (tierOrder[a.tier] || 0);
+                        default:
+                            return a.name.localeCompare(b.name);
+                    }
+                });
+
+                return filtered;
             }
 
             createMonsterCard(monster) {
-                const element = monster.element || 'none';
-                const threat = monster.threat_level || 'unknown';
-                const tier = monster.tier || 'N/A';
-                const species = monster.species || 'Unknown Species';
+                const isFavorite = this.data.favorites.has(monster.name);
+                const attackPatterns = this.getMonsterAttackPatterns(monster);
 
                 return `
                     <div class="monster-card" data-monster="${monster.name}">
-                        <div class="card-header">
+                        <div class="monster-header">
                             <div>
                                 <h3 class="monster-name">${monster.name}</h3>
-                                <div class="monster-species">${species}</div>
+                                <p class="monster-species">${monster.species}</p>
                             </div>
-                            <div class="monster-badges">
-                                <span class="monster-element element-${element}">
-                                    ${element === 'none' ? 'Non-elemental' : element.charAt(0).toUpperCase() + element.slice(1)}
-                                </span>
-                                <div class="tier-badge tier-${tier.toLowerCase()}">${tier.toUpperCase()}</div>
-                            </div>
-                        </div>
-                        
-                        <div class="card-content">
-                            <div class="monster-stats">
-                                <div class="stat-item">
-                                    <div class="stat-label">Threat</div>
-                                    <div class="stat-value">
-                                        <span class="monster-threat threat-${threat}">
-                                            ${threat.charAt(0).toUpperCase() + threat.slice(1)}
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Location</div>
-                                    <div class="stat-value">${monster.location || 'Various'}</div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-label">Category</div>
-                                    <div class="stat-value">${monster.category || 'Regular'}</div>
-                                </div>
-                            </div>
-                            
                             <div class="monster-actions">
-                                <button class="btn btn-primary btn-sm monster-details-btn">
-                                    <i class="fas fa-eye"></i>
-                                    View Details
-                                </button>
-                                <button class="btn btn-outline btn-sm monster-favorite-btn ${this.data.favorites.has(monster.name) ? 'active' : ''}">
+                                <button class="action-btn ${isFavorite ? 'active' : ''}" 
+                                        data-action="favorite" 
+                                        data-monster="${monster.name}"
+                                        title="Add to Favorites">
                                     <i class="fas fa-heart"></i>
-                                    ${this.data.favorites.has(monster.name) ? 'Favorited' : 'Favorite'}
+                                </button>
+                                <button class="action-btn" 
+                                        data-action="compare" 
+                                        data-monster="${monster.name}"
+                                        title="Add to Comparison">
+                                    <i class="fas fa-balance-scale"></i>
                                 </button>
                             </div>
                         </div>
+
+                        <div class="monster-stats">
+                            <div class="stat-item">
+                                <div class="stat-icon element-${monster.element}"></div>
+                                <span>${this.formatElement(monster.element)}</span>
+                            </div>
+                            <div class="stat-item threat-${monster.threat_level}">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>${this.formatThreatLevel(monster.threat_level)}</span>
+                            </div>
+                            <div class="stat-item tier-${monster.tier.toLowerCase()}">
+                                <i class="fas fa-trophy"></i>
+                                <span>Tier ${monster.tier}</span>
+                            </div>
+                        </div>
+
+                        <div class="monster-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            ${monster.location}
+                        </div>
+
+                        <div class="combat-preview">
+                            <div class="combat-title">Attack Patterns</div>
+                            <div class="attack-patterns">
+                                ${attackPatterns.map(pattern => 
+                                    `<span class="pattern-tag pattern-${pattern.toLowerCase()}">${pattern}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
                     </div>
                 `;
             }
 
-            addCardEventHandlers() {
-                // Details buttons
-                document.querySelectorAll('.monster-details-btn').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        const card = e.target.closest('.monster-card');
-                        const monsterName = card.getAttribute('data-monster');
-                        const monster = this.data.monsters.find(m => m.name === monsterName);
-                        if (monster) {
-                            this.showMonsterDetails(monster);
+            getMonsterAttackPatterns(monster) {
+                const patterns = new Set();
+                
+                if (monster.stance_patterns) {
+                    Object.values(monster.stance_patterns).forEach(stance => {
+                        if (stance.attacks) {
+                            stance.attacks.forEach(attack => {
+                                patterns.add(attack.type);
+                            });
                         }
                     });
-                });
-
-                // Favorite buttons
-                document.querySelectorAll('.monster-favorite-btn').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        const card = e.target.closest('.monster-card');
-                        const monsterName = card.getAttribute('data-monster');
-                        this.addToFavorites(monsterName);
-                    });
-                });
-
-                // Card click for details
-                document.querySelectorAll('.monster-card').forEach(card => {
-                    card.addEventListener('click', () => {
-                        const monsterName = card.getAttribute('data-monster');
-                        const monster = this.data.monsters.find(m => m.name === monsterName);
-                        if (monster) {
-                            this.showMonsterDetails(monster);
-                        }
-                    });
-                });
-            }
-
-            updateMonsterCount() {
-                const filtered = this.getFilteredData();
-                const countEl = document.getElementById('monsterCount');
-                if (countEl) {
-                    countEl.textContent = `${filtered.length} monster${filtered.length !== 1 ? 's' : ''}`;
                 }
-            }
-
-            updateViewControls() {
-                document.querySelectorAll('.view-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                    if (btn.getAttribute('data-view') === this.state.currentView) {
-                        btn.classList.add('active');
-                    }
-                });
-            }
-
-            // ===== TAB CONTENT RENDERERS =====
-            renderTeams() {
-                const container = document.getElementById('teams');
-                if (!container) return;
                 
-                container.innerHTML = `
-                    <div class="section">
-                        <h2>Team Builder</h2>
-                        <p class="text-secondary mb-lg">Build optimal monster teams for various combat scenarios.</p>
-                        
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="card-title">
-                                    <i class="fas fa-users"></i>
-                                    Meta Team Compositions
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <p>Team building system coming soon. This will include:</p>
-                                <ul>
-                                    <li>Meta team templates</li>
-                                    <li>Synergy analysis</li>
-                                    <li>Element coverage optimization</li>
-                                    <li>Counter-strategy building</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                `;
+                return Array.from(patterns);
             }
 
-            renderWeapons() {
-                const container = document.getElementById('weapons');
-                if (!container) return;
-                
-                container.innerHTML = `
-                    <div class="section">
-                        <h2>Weapons & Builds</h2>
-                        <p class="text-secondary mb-lg">Comprehensive weapon guides and optimal builds.</p>
-                        
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="card-title">
-                                    <i class="fas fa-sword"></i>
-                                    Weapon Categories
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <p>Weapon guide system coming soon. This will include:</p>
-                                <ul>
-                                    <li>All weapon categories and trees</li>
-                                    <li>Optimal build recommendations</li>
-                                    <li>Upgrade paths and materials</li>
-                                    <li>Combat effectiveness analysis</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                `;
+            formatElement(element) {
+                return element === 'none' ? 'Neutral' : element.charAt(0).toUpperCase() + element.slice(1);
             }
 
-            renderBosses() {
-                const container = document.getElementById('strategies');
-                if (!container) return;
-                
-                container.innerHTML = `
-                    <div class="section">
-                        <h2>Boss Strategies</h2>
-                        <p class="text-secondary mb-lg">Detailed strategies for all major boss encounters.</p>
-                        
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="card-title">
-                                    <i class="fas fa-chess"></i>
-                                    Boss Encounters
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <p>Boss strategy system coming soon. This will include:</p>
-                                <ul>
-                                    <li>Story boss guides</li>
-                                    <li>Elder Dragon strategies</li>
-                                    <li>Variant boss tactics</li>
-                                    <li>Phase transition guides</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                `;
+            formatThreatLevel(level) {
+                return level.charAt(0).toUpperCase() + level.slice(1);
             }
 
-            renderSideContent() {
-                const container = document.getElementById('content');
-                if (!container) return;
-                
-                container.innerHTML = `
-                    <div class="section">
-                        <h2>Side Content</h2>
-                        <p class="text-secondary mb-lg">Complete guides for all side activities and content.</p>
-                        
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="card-title">
-                                    <i class="fas fa-map"></i>
-                                    Activities & Exploration
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <p>Side content guide system coming soon. This will include:</p>
-                                <ul>
-                                    <li>Habitat restoration guides</li>
-                                    <li>Collection and exploration</li>
-                                    <li>Mini-games and activities</li>
-                                    <li>100% completion roadmap</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }
+            showMonsterDetails(monsterName) {
+                const monster = this.data.monsters.find(m => m.name === monsterName);
+                if (!monster) return;
 
-            renderGuides() {
-                const container = document.getElementById('guides');
-                if (!container) return;
-                
-                container.innerHTML = `
-                    <div class="section">
-                        <h2>Expert Guides</h2>
-                        <p class="text-secondary mb-lg">Advanced guides for expert-level play.</p>
-                        
-                        <div class="card-grid">
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="card-title">
-                                        <i class="fas fa-trophy"></i>
-                                        Meta Analysis
-                                    </div>
-                                </div>
-                                <div class="card-content">
-                                    <p>Deep dive into the current meta, tier rankings, and optimal strategies for competitive play.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="card-title">
-                                        <i class="fas fa-rocket"></i>
-                                        Speed Run Guides
-                                    </div>
-                                </div>
-                                <div class="card-content">
-                                    <p>Optimized routes and strategies for fastest completion times in story and side content.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="card">
-                                <div class="card-header">
-                                    <div class="card-title">
-                                        <i class="fas fa-cog"></i>
-                                        Advanced Mechanics
-                                    </div>
-                                </div>
-                                <div class="card-content">
-                                    <p>Hidden mechanics, damage calculations, and advanced techniques for expert players.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }
-
-            // ===== MODAL SYSTEM =====
-            showMonsterDetails(monster) {
                 const modal = document.getElementById('modal');
-                const backdrop = document.getElementById('modalBackdrop');
-                const title = document.getElementById('modalTitle');
-                const body = document.getElementById('modalBody');
+                const modalTitle = document.getElementById('modalTitle');
+                const modalBody = document.getElementById('modalBody');
 
-                if (!modal || !backdrop || !title || !body) return;
-
-                title.textContent = monster.name;
-                body.innerHTML = this.createMonsterDetailsContent(monster);
-
-                backdrop.classList.add('show');
-                modal.focus();
-                document.body.style.overflow = 'hidden';
+                modalTitle.textContent = monster.name;
+                modalBody.innerHTML = this.createMonsterDetailsContent(monster);
+                modal.classList.add('show');
             }
 
             createMonsterDetailsContent(monster) {
-                const element = monster.element || 'none';
-                const threat = monster.threat_level || 'unknown';
-                
                 return `
                     <div class="monster-details">
-                        <div class="flex justify-between items-start mb-lg">
-                            <div>
-                                <h3 class="text-xl font-bold mb-sm">${monster.name}</h3>
-                                <p class="text-secondary">${monster.species || 'Unknown Species'}</p>
-                                <p class="text-sm text-muted mt-sm">${monster.location || 'Various locations'}</p>
-                            </div>
-                            <div class="flex gap-sm">
-                                <span class="monster-element element-${element}">
-                                    ${element === 'none' ? 'Non-elemental' : element.charAt(0).toUpperCase() + element.slice(1)}
-                                </span>
-                                <span class="monster-threat threat-${threat}">
-                                    ${threat.toUpperCase()}
-                                </span>
+                        <div class="detail-section">
+                            <h3>Basic Information</h3>
+                            <div class="detail-grid">
+                                <div><strong>Species:</strong> ${monster.species}</div>
+                                <div><strong>Element:</strong> ${this.formatElement(monster.element)}</div>
+                                <div><strong>Threat Level:</strong> ${this.formatThreatLevel(monster.threat_level)}</div>
+                                <div><strong>Tier Rating:</strong> ${monster.tier}</div>
+                                <div><strong>Location:</strong> ${monster.location}</div>
                             </div>
                         </div>
 
                         ${monster.stance_patterns ? `
-                        <div class="mb-lg">
-                            <h4 class="font-semibold mb-md">Combat Patterns</h4>
-                            ${Object.entries(monster.stance_patterns).map(([stanceName, stance]) => `
-                                <div class="mb-md p-md bg-elevated rounded">
-                                    <h5 class="font-medium mb-sm text-accent">${stanceName.charAt(0).toUpperCase() + stanceName.slice(1)} State</h5>
-                                    <p class="text-sm text-secondary mb-sm">${stance.notes || 'No additional notes available.'}</p>
-                                    ${stance.attacks ? `
-                                        <div class="flex gap-sm flex-wrap">
-                                            ${stance.attacks.map(attack => `
-                                                <span class="attack-type type-${attack.type}">
-                                                    ${attack.name}
-                                                </span>
-                                            `).join('')}
-                                        </div>
-                                    ` : ''}
-                                </div>
-                            `).join('')}
-                        </div>
-                        ` : ''}
-
-                        ${monster.combat_data?.weaknesses ? `
-                        <div class="mb-lg">
-                            <h4 class="font-semibold mb-md">Weaknesses & Resistances</h4>
-                            <div class="grid grid-3 gap-sm">
-                                ${Object.entries(monster.combat_data.weaknesses).map(([element, effectiveness]) => `
-                                    <div class="p-sm bg-tertiary rounded text-center">
-                                        <div class="font-medium">${element.charAt(0).toUpperCase() + element.slice(1)}</div>
-                                        <div class="text-sm ${
-                                            effectiveness === 'strong' ? 'text-success' :
-                                            effectiveness === 'weak' ? 'text-danger' : 'text-secondary'
-                                        }">
-                                            ${effectiveness.charAt(0).toUpperCase() + effectiveness.slice(1)}
+                            <div class="detail-section">
+                                <h3>Combat Patterns</h3>
+                                ${Object.entries(monster.stance_patterns).map(([stance, data]) => `
+                                    <div class="stance-section">
+                                        <h4>${stance.charAt(0).toUpperCase() + stance.slice(1)} Stance</h4>
+                                        <p><em>${data.notes || 'No additional notes'}</em></p>
+                                        <div class="attacks-list">
+                                            ${data.attacks ? data.attacks.map(attack => `
+                                                <div class="attack-item">
+                                                    <span class="attack-name">${attack.name}</span>
+                                                    <span class="attack-type pattern-${attack.type}">${attack.type}</span>
+                                                    <span class="attack-desc">${attack.description}</span>
+                                                </div>
+                                            `).join('') : 'No specific attacks listed'}
                                         </div>
                                     </div>
                                 `).join('')}
                             </div>
-                        </div>
                         ` : ''}
 
-                        <div class="flex gap-md mt-lg">
-                            <button class="btn btn-primary" onclick="window.mhs3Guide.addToFavorites('${monster.name}')">
-                                <i class="fas fa-heart"></i>
-                                ${this.data.favorites.has(monster.name) ? 'Remove from Favorites' : 'Add to Favorites'}
-                            </button>
-                            <button class="btn btn-secondary" onclick="window.mhs3Guide.addToComparison('${monster.name}')">
-                                <i class="fas fa-balance-scale"></i>
-                                Add to Comparison
-                            </button>
-                        </div>
+                        ${monster.combat_data?.weaknesses ? `
+                            <div class="detail-section">
+                                <h3>Weaknesses</h3>
+                                <div class="weaknesses-grid">
+                                    ${Object.entries(monster.combat_data.weaknesses).map(([element, effectiveness]) => `
+                                        <div class="weakness-item">
+                                            <span class="element-${element}">${this.formatElement(element)}</span>
+                                            <span class="effectiveness-${effectiveness}">${effectiveness}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
                     </div>
                 `;
             }
 
             closeModal() {
                 const modal = document.getElementById('modal');
-                const backdrop = document.getElementById('modalBackdrop');
-
-                if (modal && backdrop) {
-                    backdrop.classList.remove('show');
-                    document.body.style.overflow = '';
+                if (modal) {
+                    modal.classList.remove('show');
                 }
             }
 
-            // ===== UTILITY METHODS =====
+            updateFilterStats() {
+                const statsElement = document.getElementById('filterStats');
+                if (!statsElement) return;
+
+                const filteredCount = this.getFilteredMonsters().length;
+                const totalCount = this.data.monsters.length;
+
+                if (filteredCount === totalCount) {
+                    statsElement.textContent = `Showing all ${totalCount} monsters`;
+                } else {
+                    statsElement.textContent = `Showing ${filteredCount} of ${totalCount} monsters`;
+                }
+            }
+
             addToFavorites(monsterName) {
                 if (this.data.favorites.has(monsterName)) {
                     this.data.favorites.delete(monsterName);
-                    console.log(`💔 Removed from favorites: ${monsterName}`);
                 } else {
                     this.data.favorites.add(monsterName);
-                    console.log(`❤️ Added to favorites: ${monsterName}`);
                 }
                 
                 this.saveUserPreferences();
-                this.updateDisplay();
                 
-                // Update modal if open
-                const modalTitle = document.getElementById('modalTitle');
-                if (modalTitle && modalTitle.textContent === monsterName) {
-                    const monster = this.data.monsters.find(m => m.name === monsterName);
-                    if (monster) {
-                        const modalBody = document.getElementById('modalBody');
-                        modalBody.innerHTML = this.createMonsterDetailsContent(monster);
+                // Update favorite buttons
+                document.querySelectorAll(`[data-monster="${monsterName}"]`).forEach(btn => {
+                    if (btn.getAttribute('data-action') === 'favorite') {
+                        btn.classList.toggle('active', this.data.favorites.has(monsterName));
                     }
-                }
+                });
             }
 
             addToComparison(monsterName) {
@@ -2590,7 +1931,36 @@
                 }
                 
                 this.data.comparison.add(monsterName);
-                console.log(`⚖️ Added to comparison: ${monsterName} (Total: ${this.data.comparison.size})`);
+                console.log('Added to comparison:', monsterName, 'Total:', this.data.comparison.size);
+                
+                // Could show comparison UI here
+            }
+
+            loadUserPreferences() {
+                try {
+                    const saved = localStorage.getItem('mhs3_preferences');
+                    if (saved) {
+                        const preferences = JSON.parse(saved);
+                        this.data.favorites = new Set(preferences.favorites || []);
+                        this.state.view = preferences.view || 'cards';
+                        this.state.sort = preferences.sort || 'name';
+                    }
+                } catch (error) {
+                    console.warn('⚠️ Failed to load user preferences:', error);
+                }
+            }
+
+            saveUserPreferences() {
+                try {
+                    const preferences = {
+                        favorites: Array.from(this.data.favorites),
+                        view: this.state.view,
+                        sort: this.state.sort
+                    };
+                    localStorage.setItem('mhs3_preferences', JSON.stringify(preferences));
+                } catch (error) {
+                    console.warn('⚠️ Failed to save user preferences:', error);
+                }
             }
 
             updateURL() {
@@ -2599,90 +1969,160 @@
                 window.history.replaceState({}, '', url);
             }
 
-            // ===== EVENT HANDLERS =====
+            // Placeholder methods for additional functionality
+            toggleSortOptions() {
+                console.log('Toggle sort options');
+                // Could implement sort dropdown here
+            }
+
+            handleExport() {
+                console.log('Handle export');
+                const filteredMonsters = this.getFilteredMonsters();
+                const dataStr = JSON.stringify(filteredMonsters, null, 2);
+                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'mhs3_monsters_export.json';
+                link.click();
+                URL.revokeObjectURL(url);
+            }
+
+            toggleMobileMenu() {
+                const sidebar = document.getElementById('sidebar');
+                if (sidebar) {
+                    sidebar.classList.toggle('show');
+                }
+            }
+
             handleScroll() {
-                const header = document.getElementById('header');
-                if (header) {
-                    if (window.scrollY > 50) {
-                        header.classList.add('scrolled');
-                    } else {
-                        header.classList.remove('scrolled');
-                    }
-                }
-            }
-
-            handleSearch(e) {
-                this.performSearch(e.target.value);
-            }
-
-            handleNavigation(e) {
-                e.preventDefault();
-                const tab = e.currentTarget.getAttribute('data-tab');
-                if (tab) {
-                    this.switchTab(tab);
-                }
-            }
-
-            handleQuickNavigation(e) {
-                e.preventDefault();
-                const tab = e.currentTarget.getAttribute('data-tab');
-                if (tab) {
-                    this.switchTab(tab);
-                }
-            }
-
-            handleViewChange(e) {
-                const view = e.currentTarget.getAttribute('data-view');
-                if (view && view !== this.state.currentView) {
-                    this.state.currentView = view;
-                    this.updateViewControls();
-                    this.updateDisplay();
-                    this.saveUserPreferences();
-                    console.log(`👀 View changed to: ${view}`);
-                }
+                // Could implement header scroll effects here
             }
 
             handleResize() {
-                // Handle responsive updates if needed
-            }
-
-            // ===== LOADING STATES =====
-            showLoading() {
-                const loadingContainer = document.getElementById('monstersLoading');
-                if (loadingContainer) {
-                    loadingContainer.style.display = 'flex';
-                }
-            }
-
-            hideLoading() {
-                const loadingContainer = document.getElementById('monstersLoading');
-                if (loadingContainer) {
-                    loadingContainer.style.display = 'none';
-                }
+                // Could implement responsive adjustments here
             }
 
             showError(message) {
-                console.error('❌ Error:', message);
-                // Could implement a toast notification system here
-                alert(message);
+                // Could implement error display here
+                console.error(message);
             }
         }
 
-        // Initialize the application when DOM is loaded
+        // Initialize the application when DOM is ready
         document.addEventListener('DOMContentLoaded', () => {
-            console.log('🚀 DOM loaded, initializing MHS3 Guide...');
             window.mhs3Guide = new MHS3Guide();
         });
-
-        // Handle back/forward browser navigation
-        window.addEventListener('popstate', () => {
-            if (window.mhs3Guide) {
-                const hash = window.location.hash.substring(1);
-                if (hash && hash !== window.mhs3Guide.state.currentTab) {
-                    window.mhs3Guide.switchTab(hash);
-                }
-            }
-        });
     </script>
+
+    <style>
+        /* Additional styles for feature cards and other content */
+        .page-section {
+            padding: var(--spacing-xl) 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .feature-card {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .feature-card h3 {
+            color: var(--accent-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .detail-section {
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-lg);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .detail-section:last-child {
+            border-bottom: none;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        .stance-section {
+            margin-bottom: var(--spacing-md);
+            padding: var(--spacing-md);
+            background: var(--tertiary-bg);
+            border-radius: var(--border-radius);
+        }
+
+        .attacks-list {
+            margin-top: var(--spacing-sm);
+        }
+
+        .attack-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-xs) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .attack-item:last-child {
+            border-bottom: none;
+        }
+
+        .attack-name {
+            font-weight: 600;
+            min-width: 120px;
+        }
+
+        .attack-type {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+        }
+
+        .attack-desc {
+            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+        }
+
+        .weaknesses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        .weakness-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm);
+            background: var(--tertiary-bg);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .effectiveness-strong { color: var(--warning-color); }
+        .effectiveness-weak { color: var(--success-color); }
+        .effectiveness-normal { color: var(--text-secondary); }
+    </style>
 </body>
 </html>

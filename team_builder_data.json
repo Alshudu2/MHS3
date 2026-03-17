@@ -1,0 +1,154 @@
+{
+  "meta_teams": {
+    "balanced_starter": {
+      "name": "Balanced Starter Team",
+      "description": "Perfect team composition for early to mid-game progression",
+      "members": [
+        {
+          "monster": "Velocidrome",
+          "role": "Speed Lead",
+          "reason": "Fast initiative and reliable speed attacks"
+        },
+        {
+          "monster": "Rathalos",
+          "role": "Technical DPS", 
+          "reason": "Aerial superiority and fire damage"
+        },
+        {
+          "monster": "Zinogre",
+          "role": "Thunder Support",
+          "reason": "Electric damage and balanced stats"
+        }
+      ],
+      "synergy_rating": 85,
+      "effectiveness": {
+        "early_game": 95,
+        "mid_game": 90,
+        "late_game": 60
+      }
+    },
+    "elder_dragon_destroyer": {
+      "name": "Elder Dragon Destroyer",
+      "description": "Specialized team for taking down Elder Dragons",
+      "members": [
+        {
+          "monster": "Deviljho",
+          "role": "Power Tank",
+          "reason": "Overwhelming physical damage and dragon element"
+        },
+        {
+          "monster": "Kirin",
+          "role": "Speed Striker",
+          "reason": "Lightning-fast attacks and thunder mastery"
+        },
+        {
+          "monster": "Fatalis",
+          "role": "Ultimate DPS",
+          "reason": "Peak fire power and legendary status"
+        }
+      ],
+      "synergy_rating": 98,
+      "effectiveness": {
+        "early_game": 20,
+        "mid_game": 70,
+        "late_game": 100
+      }
+    },
+    "speed_domination": {
+      "name": "Speed Domination",
+      "description": "Ultra-fast team that overwhelms with speed attacks",
+      "members": [
+        {
+          "monster": "Nargacuga",
+          "role": "Speed Lead",
+          "reason": "Ultimate agility and precision strikes"
+        },
+        {
+          "monster": "Tobi-Kadachi",
+          "role": "Electric Speed",
+          "reason": "Lightning-enhanced mobility"
+        },
+        {
+          "monster": "Astalos",
+          "role": "Aerial Speed",
+          "reason": "Flying speed attacks and electric support"
+        }
+      ],
+      "synergy_rating": 92,
+      "effectiveness": {
+        "early_game": 75,
+        "mid_game": 95,
+        "late_game": 85
+      }
+    },
+    "elemental_mastery": {
+      "name": "Elemental Mastery",
+      "description": "Covers all elements for maximum type coverage",
+      "members": [
+        {
+          "monster": "Rathalos",
+          "role": "Fire Master",
+          "reason": "Premier fire element damage"
+        },
+        {
+          "monster": "Mizutsune",
+          "role": "Water Controller",
+          "reason": "Elegant water attacks and bubble mastery"
+        },
+        {
+          "monster": "Zinogre",
+          "role": "Thunder Lord",
+          "reason": "Peak electric element control"
+        }
+      ],
+      "synergy_rating": 88,
+      "effectiveness": {
+        "early_game": 80,
+        "mid_game": 90,
+        "late_game": 85
+      }
+    }
+  },
+  "team_building_tips": {
+    "balance_considerations": [
+      "Always include at least one Speed, Power, and Technical type",
+      "Consider elemental coverage for different enemy weaknesses", 
+      "Balance offensive and defensive capabilities",
+      "Include at least one healing or support monster for sustainability"
+    ],
+    "synergy_factors": [
+      "Elemental compatibility - avoid conflicting elements",
+      "Attack type diversity - cover all three combat types",
+      "Speed tiers - ensure proper turn order management",
+      "Role distribution - tank, DPS, and support roles"
+    ],
+    "progression_advice": [
+      "Start with balanced teams before specializing",
+      "Upgrade monsters evenly to maintain team synergy",
+      "Consider monster availability when planning teams",
+      "Adapt teams based on story progression and enemy types"
+    ]
+  },
+  "role_definitions": {
+    "tank": {
+      "description": "High HP and defense, absorbs damage for the team",
+      "ideal_stats": ["High HP", "High Defense", "Power-type attacks"],
+      "examples": ["Diablos", "Gammoth", "Gravios"]
+    },
+    "dps": {
+      "description": "High damage output, focuses on eliminating enemies quickly",
+      "ideal_stats": ["High Attack", "Good Speed", "Type advantage"],
+      "examples": ["Rathalos", "Nargacuga", "Zinogre"]
+    },
+    "support": {
+      "description": "Provides healing, buffs, or utility for the team",
+      "ideal_stats": ["Balanced stats", "Utility moves", "Elemental coverage"],
+      "examples": ["Mizutsune", "Legiana", "Kirin"]
+    },
+    "speed_lead": {
+      "description": "Goes first, sets up combos or applies pressure",
+      "ideal_stats": ["Highest Speed", "Speed attacks", "Crowd control"],
+      "examples": ["Nargacuga", "Tobi-Kadachi", "Velocidrome"]
+    }
+  }
+}

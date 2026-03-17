@@ -1,0 +1,186 @@
+{
+  "combat_mechanics": {
+    "stance_system": {
+      "title": "Understanding the Stance System",
+      "description": "Master the rock-paper-scissors combat system for optimal damage",
+      "details": {
+        "power_beats_technical": "Power attacks break through Technical defenses and deal massive damage",
+        "technical_beats_speed": "Technical attacks counter Speed rushes with precise timing",
+        "speed_beats_power": "Speed attacks interrupt Power wind-ups before they can execute",
+        "same_type_clash": "Matching attack types result in clashes with reduced damage"
+      },
+      "advanced_tips": [
+        "Watch for stance tells - monsters telegraph their next attack type",
+        "Some monsters change preferred stance when enraged or in different phases",
+        "Kinship attacks ignore the stance system and always deal full damage",
+        "Breaking parts can sometimes disrupt a monster's preferred stance patterns"
+      ]
+    },
+    "kinship_system": {
+      "title": "Kinship Attack Mastery", 
+      "description": "Build and utilize kinship energy for devastating special attacks",
+      "mechanics": {
+        "building_kinship": "Land successful attacks, especially when winning stance battles",
+        "kinship_levels": "Three levels of kinship provide increasingly powerful attacks",
+        "timing": "Perfect timing windows increase kinship gain and damage output",
+        "monster_specific": "Each monster has unique kinship animations and effects"
+      },
+      "optimization_tips": [
+        "Save kinship attacks for critical moments or boss phases",
+        "Some kinship attacks provide beneficial effects beyond just damage",
+        "Kinship attacks can break parts more effectively than normal attacks",
+        "Use kinship attacks to interrupt dangerous enemy moves"
+      ]
+    },
+    "elemental_effectiveness": {
+      "title": "Elemental Damage Systems",
+      "description": "Maximize damage through elemental advantage understanding", 
+      "effectiveness_chart": {
+        "fire": {"strong_vs": ["Ice", "Grass"], "weak_vs": ["Water", "Fire"], "neutral": ["Thunder", "Dragon"]},
+        "water": {"strong_vs": ["Fire", "Rock"], "weak_vs": ["Thunder", "Water"], "neutral": ["Ice", "Dragon"]},
+        "thunder": {"strong_vs": ["Water", "Flying"], "weak_vs": ["Ground", "Thunder"], "neutral": ["Fire", "Ice"]},
+        "ice": {"strong_vs": ["Dragon", "Flying"], "weak_vs": ["Fire", "Ice"], "neutral": ["Water", "Thunder"]},
+        "dragon": {"strong_vs": ["Dragon"], "weak_vs": ["Fairy", "Steel"], "neutral": ["All others"]}
+      },
+      "advanced_mechanics": [
+        "Some monsters have dual typing affecting elemental calculations",
+        "Elemental damage increases with attack level and proper gene combinations",
+        "Status effects can be enhanced by matching elemental weaknesses",
+        "Certain parts may have different elemental weaknesses than the main body"
+      ]
+    }
+  },
+  "meta_analysis": {
+    "current_tier_list": {
+      "s_tier": {
+        "monsters": ["Fatalis", "Alatreon", "Safi'jiiva", "Shara Ishvalda"],
+        "reasoning": "Game-breaking power levels, ultimate utility, or unique mechanics"
+      },
+      "a_tier": {
+        "monsters": ["Rathalos", "Silver Rathalos", "Zinogre", "Stygian Zinogre", "Deviljho"],
+        "reasoning": "Excellent stats, reliable performance, strong in most situations"
+      },
+      "b_tier": {
+        "monsters": ["Nargacuga", "Tigrex", "Mizutsune", "Diablos", "Legiana"],
+        "reasoning": "Good performance, solid choices with specific strengths"
+      },
+      "c_tier": {
+        "monsters": ["Velocidrome", "Tobi-Kadachi", "Royal Ludroth", "Basarios"],
+        "reasoning": "Decent early-game options, outclassed by higher tiers later"
+      }
+    },
+    "meta_shifts": {
+      "current_meta": "Balanced teams with elemental coverage dominate",
+      "trending_strategies": [
+        "Speed-focused teams for quick battles",
+        "Elemental specialist teams for specific encounters", 
+        "Tank-heavy teams for survival challenges",
+        "Kinship spam strategies for burst damage"
+      ],
+      "predicted_changes": "Future updates may adjust elemental effectiveness and kinship generation rates"
+    }
+  },
+  "breeding_guide": {
+    "gene_inheritance": {
+      "title": "Understanding Gene Systems",
+      "description": "Master gene inheritance for optimal monster builds",
+      "gene_types": {
+        "active_genes": "Provide new attacks and abilities when activated",
+        "passive_genes": "Always active, provide stat bonuses and special effects",
+        "rare_genes": "Unique genes with powerful effects, harder to obtain"
+      },
+      "inheritance_rules": [
+        "Genes transfer based on compatibility between monster species",
+        "Higher rarity monsters have better gene pools",
+        "Some genes are species-locked and cannot transfer",
+        "Gene levels can be improved through repeated breeding"
+      ]
+    },
+    "optimal_breeding_paths": {
+      "power_build": {
+        "target": "Maximum physical damage output",
+        "gene_priorities": ["Power Boost", "Critical Hit", "Raw Attack"],
+        "recommended_parents": "High attack stat monsters with compatible genes"
+      },
+      "elemental_build": {
+        "target": "Specialized elemental damage",
+        "gene_priorities": ["Element Boost", "Elemental Critical", "Status Effects"],
+        "recommended_parents": "Strong elemental monsters of matching types"
+      },
+      "speed_build": {
+        "target": "Initiative and frequent attacks",
+        "gene_priorities": ["Speed Boost", "Multi-hit", "Evasion"],
+        "recommended_parents": "Fast monsters with agility-focused genes"
+      }
+    },
+    "rare_gene_locations": {
+      "legendary_genes": "Found only on Elder Dragons and special event monsters",
+      "deviant_genes": "Exclusive to deviant monster variants",
+      "elemental_mastery": "Obtained from monsters with pure elemental typing",
+      "kinship_genes": "Enhance kinship attack power and generation rate"
+    }
+  },
+  "advanced_strategies": {
+    "boss_preparation": {
+      "title": "Boss Battle Preparation",
+      "description": "Essential preparation for major encounters",
+      "research_phase": [
+        "Study boss attack patterns and stance preferences",
+        "Identify elemental weaknesses and resistances", 
+        "Note any phase changes or special mechanics",
+        "Plan team composition around boss weaknesses"
+      ],
+      "equipment_prep": [
+        "Stock up on healing items and buffs",
+        "Equip gear that resists boss's primary element",
+        "Bring items that exploit boss weaknesses",
+        "Consider defensive options for survival"
+      ]
+    },
+    "efficiency_optimization": {
+      "title": "Grinding and Farming Efficiency",
+      "description": "Maximize time investment through optimized farming",
+      "experience_farming": [
+        "Target high-EXP enemies in late-game areas",
+        "Use EXP-boosting items during grinding sessions",
+        "Focus on monsters weak to your team's elements",
+        "Chain battles for experience multipliers"
+      ],
+      "material_farming": [
+        "Research which monsters drop needed materials",
+        "Use specific attacks to target breakable parts",
+        "Bring monsters that increase drop rates",
+        "Plan routes to hit multiple targets efficiently"
+      ]
+    },
+    "competitive_strategies": {
+      "title": "PvP and Challenge Mode Tactics", 
+      "description": "Advanced tactics for competitive play",
+      "team_archetypes": {
+        "rush_down": "Fast, aggressive teams that overwhelm before opponents can set up",
+        "control": "Defensive teams that counter opponent moves and win through attrition",
+        "combo": "Teams built around specific monster interactions for devastating combos"
+      },
+      "mind_games": [
+        "Vary your attack patterns to keep opponents guessing",
+        "Save powerful kinship attacks for psychological pressure",
+        "Use status effects to disrupt opponent timing",
+        "Adapt your strategy based on opponent's team composition"
+      ]
+    }
+  },
+  "endgame_content": {
+    "post_game_challenges": {
+      "elder_dragon_gauntlet": "Face multiple Elder Dragons in succession",
+      "deviant_hunts": "Enhanced versions of regular monsters with unique mechanics",
+      "survival_trials": "Long battles testing resource management and endurance",
+      "perfect_run_challenges": "Complete battles without taking damage or using items"
+    },
+    "ultimate_builds": {
+      "god_tier_monsters": "Fully optimized monsters with perfect gene combinations",
+      "rainbow_teams": "Teams covering all elements with perfect synergy", 
+      "speedrun_builds": "Optimized for fastest completion times",
+      "challenge_builds": "Specialized builds for specific endgame challenges"
+    }
+  }
+}
