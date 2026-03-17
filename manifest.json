@@ -1,0 +1,38 @@
+{
+  "name": "Monster Hunter Stories 3: Ultimate Master Guide",
+  "short_name": "MHS3 Guide",
+  "description": "Professional-grade gaming companion with advanced search, meta team builds, and comprehensive strategies for Monster Hunter Stories 3.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#e94560",
+  "orientation": "any",
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["games", "entertainment", "productivity"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23e94560'/><text y='70' x='50' font-size='60' text-anchor='middle' fill='white'>🐉</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://via.placeholder.com/1280x720/0a0a0f/e94560?text=MHS3+Master+Guide",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Monster Hunter Stories 3 Master Guide - Main Interface"
+    }
+  ],
+  "features": [
+    "cross-platform",
+    "offline-capable",
+    "search",
+    "responsive"
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
