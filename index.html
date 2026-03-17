@@ -2156,7 +2156,7 @@
                                             </div>
 
                                             <!-- Enhanced Triggers -->
-                                            <div class="triggers-info">
+                                            ${data.triggers ? `<div class="triggers-info">
                                                 <h5>🔄 Stance Triggers:</h5>
                                                 ${typeof data.triggers === 'object' ? `
                                                     <div class="trigger-breakdown">
@@ -2167,7 +2167,7 @@
                                                 ` : `
                                                     <p class="trigger-details">${data.triggers}</p>
                                                 `}
-                                            </div>
+                                            </div>` : ``}
 
                                             <!-- Specific Attacks -->
                                             ${data.attacks && data.attacks.length > 0 ? `
@@ -2252,6 +2252,27 @@
                                             <span class="effectiveness-indicator">${effectiveness.toUpperCase()}</span>
                                         </div>
                                     `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+
+                        <!-- Egg / Capture Location -->
+                        ${monster.egg_location ? `
+                            <div class="detail-section">
+                                <h3>&#x1F95A; Egg &amp; Capture</h3>
+                                <div class="egg-location-info">
+                                    <div class="egg-region">
+                                        <span class="egg-label">Region:</span>
+                                        <span class="egg-value">${monster.egg_location.region}</span>
+                                    </div>
+                                    <div class="egg-areas">
+                                        <span class="egg-label">Areas:</span>
+                                        <span class="egg-value">${monster.egg_location.areas.join(', ')}</span>
+                                    </div>
+                                    <div class="egg-notes">
+                                        <span class="egg-label">How to Get:</span>
+                                        <span class="egg-value">${monster.egg_location.notes}</span>
+                                    </div>
                                 </div>
                             </div>
                         ` : ''}
@@ -2862,6 +2883,12 @@
         .effectiveness-weak { color: var(--success-color); }
         .effectiveness-normal { color: var(--text-secondary); }
 
+
+        /* Egg Location Section */
+        .egg-location-info { display:flex;flex-direction:column;gap:8px; }
+        .egg-region, .egg-areas, .egg-notes { display:flex;gap:8px;font-size:0.9em;align-items:flex-start; }
+        .egg-label { color:var(--text-secondary);min-width:90px;font-weight:600;flex-shrink:0; }
+        .egg-value { color:var(--text-primary); }
         /* ===== ENHANCED STANCE SYSTEM CSS ===== */
         
         /* Stance Progression Flow */
