@@ -2226,35 +2226,37 @@
                 const encounters = bd.boss_encounters || {};
                 const general = bd.general_strategies || {};
                 const diffColor = { Low: '#4caf50', Medium: '#ff9800', High: '#f44336', Extreme: '#9c27b0' };
-                const renderBossCard = (boss) => 
+
+                const renderBossCard = (boss) => `
                     <div class="feature-card">
-                        <h3>{boss.name}</h3>
+                        <h3>${boss.name}</h3>
                         <div style="display:flex;gap:8px;margin:6px 0;font-size:0.8em;flex-wrap:wrap">
-                            <span style="background:{diffColor[boss.difficulty]||'#888'};padding:2px 8px;border-radius:12px;color:#fff">{boss.difficulty}</span>
-                            <span style="color:#aaa">{boss.type}</span>
-                            {boss.chapter ? <span style="color:#888">Ch.{boss.chapter}</span> : ''}
+                            <span style="background:${diffColor[boss.difficulty]||'#888'};padding:2px 8px;border-radius:12px;color:#fff">${boss.difficulty}</span>
+                            <span style="color:#aaa">${boss.type}</span>
+                            ${boss.chapter ? `<span style="color:#888">Ch.${boss.chapter}</span>` : ''}
                         </div>
-                        {(boss.phases||[]).map(p => 
+                        ${(boss.phases||[]).map(p => `
                             <div style="border-left:3px solid #444;padding:4px 8px;margin:6px 0;font-size:0.8em">
-                                <strong style="color:#e0e0e0">Phase {p.phase_number}: {p.name}</strong>
-                                <span style="float:right;color:#666">{p.hp_threshold}</span><br>
-                                <span style="color:#aaa">{p.strategy}</span>
-                            </div>).join('')}
-                        {boss.element_strategy ? 
+                                <strong style="color:#e0e0e0">Phase ${p.phase_number}: ${p.name}</strong>
+                                <span style="float:right;color:#666">${p.hp_threshold}</span><br>
+                                <span style="color:#aaa">${p.strategy}</span>
+                            </div>`).join('')}
+                        ${boss.element_strategy ? `
                             <div style="font-size:0.78em;margin-top:8px">
-                                <span style="color:#4caf50">Good: {(boss.element_strategy.effective||[]).join(', ')||'none'}</span>
-                                &nbsp;|&nbsp;<span style="color:#f44336">Weak to: {(boss.element_strategy.ineffective||[]).join(', ')||'none'}</span>
-                            </div> : ''}
-                        {(boss.tips||[]).length ? <ul style="font-size:0.78em;padding-left:16px;margin-top:8px;color:#aaa">{boss.tips.map(t=><li>{t}</li>).join('')}</ul> : ''}
-                    </div>;
-                container.innerHTML = 
+                                <span style="color:#4caf50">Good: ${(boss.element_strategy.effective||[]).join(', ')||'none'}</span>
+                                &nbsp;|&nbsp;<span style="color:#f44336">Avoid: ${(boss.element_strategy.ineffective||[]).join(', ')||'none'}</span>
+                            </div>` : ''}
+                        ${(boss.tips||[]).length ? `<ul style="font-size:0.78em;padding-left:16px;margin-top:8px;color:#aaa">${boss.tips.map(t => `<li>${t}</li>`).join('')}</ul>` : ''}
+                    </div>`;
+
+                container.innerHTML = `
                     <h2>Boss Strategy Guide</h2>
-                    <p>Phase-by-phase strategies with element weaknesses and recommended teams.</p>
-                    {encounters.story_bosses?.length ? <h3 style="margin-top:24px">Story Bosses</h3><div class="feature-grid">{encounters.story_bosses.map(renderBossCard).join('')}</div> : ''}
-                    {encounters.elder_dragons?.length ? <h3 style="margin-top:32px">Elder Dragons</h3><div class="feature-grid">{encounters.elder_dragons.map(renderBossCard).join('')}</div> : ''}
-                    {encounters.variant_bosses?.length ? <h3 style="margin-top:32px">Variant Bosses</h3><div class="feature-grid">{encounters.variant_bosses.map(renderBossCard).join('')}</div> : ''}
-                    {Object.keys(general).length ? <h3 style="margin-top:32px">General Strategies</h3><div class="feature-grid">{Object.entries(general).map(([k,v])=><div class="feature-card"><h3>{k.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</h3>{Array.isArray(v)?<ul style="font-size:0.85em;padding-left:16px">{v.map(i=><li style="margin:4px 0">{i}</li>).join('')}</ul>:<p style="font-size:0.85em;color:#aaa">{v}</p>}</div>).join('')}</div> : ''}
-                ;
+                    <p>Phase-by-phase strategies with element weaknesses and tips.</p>
+                    ${encounters.story_bosses && encounters.story_bosses.length ? `<h3 style="margin-top:24px">Story Bosses</h3><div class="feature-grid">${encounters.story_bosses.map(renderBossCard).join('')}</div>` : ''}
+                    ${encounters.elder_dragons && encounters.elder_dragons.length ? `<h3 style="margin-top:32px">Elder Dragons</h3><div class="feature-grid">${encounters.elder_dragons.map(renderBossCard).join('')}</div>` : ''}
+                    ${encounters.variant_bosses && encounters.variant_bosses.length ? `<h3 style="margin-top:32px">Variant Bosses</h3><div class="feature-grid">${encounters.variant_bosses.map(renderBossCard).join('')}</div>` : ''}
+                    ${Object.keys(general).length ? `<h3 style="margin-top:32px">General Strategies</h3><div class="feature-grid">${Object.entries(general).map(([k,v]) => `<div class="feature-card"><h3>${k.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</h3>${Array.isArray(v) ? `<ul style="font-size:0.85em;padding-left:16px">${v.map(i=>`<li style="margin:4px 0">${i}</li>`).join('')}</ul>` : `<p style="font-size:0.85em;color:#aaa">${v}</p>`}</div>`).join('')}</div>` : ''}
+                `;
             }
 
             renderSideContent() {
@@ -2264,29 +2266,30 @@
                 const missions = sd.side_missions || [];
                 const stories = sd.side_stories || [];
                 const efficiency = sd.efficiency_guides || {};
-                container.innerHTML = 
+
+                container.innerHTML = `
                     <h2>Side Content Guide</h2>
                     <p>Mission guides with efficiency ratings and time-saving tips.</p>
-                    {missions.length ? <h3 style="margin-top:24px">Side Missions</h3><div class="feature-grid">{missions.map(m=>
+                    ${missions.length ? `<h3 style="margin-top:24px">Side Missions</h3><div class="feature-grid">${missions.map(m => `
                         <div class="feature-card">
-                            <h3>{m.title}</h3>
+                            <h3>${m.title}</h3>
                             <div style="display:flex;gap:8px;margin:6px 0;font-size:0.8em;flex-wrap:wrap">
-                                <span style="color:#aaa">{m.type}</span>
-                                <span style="color:#888">Ch.{m.chapter_available}+</span>
-                                <span style="background:{m.difficulty==='High'?'#f44336':m.difficulty==='Medium'?'#ff9800':'#4caf50'};padding:1px 6px;border-radius:10px;color:#fff">{m.difficulty}</span>
-                                <span style="color:#ffd700">{m.efficiency_rating||''}</span>
+                                <span style="color:#aaa">${m.type}</span>
+                                <span style="color:#888">Ch.${m.chapter_available}+</span>
+                                <span style="background:${m.difficulty==='High'?'#f44336':m.difficulty==='Medium'?'#ff9800':'#4caf50'};padding:1px 6px;border-radius:10px;color:#fff">${m.difficulty}</span>
+                                <span style="color:#ffd700">${m.efficiency_rating||''}</span>
                             </div>
-                            <p style="font-size:0.82em;color:#aaa">{m.efficiency_notes||''}</p>
-                            {(m.tips||[]).length?<ul style="font-size:0.8em;padding-left:16px;color:#aaa">{m.tips.slice(0,3).map(t=><li>{t}</li>).join('')}</ul>:''}
-                        </div>).join('')}</div> : ''}
-                    {stories.length ? <h3 style="margin-top:32px">Side Stories</h3><div class="feature-grid">{stories.map(s=>
+                            <p style="font-size:0.82em;color:#aaa">${m.efficiency_notes||''}</p>
+                            ${(m.tips||[]).length ? `<ul style="font-size:0.8em;padding-left:16px;color:#aaa">${m.tips.slice(0,3).map(t=>`<li>${t}</li>`).join('')}</ul>` : ''}
+                        </div>`).join('')}</div>` : ''}
+                    ${stories.length ? `<h3 style="margin-top:32px">Side Stories</h3><div class="feature-grid">${stories.map(s => `
                         <div class="feature-card">
-                            <h3>{s.title}</h3>
-                            <p style="font-size:0.85em;color:#aaa">{s.description||''}</p>
-                            {(s.rewards||[]).length?<p style="font-size:0.8em;color:#888"><strong>Rewards:</strong> {s.rewards.join(', ')}</p>:''}
-                        </div>).join('')}</div> : ''}
-                    {Object.keys(efficiency).length ? <h3 style="margin-top:32px">Efficiency Guide</h3><div class="feature-grid">{Object.entries(efficiency).map(([k,v])=><div class="feature-card"><h3>{k.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</h3>{Array.isArray(v)?<ul style="font-size:0.85em;padding-left:16px">{v.map(i=><li style="margin:4px 0">{i}</li>).join('')}</ul>:typeof v==='string'?<p style="font-size:0.85em;color:#aaa">{v}</p>:<p style="font-size:0.85em;color:#aaa">{JSON.stringify(v)}</p>}</div>).join('')}</div> : ''}
-                ;
+                            <h3>${s.title}</h3>
+                            <p style="font-size:0.85em;color:#aaa">${s.description||''}</p>
+                            ${(s.rewards||[]).length ? `<p style="font-size:0.8em;color:#888"><strong>Rewards:</strong> ${s.rewards.join(', ')}</p>` : ''}
+                        </div>`).join('')}</div>` : ''}
+                    ${Object.keys(efficiency).length ? `<h3 style="margin-top:32px">Efficiency Guide</h3><div class="feature-grid">${Object.entries(efficiency).map(([k,v]) => `<div class="feature-card"><h3>${k.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</h3>${Array.isArray(v) ? `<ul style="font-size:0.85em;padding-left:16px">${v.map(i=>`<li style="margin:4px 0">${i}</li>`).join('')}</ul>` : typeof v==='string' ? `<p style="font-size:0.85em;color:#aaa">${v}</p>` : `<p style="font-size:0.85em;color:#aaa">${JSON.stringify(v)}</p>`}</div>`).join('')}</div>` : ''}
+                `;
             }
 
             closeModal() {
