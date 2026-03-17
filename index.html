@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MHS3: Master Mohammed's Complete Guide</title>
+    <title>Monster Hunter Stories 3: Complete Guide</title>
     <style>
         :root {
             --bg: #0a0a0f;
@@ -14,11 +14,18 @@
             --text: #eee;
             --text2: #aab;
             --gold: #ffd700;
+            --silver: #c0c0c0;
+            --bronze: #cd7f32;
             --red: #ff4444;
             --orange: #ff8c00;
             --green: #44ff88;
             --blue: #4488ff;
             --purple: #bb88ff;
+            --fire: #ff6b47;
+            --water: #4a9eff;
+            --thunder: #ffd700;
+            --ice: #87ceeb;
+            --dragon: #9370db;
         }
 
         * {
@@ -33,6 +40,7 @@
             color: var(--text);
             min-height: 100vh;
             padding-bottom: 70px;
+            line-height: 1.6;
         }
 
         .header {
@@ -40,18 +48,61 @@
             padding: 20px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,.7);
-            border-bottom: 2px solid var(--accent);
+            border-bottom: 3px solid var(--accent);
         }
 
         .header h1 {
-            font-size: 2.2em;
+            font-size: 2.5em;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+            background: linear-gradient(45deg, var(--gold), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .header p {
             font-size: 1.1em;
             color: var(--text2);
+            margin-bottom: 15px;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 20px auto 0;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            background: var(--card);
+            border: 2px solid rgba(233, 69, 96, 0.3);
+            border-radius: 25px;
+            color: var(--text);
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(233, 69, 96, 0.3);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent);
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
         }
 
         .tab-bar {
@@ -64,18 +115,21 @@
             z-index: 100;
             box-shadow: 0 -4px 15px rgba(0,0,0,.7);
             border-top: 2px solid rgba(233, 69, 96, 0.4);
+            overflow-x: auto;
         }
 
         .tab-btn {
             flex: 1;
-            padding: 12px 6px;
+            min-width: 80px;
+            padding: 10px 6px;
             text-align: center;
             background: none;
             border: none;
             color: var(--text2);
-            font-size: .65em;
+            font-size: 0.65em;
             cursor: pointer;
             transition: all .3s;
+            white-space: nowrap;
         }
 
         .tab-btn.active {
@@ -86,18 +140,71 @@
 
         .tab-btn span {
             display: block;
-            font-size: 1.8em;
-            margin-bottom: 3px;
+            font-size: 1.6em;
+            margin-bottom: 2px;
         }
 
         .tab-content {
             display: none;
             padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .tab-content.active {
             display: block;
         }
+
+        /* Cards and Grids */
+        .grid {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+        .card {
+            background: var(--card);
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid rgba(255,255,255,.1);
+            transition: all .3s;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .card h4 {
+            color: var(--gold);
+            margin: 15px 0 10px;
+            font-size: 1.1em;
+        }
+
+        /* Monster Categories */
+        .category-regular { border-left: 5px solid var(--green); }
+        .category-feral { border-left: 5px solid var(--orange); }
+        .category-elder { border-left: 5px solid var(--purple); }
+        .category-boss { border-left: 5px solid var(--red); }
+
+        /* Element Colors */
+        .element-fire { color: var(--fire); }
+        .element-water { color: var(--water); }
+        .element-thunder { color: var(--thunder); }
+        .element-ice { color: var(--ice); }
+        .element-dragon { color: var(--dragon); }
+        .element-none { color: var(--text2); }
 
         /* Tier System */
         .tier-section {
@@ -115,495 +222,889 @@
             font-size: 1.3em;
         }
 
-        .tier-s { background: linear-gradient(135deg, #ffd700, #ffed4e); color: #333; }
-        .tier-a { background: linear-gradient(135deg, #ff6b6b, #ee5a52); color: white; }
-        .tier-b { background: linear-gradient(135deg, #4ecdc4, #44a08d); color: white; }
+        .tier-s { background: linear-gradient(135deg, var(--gold), #ffed4e); color: #333; }
+        .tier-a { background: linear-gradient(135deg, var(--silver), #f0f0f0); color: #333; }
+        .tier-b { background: linear-gradient(135deg, var(--bronze), #d4a574); color: white; }
 
-        .tier-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        /* Weapon Evolution Tree */
+        .weapon-tree {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-left: 20px;
         }
 
-        .team-card {
+        .weapon-node {
             background: var(--card);
-            border-radius: 15px;
-            padding: 20px;
-            border: 2px solid rgba(255,255,255,.1);
-            transition: all .3s;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+            position: relative;
         }
 
-        .team-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        .weapon-node::before {
+            content: '';
+            position: absolute;
+            left: -2px;
+            top: -10px;
+            width: 2px;
+            height: calc(100% + 20px);
+            background: var(--text2);
+            opacity: 0.3;
         }
 
-        .team-name {
-            font-size: 1.2em;
-            color: var(--accent);
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .team-description {
-            color: var(--text2);
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-
-        .monster-list {
-            list-style: none;
-            margin-bottom: 15px;
-        }
-
-        .monster-list li {
-            padding: 8px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 6px;
-            margin-bottom: 6px;
-            border-left: 4px solid var(--accent2);
-        }
-
-        .pros-cons {
+        .weapon-stats {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 5px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        /* Location Maps */
+        .location-section {
+            margin-bottom: 30px;
+        }
+
+        .location-title {
+            font-size: 1.5em;
+            color: var(--gold);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .monster-spawns {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .spawn-item {
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+
+        /* Attack Patterns */
+        .stance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 15px;
             margin-top: 15px;
         }
 
-        .pros, .cons {
-            padding: 10px;
-            border-radius: 8px;
-            font-size: .9em;
-        }
-
-        .pros {
-            background: rgba(68, 255, 136, 0.1);
-            border: 1px solid var(--green);
-        }
-
-        .cons {
-            background: rgba(255, 68, 68, 0.1);
-            border: 1px solid var(--red);
-        }
-
-        .pros h4, .cons h4 {
-            margin-bottom: 8px;
-            font-size: 1em;
-        }
-
-        .pros h4 { color: var(--green); }
-        .cons h4 { color: var(--red); }
-
-        /* Monster Database */
-        .monster-search {
-            background: var(--surface);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        .search-box {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 8px;
-            background: var(--card);
-            color: var(--text);
-            font-size: 1em;
-        }
-
-        .monster-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
-        }
-
-        .monster-card {
-            background: var(--card);
-            border-radius: 12px;
-            padding: 20px;
-            border: 2px solid rgba(255,255,255,.1);
-            cursor: pointer;
-            transition: all .3s;
-        }
-
-        .monster-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 8px 25px rgba(0,0,0,.4);
-        }
-
-        .monster-header-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .monster-name-info {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: var(--text);
-        }
-
-        .element-badge {
-            padding: 6px 12px;
-            border-radius: 15px;
-            font-size: .8em;
-            font-weight: bold;
-        }
-
-        .fire { background: var(--red); color: white; }
-        .thunder { background: var(--gold); color: black; }
-        .ice { background: var(--blue); color: white; }
-        .non-elemental { background: #666; color: white; }
-
-        .stance-info {
-            margin-top: 15px;
-        }
-
-        .stance-title {
-            font-weight: bold;
-            color: var(--accent2);
-            margin-bottom: 8px;
-        }
-
-        .stance-pattern {
-            padding: 8px;
+        .stance-card {
             background: rgba(255,255,255,0.05);
-            border-radius: 6px;
-            margin-bottom: 6px;
-            font-size: .9em;
+            padding: 15px;
+            border-radius: 10px;
+            border-top: 3px solid var(--accent2);
         }
 
-        /* Responsive */
+        .attack-type-speed { color: var(--green); }
+        .attack-type-power { color: var(--red); }
+        .attack-type-technical { color: var(--blue); }
+
+        /* Mission and Content Lists */
+        .content-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content-item {
+            background: rgba(255,255,255,0.05);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .content-item h4 {
+            margin-bottom: 5px;
+            color: var(--gold);
+        }
+
+        /* Filters */
+        .filter-section {
+            background: var(--surface);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             .header h1 { font-size: 1.8em; }
-            .tier-grid, .monster-grid { grid-template-columns: 1fr; }
-            .pros-cons { grid-template-columns: 1fr; }
-            .tab-btn { font-size: .6em; padding: 10px 4px; }
+            .tab-btn { min-width: 70px; font-size: 0.6em; }
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .filter-section { flex-direction: column; align-items: stretch; }
+            .weapon-stats { grid-template-columns: repeat(2, 1fr); }
         }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mb-20 { margin-bottom: 20px; }
+        .mt-20 { margin-top: 20px; }
+        .hidden { display: none; }
+        .loading { opacity: 0.6; pointer-events: none; }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🏆 Monster Hunter Stories 3</h1>
-        <p>Master Mohammed's Complete Strategy Guide</p>
-    </div>
+    <header class="header">
+        <h1>Monster Hunter Stories 3</h1>
+        <p>Complete Game Guide & Database</p>
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search monsters, weapons, locations...">
+            <button class="search-btn" onclick="performSearch()">🔍</button>
+        </div>
+    </header>
 
-    <div class="tab-bar">
-        <button class="tab-btn active" data-tab="teams">
-            <span>🏆</span>
-            Teams
+    <nav class="tab-bar">
+        <button class="tab-btn active" onclick="showTab('teams')">
+            <span>👥</span>Teams
         </button>
-        <button class="tab-btn" data-tab="monsters">
-            <span>👹</span>
-            Monsters
+        <button class="tab-btn" onclick="showTab('monsters')">
+            <span>🐉</span>Monsters
         </button>
-        <button class="tab-btn" data-tab="weapons">
-            <span>⚔️</span>
-            Weapons
+        <button class="tab-btn" onclick="showTab('weapons')">
+            <span>⚔️</span>Weapons
         </button>
-        <button class="tab-btn" data-tab="guide">
-            <span>📖</span>
-            Guide
+        <button class="tab-btn" onclick="showTab('locations')">
+            <span>🗺️</span>Locations
         </button>
-    </div>
+        <button class="tab-btn" onclick="showTab('missions')">
+            <span>📋</span>Missions
+        </button>
+        <button class="tab-btn" onclick="showTab('builds')">
+            <span>💪</span>Builds
+        </button>
+        <button class="tab-btn" onclick="showTab('guide')">
+            <span>📖</span>Guide
+        </button>
+    </nav>
 
-    <!-- TEAMS TAB WITH TIER SYSTEM -->
     <div id="teams" class="tab-content active">
+        <h2 class="text-center mb-20">🏆 Team Tier Rankings</h2>
         
-        <!-- S-TIER TEAMS -->
         <div class="tier-section">
             <div class="tier-header tier-s">
                 <span style="font-size: 2em;">🥇</span>
-                <span>S-TIER TEAMS - Optimal Performance</span>
-            </div>
-            
-            <div class="tier-grid">
-                <div class="team-card">
-                    <div class="team-name">💀 Status Control Supremacy</div>
-                    <div class="team-description">Complete battlefield domination through status effects and DoT damage</div>
-                    <ul class="monster-list">
-                        <li>Dreadqueen Rathian - Poison + Burn DoT</li>
-                        <li>Boltreaver Astalos - Paralysis + Self-buff</li>
-                        <li>Purple Gypceros - Stun + Flash control</li>
-                        <li>Nerscylla - Sleep + Setup</li>
-                        <li>Seregios - Bleed + Consistent damage</li>
-                        <li>Velkhana - Skill Seal + Tank</li>
-                    </ul>
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>✅ Strengths</h4>
-                            <div>• Complete status lockdown<br>• Solar Cry chain combos<br>• DoT stacking mastery</div>
-                        </div>
-                        <div class="cons">
-                            <h4>⚠️ Requirements</h4>
-                            <div>• S-rank + A-rank mutations<br>• Late game completion<br>• High skill investment</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-card">
-                    <div class="team-name">⚡ Solar Cry Chain Masters</div>
-                    <div class="team-description">60% kinship generation for constant ultimate abilities</div>
-                    <ul class="monster-list">
-                        <li>Dreadqueen Rathian - Solar Cry foundation</li>
-                        <li>Boltreaver Astalos - Solar Cry combo</li>
-                        <li>Purple Gypceros - Emergency control</li>
-                        <li>Rathalos - Fire support</li>
-                        <li>Velkhana - Skill Seal protection</li>
-                        <li>Nerscylla - Sleep utility</li>
-                    </ul>
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>✅ Strengths</h4>
-                            <div>• Instant ultimates<br>• Perfect synergy<br>• Maximum damage output</div>
-                        </div>
-                        <div class="cons">
-                            <h4>⚠️ Requirements</h4>
-                            <div>• Mutation unlocks needed<br>• Specific skill timing<br>• Late game optimal</div>
-                        </div>
-                    </div>
+                <div>
+                    <div>S-TIER</div>
+                    <small>Elite Meta Teams - Dominant in all content</small>
                 </div>
             </div>
+            <div class="grid grid-2" id="s-tier-teams"></div>
         </div>
 
-        <!-- A-TIER TEAMS -->
         <div class="tier-section">
             <div class="tier-header tier-a">
                 <span style="font-size: 2em;">🥈</span>
-                <span>A-TIER TEAMS - Excellent Performance</span>
-            </div>
-            
-            <div class="tier-grid">
-                <div class="team-card">
-                    <div class="team-name">🔥 Fire Dominance Squad</div>
-                    <div class="team-description">Double fire coverage with strong elemental synergy</div>
-                    <ul class="monster-list">
-                        <li>Rathalos - Primary fire damage</li>
-                        <li>Dreadqueen Rathian - Fire DoT master</li>
-                        <li>Purple Gypceros - Control support</li>
-                        <li>Boltreaver Astalos - Thunder counter</li>
-                        <li>Velkhana - Ice balance</li>
-                        <li>Nerscylla - Utility support</li>
-                    </ul>
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>✅ Strengths</h4>
-                            <div>• Strong vs ice enemies<br>• Good elemental coverage<br>• Mid-game viable</div>
-                        </div>
-                        <div class="cons">
-                            <h4>⚠️ Weaknesses</h4>
-                            <div>• Fire overlap inefficiency<br>• Vulnerable to water<br>• Less status control</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-card">
-                    <div class="team-name">⚖️ Balanced Progression</div>
-                    <div class="team-description">Well-rounded team for story progression and exploration</div>
-                    <ul class="monster-list">
-                        <li>Rathalos - Fire + aerial coverage</li>
-                        <li>Mizutsune - Water + support buffs</li>
-                        <li>Boltreaver Astalos - Thunder burst</li>
-                        <li>Purple Gypceros - Power control</li>
-                        <li>Nerscylla - Sleep + exploration</li>
-                        <li>Seregios - Normal element safety</li>
-                    </ul>
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>✅ Strengths</h4>
-                            <div>• Complete element coverage<br>• Good for all content<br>• Flexible adaptation</div>
-                        </div>
-                        <div class="cons">
-                            <h4>⚠️ Weaknesses</h4>
-                            <div>• No specialization<br>• Less synergy<br>• Jack-of-all-trades</div>
-                        </div>
-                    </div>
+                <div>
+                    <div>A-TIER</div>
+                    <small>Strong Teams - Excellent for most content</small>
                 </div>
             </div>
+            <div class="grid grid-2" id="a-tier-teams"></div>
         </div>
 
-        <!-- B-TIER TEAMS -->
         <div class="tier-section">
             <div class="tier-header tier-b">
                 <span style="font-size: 2em;">🥉</span>
-                <span>B-TIER TEAMS - Good for Early Game</span>
-            </div>
-            
-            <div class="tier-grid">
-                <div class="team-card">
-                    <div class="team-name">🌱 Early Game Starter</div>
-                    <div class="team-description">Accessible team for Chapters 1-4 progression</div>
-                    <ul class="monster-list">
-                        <li>Ratha - Starter Rathalos</li>
-                        <li>Purple Gypceros - Early control</li>
-                        <li>Royal Ludroth - Swimming + debuffs</li>
-                        <li>Nerscylla - Sleep utility</li>
-                        <li>Tobi-Kadachi - Thunder coverage</li>
-                        <li>Anjanath - Power fire option</li>
-                    </ul>
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>✅ Strengths</h4>
-                            <div>• Immediate availability<br>• No mutations needed<br>• Good for learning</div>
-                        </div>
-                        <div class="cons">
-                            <h4>⚠️ Weaknesses</h4>
-                            <div>• Lower stats<br>• Limited synergy<br>• Falls off late game</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-card">
-                    <div class="team-name">💰 Budget Build</div>
-                    <div class="team-description">Minimal investment team for casual players</div>
-                    <ul class="monster-list">
-                        <li>Base Rathian - Standard fire</li>
-                        <li>Base Astalos - Thunder without mutation</li>
-                        <li>Purple Gypceros - Still excellent control</li>
-                        <li>Nerscylla - Essential utility</li>
-                        <li>Royal Ludroth - Water coverage</li>
-                        <li>Seregios - Normal damage</li>
-                    </ul>
-                    <div class="pros-cons">
-                        <div class="pros">
-                            <h4>✅ Strengths</h4>
-                            <div>• Low time investment<br>• No ecosystem grinding<br>• Still functional</div>
-                        </div>
-                        <div class="cons">
-                            <h4>⚠️ Weaknesses</h4>
-                            <div>• Missing key abilities<br>• Lower damage output<br>• No Solar Cry chains</div>
-                        </div>
-                    </div>
+                <div>
+                    <div>B-TIER</div>
+                    <small>Viable Teams - Good for specific situations</small>
                 </div>
             </div>
+            <div class="grid grid-2" id="b-tier-teams"></div>
         </div>
     </div>
 
-    <!-- MONSTERS TAB -->
     <div id="monsters" class="tab-content">
-        <div class="monster-search">
-            <input type="text" class="search-box" placeholder="🔍 Search monsters by name, element, or attack pattern...">
-        </div>
+        <h2 class="text-center mb-20">🐉 Complete Monster Database</h2>
         
-        <div class="monster-grid" id="monster-container">
-            <!-- Monsters will be loaded here -->
+        <div class="filter-section">
+            <strong>Filter by Category:</strong>
+            <button class="filter-btn active" onclick="filterMonsters('all')">All</button>
+            <button class="filter-btn" onclick="filterMonsters('regular')">Regular</button>
+            <button class="filter-btn" onclick="filterMonsters('feral')">Feral</button>
+            <button class="filter-btn" onclick="filterMonsters('elder')">Elder Dragons</button>
+            <button class="filter-btn" onclick="filterMonsters('boss')">Bosses</button>
         </div>
+
+        <div class="filter-section">
+            <strong>Filter by Element:</strong>
+            <button class="filter-btn active" onclick="filterByElement('all')">All</button>
+            <button class="filter-btn" onclick="filterByElement('fire')">🔥 Fire</button>
+            <button class="filter-btn" onclick="filterByElement('water')">💧 Water</button>
+            <button class="filter-btn" onclick="filterByElement('thunder')">⚡ Thunder</button>
+            <button class="filter-btn" onclick="filterByElement('ice')">❄️ Ice</button>
+            <button class="filter-btn" onclick="filterByElement('dragon')">🐲 Dragon</button>
+            <button class="filter-btn" onclick="filterByElement('none')">⚪ None</button>
+        </div>
+
+        <div class="grid grid-3" id="monsters-grid"></div>
     </div>
 
-    <!-- WEAPONS TAB -->
     <div id="weapons" class="tab-content">
-        <div style="text-align: center; padding: 60px; color: var(--text2);">
-            <h2>⚔️ Weapons System</h2>
-            <p>Weapon evolution trees and upgrade paths coming soon...</p>
-            <p>Focus on monster team optimization for maximum impact.</p>
+        <h2 class="text-center mb-20">⚔️ Weapon Evolution System</h2>
+        
+        <div class="filter-section">
+            <strong>Weapon Type:</strong>
+            <button class="filter-btn active" onclick="showWeaponCategory('all')">All</button>
+            <button class="filter-btn" onclick="showWeaponCategory('swords')">Swords</button>
+            <button class="filter-btn" onclick="showWeaponCategory('great_swords')">Great Swords</button>
+            <button class="filter-btn" onclick="showWeaponCategory('hammers')">Hammers</button>
+            <button class="filter-btn" onclick="showWeaponCategory('hunting_horns')">Hunting Horns</button>
+            <button class="filter-btn" onclick="showWeaponCategory('lances')">Lances</button>
+            <button class="filter-btn" onclick="showWeaponCategory('gun_lances')">Gun Lances</button>
+        </div>
+
+        <div id="weapons-container"></div>
+    </div>
+
+    <div id="locations" class="tab-content">
+        <h2 class="text-center mb-20">🗺️ Location Guides & Monster Spawns</h2>
+        <div id="locations-container"></div>
+    </div>
+
+    <div id="missions" class="tab-content">
+        <h2 class="text-center mb-20">📋 Missions & Story Content</h2>
+        
+        <div class="grid grid-2">
+            <div class="card">
+                <h3>🎯 Side Missions</h3>
+                <ul class="content-list" id="side-missions"></ul>
+            </div>
+            <div class="card">
+                <h3>👹 Boss Encounters</h3>
+                <ul class="content-list" id="boss-missions"></ul>
+            </div>
+        </div>
+
+        <div class="card mt-20">
+            <h3>📖 Story Progression</h3>
+            <div id="story-content"></div>
         </div>
     </div>
 
-    <!-- GUIDE TAB -->
+    <div id="builds" class="tab-content">
+        <h2 class="text-center mb-20">💪 Optimization Guides & Builds</h2>
+        
+        <div class="grid grid-2">
+            <div class="card">
+                <h3>🔥 Speed Clear Builds</h3>
+                <div id="speed-builds"></div>
+            </div>
+            <div class="card">
+                <h3>🛡️ Tank Builds</h3>
+                <div id="tank-builds"></div>
+            </div>
+            <div class="card">
+                <h3>⚡ Elemental Builds</h3>
+                <div id="elemental-builds"></div>
+            </div>
+            <div class="card">
+                <h3>🎯 All-Purpose Builds</h3>
+                <div id="general-builds"></div>
+            </div>
+        </div>
+    </div>
+
     <div id="guide" class="tab-content">
-        <div style="background: var(--card); padding: 30px; border-radius: 15px; margin-bottom: 30px;">
-            <h2 style="color: var(--accent); margin-bottom: 20px;">📖 Master Mohammed's Complete Guide</h2>
+        <h2 class="text-center mb-20">📖 Complete Game Guide</h2>
+        
+        <div class="grid grid-2">
+            <div class="card">
+                <h3>🎮 Combat System</h3>
+                <h4>Attack Types</h4>
+                <p><span class="attack-type-speed">🟢 Speed:</span> Fast attacks that counter Power</p>
+                <p><span class="attack-type-power">🔴 Power:</span> Strong attacks that counter Technical</p>
+                <p><span class="attack-type-technical">🔵 Technical:</span> Precise attacks that counter Speed</p>
+                
+                <h4>Monster States</h4>
+                <p><strong>Normal:</strong> Standard behavior patterns</p>
+                <p><strong>Enraged:</strong> Increased damage, changed attack patterns</p>
+                <p><strong>Sleep:</strong> Vulnerable to setup and healing</p>
+            </div>
             
-            <h3 style="color: var(--accent2); margin: 25px 0 15px 0;">🎯 Quick Start Recommendations</h3>
-            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-                <p><strong>Chapter 1-2:</strong> Get Purple Gypceros + Nerscylla immediately</p>
-                <p><strong>Chapter 3-4:</strong> Add Rathalos, start ecosystem work</p>
-                <p><strong>Mid Game:</strong> Work on Dreadqueen + Boltreaver mutations</p>
-                <p><strong>End Game:</strong> Complete S-tier team with Velkhana</p>
+            <div class="card">
+                <h3>🐉 Monster Categories</h3>
+                <p class="category-regular"><strong>Regular:</strong> Standard wild monsters</p>
+                <p class="category-feral"><strong>Feral:</strong> Aggressive, powered-up variants</p>
+                <p class="category-elder"><strong>Elder Dragons:</strong> Legendary creatures with unique abilities</p>
+                <p class="category-boss"><strong>Bosses:</strong> Story and mission-specific encounters</p>
             </div>
-
-            <h3 style="color: var(--accent2); margin: 25px 0 15px 0;">⚡ Solar Cry Chain Mastery</h3>
-            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-                <p><strong>Step 1:</strong> Dreadqueen Rathian Solar Cry (+30% kinship)</p>
-                <p><strong>Step 2:</strong> Boltreaver Astalos Solar Cry (+30% = 60% total)</p>
-                <p><strong>Result:</strong> Instant ultimate abilities every other turn</p>
+            
+            <div class="card">
+                <h3>⚔️ Weapon Progression</h3>
+                <p>Weapons evolve through multiple tiers using materials from defeated monsters.</p>
+                <p><strong>Sharpness levels:</strong> Yellow → Green → Blue → White</p>
+                <p><strong>Elements:</strong> Match monster weaknesses for optimal damage</p>
             </div>
-
-            <h3 style="color: var(--accent2); margin: 25px 0 15px 0;">🔗 Status Control Strategy</h3>
-            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
-                <p><strong>Turn 1:</strong> Purple Gypceros Flash/Stun</p>
-                <p><strong>Turn 2:</strong> Nerscylla Sleep vulnerable targets</p>
-                <p><strong>Turn 3:</strong> Apply all DoT effects (Poison + Burn + Bleed)</p>
-                <p><strong>Result:</strong> Enemies defeat themselves while controlled</p>
+            
+            <div class="card">
+                <h3>🎯 Strategy Tips</h3>
+                <ul>
+                    <li>Study monster attack patterns and stance changes</li>
+                    <li>Use the rock-paper-scissors combat system effectively</li>
+                    <li>Exploit elemental weaknesses</li>
+                    <li>Time your dodges and counters</li>
+                    <li>Manage your monstie's stamina and health</li>
+                </ul>
             </div>
         </div>
     </div>
 
     <script>
-        // Tab switching functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabBtns = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remove active classes
-                    tabBtns.forEach(b => b.classList.remove('active'));
-                    tabContents.forEach(c => c.classList.remove('active'));
-                    
-                    // Add active class
-                    btn.classList.add('active');
-                    document.getElementById(btn.dataset.tab).classList.add('active');
-                });
+        let gameData = {};
+        let weaponData = {};
+        let currentFilter = 'all';
+        let currentElementFilter = 'all';
+
+        // Tab Management
+        function showTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
             });
+            
+            // Remove active class from all tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.closest('.tab-btn').classList.add('active');
+        }
 
-            // Load monster data
-            loadMonsters();
-        });
+        // Load Data
+        async function loadData() {
+            try {
+                console.log('Loading game data...');
+                
+                // Load monster data
+                const gameResponse = await fetch('enhanced_game8_data.json');
+                gameData = await gameResponse.json();
+                console.log('Game data loaded:', gameData);
+                
+                // Load weapon data  
+                const weaponResponse = await fetch('weapon_evolution_data.json');
+                weaponData = await weaponResponse.json();
+                console.log('Weapon data loaded:', weaponData);
+                
+                // Initialize all content
+                initializeTeams();
+                initializeMonsters();
+                initializeWeapons();
+                initializeLocations();
+                initializeMissions();
+                initializeBuilds();
+                
+            } catch (error) {
+                console.error('Error loading data:', error);
+            }
+        }
 
-        // Monster data (simplified for demo)
-        function loadMonsters() {
-            const monsters = [
-                {
-                    name: 'Dreadqueen Rathian',
-                    element: 'fire',
-                    stances: {
-                        normal: 'Uses: SPEED attacks with poison application',
-                        enraged: 'Uses: SPEED + POWER with enhanced burn DoT'
+        // Team Tier System
+        function initializeTeams() {
+            const teams = {
+                s: [
+                    {
+                        name: "Elder Dragon Trinity",
+                        description: "Combines the raw power of Elder Dragons with balanced elemental coverage",
+                        composition: "Fatalis + Alatreon + Safi'jiiva",
+                        strengths: "Massive damage output, excellent against all boss types",
+                        usage: "Endgame content, speedruns, challenge quests"
+                    },
+                    {
+                        name: "Speed Demon Squad",
+                        description: "Ultra-fast team focusing on overwhelming speed attacks",
+                        composition: "Velocidrome + Barioth + Nargacuga",
+                        strengths: "Incredible speed, perfect for speed-weak monsters",
+                        usage: "Power-type bosses, quick hunts"
+                    },
+                    {
+                        name: "Technical Mastery",
+                        description: "Precision-based team with complex combos and status effects",
+                        composition: "Khezu + Yian Garuga + Brachydios",
+                        strengths: "Status control, technical superiority",
+                        usage: "Speed-type monsters, control strategies"
                     }
-                },
-                {
-                    name: 'Boltreaver Astalos',
-                    element: 'thunder', 
-                    stances: {
-                        normal: 'Uses: TECHNICAL attacks with paralysis chance',
-                        enraged: 'Uses: TECHNICAL + self-buffing loop activation'
+                ],
+                a: [
+                    {
+                        name: "Elemental Balance",
+                        description: "Well-rounded team with solid elemental coverage",
+                        composition: "Rathalos + Lagiacrus + Diablos",
+                        strengths: "Good against most monster types, reliable performance",
+                        usage: "General progression, story content"
+                    },
+                    {
+                        name: "Tank and Spank",
+                        description: "Defensive powerhouse with sustain and survivability",
+                        composition: "Gravios + Basarios + Uragaan",
+                        strengths: "Incredible defense, perfect for learning fights",
+                        usage: "Difficult bosses, defensive strategies"
+                    },
+                    {
+                        name: "Flying Fortress",
+                        description: "Aerial superiority with flying monsters",
+                        composition: "Astalos + Silver Rathalos + Seregios",
+                        strengths: "Air mobility, ranged attacks",
+                        usage: "Ground-based enemies, mobility fights"
                     }
-                },
-                {
-                    name: 'Purple Gypceros',
-                    element: 'non-elemental',
-                    stances: {
-                        normal: 'Uses: POWER attacks with flash blind',
-                        enraged: 'Uses: POWER + tail stun priority interrupt'
+                ],
+                b: [
+                    {
+                        name: "Beginner's Best",
+                        description: "Excellent starter team for new riders",
+                        composition: "Great Jagras + Anjanath + Tobi-Kadachi",
+                        strengths: "Easy to obtain, good learning curve",
+                        usage: "Early to mid game progression"
+                    },
+                    {
+                        name: "Status Specialists", 
+                        description: "Focus on inflicting and exploiting status ailments",
+                        composition: "Gypceros + Chameleos + Espinas",
+                        strengths: "Status control, support utility",
+                        usage: "Status-weak monsters, support builds"
                     }
-                }
-            ];
+                ]
+            };
 
-            const container = document.getElementById('monster-container');
-            container.innerHTML = '';
+            renderTeamTier('s-tier-teams', teams.s);
+            renderTeamTier('a-tier-teams', teams.a);
+            renderTeamTier('b-tier-teams', teams.b);
+        }
 
-            monsters.forEach(monster => {
-                const card = document.createElement('div');
-                card.className = 'monster-card';
-                card.innerHTML = `
-                    <div class="monster-header-info">
-                        <div class="monster-name-info">${monster.name}</div>
-                        <div class="element-badge ${monster.element}">${monster.element.toUpperCase()}</div>
-                    </div>
-                    <div class="stance-info">
-                        <div class="stance-title">Combat Stances:</div>
-                        <div class="stance-pattern"><strong>Normal:</strong> ${monster.stances.normal}</div>
-                        <div class="stance-pattern"><strong>Enraged:</strong> ${monster.stances.enraged}</div>
+        function renderTeamTier(containerId, teams) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = teams.map(team => `
+                <div class="card">
+                    <h3>${team.name}</h3>
+                    <p class="mb-20">${team.description}</p>
+                    <h4>Team Composition</h4>
+                    <p>${team.composition}</p>
+                    <h4>Key Strengths</h4>
+                    <p>${team.strengths}</p>
+                    <h4>Best Usage</h4>
+                    <p>${team.usage}</p>
+                </div>
+            `).join('');
+        }
+
+        // Monster Database
+        function initializeMonsters() {
+            renderMonsters();
+        }
+
+        function renderMonsters() {
+            const container = document.getElementById('monsters-grid');
+            if (!gameData.monsters) {
+                container.innerHTML = '<p>Loading monsters...</p>';
+                return;
+            }
+
+            let monsters = gameData.monsters;
+
+            // Apply category filter
+            if (currentFilter !== 'all') {
+                monsters = monsters.filter(monster => monster.category === currentFilter);
+            }
+
+            // Apply element filter
+            if (currentElementFilter !== 'all') {
+                monsters = monsters.filter(monster => monster.element === currentElementFilter);
+            }
+
+            container.innerHTML = monsters.map(monster => {
+                const categoryClass = `category-${monster.category}`;
+                const elementClass = `element-${monster.element}`;
+                
+                return `
+                    <div class="card ${categoryClass}">
+                        <h3>${monster.name}</h3>
+                        <p><strong>Species:</strong> ${monster.species}</p>
+                        <p><strong>Element:</strong> <span class="${elementClass}">${monster.element || 'None'}</span></p>
+                        <p><strong>Threat:</strong> ${monster.threat_level}</p>
+                        <p><strong>Location:</strong> ${monster.location}</p>
+                        
+                        <h4>Combat Patterns</h4>
+                        <div class="stance-grid">
+                            ${Object.entries(monster.stance_patterns).map(([state, data]) => `
+                                <div class="stance-card">
+                                    <strong>${state.charAt(0).toUpperCase() + state.slice(1)}:</strong>
+                                    <p style="font-size: 0.9em; margin-top: 5px;">${data.notes}</p>
+                                    ${data.attacks && data.attacks.length > 0 ? `
+                                        <div style="margin-top: 8px;">
+                                            ${data.attacks.map(attack => `
+                                                <div style="font-size: 0.8em; margin: 3px 0;">
+                                                    <span class="attack-type-${attack.type}">● ${attack.name}</span>
+                                                </div>
+                                            `).join('')}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        ${monster.combat_data && monster.combat_data.weaknesses ? `
+                            <h4>Weaknesses</h4>
+                            <div class="weapon-stats">
+                                ${Object.entries(monster.combat_data.weaknesses).map(([element, level]) => `
+                                    <div class="stat">
+                                        <div class="element-${element}">${element}</div>
+                                        <div>${level}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        ` : ''}
                     </div>
                 `;
-                container.appendChild(card);
+            }).join('');
+        }
+
+        function filterMonsters(category) {
+            currentFilter = category;
+            document.querySelectorAll('.filter-section .filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            renderMonsters();
+        }
+
+        function filterByElement(element) {
+            currentElementFilter = element;
+            event.target.closest('.filter-section').querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            renderMonsters();
+        }
+
+        // Weapon System
+        function initializeWeapons() {
+            renderWeapons('all');
+        }
+
+        function showWeaponCategory(category) {
+            document.querySelectorAll('#weapons .filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            renderWeapons(category);
+        }
+
+        function renderWeapons(category) {
+            const container = document.getElementById('weapons-container');
+            if (!weaponData.weapons) {
+                container.innerHTML = '<p>Loading weapons...</p>';
+                return;
+            }
+
+            let content = '';
+            const categories = category === 'all' ? Object.keys(weaponData.weapons) : [category];
+
+            categories.forEach(cat => {
+                if (!weaponData.weapons[cat]) return;
+                
+                content += `
+                    <div class="card">
+                        <h3>${cat.charAt(0).toUpperCase() + cat.slice(1).replace('_', ' ')}</h3>
+                        <div class="weapon-tree">
+                            ${weaponData.weapons[cat].map(weapon => `
+                                <div class="weapon-node">
+                                    <h4>${weapon.name}</h4>
+                                    <p>${weapon.description}</p>
+                                    
+                                    <div class="weapon-stats">
+                                        <div class="stat">
+                                            <div>Attack</div>
+                                            <div>${weapon.attack}</div>
+                                        </div>
+                                        <div class="stat">
+                                            <div>Element</div>
+                                            <div class="element-${weapon.element}">${weapon.element}</div>
+                                        </div>
+                                        <div class="stat">
+                                            <div>Sharpness</div>
+                                            <div>${weapon.sharpness}</div>
+                                        </div>
+                                        <div class="stat">
+                                            <div>Rarity</div>
+                                            <div>${weapon.rarity}⭐</div>
+                                        </div>
+                                    </div>
+
+                                    ${weapon.craft_materials || weapon.upgrade_materials ? `
+                                        <h4>Materials</h4>
+                                        <div style="font-size: 0.9em;">
+                                            ${(weapon.craft_materials || weapon.upgrade_materials).map(mat => 
+                                                `<div>• ${mat.item} x${mat.quantity}</div>`
+                                            ).join('')}
+                                        </div>
+                                    ` : ''}
+
+                                    ${weapon.evolves_to ? `
+                                        <div style="margin-top: 10px; font-size: 0.9em; color: var(--accent);">
+                                            Evolves to: ${weapon.evolves_to.join(', ')}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = content;
+        }
+
+        // Locations
+        function initializeLocations() {
+            const locations = {};
+            
+            // Group monsters by location
+            if (gameData.monsters) {
+                gameData.monsters.forEach(monster => {
+                    if (!locations[monster.location]) {
+                        locations[monster.location] = [];
+                    }
+                    locations[monster.location].push(monster);
+                });
+            }
+
+            // Add bosses to locations
+            if (gameData.bosses) {
+                gameData.bosses.forEach(boss => {
+                    if (!locations[boss.location]) {
+                        locations[boss.location] = [];
+                    }
+                    locations[boss.location].push({...boss, category: 'boss'});
+                });
+            }
+
+            const container = document.getElementById('locations-container');
+            container.innerHTML = Object.entries(locations).map(([location, monsters]) => `
+                <div class="location-section">
+                    <div class="location-title">🗺️ ${location}</div>
+                    <div class="monster-spawns">
+                        ${monsters.map(monster => `
+                            <div class="spawn-item category-${monster.category}">
+                                <strong>${monster.name}</strong><br>
+                                <span class="element-${monster.element}">${monster.element || 'None'}</span> • 
+                                ${monster.threat_level}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Missions
+        function initializeMissions() {
+            // Side missions (extracted from game data)
+            const sideMissions = [
+                { title: "Velocidrome Hunt", description: "Hunt the pack leader in Azuria Plains", reward: "Velocidrome materials" },
+                { title: "Cave Exploration", description: "Clear Khezu from cave systems", reward: "Thunder element materials" },
+                { title: "Web Cleanup", description: "Deal with Nerscylla infestation", reward: "Thread and web materials" },
+                { title: "Forest Guardian", description: "Face the territorial monsters", reward: "Rare scales and claws" }
+            ];
+
+            // Boss missions (from boss data)
+            let bossMissions = [];
+            if (gameData.bosses) {
+                bossMissions = gameData.bosses.map(boss => ({
+                    title: boss.mission || `${boss.name} Encounter`,
+                    description: `Face the mighty ${boss.name} at ${boss.location}`,
+                    reward: `${boss.name} rare materials`
+                }));
+            }
+
+            document.getElementById('side-missions').innerHTML = sideMissions.map(mission => `
+                <li class="content-item">
+                    <h4>${mission.title}</h4>
+                    <p>${mission.description}</p>
+                    <div style="color: var(--gold); font-size: 0.9em;">Reward: ${mission.reward}</div>
+                </li>
+            `).join('');
+
+            document.getElementById('boss-missions').innerHTML = bossMissions.map(mission => `
+                <li class="content-item">
+                    <h4>${mission.title}</h4>
+                    <p>${mission.description}</p>
+                    <div style="color: var(--gold); font-size: 0.9em;">Reward: ${mission.reward}</div>
+                </li>
+            `).join('');
+
+            // Story content
+            document.getElementById('story-content').innerHTML = `
+                <div class="content-item">
+                    <h4>Main Story Progression</h4>
+                    <p>Follow the journey of a Monster Rider as they explore diverse environments, forge bonds with monsters, and uncover ancient secrets.</p>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Chapter 1-3: Learn the basics in Azuria Plains</li>
+                        <li>Chapter 4-6: Explore dangerous cave systems</li>
+                        <li>Chapter 7-9: Face increasing challenges</li>
+                        <li>Chapter 10+: Endgame content and Elder Dragons</li>
+                    </ul>
+                </div>
+            `;
+        }
+
+        // Builds
+        function initializeBuilds() {
+            const builds = {
+                speed: [
+                    {
+                        name: "Lightning Fast",
+                        description: "Maximum speed with thunder element",
+                        monsters: "Velocidrome + Barioth + Khezu",
+                        weapons: "Thunder-element weapons recommended",
+                        strategy: "Overwhelm with speed attacks, exploit power-type monsters"
+                    }
+                ],
+                tank: [
+                    {
+                        name: "Fortress Wall",
+                        description: "Maximum defense and HP",
+                        monsters: "Gravios + Basarios + Uragaan",
+                        weapons: "High defense weapons with shields",
+                        strategy: "Absorb damage, counter with power attacks"
+                    }
+                ],
+                elemental: [
+                    {
+                        name: "Elemental Master",
+                        description: "Exploit elemental weaknesses",
+                        monsters: "Rathalos (Fire) + Lagiacrus (Water) + Variable third",
+                        weapons: "Match monster elements to enemy weaknesses",
+                        strategy: "Switch monsters based on enemy weaknesses"
+                    }
+                ],
+                general: [
+                    {
+                        name: "All-Rounder",
+                        description: "Balanced team for any situation",
+                        monsters: "Rathalos + Diablos + Nargacuga",
+                        weapons: "Mix of weapon types and elements",
+                        strategy: "Adapt to any situation, reliable performance"
+                    }
+                ]
+            };
+
+            Object.entries(builds).forEach(([type, buildList]) => {
+                const containerId = `${type}-builds`;
+                const container = document.getElementById(containerId);
+                if (container) {
+                    container.innerHTML = buildList.map(build => `
+                        <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; margin-bottom: 15px;">
+                            <h4>${build.name}</h4>
+                            <p style="margin: 10px 0;">${build.description}</p>
+                            <p><strong>Team:</strong> ${build.monsters}</p>
+                            <p><strong>Weapons:</strong> ${build.weapons}</p>
+                            <p><strong>Strategy:</strong> ${build.strategy}</p>
+                        </div>
+                    `).join('');
+                }
             });
         }
+
+        // Search Functionality
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (!query) return;
+
+            let results = [];
+            
+            // Search monsters
+            if (gameData.monsters) {
+                gameData.monsters.forEach(monster => {
+                    if (monster.name.toLowerCase().includes(query) || 
+                        monster.species.toLowerCase().includes(query) ||
+                        monster.location.toLowerCase().includes(query) ||
+                        (monster.element && monster.element.toLowerCase().includes(query))) {
+                        results.push({type: 'monster', data: monster});
+                    }
+                });
+            }
+
+            // Search weapons
+            if (weaponData.weapons) {
+                Object.values(weaponData.weapons).flat().forEach(weapon => {
+                    if (weapon.name.toLowerCase().includes(query) ||
+                        weapon.description.toLowerCase().includes(query)) {
+                        results.push({type: 'weapon', data: weapon});
+                    }
+                });
+            }
+
+            displaySearchResults(results, query);
+        }
+
+        function displaySearchResults(results, query) {
+            if (results.length === 0) {
+                alert(`No results found for "${query}"`);
+                return;
+            }
+
+            // For now, just show the first result's tab
+            if (results[0].type === 'monster') {
+                showTab('monsters');
+                // Could highlight the specific monster here
+            } else if (results[0].type === 'weapon') {
+                showTab('weapons');
+                // Could highlight the specific weapon here
+            }
+
+            console.log(`Found ${results.length} results for "${query}":`, results);
+        }
+
+        // Enter key support for search
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Page loaded, initializing...');
+            loadData();
+        });
     </script>
 </body>
 </html>
