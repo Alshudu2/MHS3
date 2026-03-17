@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,7 +27,7 @@
     <meta name="twitter:image" content="https://yourgithubusername.github.io/MHS3-github-pages/assets/preview.jpg">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>ًںگ‰</text></svg>">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐉</text></svg>">
     
     <!-- Enhanced Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -523,22 +523,14 @@
             grid-auto-rows: auto;
         }
 
-                .monster-image {
+        .monster-image {
             width: 100%;
             height: 120px;
             object-fit: contain;
             border-radius: 8px 8px 0 0;
             background: rgba(0,0,0,0.3);
             display: block;
-        }
-        .monster-image-placeholder {
-            width: 100%;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            opacity: 0.3;
+            padding: 8px;
         }
         .monster-card {
             background: var(--secondary-bg);
@@ -991,7 +983,7 @@
         <!-- Sidebar -->
         <nav class="sidebar" id="sidebar">
             <div class="sidebar-brand">
-                <div class="brand-title">ًںگ‰ MHS3 Guide</div>
+                <div class="brand-title">🐉 MHS3 Guide</div>
                 <div class="brand-subtitle">Ultimate Master Guide</div>
             </div>
             
@@ -1210,7 +1202,7 @@
                     <!-- Team Builder Tab -->
                     <div id="teams" class="tab-content">
                         <div id="teamsContainer" class="page-section">
-                            <h2>ًں›،ï¸ڈ Meta Team Builder</h2>
+                            <h2>🛡️ Meta Team Builder</h2>
                             <p>Loading team data...</p>
                         </div>
                     </div>
@@ -1218,7 +1210,7 @@
                     <!-- Weapons & Builds Tab -->
                     <div id="weapons" class="tab-content">
                         <div id="weaponsContainer" class="page-section">
-                            <h2>âڑ”ï¸ڈ Weapons & Build Guide</h2>
+                            <h2>⚔️ Weapons & Build Guide</h2>
                             <p>Loading weapon data...</p>
                         </div>
                     </div>
@@ -1226,7 +1218,7 @@
                     <!-- Boss Strategies Tab -->
                     <div id="strategies" class="tab-content">
                         <div class="page-section">
-                            <h2>ًںڈ† Boss Strategy Guide</h2>
+                            <h2>🏆 Boss Strategy Guide</h2>
                             <p>Phase-by-phase strategies for all major bosses and challenging encounters.</p>
                             
                             <div class="feature-grid">
@@ -1249,7 +1241,7 @@
                     <!-- Side Content Tab -->
                     <div id="content" class="tab-content">
                         <div class="page-section">
-                            <h2>ًں—؛ï¸ڈ Side Content Guide</h2>
+                            <h2>🗺️ Side Content Guide</h2>
                             <p>Mission guides, collectibles, and efficiency ratings for all side content.</p>
                             
                             <div class="feature-grid">
@@ -1272,7 +1264,7 @@
                     <!-- Expert Guides Tab -->
                     <div id="guides" class="tab-content">
                         <div id="guidesContainer" class="page-section">
-                            <h2>ًںژ“ Expert Guides</h2>
+                            <h2>🎓 Expert Guides</h2>
                             <p>Loading guides data...</p>
                         </div>
                     </div>
@@ -1335,21 +1327,21 @@
                     this.setupKeyboardNavigation();
                     this.loadUserPreferences();
                     this.updateDisplay();
-                    console.log('âœ… MHS3Guide initialized successfully');
+                    console.log('✅ MHS3Guide initialized successfully');
                 } catch (error) {
-                    console.error('â‌Œ Failed to initialize MHS3Guide:', error);
+                    console.error('❌ Failed to initialize MHS3Guide:', error);
                     this.showError('Failed to load application data');
                 }
             }
 
             async loadData() {
                 try {
-                    console.log('ًں”„ Loading monster data...');
+                    console.log('🔄 Loading monster data...');
                     const response = await fetch('complete_monster_database.json');
                     const data = await response.json();
                     
                     this.data.monsters = data.monsters || [];
-                    console.log(`ًں“ٹ Loaded ${this.data.monsters.length} monsters`);
+                    console.log(`📊 Loaded ${this.data.monsters.length} monsters`);
                     
                     // Load other data files if available
                     try {
@@ -1368,12 +1360,12 @@
                         this.data.expertGuides = expertGuides;
                         this.data.teamData = teamData;
                         this.data.weaponEvolution = weaponEvolution;
-                        console.log('âœ… All data files loaded');
+                        console.log('✅ All data files loaded');
                     } catch (error) {
-                        console.warn('âڑ ï¸ڈ Some data files not loaded:', error);
+                        console.warn('⚠️ Some data files not loaded:', error);
                     }
                 } catch (error) {
-                    console.error('â‌Œ Failed to load data:', error);
+                    console.error('❌ Failed to load data:', error);
                     this.data.monsters = [];
                     throw error;
                 }
@@ -1664,7 +1656,7 @@
                 const container = document.getElementById('monsterCards');
                 if (!container) return;
 
-                console.log('ًں”„ Rendering monsters...');
+                console.log('🔄 Rendering monsters...');
                 
                 const filteredMonsters = this.getFilteredMonsters();
 
@@ -1693,7 +1685,7 @@
 
                 container.appendChild(fragment);
 
-                console.log(`âœ… Rendered ${filteredMonsters.length} monsters`);
+                console.log(`✅ Rendered ${filteredMonsters.length} monsters`);
 
                 // Add event listeners for action buttons
                 this.attachCardEventListeners();
@@ -1920,13 +1912,13 @@
                 
                 switch(completeness) {
                     case 'complete':
-                        return stanceCount === 2 ? 'âœ… Complete Analysis' : `âœ… Complete: ${stanceCount} Phases`;
+                        return stanceCount === 2 ? '✅ Complete Analysis' : `✅ Complete: ${stanceCount} Phases`;
                     case 'partial':
-                        return 'âڑ ï¸ڈ Partial Data';
+                        return '⚠️ Partial Data';
                     case 'estimated':
-                        return 'ًں“ٹ Estimated';
+                        return '📊 Estimated';
                     default:
-                        return 'ًں“ٹ Analyzed';
+                        return '📊 Analyzed';
                 }
             }
 
@@ -2005,7 +1997,7 @@
                                             </div>
                                             <div class="step-trigger">${stance.triggers?.entry || stance.triggers || 'Auto progression'}</div>
                                         </div>
-                                        ${index < stanceNames.length - 1 ? '<div class="flow-arrow">â†’</div>' : ''}
+                                        ${index < stanceNames.length - 1 ? '<div class="flow-arrow">→</div>' : ''}
                                     </div>
                                 `;
                             }).join('')}
@@ -2035,7 +2027,7 @@
                         <!-- Quick Reference Section -->
                         <div class="detail-section quick-reference-section">
                             <div class="quick-ref-header">
-                                <h3>ًںژ¯ Quick Reference</h3>
+                                <h3>🎯 Quick Reference</h3>
                                 ${monster.stance_patterns ? `
                                     <div class="quick-ref-stance-info">
                                         <span class="quick-stance-count">${Object.keys(monster.stance_patterns).length} Combat ${Object.keys(monster.stance_patterns).length === 1 ? 'Stance' : 'Stances'}</span>
@@ -2065,22 +2057,22 @@
 
                         <!-- Counter Strategy Guide -->
                         <div class="detail-section counter-strategy-section">
-                            <h3>âڑ”ï¸ڈ Counter Strategy</h3>
+                            <h3>⚔️ Counter Strategy</h3>
                             <div class="counter-guide">
                                 <div class="counter-item">
-                                    <span class="counter-when">vs <i class="attack-icon speed-icon">âڑ،</i> SPEED</span>
-                                    <span class="counter-arrow">â†’</span>
-                                    <span class="counter-use">Use <i class="attack-icon power-icon">ًں’ھ</i> POWER</span>
+                                    <span class="counter-when">vs <i class="attack-icon speed-icon">⚡</i> SPEED</span>
+                                    <span class="counter-arrow">→</span>
+                                    <span class="counter-use">Use <i class="attack-icon power-icon">💪</i> POWER</span>
                                 </div>
                                 <div class="counter-item">
-                                    <span class="counter-when">vs <i class="attack-icon power-icon">ًں’ھ</i> POWER</span>
-                                    <span class="counter-arrow">â†’</span>
-                                    <span class="counter-use">Use <i class="attack-icon technical-icon">ًں§ </i> TECHNICAL</span>
+                                    <span class="counter-when">vs <i class="attack-icon power-icon">💪</i> POWER</span>
+                                    <span class="counter-arrow">→</span>
+                                    <span class="counter-use">Use <i class="attack-icon technical-icon">🧠</i> TECHNICAL</span>
                                 </div>
                                 <div class="counter-item">
-                                    <span class="counter-when">vs <i class="attack-icon technical-icon">ًں§ </i> TECHNICAL</span>
-                                    <span class="counter-arrow">â†’</span>
-                                    <span class="counter-use">Use <i class="attack-icon speed-icon">âڑ،</i> SPEED</span>
+                                    <span class="counter-when">vs <i class="attack-icon technical-icon">🧠</i> TECHNICAL</span>
+                                    <span class="counter-arrow">→</span>
+                                    <span class="counter-use">Use <i class="attack-icon speed-icon">⚡</i> SPEED</span>
                                 </div>
                             </div>
                         </div>
@@ -2089,7 +2081,7 @@
                         ${monster.stance_patterns ? `
                             <div class="detail-section stance-behavior-section">
                                 <div class="stance-header-with-count">
-                                    <h3>ًں›،ï¸ڈ Stances & Behavior</h3>
+                                    <h3>🛡️ Stances & Behavior</h3>
                                     <div class="stance-count-indicators">
                                         <div class="stance-count-badge">
                                             ${Object.keys(monster.stance_patterns).length} Combat ${Object.keys(monster.stance_patterns).length === 1 ? 'Stance' : 'Stances'}
@@ -2112,7 +2104,7 @@
                                 </div>
                                 ${Object.keys(monster.stance_patterns).length > 2 ? `
                                     <div class="stance-complexity-badge">
-                                        <span class="complexity-icon">ًںژ¯</span>
+                                        <span class="complexity-icon">🎯</span>
                                         <span class="complexity-text">Complex ${Object.keys(monster.stance_patterns).length}-Phase Monster</span>
                                     </div>
                                 ` : ''}
@@ -2148,13 +2140,13 @@
 
                                             <!-- Counter Recommendation -->
                                             <div class="counter-recommendation">
-                                                <h5>ًں’، What You Should Do:</h5>
+                                                <h5>💡 What You Should Do:</h5>
                                                 <p class="counter-advice">${data.counter}</p>
                                             </div>
 
                                             <!-- Enhanced Triggers -->
                                             <div class="triggers-info">
-                                                <h5>ًں”„ Stance Triggers:</h5>
+                                                <h5>🔄 Stance Triggers:</h5>
                                                 ${typeof data.triggers === 'object' ? `
                                                     <div class="trigger-breakdown">
                                                         ${data.triggers.entry ? `<div class="trigger-item"><strong>Entry:</strong> ${data.triggers.entry}</div>` : ''}
@@ -2169,7 +2161,7 @@
                                             <!-- Specific Attacks -->
                                             ${data.attacks && data.attacks.length > 0 ? `
                                                 <div class="attacks-list">
-                                                    <h5>ًںژ¯ Specific Attacks:</h5>
+                                                    <h5>🎯 Specific Attacks:</h5>
                                                     ${data.attacks.map(attack => `
                                                         <div class="attack-item">
                                                             <span class="attack-name">${attack.name}</span>
@@ -2191,7 +2183,7 @@
                         <!-- Stance Progression Flow -->
                         ${monster.stance_patterns && Object.keys(monster.stance_patterns).length > 2 ? `
                             <div class="detail-section stance-flow-section">
-                                <h3>ًں”„ Stance Progression</h3>
+                                <h3>🔄 Stance Progression</h3>
                                 <div class="stance-progression">
                                     ${this.createStanceFlow(monster)}
                                 </div>
@@ -2201,7 +2193,7 @@
                         <!-- Battle Flow Timeline -->
                         ${monster.battle_flow ? `
                             <div class="detail-section battle-flow-section">
-                                <h3>âڈ±ï¸ڈ Battle Timeline</h3>
+                                <h3>⏱️ Battle Timeline</h3>
                                 <div class="battle-timeline">
                                     <div class="timeline-item">
                                         <div class="timeline-phase">Opening</div>
@@ -2227,7 +2219,7 @@
 
                         <!-- Basic Information -->
                         <div class="detail-section">
-                            <h3>ًں“ٹ Basic Information</h3>
+                            <h3>📊 Basic Information</h3>
                             <div class="detail-grid">
                                 <div><strong>Species:</strong> ${monster.species}</div>
                                 <div><strong>Element:</strong> ${this.formatElement(monster.element)}</div>
@@ -2240,7 +2232,7 @@
                         <!-- Weaknesses -->
                         ${monster.combat_data?.weaknesses ? `
                             <div class="detail-section">
-                                <h3>ًں’€ Elemental Weaknesses</h3>
+                                <h3>💀 Elemental Weaknesses</h3>
                                 <div class="weaknesses-grid">
                                     ${Object.entries(monster.combat_data.weaknesses).map(([element, effectiveness]) => `
                                         <div class="weakness-item effectiveness-${effectiveness}">
@@ -2279,7 +2271,7 @@
                 };
 
                 container.innerHTML = `
-                    <h2>ًں›،ï¸ڈ Meta Team Builder</h2>
+                    <h2>🛡️ Meta Team Builder</h2>
                     <p>Recommended team compositions with synergy analysis.</p>
 
                     <h3 style="margin-top:24px">Meta Team Presets</h3>
@@ -2359,7 +2351,7 @@
                 const tierColors = { s_tier: '#ffd700', a_tier: '#c0c0c0', b_tier: '#cd7f32', c_tier: '#888' };
 
                 container.innerHTML = `
-                    <h2>ًںژ“ Expert Guides</h2>
+                    <h2>🎓 Expert Guides</h2>
 
                     <!-- Tier List -->
                     ${meta.current_tier_list ? `
@@ -2455,7 +2447,7 @@
                 const evoPaths = we.evolution_paths || {};
 
                 container.innerHTML = `
-                    <h2>âڑ”ï¸ڈ Weapons & Build Guide</h2>
+                    <h2>⚔️ Weapons & Build Guide</h2>
 
                     <!-- Weapon Categories -->
                     ${Object.keys(categories).length ? `
@@ -2497,7 +2489,7 @@
                         ${Object.entries(evoPaths).map(([name, path]) => `
                             <div class="feature-card">
                                 <h3>${name.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</h3>
-                                ${Array.isArray(path) ? `<div style="font-size:0.82em;color:#aaa">${path.join(' â†’ ')}</div>` : `<p style="font-size:0.82em;color:#aaa">${JSON.stringify(path)}</p>`}
+                                ${Array.isArray(path) ? `<div style="font-size:0.82em;color:#aaa">${path.join(' → ')}</div>` : `<p style="font-size:0.82em;color:#aaa">${JSON.stringify(path)}</p>`}
                             </div>
                         `).join('')}
                     </div>
@@ -2568,7 +2560,7 @@
                         this.state.sort = preferences.sort || 'name';
                     }
                 } catch (error) {
-                    console.warn('âڑ ï¸ڈ Failed to load user preferences:', error);
+                    console.warn('⚠️ Failed to load user preferences:', error);
                 }
             }
 
@@ -2581,7 +2573,7 @@
                     };
                     localStorage.setItem('mhs3_preferences', JSON.stringify(preferences));
                 } catch (error) {
-                    console.warn('âڑ ï¸ڈ Failed to save user preferences:', error);
+                    console.warn('⚠️ Failed to save user preferences:', error);
                 }
             }
 
