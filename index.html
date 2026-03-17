@@ -523,6 +523,35 @@
             grid-auto-rows: auto;
         }
 
+
+        .cards-container.view-list {
+            grid-template-columns: 1fr;
+        }
+
+        .cards-container.view-list .monster-card {
+            display: grid;
+            grid-template-columns: 120px 1fr 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+
+        .cards-container.view-list .monster-image {
+            height: 80px;
+            border-radius: 8px;
+        }
+
+        .cards-container.view-compact {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 8px;
+        }
+
+        .cards-container.view-compact .monster-image {
+            height: 70px;
+        }
+
+        .cards-container.view-compact .combat-preview {
+            display: none;
+        }
         .monster-image {
             width: 100%;
             height: 120px;
@@ -1379,6 +1408,10 @@
                 // Export functionality
                 const exportBtn = document.getElementById('exportBtn');
                 if (exportBtn) {
+                const sortBtn = document.getElementById('sortBtn');
+                if (sortBtn) {
+                    sortBtn.addEventListener('click', this.handleSort.bind(this));
+                }
                     exportBtn.addEventListener('click', this.handleExport.bind(this));
                 }
 
@@ -1608,13 +1641,19 @@
                 const view = e.currentTarget.getAttribute('data-view');
                 this.state.view = view;
 
-                document.querySelectorAll('.view-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
+                document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
                 e.currentTarget.classList.add('active');
+
+                const container = document.getElementById('monsterCards');
+                if (container) {
+                    container.classList.remove('view-list', 'view-compact');
+                    if (view === 'list') container.classList.add('view-list');
+                    if (view === 'compact') container.classList.add('view-compact');
+                }
 
                 this.updateDisplay();
             }
+
 
             updateDisplay() {
                 if (this.state.currentTab === 'monsters') {
@@ -1678,6 +1717,7 @@
                                 break;
                             case 'compare':
                                 this.addToComparison(monsterName);
+                                this.showComparisonPanel();
                                 break;
                         }
                     });
@@ -2290,6 +2330,58 @@
                         </div>`).join('')}</div>` : ''}
                     ${Object.keys(efficiency).length ? `<h3 style="margin-top:32px">Efficiency Guide</h3><div class="feature-grid">${Object.entries(efficiency).map(([k,v]) => `<div class="feature-card"><h3>${k.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</h3>${Array.isArray(v) ? `<ul style="font-size:0.85em;padding-left:16px">${v.map(i=>`<li style="margin:4px 0">${i}</li>`).join('')}</ul>` : typeof v==='string' ? `<p style="font-size:0.85em;color:#aaa">${v}</p>` : `<p style="font-size:0.85em;color:#aaa">${JSON.stringify(v)}</p>`}</div>`).join('')}</div>` : ''}
                 `;
+            }
+
+
+            handleSort() {
+                const sortCycle = ['name', 'threat', 'tier'];
+                const currentIdx = sortCycle.indexOf(this.state.sort);
+                this.state.sort = sortCycle[(currentIdx + 1) % sortCycle.length];
+
+                const labels = { name: 'Name (A-Z)', threat: 'Threat Level', tier: 'Tier Rating' };
+                const btn = document.getElementById('sortBtn');
+                if (btn) btn.innerHTML = `<i class="fas fa-sort"></i> Sort: ${labels[this.state.sort]}`;
+
+                this.saveUserPreferences();
+                this.updateDisplay();
+            }
+
+            showComparisonPanel() {
+                const names = Array.from(this.data.comparison);
+                if (names.length < 2) {
+                    alert('Add at least 2 monsters to compare (use the ⚖ button on cards).');
+                    return;
+                }
+                const monsters = names.map(n => this.data.monsters.find(m => m.name === n)).filter(Boolean);
+                const modal = document.getElementById('modal');
+                const modalTitle = document.getElementById('modalTitle');
+                const modalBody = document.getElementById('modalBody');
+                modalTitle.textContent = 'Monster Comparison';
+                modalBody.innerHTML = `
+                    <div style="overflow-x:auto">
+                    <table style="width:100%;border-collapse:collapse;font-size:0.9em">
+                        <thead>
+                            <tr>
+                                <th style="text-align:left;padding:8px;border-bottom:1px solid #444;color:#aaa">Attribute</th>
+                                ${monsters.map(m => `<th style="padding:8px;border-bottom:1px solid #444;text-align:center">${m.name}</th>`).join('')}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="padding:8px;color:#aaa;border-bottom:1px solid #333">Species</td>${monsters.map(m=>`<td style="padding:8px;text-align:center;border-bottom:1px solid #333">${m.species}</td>`).join('')}</tr>
+                            <tr><td style="padding:8px;color:#aaa;border-bottom:1px solid #333">Element</td>${monsters.map(m=>`<td style="padding:8px;text-align:center;border-bottom:1px solid #333">${this.formatElement(m.element)}</td>`).join('')}</tr>
+                            <tr><td style="padding:8px;color:#aaa;border-bottom:1px solid #333">Threat</td>${monsters.map(m=>`<td style="padding:8px;text-align:center;border-bottom:1px solid #333">${this.formatThreatLevel(m.threat_level)}</td>`).join('')}</tr>
+                            <tr><td style="padding:8px;color:#aaa;border-bottom:1px solid #333">Tier</td>${monsters.map(m=>`<td style="padding:8px;text-align:center;border-bottom:1px solid #333">${m.tier}</td>`).join('')}</tr>
+                            <tr><td style="padding:8px;color:#aaa;border-bottom:1px solid #333">Location</td>${monsters.map(m=>`<td style="padding:8px;text-align:center;border-bottom:1px solid #333">${m.location}</td>`).join('')}</tr>
+                            <tr><td style="padding:8px;color:#aaa;border-bottom:1px solid #333">Primary Attack</td>${monsters.map(m=>`<td style="padding:8px;text-align:center;border-bottom:1px solid #333">${(m.quick_reference?.primary_stance_pattern||'').toUpperCase()}</td>`).join('')}</tr>
+                            <tr><td style="padding:8px;color:#aaa">Enraged Attack</td>${monsters.map(m=>`<td style="padding:8px;text-align:center">${(m.quick_reference?.enraged_stance_pattern||'').toUpperCase()}</td>`).join('')}</tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div style="margin-top:16px;text-align:right">
+                        <button onclick="window.mhs3Guide.data.comparison.clear();window.mhs3Guide.closeModal();" style="background:#444;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer">Clear Comparison</button>
+                    </div>
+                `;
+                modal.classList.add('show');
             }
 
             closeModal() {
