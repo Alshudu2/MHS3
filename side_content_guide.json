@@ -1,0 +1,599 @@
+{
+  "side_stories": [
+    {
+      "title": "The Wandering Felyne",
+      "type": "Character Story",
+      "chapter_available": 3,
+      "unlock_conditions": [
+        "Complete Chapter 3: Rathian's Territory", 
+        "Speak to Felyne merchant in Azuria Village",
+        "Have 5+ different monster species in party"
+      ],
+      "story_length": "Short (2-3 hours)",
+      "difficulty": "Easy",
+      "quest_chain": [
+        {
+          "quest_name": "Lost Felyne",
+          "objective": "Find the wandering Felyne in Azuria Plains",
+          "location": "Azuria Plains - Eastern Cave",
+          "requirements": "None",
+          "rewards": ["Felyne Voucher", "1000 Zenny"]
+        },
+        {
+          "quest_name": "Felyne's Request", 
+          "objective": "Gather 10 Honey and 5 Blue Mushrooms",
+          "location": "Forest areas",
+          "requirements": "Gathering skill level 2+",
+          "rewards": ["Felyne Companion unlock", "Gathering boost items"]
+        },
+        {
+          "quest_name": "Felyne's Secret",
+          "objective": "Escort Felyne to hidden gathering spot",
+          "location": "Azuria Plains - Secret Grove",
+          "requirements": "Felyne Companion active",
+          "rewards": ["Permanent gathering boost", "Rare materials access"]
+        }
+      ],
+      "story_summary": "A lost Felyne merchant seeks help returning to his secret gathering grounds. In exchange, he offers to join your adventure as a permanent companion.",
+      "rewards": {
+        "companion": "Felyne - provides gathering bonuses and item hints",
+        "abilities": ["Gathering Boost +20%", "Rare material detection", "Item duplication chance"],
+        "special": "Access to Felyne-only gathering spots"
+      },
+      "efficiency_rating": "★★★★★",
+      "efficiency_notes": "Essential early-game companion. Gathering bonuses pay for themselves quickly.",
+      "tips": [
+        "Start this as soon as Chapter 3 is available",
+        "Felyne gathering spots contain rare materials not found elsewhere", 
+        "Companion abilities stack with your own gathering skills",
+        "Felyne provides hints about nearby rare materials"
+      ]
+    },
+    {
+      "title": "Legend of the Silver Rathalos",
+      "type": "Epic Story",
+      "chapter_available": 6,
+      "unlock_conditions": [
+        "Complete main story through Chapter 6",
+        "Rathalos habitat at S-rank",
+        "Defeat 10 Flying Wyverns in head-to-head combat",
+        "Have Rathalos in active party"
+      ],
+      "story_length": "Long (8-12 hours)",
+      "difficulty": "Very Hard",
+      "quest_chain": [
+        {
+          "quest_name": "Legends Speak",
+          "objective": "Investigate Silver Rathalos sightings",
+          "location": "Sky-High Summit",
+          "requirements": "Flying monster for transportation",
+          "rewards": ["Ancient Scale", "Legend Fragment 1/5"]
+        },
+        {
+          "quest_name": "The Silver Hunt",
+          "objective": "Track Silver Rathalos through aerial zones",
+          "location": "Multiple aerial locations",
+          "requirements": "Master-rank tracking skills",
+          "rewards": ["Silver Talon", "Legend Fragment 2/5"]
+        },
+        {
+          "quest_name": "Territorial Dispute",
+          "objective": "Defeat Guardian Rathalos protecting Silver's territory",
+          "location": "Apex Nest - Sky Realm",
+          "requirements": "S-rank combat team",
+          "rewards": ["Guardian Scale", "Legend Fragment 3/5"]
+        },
+        {
+          "quest_name": "The Silver Challenge",
+          "objective": "Prove worthiness in aerial combat trial",
+          "location": "Silver's Domain",
+          "requirements": "Perfect aerial combat mastery",
+          "rewards": ["Silver's Recognition", "Legend Fragment 4/5"]
+        },
+        {
+          "quest_name": "Bond of Silver",
+          "objective": "Form bond with Silver Rathalos",
+          "location": "Silver Aerie",
+          "requirements": "All previous fragments + Rathalos at max bond",
+          "rewards": ["Silver Rathalos egg", "Legend Fragment 5/5", "Silver Master title"]
+        }
+      ],
+      "story_summary": "Legends speak of a Silver Rathalos whose speed surpasses all others. Only those who prove themselves worthy of the skies may earn its respect and partnership.",
+      "rewards": {
+        "monster": "Silver Rathalos - S-tier Speed specialist",
+        "abilities": ["Fastest Speed stat in game", "Aerial supremacy", "Silver Fire attacks"],
+        "equipment": ["Silver armor set", "Silver weapons", "Speed mastery skills"],
+        "titles": ["Silver Master", "Sky Lord", "Legend Seeker"]
+      },
+      "efficiency_rating": "★★★★☆",
+      "efficiency_notes": "Long questline but Silver Rathalos is top-tier reward. Worth the investment for speed-focused teams.",
+      "tips": [
+        "Requires significant preparation - don't attempt undergeared",
+        "Master aerial combat before starting final challenges",
+        "Silver Rathalos has unique attack patterns - study them",
+        "Keep multiple flying monsters for different trial requirements",
+        "Stock up on healing items - trials are marathon endurance tests"
+      ]
+    },
+    {
+      "title": "The Ancient Trial",
+      "type": "Ultimate Challenge",
+      "chapter_available": "Post-game",
+      "unlock_conditions": [
+        "Complete all other side stories",
+        "Defeat all Elder Dragons", 
+        "All habitats at S-rank",
+        "Monster collection 90%+ complete",
+        "Master Hunter rank"
+      ],
+      "story_length": "Epic (15-20 hours)",
+      "difficulty": "Legendary",
+      "quest_chain": [
+        {
+          "quest_name": "The First Trial - Power",
+          "objective": "Defeat 3 Elder Dragons in succession without rest",
+          "location": "Ancient Colosseum",
+          "requirements": "S-tier team, perfect preparation",
+          "rewards": ["Power Sigil", "Ancient Fragment 1/7"]
+        },
+        {
+          "quest_name": "The Second Trial - Speed",
+          "objective": "Complete time attack against ultimate opponents",
+          "location": "Velocity Chamber",
+          "requirements": "Sub-5 minute clear times on designated monsters",
+          "rewards": ["Speed Sigil", "Ancient Fragment 2/7"]
+        },
+        {
+          "quest_name": "The Third Trial - Technique",
+          "objective": "Perfect combat mastery examination",
+          "location": "Mastery Dojo",
+          "requirements": "100% perfect head-to-head success rate",
+          "rewards": ["Technique Sigil", "Ancient Fragment 3/7"]
+        },
+        {
+          "quest_name": "The Fourth Trial - Bond",
+          "objective": "Demonstrate perfect rider-monster synchronization",
+          "location": "Harmony Sanctuary",
+          "requirements": "Max bond with entire active team",
+          "rewards": ["Bond Sigil", "Ancient Fragment 4/7"]
+        },
+        {
+          "quest_name": "The Fifth Trial - Knowledge",
+          "objective": "Solve ancient puzzles using monster knowledge",
+          "location": "Wisdom Vault",
+          "requirements": "Complete monster encyclopedia",
+          "rewards": ["Wisdom Sigil", "Ancient Fragment 5/7"]
+        },
+        {
+          "quest_name": "The Sixth Trial - Courage",
+          "objective": "Face the ultimate fear - corrupted Fatalis",
+          "location": "Nightmare Realm", 
+          "requirements": "Legendary-tier equipment and skill",
+          "rewards": ["Courage Sigil", "Ancient Fragment 6/7"]
+        },
+        {
+          "quest_name": "The Final Trial - Transcendence",
+          "objective": "Surpass the limits of hunter and monster",
+          "location": "Beyond Reality",
+          "requirements": "All previous sigils + perfect mastery",
+          "rewards": ["Transcendence Sigil", "Ancient Fragment 7/7", "Ancient Talisman"]
+        }
+      ],
+      "story_summary": "The ultimate test left by ancient monster riders. Seven trials that push hunter and monster beyond their limits to achieve perfect synchronization and mastery.",
+      "rewards": {
+        "talisman": "Ancient Talisman - unlocks hidden game content",
+        "abilities": ["Perfect Bond - 100% kinship generation", "Ancient Knowledge - see all monster weaknesses", "Transcendent Power - 50% damage boost"],
+        "access": ["Hidden post-game areas", "Legendary monster variants", "Ultimate crafting materials"],
+        "titles": ["Ancient Master", "Transcendent Hunter", "Legend Incarnate"]
+      },
+      "efficiency_rating": "★★★☆☆",
+      "efficiency_notes": "Massive time investment but unlocks ultimate endgame content. Only for completion perfectionists.",
+      "tips": [
+        "Only attempt after mastering all other content",
+        "Each trial requires different optimization - adapt team accordingly",
+        "Save frequently - trials can be restarted but progress is valuable",
+        "Study ancient lore hints - trials contain puzzle elements",
+        "Final trial is deliberately enigmatic - experimentation required"
+      ]
+    },
+    {
+      "title": "Deviljho's Hunger",
+      "type": "Invader Story",
+      "chapter_available": 5,
+      "unlock_conditions": [
+        "Encounter Deviljho invasion 3 times",
+        "Survive Deviljho encounter without fleeing",
+        "Complete 'Understanding Invaders' research"
+      ],
+      "story_length": "Medium (4-6 hours)",
+      "difficulty": "Hard",
+      "quest_chain": [
+        {
+          "quest_name": "The Endless Hunger",
+          "objective": "Study Deviljho feeding patterns",
+          "location": "Multiple regions (tracks invasions)",
+          "requirements": "Stealth and observation skills",
+          "rewards": ["Hunger Data", "Deviljho Scale"]
+        },
+        {
+          "quest_name": "Ecosystem Disruption",
+          "objective": "Restore balance to regions after Deviljho invasions",
+          "location": "Damaged ecosystems",
+          "requirements": "Habitat restoration expertise",
+          "rewards": ["Balance Restored achievement", "Ecosystem materials"]
+        },
+        {
+          "quest_name": "The Hungry Beast",
+          "objective": "Confront and defeat Deviljho in direct combat",
+          "location": "Deviljho's claimed territory",
+          "requirements": "S-tier combat team with crowd control",
+          "rewards": ["Deviljho materials", "Invader's Respect"]
+        },
+        {
+          "quest_name": "Understanding Hunger",
+          "objective": "Communicate with defeated Deviljho",
+          "location": "Post-battle scene",
+          "requirements": "Complete previous quest without killing",
+          "rewards": ["Deviljho egg", "Hunger Control technique"]
+        }
+      ],
+      "story_summary": "The dreaded Deviljho's hunger drives it to invade territories and disrupt ecosystems. Understanding its nature may lead to an unlikely partnership.",
+      "rewards": {
+        "monster": "Deviljho - A-tier Power specialist with unique hunger mechanics",
+        "abilities": ["Invasion Detection", "Hunger Management", "Ecosystem Disruption"],
+        "knowledge": "Understanding of invader monster behavior patterns",
+        "special": "Deviljho's hunger can be channeled for massive damage bursts"
+      },
+      "efficiency_rating": "★★★☆☆", 
+      "efficiency_notes": "Deviljho is powerful but difficult to manage. Niche appeal for experienced hunters.",
+      "tips": [
+        "Deviljho requires constant feeding or becomes uncontrollable",
+        "Hunger mechanics add complexity but enable devastating attacks",
+        "Best used as specialist monster for tough encounters",
+        "Keep plenty of raw meat for feeding requirements",
+        "Deviljho's presence affects other monsters' behavior"
+      ]
+    }
+  ],
+  "side_missions": [
+    {
+      "title": "Habitat Restoration: Rathian Nest",
+      "type": "Ecosystem Mission",
+      "chapter_available": 2,
+      "unlock_conditions": [
+        "First Rathian encounter completed",
+        "Access to Azuria Plains fully unlocked",
+        "Basic habitat knowledge tutorial completed"
+      ],
+      "mission_length": "Medium (3-5 hours)",
+      "difficulty": "Medium",
+      "objectives": [
+        {
+          "phase": "Assessment",
+          "task": "Survey current ecosystem state",
+          "location": "Rathian territory - all zones",
+          "requirements": "Complete area exploration",
+          "progress_tracking": "7 survey points to document"
+        },
+        {
+          "phase": "Population Balance",
+          "task": "Adjust herbivore and predator populations",
+          "location": "Ecosystem zones 1-4",
+          "requirements": "Capture/relocate specific monsters",
+          "progress_tracking": "Population targets: Herbivores 15+, Small predators 8-10, Large predators 3-5"
+        },
+        {
+          "phase": "Resource Management",
+          "task": "Plant native vegetation and manage food sources",
+          "location": "All habitat zones",
+          "requirements": "Gathering skills + specific seeds/materials",
+          "progress_tracking": "Plant 50 native species, establish 10 food sources"
+        },
+        {
+          "phase": "Apex Introduction",
+          "task": "Introduce healthy Rathian pair to restored habitat",
+          "location": "Central nesting ground",
+          "requirements": "Captured male and female Rathian of good health",
+          "progress_tracking": "Monitor for 72 in-game hours for successful adaptation"
+        },
+        {
+          "phase": "Quality Verification",
+          "task": "Achieve S-rank ecosystem rating",
+          "location": "Full habitat assessment",
+          "requirements": "All previous phases completed + time for ecosystem maturation",
+          "progress_tracking": "S-rank certification from Ecological Survey team"
+        }
+      ],
+      "efficiency_strategy": {
+        "optimal_order": [
+          "Complete full area survey first - reveals all needed resources",
+          "Focus on population balance during normal hunting activities",
+          "Gather planting materials during exploration phases",
+          "Time apex introduction with natural breeding season",
+          "Allow 1-2 weeks real-time for ecosystem to stabilize"
+        ],
+        "time_savers": [
+          "Combine resource gathering with other quests in the area",
+          "Use Felyne companion for efficient seed/material detection",
+          "Plan monster relocations during story missions requiring those areas",
+          "Stock up on ecosystem materials early - many are time-gated"
+        ]
+      },
+      "rewards": {
+        "immediate": ["Habitat Restorer title", "5000 Zenny", "Rare ecosystem materials"],
+        "ongoing": ["Access to S-rank Rathian breeding pairs", "Unique Rathian variants", "Ecosystem material regeneration"],
+        "ultimate": "Dreadqueen Rathian mutation becomes available with 3 Poison monsters in habitat"
+      },
+      "efficiency_rating": "★★★★★",
+      "efficiency_notes": "Essential for accessing Dreadqueen Rathian - the best Fire/Poison specialist in the game. High impact mission.",
+      "tips": [
+        "Start early - ecosystem restoration takes real-world time to complete",
+        "Document everything during survey phase - saves backtracking later",
+        "Population targets are strict - monitor carefully during rebalancing",
+        "Native seeds are region-specific - can't substitute from other areas",
+        "S-rank certification unlocks mutation prerequisites"
+      ]
+    },
+    {
+      "title": "Thunder Lord Challenge",
+      "type": "Combat Trial Mission",
+      "chapter_available": 4,
+      "unlock_conditions": [
+        "Astalos habitat restored to A-rank minimum",
+        "Defeat 5 Thunder-element monsters in head-to-head combat",
+        "Complete 'Mastering Technical Types' tutorial"
+      ],
+      "mission_length": "Long (6-8 hours)",
+      "difficulty": "Very Hard",
+      "challenge_series": [
+        {
+          "trial_name": "Lightning Reflexes",
+          "objective": "Defeat 10 consecutive Thunder monsters without taking damage",
+          "location": "Thunder Trial Arena",
+          "requirements": "Perfect dodge timing mastery",
+          "time_limit": "30 minutes",
+          "failure_consequence": "Restart from beginning"
+        },
+        {
+          "trial_name": "Technical Mastery",
+          "objective": "Win 15 head-to-head Technical exchanges in a row",
+          "location": "Technique Chamber",
+          "requirements": "Perfect technical pattern recognition",
+          "time_limit": "No limit",
+          "failure_consequence": "Counter resets to 0"
+        },
+        {
+          "trial_name": "Thunder Lord Gauntlet",
+          "objective": "Survive escalating Astalos encounters",
+          "location": "Escalating Arena",
+          "requirements": "Endurance + adaptation skills",
+          "stages": [
+            "Basic Astalos",
+            "Enhanced Astalos x2",
+            "Charged Astalos x3", 
+            "Proto-Boltreaver",
+            "True Boltreaver Astalos"
+          ],
+          "failure_consequence": "Return to stage 1"
+        },
+        {
+          "trial_name": "Synchronization Test",
+          "objective": "Achieve perfect kinship sync with trial Astalos",
+          "location": "Bond Chamber",
+          "requirements": "Perfect timing and rhythm matching",
+          "mechanics": "Must match Astalos movements and attacks in harmony",
+          "failure_consequence": "Restart synchronization sequence"
+        },
+        {
+          "trial_name": "Final Judgment",
+          "objective": "Prove worthiness to the Thunder Lord",
+          "location": "Boltreaver's Domain",
+          "requirements": "All previous trials passed + S-tier team",
+          "boss": "Boltreaver Astalos at maximum power",
+          "special_conditions": "Must win without using items or environmental assistance"
+        }
+      ],
+      "efficiency_strategy": {
+        "preparation": [
+          "Master head-to-head timing on easier Technical monsters first",
+          "Practice dodge timing extensively - Lightning Reflexes trial is brutal",
+          "Build a specialized anti-Thunder team with Ice/Ground elements",
+          "Stock up on paralysis resistance items and healing supplies",
+          "Study Astalos attack patterns until they're automatic responses"
+        ],
+        "trial_tactics": [
+          "Lightning Reflexes: Focus on perfect positioning over damage dealing",
+          "Technical Mastery: Learn the visual/audio cues for technical attacks", 
+          "Thunder Lord Gauntlet: Pace yourself - it's endurance, not speed",
+          "Synchronization: Watch Boltreaver's movements, mirror them exactly",
+          "Final Judgment: Pure skill test - no shortcuts or cheese strategies"
+        ]
+      },
+      "rewards": {
+        "progression": ["Thunder Mastery certification", "Technical combat excellence"],
+        "monster": "Boltreaver Astalos - S-tier Technical specialist with self-buffing",
+        "abilities": ["Thunder Lord's Blessing - 25% Thunder damage boost", "Technical Mastery - Perfect head-to-head timing"],
+        "equipment": ["Boltreaver armor set", "Thunder Lord weapons", "Lightning mastery charms"],
+        "titles": ["Thunder Lord", "Technical Master", "Lightning Dancer"]
+      },
+      "efficiency_rating": "★★★★★",
+      "efficiency_notes": "Boltreaver Astalos is essential for meta team compositions. Difficult but necessary for end-game viability.",
+      "tips": [
+        "Don't attempt until you can consistently perfect Technical head-to-heads",
+        "Lightning Reflexes trial has the highest failure rate - practice extensively",
+        "Gauntlet trial is about endurance management - pace yourself",
+        "Synchronization requires rhythm - some hunters find music helps",
+        "Final boss is pure skill check - can't be overpowered or cheesed",
+        "Take breaks between attempts - frustration leads to more failures"
+      ]
+    },
+    {
+      "title": "Elder Dragon Research Initiative",
+      "type": "Research Mission Chain",
+      "chapter_available": "Post-story",
+      "unlock_conditions": [
+        "Complete main storyline",
+        "Encounter first Elder Dragon",
+        "Unlock Research Institute access",
+        "Academic rank: Researcher or higher"
+      ],
+      "mission_length": "Very Long (12-20 hours)",
+      "difficulty": "Expert",
+      "research_phases": [
+        {
+          "phase_name": "Data Collection",
+          "duration": "2-3 hours",
+          "objectives": [
+            "Document 5 different Elder Dragon encounters",
+            "Collect biological samples from each species",
+            "Record behavioral patterns and attack sequences",
+            "Map Elder Dragon territorial boundaries"
+          ],
+          "locations": "All Elder Dragon habitats",
+          "requirements": "Stealth skills + observation equipment",
+          "deliverables": "Comprehensive Elder Dragon database"
+        },
+        {
+          "phase_name": "Combat Analysis",
+          "duration": "4-6 hours", 
+          "objectives": [
+            "Defeat each documented Elder Dragon type",
+            "Test weaknesses and resistances experimentally",
+            "Document phase transition triggers",
+            "Analyze kinship compatibility factors"
+          ],
+          "locations": "Elder Dragon combat zones",
+          "requirements": "S-tier combat capabilities",
+          "deliverables": "Combat effectiveness profiles"
+        },
+        {
+          "phase_name": "Ecosystem Impact Study",
+          "duration": "3-4 hours",
+          "objectives": [
+            "Study Elder Dragon effects on local ecosystems",
+            "Document environmental changes post-encounter",
+            "Analyze food chain disruptions and adaptations",
+            "Research restoration techniques for damaged areas"
+          ],
+          "locations": "Post-Elder Dragon encounter zones",
+          "requirements": "Ecosystem expertise + time passage",
+          "deliverables": "Environmental impact assessment"
+        },
+        {
+          "phase_name": "Synthesis and Theory",
+          "duration": "2-3 hours",
+          "objectives": [
+            "Develop unified Elder Dragon behavior theory", 
+            "Propose advanced counter-strategies",
+            "Design improved detection and warning systems",
+            "Create training protocols for future hunters"
+          ],
+          "locations": "Research Institute",
+          "requirements": "All previous data + research skills",
+          "deliverables": "Master Elder Dragon Codex"
+        },
+        {
+          "phase_name": "Practical Application",
+          "duration": "3-4 hours",
+          "objectives": [
+            "Test new strategies against live Elder Dragons",
+            "Validate theoretical models in real combat",
+            "Refine techniques based on field results",
+            "Train other hunters using developed protocols"
+          ],
+          "locations": "Elder Dragon territories",
+          "requirements": "Codex completion + advanced team",
+          "deliverables": "Proven combat methodologies"
+        }
+      ],
+      "efficiency_strategy": {
+        "planning": [
+          "Schedule around Elder Dragon spawn cycles for efficiency",
+          "Combine data collection with regular hunting activities",
+          "Use multiple save files to test different approaches safely",
+          "Coordinate with other hunters for collaborative data gathering",
+          "Document everything - research builds on itself"
+        ],
+        "execution": [
+          "Data collection requires patience - don't rush observations",
+          "Combat analysis benefits from multiple attempts with different loadouts",
+          "Ecosystem studies need time passage - plan other activities during waiting",
+          "Theory phase rewards careful analysis over quick completion",
+          "Practical application validates all previous work - take seriously"
+        ]
+      },
+      "rewards": {
+        "academic": ["Elder Dragon Research Certification", "Research Institute membership"],
+        "practical": ["Advanced Elder Dragon detection", "Enhanced damage vs Elder Dragons", "Exclusive research materials"],
+        "knowledge": ["Complete Elder Dragon codex", "Unlock hidden Elder Dragon variants", "Access to cutting-edge research"],
+        "titles": ["Elder Dragon Scholar", "Research Pioneer", "Master Researcher"]
+      },
+      "efficiency_rating": "★★★☆☆",
+      "efficiency_notes": "Massive knowledge gain and unlocks advanced content, but very time-intensive. For dedicated researchers.",
+      "tips": [
+        "Approach systematically - rushing leads to incomplete data",
+        "Document everything with screenshots/notes - memory isn't reliable",
+        "Collaborate with other players when possible for diverse perspectives", 
+        "Some research requires multiple Elder Dragon encounters - plan accordingly",
+        "Theory phase benefits from reviewing other hunters' strategies",
+        "Practical application should validate theories, not just show off"
+      ]
+    }
+  ],
+  "efficiency_guides": [
+    {
+      "focus": "Story Progression Speed Run",
+      "strategy": "Complete only essential side content that directly impacts main story power level",
+      "recommended_content": [
+        "Wandering Felyne (gathering bonuses essential)",
+        "Rathian Habitat Restoration (Dreadqueen access)", 
+        "Thunder Lord Challenge (Boltreaver for DPS)"
+      ],
+      "skip_until_later": [
+        "Ancient Trial (post-game only)",
+        "Elder Dragon Research (huge time investment)",
+        "Most character backstory missions"
+      ],
+      "time_estimate": "15-20 hours for essentials vs 60+ hours for completion"
+    },
+    {
+      "focus": "Team Building Optimization",
+      "strategy": "Prioritize side content that unlocks S-tier monsters and team synergies",
+      "priority_order": [
+        "1. Habitat Restorations (variant access)",
+        "2. Combat Trials (specialist monsters)", 
+        "3. Character Stories (companion abilities)",
+        "4. Research Missions (advanced knowledge)"
+      ],
+      "efficiency_multipliers": [
+        "Companions boost all other activities",
+        "Habitat restorations unlock multiple monsters per investment",
+        "Combat trials teach skills applicable everywhere",
+        "Research provides long-term advantages"
+      ]
+    },
+    {
+      "focus": "Completion Perfectionist",
+      "strategy": "Complete everything for 100% game completion and ultimate rewards",
+      "systematic_approach": [
+        "Phase 1: All essential story-locked content",
+        "Phase 2: Habitat restorations and ecosystem management",
+        "Phase 3: Combat trials and skill mastery",
+        "Phase 4: Research and knowledge completion", 
+        "Phase 5: Ultimate challenges and ancient trials"
+      ],
+      "estimated_total_time": "80-120 hours for true completion"
+    }
+  ],
+  "meta": {
+    "total_side_stories": 15,
+    "total_side_missions": 25,
+    "total_research_projects": 8,
+    "completion_tiers": 5,
+    "estimated_content_hours": "60-120 depending on approach",
+    "efficiency_strategies": 3,
+    "extracted_at": "2026-03-17T20:20:00.000Z",
+    "source": "complete_side_content_database",
+    "version": "MHS3_Side_Content_Guide_1.0"
+  }
+}

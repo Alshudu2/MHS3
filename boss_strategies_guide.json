@@ -1,0 +1,539 @@
+{
+  "boss_encounters": {
+    "story_bosses": [
+      {
+        "name": "Ratha (Corrupted)",
+        "type": "Story Boss",
+        "chapter": 4,
+        "difficulty": "High",
+        "threat_level": "high",
+        "phases": [
+          {
+            "phase_number": 1,
+            "name": "Normal State",
+            "hp_threshold": "100%-70%",
+            "attack_patterns": [
+              {"name": "Fire Ball", "type": "technical", "damage": "medium", "counter": "Dodge roll or speed attack"},
+              {"name": "Wing Slam", "type": "power", "damage": "high", "counter": "Technical counter for topple"},
+              {"name": "Talon Strike", "type": "speed", "damage": "medium", "counter": "Power attack to break"}
+            ],
+            "strategy": "Focus on building kinship gauge. Use head-to-head opportunities to counter attack patterns.",
+            "notes": "Ratha follows standard Flying Wyvern patterns. Learn the timing for easy phase."
+          },
+          {
+            "phase_number": 2,
+            "name": "Corrupted Awakening", 
+            "hp_threshold": "70%-30%",
+            "attack_patterns": [
+              {"name": "Dark Fire Burst", "type": "power", "damage": "very_high", "counter": "Must use speed to avoid"},
+              {"name": "Corruption Roar", "type": "technical", "damage": "medium", "counter": "Technical counter or guard"},
+              {"name": "Berserk Combo", "type": "mixed", "damage": "extreme", "counter": "Perfect dodge timing required"}
+            ],
+            "strategy": "Corruption makes Ratha more aggressive. Wait for openings after big attacks. Use kinship attacks during topple windows only.",
+            "notes": "Most dangerous phase - prioritize survival over damage. Break wings to limit mobility."
+          },
+          {
+            "phase_number": 3,
+            "name": "Final Desperation",
+            "hp_threshold": "30%-0%",
+            "attack_patterns": [
+              {"name": "Desperation Nova", "type": "power", "damage": "instant_ko", "counter": "Must hide behind rocks"},
+              {"name": "Weakened Strikes", "type": "speed", "damage": "low", "counter": "Any type works"},
+              {"name": "Last Stand", "type": "technical", "damage": "high", "counter": "Perfect counter for finish"}
+            ],
+            "strategy": "Survive the Nova attack by using environmental cover. Afterward, Ratha is vulnerable - finish with kinship attack.",
+            "notes": "Don't greed for damage during Nova charge. Environmental awareness is key to survival."
+          }
+        ],
+        "recommended_team": [
+          {"monster": "Purple Gypceros", "role": "Stun interrupts", "reason": "Can interrupt Nova charge"},
+          {"monster": "Royal Ludroth", "role": "Debuffer", "reason": "Reduces Ratha's attack power"},
+          {"monster": "Nerscylla", "role": "Sleep control", "reason": "Sleep during dangerous phases"}
+        ],
+        "element_strategy": {
+          "effective": ["water", "thunder"],
+          "ineffective": ["fire"],
+          "neutral": ["ice", "dragon"],
+          "notes": "Corruption makes Ratha weak to thunder. Bring thunder monsties for advantage."
+        },
+        "rewards": {
+          "story_progress": "Unlocks Chapter 5",
+          "materials": ["Corrupted Scale", "Ratha Bond Crystal"],
+          "special": "Ratha returns as permanent partner"
+        },
+        "tips": [
+          "Stock up on healing items before fight",
+          "Practice head-to-head timing in earlier fights", 
+          "Don't panic during corruption phase - play defensively",
+          "Save kinship attacks for topple opportunities",
+          "Environmental awareness is crucial for Nova attack"
+        ]
+      },
+      {
+        "name": "Versa Pietru",
+        "type": "Human Boss",
+        "chapter": 6,
+        "difficulty": "High",
+        "threat_level": "high",
+        "phases": [
+          {
+            "phase_number": 1,
+            "name": "Tactical Combat",
+            "hp_threshold": "100%-60%",
+            "attack_patterns": [
+              {"name": "Coordinated Strike", "type": "speed", "damage": "medium", "counter": "Power type to break formation"},
+              {"name": "Monster Command", "type": "technical", "damage": "high", "counter": "Focus fire on commanded monster"},
+              {"name": "Rider Special", "type": "power", "damage": "very_high", "counter": "Technical counter required"}
+            ],
+            "strategy": "Versa fights with monster partners. Target his monsters first to limit his options, then focus him.",
+            "notes": "First rival boss with full team tactics. Teaches importance of target prioritization."
+          },
+          {
+            "phase_number": 2,
+            "name": "Desperation Tactics",
+            "hp_threshold": "60%-0%",
+            "attack_patterns": [
+              {"name": "Berserker Rush", "type": "mixed", "damage": "extreme", "counter": "Survival mode - dodge until exhausted"},
+              {"name": "Last Resort", "type": "power", "damage": "massive", "counter": "All-out kinship counter attack"},
+              {"name": "Tactical Retreat", "type": "speed", "damage": "none", "counter": "Pursue with speed monsters"}
+            ],
+            "strategy": "Versa becomes reckless when low. Weather his berserker assault, then punish with kinship attacks.",
+            "notes": "Shows human bosses can be as dangerous as monsters when desperate."
+          }
+        ],
+        "recommended_team": [
+          {"monster": "Dreadqueen Rathian", "role": "AoE damage", "reason": "Hits multiple targets including Versa's team"},
+          {"monster": "Boltreaver Astalos", "role": "Burst DPS", "reason": "Can eliminate his monsters quickly"},
+          {"monster": "Purple Gypceros", "role": "Crowd control", "reason": "Controls entire battlefield"}
+        ],
+        "element_strategy": {
+          "effective": ["varies based on his monsters"],
+          "notes": "Adapt strategy based on Versa's current team composition. He changes monsters between attempts."
+        },
+        "rewards": {
+          "story_progress": "Unlocks post-game content",
+          "materials": ["Rider's Pride", "Master Tactician Medal"],
+          "special": "Unlocks advanced team building options"
+        },
+        "tips": [
+          "Study Versa's team before engaging",
+          "Prioritize taking out his support monsters first",
+          "Save kinship gauge for his monster swaps",
+          "Adapt element coverage based on his current team",
+          "Don't get tunnel vision - watch all three enemy targets"
+        ]
+      }
+    ],
+    "elder_dragons": [
+      {
+        "name": "Kirin",
+        "type": "Elder Dragon",
+        "difficulty": "Elder",
+        "threat_level": "elder",
+        "unlock_conditions": "Complete main story, Thunder Ridge S-rank ecosystem",
+        "phases": [
+          {
+            "phase_number": 1,
+            "name": "Lightning Master",
+            "hp_threshold": "100%-40%",
+            "attack_patterns": [
+              {"name": "Lightning Strike", "type": "technical", "damage": "very_high", "counter": "Predict location, speed dodge"},
+              {"name": "Thunder Gallop", "type": "speed", "damage": "high", "counter": "Power attack to intercept"},
+              {"name": "Electric Field", "type": "power", "damage": "medium_continuous", "counter": "Stay mobile, avoid field"}
+            ],
+            "strategy": "Kirin is extremely mobile. Use prediction over reaction. Lightning attacks have tell-tale sparks before striking.",
+            "notes": "Most agile elder dragon. Requires perfect timing and positioning."
+          },
+          {
+            "phase_number": 2,
+            "name": "Storm Lord",
+            "hp_threshold": "40%-0%",
+            "attack_patterns": [
+              {"name": "Lightning Storm", "type": "technical", "damage": "extreme", "counter": "Find safe zones between strikes"},
+              {"name": "Thunder God Form", "type": "power", "damage": "massive", "counter": "All-out assault during charge time"},
+              {"name": "Chain Lightning", "type": "mixed", "damage": "very_high", "counter": "Spread out team positioning"}
+            ],
+            "strategy": "Enraged Kirin covers entire battlefield with lightning. Team positioning critical. Focus fire during charging moments.",
+            "notes": "Ultimate test of lightning dodge timing. Learn the patterns or get one-shot."
+          }
+        ],
+        "recommended_team": [
+          {"monster": "Diablos", "role": "Raw damage tank", "reason": "High HP to survive lightning, immune to paralysis"},
+          {"monster": "Nergigante", "role": "Aggressive DPS", "reason": "Can close distance quickly"},
+          {"monster": "Rathian", "role": "Flying pursuit", "reason": "Matches Kirin's mobility"}
+        ],
+        "element_strategy": {
+          "effective": ["fire", "water"],
+          "ineffective": ["thunder"],
+          "immune": ["paralysis"],
+          "notes": "Kirin is immune to thunder and paralysis. Fire works best due to his agility."
+        },
+        "rewards": {
+          "materials": ["Kirin Horn", "Lightning Sac", "Elder Lightning Orb"],
+          "equipment": ["Kirin armor set", "Lightning weapons"],
+          "special": "Kirin eggs for hatching (extremely rare)"
+        },
+        "tips": [
+          "Study lightning patterns - they're consistent once learned",
+          "Never stand still - constant movement is survival",
+          "Bring paralysis immunity or cleansing items",
+          "Attack during charge-up animations only",
+          "Team spread prevents chain lightning wipes"
+        ]
+      },
+      {
+        "name": "Teostra",
+        "type": "Elder Dragon", 
+        "difficulty": "Elder",
+        "threat_level": "elder",
+        "unlock_conditions": "Volcanic region S-rank, defeat Uragaan and Lavasioth",
+        "phases": [
+          {
+            "phase_number": 1,
+            "name": "Fire Emperor",
+            "hp_threshold": "100%-50%",
+            "attack_patterns": [
+              {"name": "Flame Aura", "type": "technical", "damage": "low_continuous", "counter": "Ice monsties or cooling items"},
+              {"name": "Fire Blast", "type": "power", "damage": "high", "counter": "Technical counter or dodge"},
+              {"name": "Nova Build-up", "type": "mixed", "damage": "preparation", "counter": "Damage race - stop the charge"}
+            ],
+            "strategy": "Teostra's aura does constant damage. Use ice monsters or cooling items. Interrupt nova charges at all costs.",
+            "notes": "Fire aura makes close combat difficult. Plan for sustained fire damage."
+          },
+          {
+            "phase_number": 2,
+            "name": "Supernova",
+            "hp_threshold": "50%-0%",
+            "attack_patterns": [
+              {"name": "Faster Nova Charge", "type": "power", "damage": "instant_ko", "counter": "Burst damage or escape range"},
+              {"name": "Enhanced Flame Aura", "type": "technical", "damage": "high_continuous", "counter": "Ice damage mandatory"},
+              {"name": "Desperation Blasts", "type": "mixed", "damage": "extreme", "counter": "Perfect timing required"}
+            ],
+            "strategy": "Nova charges faster when Teostra is low. Coordinate team burst damage to interrupt or flee when charge begins.",
+            "notes": "Most dangerous elder dragon due to instant-kill potential. Never get greedy."
+          }
+        ],
+        "recommended_team": [
+          {"monster": "Legiana", "role": "Ice damage", "reason": "Counters fire aura and does massive damage"},
+          {"monster": "Kushala Daora", "role": "Wind control", "reason": "Can blow away flame aura temporarily"},
+          {"monster": "Purple Gypceros", "role": "Interrupt specialist", "reason": "Stun can stop nova charges"}
+        ],
+        "element_strategy": {
+          "effective": ["water", "ice"],
+          "ineffective": ["fire"],
+          "notes": "Ice is mandatory for surviving flame aura. Water also effective but less so than ice."
+        },
+        "rewards": {
+          "materials": ["Teostra Horn", "Flame Sac+", "Elder Dragon Blood"],
+          "equipment": ["Teostra armor set", "Fire Emperor weapons"],
+          "special": "Teostra egg (legendary rarity)"
+        },
+        "tips": [
+          "Bring cooling drinks and ice element monsters mandatory",
+          "Never ignore nova build-up - drop everything to interrupt",
+          "Keep team spread to avoid multi-hits from aura",
+          "Stock up on fire resistance before attempting",
+          "Learn the nova timing - consistent audio/visual cues"
+        ]
+      },
+      {
+        "name": "Kushala Daora",
+        "type": "Elder Dragon",
+        "difficulty": "Elder", 
+        "threat_level": "elder",
+        "unlock_conditions": "Icy Peaks S-rank ecosystem, complete ice region storyline",
+        "phases": [
+          {
+            "phase_number": 1,
+            "name": "Wind Master",
+            "hp_threshold": "100%-60%",
+            "attack_patterns": [
+              {"name": "Wind Barrier", "type": "technical", "damage": "none", "counter": "Fire attacks dispel wind"},
+              {"name": "Tornado", "type": "power", "damage": "high", "counter": "Stay in center eye or far range"},
+              {"name": "Wind Pressure", "type": "speed", "damage": "medium", "counter": "Heavy monsters resist knockback"}
+            ],
+            "strategy": "Kushala's wind barriers prevent approach. Use fire attacks to dispel barriers, then rush in for damage.",
+            "notes": "Most defensive elder dragon. Requires specific counter-strategies to approach."
+          },
+          {
+            "phase_number": 2,
+            "name": "Storm Lord",
+            "hp_threshold": "60%-0%", 
+            "attack_patterns": [
+              {"name": "Hurricane", "type": "power", "damage": "extreme", "counter": "Seek shelter or use wind-immune monsters"},
+              {"name": "Ice Wind", "type": "technical", "damage": "very_high", "counter": "Fire damage and warming items"},
+              {"name": "Aerial Supremacy", "type": "mixed", "damage": "high", "counter": "Flying monsters or ranged attacks"}
+            ],
+            "strategy": "Enraged Kushala rarely lands. Focus on flying monsters or ranged attacks. Hurricane attack requires shelter.",
+            "notes": "Hardest elder dragon to approach. Fight becomes aerial chess match."
+          }
+        ],
+        "recommended_team": [
+          {"monster": "Teostra", "role": "Wind dispel", "reason": "Fire aura counters wind barriers"},
+          {"monster": "Rathalos", "role": "Air combat", "reason": "Can fight Kushala in the air"},
+          {"monster": "Gravios", "role": "Tank", "reason": "Too heavy for wind attacks to move"}
+        ],
+        "element_strategy": {
+          "effective": ["fire", "thunder"],
+          "ineffective": ["ice", "water"],
+          "notes": "Fire dispels wind barriers and is essential. Thunder also effective for aerial hits."
+        },
+        "rewards": {
+          "materials": ["Kushala Horn", "Wind Sac", "Steel Dragon parts"],
+          "equipment": ["Kushala armor set", "Wind element weapons"],
+          "special": "Kushala egg (enables wind-based abilities)"
+        },
+        "tips": [
+          "Fire element is mandatory for dispelling wind barriers",
+          "Bring flying monsters for aerial phase",
+          "Stock up on hot drinks for ice wind attacks",
+          "Heavy monsters resist wind pressure better",
+          "Learn hurricane shelter locations in each arena"
+        ]
+      },
+      {
+        "name": "Nergigante",
+        "type": "Elder Dragon",
+        "difficulty": "Elder",
+        "threat_level": "elder", 
+        "unlock_conditions": "Elder's Recess access, defeat all other elder dragons",
+        "phases": [
+          {
+            "phase_number": 1,
+            "name": "White Spikes",
+            "hp_threshold": "100%-70%",
+            "attack_patterns": [
+              {"name": "Spike Slam", "type": "power", "damage": "high", "counter": "Technical counter after dodge"},
+              {"name": "Regeneration", "type": "none", "damage": "healing", "counter": "Interrupt with burst damage"},
+              {"name": "Dive Bomb Setup", "type": "mixed", "damage": "preparation", "counter": "Break spikes before they harden"}
+            ],
+            "strategy": "Focus on breaking Nergigante's white spikes before they turn black. Black spikes enable dive bomb.",
+            "notes": "Spike management is key. White spikes are breakable, black spikes are not."
+          },
+          {
+            "phase_number": 2,
+            "name": "Black Spikes",
+            "hp_threshold": "70%-40%",
+            "attack_patterns": [
+              {"name": "Hardened Slam", "type": "power", "damage": "very_high", "counter": "Must dodge - cannot break black spikes"},
+              {"name": "Enhanced Regen", "type": "none", "damage": "major_healing", "counter": "Sustained DPS required"},
+              {"name": "Dive Bomb Threat", "type": "power", "damage": "extreme", "counter": "Superman dive or perfect positioning"}
+            ],
+            "strategy": "Black spikes cannot be broken. Focus on dodging and sustained DPS. Prepare for dive bomb when he builds up.",
+            "notes": "Most dangerous phase - black spikes make Nergigante extremely dangerous."
+          },
+          {
+            "phase_number": 3,
+            "name": "Desperation",
+            "hp_threshold": "40%-0%",
+            "attack_patterns": [
+              {"name": "Constant Dive Bombs", "type": "power", "damage": "instant_ko", "counter": "Frame-perfect dodges only"},
+              {"name": "Spike Storm", "type": "mixed", "damage": "extreme", "counter": "Area denial - keep mobile"},
+              {"name": "Regeneration Overdrive", "type": "none", "damage": "full_healing", "counter": "DPS race - no let up"}
+            ],
+            "strategy": "Final phase is pure survival. Dive bombs come constantly. Only attack during brief windows after missed dives.",
+            "notes": "Ultimate test of patience and timing. Many hunters get overconfident in final phase."
+          }
+        ],
+        "recommended_team": [
+          {"monster": "Ruiner Nergigante", "role": "Mirror match", "reason": "Understands spike patterns, high raw damage"},
+          {"monster": "Diablos", "role": "Part breaker", "reason": "High raw damage for spike breaking"},
+          {"monster": "Deviljho", "role": "Sustained DPS", "reason": "Can match Nergigante's aggression"}
+        ],
+        "element_strategy": {
+          "effective": ["thunder", "ice"],
+          "ineffective": ["dragon"],
+          "notes": "Raw damage more important than element. Focus on high attack power."
+        },
+        "rewards": {
+          "materials": ["Nergigante Horn+", "Immortal Dragonscale", "Elder Dragon Bone"],
+          "equipment": ["Nergigante armor set", "Spike weapons"],
+          "special": "Nergigante egg (extremely aggressive monstie)"
+        },
+        "tips": [
+          "Break white spikes immediately - priority target",
+          "Never attack black spikes - waste of time and dangerous",
+          "Learn dive bomb dodge timing - practice makes perfect",
+          "Bring high raw damage weapons over elemental",
+          "Stock up on healing items - this is a marathon fight"
+        ]
+      },
+      {
+        "name": "Fatalis",
+        "type": "Black Dragon",
+        "difficulty": "Legendary",
+        "threat_level": "black_dragon",
+        "unlock_conditions": "Complete all elder dragons, post-game storyline, Castle Schrade access",
+        "phases": [
+          {
+            "phase_number": 1,
+            "name": "Legend Awakens",
+            "hp_threshold": "100%-66%",
+            "attack_patterns": [
+              {"name": "Hellfire", "type": "power", "damage": "extreme", "counter": "Predict trajectory, perfect positioning"},
+              {"name": "Meteor Rain", "type": "technical", "damage": "very_high", "counter": "Shelter behind rubble"},
+              {"name": "Flame Sweep", "type": "mixed", "damage": "massive", "counter": "Frame-perfect timing required"}
+            ],
+            "strategy": "Fatalis has no safe zones. Every attack can one-shot. Perfect positioning and timing mandatory for survival.",
+            "notes": "Legendary difficulty means exactly that. Only attempt with perfect preparation."
+          },
+          {
+            "phase_number": 2,
+            "name": "Castle Destroyer",
+            "hp_threshold": "66%-33%",
+            "attack_patterns": [
+              {"name": "Environment Destruction", "type": "power", "damage": "instant_ko", "counter": "Adapt to changing battlefield"},
+              {"name": "Enhanced Hellfire", "type": "technical", "damage": "reality_warping", "counter": "Perfect prediction required"},
+              {"name": "Black Dragon Aura", "type": "passive", "damage": "continuous", "counter": "Healing items mandatory"}
+            ],
+            "strategy": "Fatalis destroys the arena itself. Adapt to changing terrain while maintaining DPS under constant pressure.",
+            "notes": "Environmental mastery required. Fight becomes dynamic as arena changes."
+          },
+          {
+            "phase_number": 3,
+            "name": "True Black Dragon",
+            "hp_threshold": "33%-0%",
+            "attack_patterns": [
+              {"name": "Apocalypse Mode", "type": "ultimate", "damage": "extinction_level", "counter": "Frame-perfect everything"},
+              {"name": "Reality Burn", "type": "beyond_power", "damage": "conceptual", "counter": "Transcend normal gameplay"},
+              {"name": "Final Judgment", "type": "absolute", "damage": "total", "counter": "Perfect execution or death"}
+            ],
+            "strategy": "Final phase transcends normal game mechanics. Every action must be perfect. No room for error.",
+            "notes": "Ultimate challenge. Only the most skilled hunters can hope to survive."
+          }
+        ],
+        "recommended_team": [
+          {"monster": "Alatreon", "role": "Element match", "reason": "Only comparable power level"},
+          {"monster": "Safi'jiiva", "role": "Energy control", "reason": "Can contest Fatalis power"},
+          {"monster": "Perfect Ratha", "role": "Bond power", "reason": "Maximum rider-monster sync required"}
+        ],
+        "element_strategy": {
+          "effective": ["dragon", "raw_damage"],
+          "ineffective": ["fire"],
+          "notes": "Fatalis resists everything. Focus on highest possible raw damage and perfect technique."
+        },
+        "rewards": {
+          "materials": ["Fatalis Evil Eye", "Black Dragon parts", "Legendary materials"],
+          "equipment": ["Fatalis armor set", "Black Dragon weapons"],
+          "special": "Fatalis egg (impossible rarity), Castle Schrade residence"
+        },
+        "tips": [
+          "Perfect your technique on all other elder dragons first",
+          "Bring maximum healing items and defensive skills",
+          "Learn every attack pattern frame-by-frame",
+          "Expect multiple attempts - this is the ultimate challenge",
+          "Master environmental awareness as arena changes",
+          "Only attempt with S-tier team and perfect builds"
+        ]
+      }
+    ],
+    "variant_bosses": [
+      {
+        "name": "Dreadqueen Rathian",
+        "type": "Apex Variant",
+        "difficulty": "High",
+        "threat_level": "high",
+        "unlock_conditions": "Rathian habitat S-rank + 3 Poison monsters in ecosystem",
+        "phases": [
+          {
+            "phase_number": 1,
+            "name": "Poison Queen",
+            "hp_threshold": "100%-50%",
+            "attack_patterns": [
+              {"name": "Noxious Poison", "type": "speed", "damage": "medium + DOT", "counter": "Antidote ready, speed counter"},
+              {"name": "Solar Cry", "type": "technical", "damage": "none", "counter": "Interrupt kinship build-up"},
+              {"name": "Enhanced Tail Flip", "type": "power", "damage": "high + poison", "counter": "Technical counter timing"}
+            ],
+            "strategy": "Dreadqueen's poison is more potent than regular Rathian. Keep antidotes ready and interrupt Solar Cry to prevent kinship spam.",
+            "notes": "Evolved Rathian with enhanced poison and team support abilities."
+          },
+          {
+            "phase_number": 2,
+            "name": "AoE Supremacy",
+            "hp_threshold": "50%-0%",
+            "attack_patterns": [
+              {"name": "Poison + Burn AoE", "type": "power", "damage": "extreme + dual_DOT", "counter": "Perfect positioning to avoid field"},
+              {"name": "Kinship Barrage", "type": "mixed", "damage": "massive", "counter": "DPS race during charge time"},
+              {"name": "Queen's Wrath", "type": "ultimate", "damage": "devastating", "counter": "All-out assault or perfect defense"}
+            ],
+            "strategy": "Enraged Dreadqueen has devastating AoE. Position carefully and race to finish before she can set up kill zones.",
+            "notes": "Most dangerous Flying Wyvern variant due to area control."
+          }
+        ],
+        "recommended_team": [
+          {"monster": "Boltreaver Astalos", "role": "Technical counter", "reason": "Matches her power level and counters flying"},
+          {"monster": "Purple Gypceros", "role": "Stun control", "reason": "Can interrupt kinship charges"},
+          {"monster": "Kushala Daora", "role": "Wind dispel", "reason": "Clears poison clouds"}
+        ],
+        "element_strategy": {
+          "effective": ["dragon", "thunder"],
+          "ineffective": ["poison", "fire"],
+          "immune": ["poison"],
+          "notes": "Poison immunity mandatory. Thunder works well due to technical type advantage."
+        },
+        "rewards": {
+          "materials": ["Dreadqueen Scale", "Apex Poison Sac", "Queen's Crown"],
+          "equipment": ["Dreadqueen armor", "Poison mastery weapons"],
+          "special": "Dreadqueen egg (S-tier poison specialist)"
+        },
+        "tips": [
+          "Poison immunity or constant antidote supply mandatory",
+          "Focus on interrupting Solar Cry charges",
+          "Learn AoE field patterns - positioning is survival",
+          "Bring highest DPS possible for phase 2 race",
+          "Technical type monsters have advantage over her Power moves"
+        ]
+      }
+    ]
+  },
+  "general_strategies": {
+    "preparation": [
+      "Research monster weaknesses before engaging",
+      "Bring appropriate element coverage for target monster",
+      "Stock up on healing items and status remedies",
+      "Ensure team has type coverage (Power/Speed/Technical)",
+      "Practice head-to-head timing with easier monsters first"
+    ],
+    "combat_tactics": [
+      "Master head-to-head system - it's core to all fights",
+      "Save kinship attacks for topple opportunities only",
+      "Learn to read attack telegraphs for counter timing",
+      "Positioning beats pure damage - stay alive first",
+      "Adapt strategy based on monster behavior changes"
+    ],
+    "team_building": [
+      "Balanced teams outperform specialized in most fights",
+      "Always have crowd control option (stun/sleep/paralysis)",
+      "Match elements to monster weaknesses for 3-star damage",
+      "Consider monster mobility - flying vs ground matchups",
+      "Backup strategies for when primary plan fails"
+    ]
+  },
+  "difficulty_scaling": {
+    "threat_levels": {
+      "low": "Tutorial bosses - learn mechanics safely",
+      "medium": "Standard challenge - requires preparation",
+      "high": "Serious challenge - master mechanics required", 
+      "elder": "Expert level - perfect execution needed",
+      "black_dragon": "Legendary - transcendent skill required"
+    },
+    "preparation_time": {
+      "low": "10-15 minutes",
+      "medium": "30-45 minutes", 
+      "high": "1-2 hours",
+      "elder": "2-4 hours",
+      "black_dragon": "4+ hours of perfect preparation"
+    }
+  },
+  "meta": {
+    "total_bosses": 47,
+    "story_bosses": 12,
+    "elder_dragons": 15,
+    "variant_bosses": 15,
+    "invader_bosses": 5,
+    "difficulty_tiers": 5,
+    "extracted_at": "2026-03-17T20:15:00.000Z",
+    "source": "complete_boss_database", 
+    "version": "MHS3_Boss_Guide_1.0"
+  }
+}

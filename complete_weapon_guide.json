@@ -1,0 +1,745 @@
+{
+  "weapon_categories": {
+    "swords": {
+      "name": "Sword & Shield",
+      "description": "Balanced weapons with versatile movesets and item usage",
+      "playstyle": "Balanced offense and defense with support capabilities",
+      "best_for": "Beginners and support-focused players"
+    },
+    "great_swords": {
+      "name": "Great Sword", 
+      "description": "Heavy two-handed weapons with devastating charge attacks",
+      "playstyle": "Slow but extremely powerful hits with timing-based gameplay",
+      "best_for": "Players who like timing and maximum damage per hit"
+    },
+    "hammers": {
+      "name": "Hammer",
+      "description": "Blunt weapons specializing in head damage and KO potential",
+      "playstyle": "Mobile power attacks with stunning capabilities",
+      "best_for": "Aggressive players who like stunning enemies"
+    },
+    "hunting_horns": {
+      "name": "Hunting Horn",
+      "description": "Support weapons that provide team buffs through melodies",
+      "playstyle": "Support-focused with team buff management",
+      "best_for": "Team players and support specialists"
+    },
+    "lances": {
+      "name": "Lance",
+      "description": "Defensive weapons with shields and precise thrusting attacks",
+      "playstyle": "Defensive counterattack style with high survivability", 
+      "best_for": "Defensive players who like tanking and countering"
+    },
+    "gun_lances": {
+      "name": "Gunlance",
+      "description": "Hybrid weapons combining lance defense with explosive shells",
+      "playstyle": "Defensive base with explosive finishing attacks",
+      "best_for": "Players who want defense with explosive damage"
+    }
+  },
+  "weapon_trees": {
+    "swords": [
+      {
+        "tree_name": "Iron Sword Line",
+        "weapons": [
+          {
+            "id": "iron_sword",
+            "name": "Iron Sword",
+            "tier": 1,
+            "attack": 65,
+            "element": "none",
+            "element_power": 0,
+            "sharpness": "yellow",
+            "slots": 0,
+            "rarity": 1,
+            "materials": [
+              {"item": "Iron Ore", "quantity": 5},
+              {"item": "Machalite Ore", "quantity": 1}
+            ],
+            "zenny_cost": 750,
+            "description": "Basic iron sword. Reliable starter weapon.",
+            "build_notes": "Early game only, upgrade quickly"
+          },
+          {
+            "id": "steel_sword",
+            "name": "Steel Sword",
+            "tier": 3,
+            "attack": 125,
+            "element": "none",
+            "element_power": 0,
+            "sharpness": "green",
+            "slots": 1,
+            "rarity": 3,
+            "materials": [
+              {"item": "Steel Ingot", "quantity": 3},
+              {"item": "Carbalite Ore", "quantity": 5},
+              {"item": "Monster Bone+", "quantity": 2}
+            ],
+            "zenny_cost": 2500,
+            "description": "Improved steel sword with decoration slot.",
+            "build_notes": "Solid mid-game option with customization"
+          },
+          {
+            "id": "chrome_razor",
+            "name": "Chrome Razor",
+            "tier": 5,
+            "attack": 185,
+            "element": "none",
+            "element_power": 0,
+            "sharpness": "blue",
+            "slots": 2,
+            "rarity": 5,
+            "materials": [
+              {"item": "Chrome Metal", "quantity": 4},
+              {"item": "Fucium Ore", "quantity": 8},
+              {"item": "Monster Hardbone", "quantity": 3}
+            ],
+            "zenny_cost": 8500,
+            "description": "High-quality chrome weapon with excellent sharpness.",
+            "build_notes": "End-game raw damage option with slot flexibility"
+          }
+        ]
+      },
+      {
+        "tree_name": "Rathalos Sword Line",
+        "weapons": [
+          {
+            "id": "rathalos_sword",
+            "name": "Rathalos Edge",
+            "tier": 3,
+            "attack": 115,
+            "element": "fire",
+            "element_power": 24,
+            "sharpness": "green",
+            "slots": 0,
+            "rarity": 3,
+            "materials": [
+              {"item": "Rathalos Scale+", "quantity": 4},
+              {"item": "Rathalos Wing", "quantity": 2},
+              {"item": "Flame Sac", "quantity": 1}
+            ],
+            "zenny_cost": 3200,
+            "description": "Fire-element sword from Rathalos materials.",
+            "build_notes": "Great fire damage for ice-weak monsters"
+          },
+          {
+            "id": "rathalos_sword_plus",
+            "name": "Rathalos Firesword",
+            "tier": 4,
+            "attack": 145,
+            "element": "fire",
+            "element_power": 32,
+            "sharpness": "green",
+            "slots": 1,
+            "rarity": 4,
+            "materials": [
+              {"item": "Rathalos Scale+", "quantity": 6},
+              {"item": "Rathalos Carapace", "quantity": 3},
+              {"item": "Inferno Sac", "quantity": 2}
+            ],
+            "zenny_cost": 5500,
+            "description": "Enhanced Rathalos sword with increased fire power.",
+            "build_notes": "Excellent fire specialist weapon"
+          },
+          {
+            "id": "silver_rathalos_sword",
+            "name": "Silver Sol Edge",
+            "tier": 6,
+            "attack": 205,
+            "element": "fire",
+            "element_power": 45,
+            "sharpness": "white",
+            "slots": 2,
+            "rarity": 6,
+            "materials": [
+              {"item": "Silver Rathalos Scale", "quantity": 5},
+              {"item": "Silver Rathalos Wing", "quantity": 2},
+              {"item": "Silver Flame Sac", "quantity": 3}
+            ],
+            "zenny_cost": 15000,
+            "description": "Ultimate fire sword with white sharpness.",
+            "build_notes": "Top-tier fire weapon with perfect sharpness"
+          }
+        ]
+      },
+      {
+        "tree_name": "Nargacuga Sword Line",
+        "weapons": [
+          {
+            "id": "nargacuga_sword",
+            "name": "Hidden Saber",
+            "tier": 4,
+            "attack": 135,
+            "element": "none",
+            "element_power": 0,
+            "sharpness": "blue",
+            "slots": 0,
+            "rarity": 4,
+            "affinity": 40,
+            "materials": [
+              {"item": "Nargacuga Scale+", "quantity": 4},
+              {"item": "Nargacuga Fang+", "quantity": 2},
+              {"item": "Nargacuga Tail", "quantity": 1}
+            ],
+            "zenny_cost": 6200,
+            "description": "High-affinity sword with natural blue sharpness.",
+            "build_notes": "Critical hit specialist - pair with crit boost skills"
+          },
+          {
+            "id": "nargacuga_sword_final",
+            "name": "Night Eternal",
+            "tier": 6,
+            "attack": 175,
+            "element": "none", 
+            "element_power": 0,
+            "sharpness": "white",
+            "slots": 2,
+            "rarity": 6,
+            "affinity": 50,
+            "materials": [
+              {"item": "Nargacuga Scale+", "quantity": 8},
+              {"item": "Nargacuga Medulla", "quantity": 1},
+              {"item": "Shadowcore Ore", "quantity": 3}
+            ],
+            "zenny_cost": 18500,
+            "description": "Ultimate critical weapon with maximum sharpness.",
+            "build_notes": "Perfect for critical-focused builds - 50% base affinity"
+          }
+        ]
+      }
+    ],
+    "great_swords": [
+      {
+        "tree_name": "Diablos Great Sword Line",
+        "weapons": [
+          {
+            "id": "diablos_gs",
+            "name": "Diablos Crusher",
+            "tier": 4,
+            "attack": 225,
+            "element": "none",
+            "element_power": 0,
+            "sharpness": "green",
+            "slots": 0,
+            "rarity": 4,
+            "affinity": -20,
+            "materials": [
+              {"item": "Diablos Shell", "quantity": 4},
+              {"item": "Diablos Horn", "quantity": 2},
+              {"item": "Diablos Marrow", "quantity": 1}
+            ],
+            "zenny_cost": 7500,
+            "description": "Massive raw damage with negative affinity.",
+            "build_notes": "Raw damage king - offset negative affinity with skills"
+          },
+          {
+            "id": "diablos_gs_final",
+            "name": "Diablos Tyrannis",
+            "tier": 6,
+            "attack": 285,
+            "element": "none",
+            "element_power": 0,
+            "sharpness": "white",
+            "slots": 1,
+            "rarity": 6,
+            "affinity": -25,
+            "materials": [
+              {"item": "Diablos Hardhorn", "quantity": 2},
+              {"item": "Diablos Carapace", "quantity": 6},
+              {"item": "Wyvern Gem", "quantity": 1}
+            ],
+            "zenny_cost": 25000,
+            "description": "Ultimate raw damage great sword.",
+            "build_notes": "Highest raw damage - requires affinity management"
+          }
+        ]
+      },
+      {
+        "tree_name": "Fatalis Great Sword Line", 
+        "weapons": [
+          {
+            "id": "fatalis_gs",
+            "name": "Black Fatalis Blade", 
+            "tier": 7,
+            "attack": 310,
+            "element": "dragon",
+            "element_power": 55,
+            "sharpness": "purple",
+            "slots": 3,
+            "rarity": 7,
+            "affinity": 0,
+            "materials": [
+              {"item": "Fatalis Cortex", "quantity": 3},
+              {"item": "Fatalis Horn", "quantity": 1},
+              {"item": "Fatalis Eye", "quantity": 1}
+            ],
+            "zenny_cost": 50000,
+            "description": "Legendary great sword with purple sharpness.",
+            "build_notes": "Ultimate end-game weapon with perfect stats"
+          }
+        ]
+      }
+    ],
+    "hammers": [
+      {
+        "tree_name": "Diablos Hammer Line",
+        "weapons": [
+          {
+            "id": "diablos_hammer",
+            "name": "Diablos Sledge",
+            "tier": 4,
+            "attack": 215,
+            "element": "none", 
+            "element_power": 0,
+            "sharpness": "green",
+            "slots": 0,
+            "rarity": 4,
+            "affinity": -15,
+            "materials": [
+              {"item": "Diablos Shell", "quantity": 4},
+              {"item": "Diablos Ridge+", "quantity": 3},
+              {"item": "Diablos Marrow", "quantity": 1}
+            ],
+            "zenny_cost": 8200,
+            "description": "Heavy-hitting hammer with KO potential.",
+            "build_notes": "Excellent for head breaking and KO damage"
+          },
+          {
+            "id": "diablos_hammer_final",
+            "name": "Diablos Shatterer",
+            "tier": 6,
+            "attack": 275,
+            "element": "none",
+            "element_power": 0,
+            "sharpness": "blue",
+            "slots": 1,
+            "rarity": 6,
+            "affinity": -20,
+            "materials": [
+              {"item": "Diablos Hardhorn", "quantity": 2},
+              {"item": "Diablos Carapace", "quantity": 5},
+              {"item": "Wyvern Gem", "quantity": 1}
+            ],
+            "zenny_cost": 22000,
+            "description": "Ultimate KO hammer with devastating power.",
+            "build_notes": "Best raw hammer for stunning and part breaking"
+          }
+        ]
+      },
+      {
+        "tree_name": "Zinogre Hammer Line",
+        "weapons": [
+          {
+            "id": "zinogre_hammer",
+            "name": "Usurper's Thunder",
+            "tier": 5,
+            "attack": 195,
+            "element": "thunder",
+            "element_power": 38,
+            "sharpness": "blue",
+            "slots": 1,
+            "rarity": 5,
+            "affinity": 15,
+            "materials": [
+              {"item": "Zinogre Shell+", "quantity": 4},
+              {"item": "Zinogre Horn+", "quantity": 2},
+              {"item": "Thunder Sac", "quantity": 3}
+            ],
+            "zenny_cost": 12500,
+            "description": "Thunder hammer with positive affinity.",
+            "build_notes": "Balanced thunder damage with good critical rate"
+          },
+          {
+            "id": "stygian_zinogre_hammer",
+            "name": "Stygian Acedia",
+            "tier": 6,
+            "attack": 215,
+            "element": "dragon",
+            "element_power": 42,
+            "sharpness": "purple",
+            "slots": 2,
+            "rarity": 6,
+            "affinity": 20,
+            "materials": [
+              {"item": "Stygian Zinogre Horn+", "quantity": 2},
+              {"item": "Stygian Zinogre Shell", "quantity": 5},
+              {"item": "Shadowcore Ore", "quantity": 4}
+            ],
+            "zenny_cost": 28000,
+            "description": "Dark evolution with dragon element and high affinity.", 
+            "build_notes": "Top-tier dragon hammer with excellent critical rate"
+          }
+        ]
+      }
+    ],
+    "hunting_horns": [
+      {
+        "tree_name": "Support Horn Line",
+        "weapons": [
+          {
+            "id": "bone_horn",
+            "name": "Bone Horn",
+            "tier": 1,
+            "attack": 55,
+            "element": "none",
+            "element_power": 0,
+            "sharpness": "green",
+            "slots": 1,
+            "rarity": 1,
+            "melodies": ["Health Boost", "Attack Up Small"],
+            "materials": [
+              {"item": "Monster Bone", "quantity": 3},
+              {"item": "Bone", "quantity": 5}
+            ],
+            "zenny_cost": 600,
+            "description": "Basic support horn with health and attack buffs.",
+            "build_notes": "Essential early game support weapon"
+          },
+          {
+            "id": "fortissimo",
+            "name": "Fortissimo",
+            "tier": 5,
+            "attack": 165,
+            "element": "none",
+            "element_power": 0,
+            "sharpness": "white",
+            "slots": 2,
+            "rarity": 5,
+            "melodies": ["Health Boost Large", "Attack Up Large", "Defense Up Large", "Stamina Use Reduced"],
+            "materials": [
+              {"item": "Elder Dragon Blood", "quantity": 2},
+              {"item": "Harmony Ore", "quantity": 5},
+              {"item": "Monster Hardbone", "quantity": 8}
+            ],
+            "zenny_cost": 18000,
+            "description": "Ultimate support horn with all major buffs.",
+            "build_notes": "Perfect team support weapon with full buff suite"
+          }
+        ]
+      },
+      {
+        "tree_name": "Bazelgeuse Horn Line",
+        "weapons": [
+          {
+            "id": "bazel_horn",
+            "name": "Bazel Valdi Rooksearer",
+            "tier": 5,
+            "attack": 175,
+            "element": "fire",
+            "element_power": 32,
+            "sharpness": "blue",
+            "slots": 1,
+            "rarity": 5,
+            "melodies": ["Attack Up Large", "Explosive Damage Up", "Fire Damage Up"],
+            "materials": [
+              {"item": "Bazelgeuse Scale+", "quantity": 4},
+              {"item": "Bazelgeuse Talon", "quantity": 3},
+              {"item": "Explosive Scale", "quantity": 5}
+            ],
+            "zenny_cost": 15500,
+            "description": "Offensive horn focusing on damage amplification.",
+            "build_notes": "DPS-focused horn for aggressive team compositions"
+          }
+        ]
+      }
+    ],
+    "lances": [
+      {
+        "tree_name": "Defensive Lance Line",
+        "weapons": [
+          {
+            "id": "iron_lance",
+            "name": "Iron Lance",
+            "tier": 1,
+            "attack": 75,
+            "element": "none",
+            "element_power": 0,
+            "sharpness": "yellow",
+            "slots": 0,
+            "rarity": 1,
+            "materials": [
+              {"item": "Iron Ore", "quantity": 4},
+              {"item": "Monster Bone", "quantity": 2}
+            ],
+            "zenny_cost": 800,
+            "description": "Basic defensive lance with reliable guard.",
+            "build_notes": "Starter tank weapon with solid defense"
+          },
+          {
+            "id": "uragaan_lance",
+            "name": "Uragaan Partbreaker",
+            "tier": 5,
+            "attack": 185,
+            "element": "fire",
+            "element_power": 28,
+            "sharpness": "blue",
+            "slots": 1,
+            "rarity": 5,
+            "special": "Guard Up",
+            "materials": [
+              {"item": "Uragaan Scale+", "quantity": 5},
+              {"item": "Uragaan Carapace", "quantity": 3},
+              {"item": "Firecell Stone", "quantity": 4}
+            ],
+            "zenny_cost": 14000,
+            "description": "Ultimate defensive lance with built-in Guard Up.",
+            "build_notes": "Perfect tank weapon - can block normally unblockable attacks"
+          }
+        ]
+      },
+      {
+        "tree_name": "Counter Lance Line",
+        "weapons": [
+          {
+            "id": "nargacuga_lance",
+            "name": "Hidden Stinger",
+            "tier": 4,
+            "attack": 155,
+            "element": "none",
+            "element_power": 0,
+            "sharpness": "blue", 
+            "slots": 1,
+            "rarity": 4,
+            "affinity": 35,
+            "materials": [
+              {"item": "Nargacuga Scale+", "quantity": 5},
+              {"item": "Nargacuga Blade Wing", "quantity": 2},
+              {"item": "Nargacuga Tail", "quantity": 1}
+            ],
+            "zenny_cost": 7800,
+            "description": "Counter-focused lance with high affinity.",
+            "build_notes": "Aggressive lance for counter-attack playstyle"
+          }
+        ]
+      }
+    ],
+    "gun_lances": [
+      {
+        "tree_name": "Royal Burst Line",
+        "weapons": [
+          {
+            "id": "royal_burst",
+            "name": "Royal Burst",
+            "tier": 4,
+            "attack": 165,
+            "element": "none",
+            "element_power": 0,
+            "sharpness": "green",
+            "slots": 0,
+            "rarity": 4,
+            "shelling_type": "Normal Lv4",
+            "materials": [
+              {"item": "Rathian Shell+", "quantity": 4},
+              {"item": "Rathian Spike+", "quantity": 3},
+              {"item": "Gunpowder", "quantity": 10}
+            ],
+            "zenny_cost": 8500,
+            "description": "Balanced gunlance with normal shelling.",
+            "build_notes": "Versatile gunlance good for learning shell timing"
+          },
+          {
+            "id": "raging_brachydios_gl", 
+            "name": "Lightbreak Gunlance",
+            "tier": 6,
+            "attack": 205,
+            "element": "none",
+            "element_power": 0,
+            "sharpness": "purple",
+            "slots": 2,
+            "rarity": 6,
+            "shelling_type": "Normal Lv7",
+            "special": "Blast Buildup",
+            "materials": [
+              {"item": "Raging Brachydios Shell", "quantity": 3},
+              {"item": "Immortal Reactor", "quantity": 1},
+              {"item": "Brachydios Pallium", "quantity": 1}
+            ],
+            "zenny_cost": 35000,
+            "description": "Ultimate explosive gunlance with blast element.",
+            "build_notes": "Top-tier weapon combining shells with blast procs"
+          }
+        ]
+      },
+      {
+        "tree_name": "Wide Shell Line",
+        "weapons": [
+          {
+            "id": "dodogama_gl",
+            "name": "Dodogama Cannon",
+            "tier": 4,
+            "attack": 145,
+            "element": "fire",
+            "element_power": 25,
+            "sharpness": "blue",
+            "slots": 1,
+            "rarity": 4,
+            "shelling_type": "Wide Lv3",
+            "materials": [
+              {"item": "Dodogama Hide+", "quantity": 4},
+              {"item": "Dodogama Jaw", "quantity": 2},
+              {"item": "Monster Keenbone", "quantity": 3}
+            ],
+            "zenny_cost": 6800,
+            "description": "Wide-shelling specialist with fire element.",
+            "build_notes": "Charged shell focused - maximize artillery skills"
+          }
+        ]
+      }
+    ]
+  },
+  "build_guides": {
+    "meta_builds": [
+      {
+        "name": "Raw Damage Speedrun Build",
+        "weapon_type": "great_sword",
+        "recommended_weapons": ["Diablos Tyrannis", "Black Fatalis Blade"],
+        "key_skills": [
+          "Critical Eye 7",
+          "Critical Boost 3", 
+          "Weakness Exploit 3",
+          "Attack Boost 7",
+          "Focus 3"
+        ],
+        "strategy": "Maximize raw damage output with perfect timing. Focus on level 3 charges to monster weak points.",
+        "playstyle": "Hit-and-run with massive damage bursts",
+        "difficulty": "Expert"
+      },
+      {
+        "name": "Element Specialist Build",
+        "weapon_type": "sword",
+        "recommended_weapons": ["Silver Sol Edge", "Kirin Bolt"],
+        "key_skills": [
+          "Element Attack Up 5",
+          "Critical Element",
+          "Weakness Exploit 3", 
+          "Critical Eye 7",
+          "Element Acceleration"
+        ],
+        "strategy": "Exploit elemental weaknesses for consistent high damage. Match element to monster weakness.",
+        "playstyle": "Sustained DPS through elemental advantage",
+        "difficulty": "Intermediate"
+      },
+      {
+        "name": "Support Maestro Build",
+        "weapon_type": "hunting_horn",
+        "recommended_weapons": ["Fortissimo", "Bazel Valdi Rooksearer"],
+        "key_skills": [
+          "Horn Maestro",
+          "Wide-Range 5",
+          "Speed Eating 3",
+          "Free Meal 3",
+          "Mushroomancer 3"
+        ],
+        "strategy": "Maximize team support through buffs and item sharing. Focus on keeping team alive and buffed.",
+        "playstyle": "Team-first support with healing and buffs",
+        "difficulty": "Intermediate"
+      },
+      {
+        "name": "Tank Guardian Build", 
+        "weapon_type": "lance",
+        "recommended_weapons": ["Uragaan Partbreaker", "Fatalis Lance"],
+        "key_skills": [
+          "Guard 5",
+          "Guard Up",
+          "Offensive Guard 3",
+          "Counter-Attack 3",
+          "Health Boost 3"
+        ],
+        "strategy": "Block everything and counter-attack for damage. Perfect blocks trigger offensive guard buffs.",
+        "playstyle": "Defensive wall that counters for damage",
+        "difficulty": "Beginner"
+      },
+      {
+        "name": "Critical Counter Build",
+        "weapon_type": "sword",
+        "recommended_weapons": ["Night Eternal", "Hidden Saber"],
+        "key_skills": [
+          "Critical Eye 7",
+          "Critical Boost 3",
+          "Weakness Exploit 3",
+          "Critical Draw 3",
+          "Speed Sharpening 3"
+        ],
+        "strategy": "High affinity weapons with perfect critical optimization. Every hit should be a critical.",
+        "playstyle": "Surgical precision with maximum critical rate",
+        "difficulty": "Expert"
+      },
+      {
+        "name": "Explosive Artillery Build",
+        "weapon_type": "gun_lance",
+        "recommended_weapons": ["Lightbreak Gunlance", "Fatalis Gunlance"],
+        "key_skills": [
+          "Artillery 5",
+          "Capacity Boost",
+          "Focus 3",
+          "Guard 3",
+          "Load Shells"
+        ],
+        "strategy": "Maximize shell damage and frequency. Guard point into full burst combos.",
+        "playstyle": "Explosive offense with defensive backup",
+        "difficulty": "Intermediate"
+      }
+    ],
+    "progression_guide": {
+      "early_game": {
+        "chapters": "1-3",
+        "recommended_weapons": [
+          {"weapon": "Iron weapons", "reason": "Cheap and available"},
+          {"weapon": "Bone weapons", "reason": "Easy materials, good attack"},
+          {"weapon": "Great Jagras weapons", "reason": "First upgrade path"}
+        ],
+        "key_upgrades": [
+          "Focus on attack power over elements early",
+          "Prioritize sharpness and slot availability", 
+          "Don't invest heavily - these are temporary"
+        ]
+      },
+      "mid_game": {
+        "chapters": "4-6",
+        "recommended_weapons": [
+          {"weapon": "Rathalos weapons", "reason": "Good fire damage and availability"},
+          {"weapon": "Diablos weapons", "reason": "Highest raw damage"},
+          {"weapon": "Nargacuga weapons", "reason": "High affinity and sharpness"}
+        ],
+        "key_upgrades": [
+          "Start specializing in preferred weapon types",
+          "Begin building element-specific weapons",
+          "Focus on skill decoration compatibility"
+        ]
+      },
+      "end_game": {
+        "chapters": "7+",
+        "recommended_weapons": [
+          {"weapon": "Elder Dragon weapons", "reason": "Best stats and unique abilities"},
+          {"weapon": "Fatalis weapons", "reason": "Ultimate end-game performance"},
+          {"weapon": "Kulve Taroth weapons", "reason": "Unique siege rewards"}
+        ],
+        "key_upgrades": [
+          "Perfect builds with optimal skill combinations",
+          "Multiple specialized weapons for different matchups",
+          "Maximum augmentation and customization"
+        ]
+      }
+    }
+  },
+  "crafting_tips": [
+    "Always check material efficiency - some weapons share upgrade materials",
+    "Prioritize weapons that match your monster collection elements", 
+    "Keep multiple element weapons of your preferred type",
+    "Don't sell old weapons - they may be needed for side quests",
+    "Focus on sharpness and slots over pure attack early game",
+    "Element weapons excel against 3+ star weaknesses",
+    "Raw weapons work well against everything but excel at nothing",
+    "Critical builds require high base affinity or significant skill investment",
+    "Support weapons need different skill priorities than DPS weapons"
+  ],
+  "meta": {
+    "total_weapons": 156,
+    "weapon_types": 6,
+    "max_tier": 7,
+    "build_archetypes": 8,
+    "extracted_at": "2026-03-17T20:10:00.000Z",
+    "source": "complete_weapon_database",
+    "version": "MHS3_Weapon_Guide_1.0"
+  }
+}
