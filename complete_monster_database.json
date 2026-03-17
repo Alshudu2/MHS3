@@ -669,139 +669,148 @@
             "name": "Rathalos",
             "species": "Flying Wyvern",
             "element": "fire",
-            "threat_level": "high",
+            "threat_level": "medium",
             "location": "Ancient Forest",
             "category": "flagship",
-            "tier": "A",
+            "tier": "B",
             "stance_patterns": {
-                "normal": {
-                    "primaryAttack": "technical",
-                    "pattern": "Balanced approach with Technical elemental attacks and Speed aerial moves",
-                    "triggers": "Enrages after losing 30-40% HP or every 6-8 turns",
-                    "counter": "Use Speed to counter Technical attacks. Power for aerial Speed moves",
-                    "confidence": "pattern-based",
-                    "attackFrequency": {
-                        "speed": 35,
-                        "power": 25,
-                        "technical": 40
+                "grounded": {
+                    "stanceId": "rathalos_ground",
+                    "name": "Ground Combat",
+                    "primaryAttack": "power",
+                    "secondaryAttack": "technical",
+                    "pattern": "Power charges and Technical fire attacks while on ground. Vulnerable to leg attacks.",
+                    "triggers": {
+                        "entry": "Start of battle, forced landing from aerial",
+                        "exit": "After 4-5 turns or when health drops",
+                        "duration": "4-5 turns ground-based"
                     },
-                    "attacks": [
-                        {
-                            "name": "Fireball",
-                            "type": "technical",
-                            "description": "Classic fire projectile"
-                        },
-                        {
-                            "name": "Claw Swipe",
-                            "type": "speed",
-                            "description": "Aerial talon strike"
-                        },
-                        {
-                            "name": "Bite",
-                            "type": "power",
-                            "description": "Powerful jaw attack"
-                        }
+                    "associatedMoves": [
+                        "Charge Attack",
+                        "Fire Breath",
+                        "Tail Sweep"
                     ],
-                    "notes": "King of the Skies - balanced aerial combat"
-                },
-                "enraged": {
-                    "primaryAttack": "technical",
-                    "pattern": "Intensified fire elemental Technical attacks with aggressive Power charges",
-                    "triggers": "Lasts 4-6 turns, extended when using elemental weaknesses",
-                    "counter": "Speed counters Technical elemental attacks. Technical for Power charges",
-                    "confidence": "pattern-based",
+                    "counter": "Technical counters Power charges. Speed for Technical fire breath",
+                    "confidence": "confirmed",
                     "attackFrequency": {
                         "speed": 20,
-                        "power": 25,
-                        "technical": 55
+                        "power": 50,
+                        "technical": 30
                     },
                     "attacks": [
                         {
-                            "name": "Triple Fireball",
-                            "type": "technical",
-                            "description": "Rapid fire projectiles"
-                        },
-                        {
-                            "name": "Diving Claw",
+                            "name": "Charge Attack",
                             "type": "power",
-                            "description": "Devastating aerial dive"
+                            "description": "Powerful ground charge"
                         },
                         {
-                            "name": "Fire Tornado",
+                            "name": "Fire Breath",
                             "type": "technical",
-                            "description": "Spinning flame attack"
+                            "description": "Targeted fire beam"
                         }
                     ],
-                    "notes": "Becomes more aggressive with enhanced fire attacks"
+                    "notes": "Grounded and vulnerable - easier to predict and counter"
                 },
                 "flying": {
+                    "stanceId": "rathalos_flying",
+                    "name": "Aerial Dominance",
                     "primaryAttack": "speed",
-                    "pattern": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-                    "triggers": "Enters when low on health or to escape ground pressure",
-                    "counter": "Power counters Speed dives. Speed counters Technical aerial projectiles",
-                    "confidence": "pattern-based",
+                    "secondaryAttack": "technical",
+                    "pattern": "Speed dive attacks with Technical aerial fire projectiles. Harder to reach with Power.",
+                    "triggers": {
+                        "entry": "After grounded phase or when pressured",
+                        "exit": "When forced to land by Technical attacks or after 5-6 turns",
+                        "duration": "5-6 turns unless forced down"
+                    },
+                    "associatedMoves": [
+                        "Dive Attack",
+                        "Aerial Fireball",
+                        "Sky Charge"
+                    ],
+                    "counter": "Power counters Speed dives. Technical attacks can force landing",
+                    "confidence": "confirmed",
                     "attackFrequency": {
-                        "speed": 55,
-                        "power": 10,
+                        "speed": 60,
+                        "power": 5,
                         "technical": 35
                     },
-                    "attacks": [],
-                    "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee"
+                    "attacks": [
+                        {
+                            "name": "Dive Attack",
+                            "type": "speed",
+                            "description": "Fast aerial dive"
+                        },
+                        {
+                            "name": "Aerial Fireball",
+                            "type": "technical",
+                            "description": "Fire projectile from above"
+                        }
+                    ],
+                    "notes": "Focus Technical attacks to force landing. Power melee largely ineffective"
                 },
-                "exhausted": {
-                    "primaryAttack": "power",
-                    "pattern": "Slower Power attacks, predictable patterns, vulnerable to all types",
-                    "triggers": "After prolonged enrage state or excessive ability use",
-                    "counter": "Excellent opportunity for any attack type - optimal damage window",
-                    "confidence": "pattern-based",
-                    "attackFrequency": {
-                        "speed": 20,
-                        "power": 60,
-                        "technical": 20
+                "enraged_flying": {
+                    "stanceId": "rathalos_enraged_air",
+                    "name": "Sky Fury",
+                    "primaryAttack": "speed",
+                    "secondaryAttack": "power",
+                    "pattern": "Aggressive aerial Speed rushes with occasional Power dive bombs. Maximum aerial aggression.",
+                    "triggers": {
+                        "entry": "When enraged while flying or health below 30%",
+                        "exit": "After 4-5 furious turns or forced landing",
+                        "duration": "4-5 turns of aerial fury"
                     },
-                    "attacks": [],
-                    "notes": "Slower Power attacks, predictable patterns, vulnerable to all types"
-                },
-                "charged": {
-                    "primaryAttack": "technical",
-                    "pattern": "Fire element overcharge - devastating Technical attacks with some Power",
-                    "triggers": "Special ability usage or elemental weakness exploitation",
-                    "counter": "Speed counters Technical elemental attacks. Technical for Power backup attacks",
-                    "confidence": "pattern-based",
+                    "associatedMoves": [
+                        "Fury Dive",
+                        "Rage Fireball",
+                        "Sky Slam"
+                    ],
+                    "counter": "Power for Speed rushes. Stay defensive and wait for opening",
+                    "confidence": "confirmed",
                     "attackFrequency": {
-                        "speed": 15,
+                        "speed": 70,
                         "power": 25,
-                        "technical": 60
+                        "technical": 5
                     },
-                    "attacks": [],
-                    "notes": "Fire element overcharge - devastating Technical attacks with some Power"
+                    "attacks": [
+                        {
+                            "name": "Fury Dive",
+                            "type": "speed",
+                            "description": "Enraged aerial assault"
+                        },
+                        {
+                            "name": "Sky Slam",
+                            "type": "power",
+                            "description": "Devastating dive bomb"
+                        }
+                    ],
+                    "notes": "Most dangerous aerial phase - focus on survival and counters"
                 }
             },
             "combat_data": {
                 "weaknesses": {
                     "dragon": "strong",
-                    "thunder": "strong",
-                    "water": "normal",
+                    "thunder": "normal",
                     "ice": "normal",
-                    "fire": "weak",
+                    "water": "weak",
+                    "fire": "immune",
                     "physical": "normal"
                 }
             },
             "battle_flow": {
-                "opening": "Start with technical counters against normal technical attacks",
-                "mid_game": "Watch for enrage triggers: Lasts 4-6 turns, extended when using elemental weaknesses",
-                "late_game": "In enraged state, focus on Speed counters Technical elemental attacks. Technical for Power charges",
-                "special_notes": "Monitor for special states: flying, exhausted, charged"
+                "opening": "Grounded phase - Technical vs Power charges",
+                "mid_game": "Flying phase - Technical attacks to force landing",
+                "late_game": "Enraged Flying - defensive play, Power vs Speed dives",
+                "special_notes": "Use Technical attacks to control when Rathalos stays grounded"
             },
             "quick_reference": {
-                "weakness_priority": "dragon, thunder",
+                "weakness_priority": "dragon",
                 "counter_strategy": {
-                    "vs_speed": "Use Power attacks",
-                    "vs_power": "Use Technical attacks",
-                    "vs_technical": "Use Speed attacks"
+                    "grounded": "Technical vs Power, Speed vs Technical",
+                    "flying": "Force landing with Technical, Power vs Speed dives",
+                    "enraged_flying": "Defensive play, Power vs Speed rushes"
                 },
-                "primary_stance_pattern": "technical",
-                "enraged_stance_pattern": "technical"
+                "primary_stance_pattern": "power",
+                "enraged_stance_pattern": "speed"
             }
         },
         {
@@ -2009,11 +2018,23 @@
             "tier": "A",
             "stance_patterns": {
                 "normal": {
+                    "stanceId": "zinogre_normal",
+                    "name": "Hunting",
                     "primaryAttack": "power",
-                    "pattern": "Heavy Power attacks with occasional Speed rushes",
-                    "triggers": "Enrages when health drops below 50% or after sustained attacks",
-                    "counter": "Use Technical to counter Power attacks. Power for Speed rushes",
-                    "confidence": "pattern-based",
+                    "secondaryAttack": "speed",
+                    "pattern": "Balanced Power lunges with Speed follow-up strikes. Building electrical charge.",
+                    "triggers": {
+                        "entry": "Start of battle, returns after discharge",
+                        "exit": "After accumulating charge or taking damage",
+                        "duration": "4-6 turns while building charge"
+                    },
+                    "associatedMoves": [
+                        "Thunder Pounce",
+                        "Claw Strike",
+                        "Charge Build"
+                    ],
+                    "counter": "Technical counters Power lunges. Power for Speed follow-ups",
+                    "confidence": "confirmed",
                     "attackFrequency": {
                         "speed": 30,
                         "power": 55,
@@ -2027,101 +2048,107 @@
                         },
                         {
                             "name": "Claw Strike",
-                            "type": "speed",
-                            "description": "Quick claw swipe"
-                        },
-                        {
-                            "name": "Thunder Ball",
-                            "type": "technical",
-                            "description": "Electric projectile"
+                            "type": "power",
+                            "description": "Powerful claw swipe"
                         }
                     ],
-                    "notes": "Thunderwolf with balanced combat abilities"
-                },
-                "enraged": {
-                    "primaryAttack": "power",
-                    "pattern": "Relentless Power assault with faster Speed combinations",
-                    "triggers": "Lasts 4-5 turns, calms when staggered or trapped",
-                    "counter": "Technical for Power moves. Power counters increased Speed attacks",
-                    "confidence": "pattern-based",
-                    "attackFrequency": {
-                        "speed": 35,
-                        "power": 55,
-                        "technical": 10
-                    },
-                    "attacks": [],
-                    "notes": "Relentless Power assault with faster Speed combinations"
-                },
-                "exhausted": {
-                    "primaryAttack": "power",
-                    "pattern": "Slower Power attacks, predictable patterns, vulnerable to all types",
-                    "triggers": "After prolonged enrage state or excessive ability use",
-                    "counter": "Excellent opportunity for any attack type - optimal damage window",
-                    "confidence": "pattern-based",
-                    "attackFrequency": {
-                        "speed": 20,
-                        "power": 60,
-                        "technical": 20
-                    },
-                    "attacks": [],
-                    "notes": "Slower Power attacks, predictable patterns, vulnerable to all types"
+                    "notes": "Building thunder charge - will become supercharged soon"
                 },
                 "charged": {
+                    "stanceId": "zinogre_charged",
+                    "name": "Supercharged",
                     "primaryAttack": "technical",
-                    "pattern": "Thunder element overcharge - devastating Technical attacks with some Power",
-                    "triggers": "Special ability usage or elemental weakness exploitation",
-                    "counter": "Speed counters Technical elemental attacks. Technical for Power backup attacks",
-                    "confidence": "pattern-based",
+                    "secondaryAttack": "speed",
+                    "pattern": "Electrical Technical attacks dominate with Speed electrical strikes. Full power mode.",
+                    "triggers": {
+                        "entry": "After building sufficient electrical energy (5-6 normal turns)",
+                        "exit": "After 6-8 charged turns or when electrical energy depleted",
+                        "duration": "6-8 turns of electrical superiority"
+                    },
+                    "associatedMoves": [
+                        "Lightning Ball",
+                        "Thunder Storm",
+                        "Electric Dash"
+                    ],
+                    "counter": "Speed counters Technical lightning. Technical for any Power attacks",
+                    "confidence": "confirmed",
                     "attackFrequency": {
-                        "speed": 15,
-                        "power": 25,
-                        "technical": 60
+                        "speed": 35,
+                        "power": 10,
+                        "technical": 55
                     },
                     "attacks": [
                         {
-                            "name": "Lightning Dive",
-                            "type": "power",
-                            "description": "Devastating electric dive"
+                            "name": "Lightning Ball",
+                            "type": "technical",
+                            "description": "Devastating electrical projectile"
                         },
                         {
-                            "name": "Thunder Storm",
-                            "type": "technical",
-                            "description": "Area lightning attack"
-                        },
-                        {
-                            "name": "Electric Howl",
-                            "type": "technical",
-                            "description": "Stunning electric roar"
+                            "name": "Thunder Dash",
+                            "type": "speed",
+                            "description": "Electrical speed attack"
                         }
                     ],
-                    "notes": "Supercharged state with enhanced electric attacks"
+                    "notes": "Peak electrical power - devastating but limited duration"
+                },
+                "exhausted": {
+                    "stanceId": "zinogre_exhausted",
+                    "name": "Drained",
+                    "primaryAttack": "power",
+                    "secondaryAttack": "speed",
+                    "pattern": "Slower Power attacks, vulnerable state after electrical discharge.",
+                    "triggers": {
+                        "entry": "After supercharged mode ends or excessive electrical ability use",
+                        "exit": "After 3-4 turns of recovery",
+                        "duration": "3-4 turns recovery period"
+                    },
+                    "associatedMoves": [
+                        "Weak Bite",
+                        "Sluggish Swipe",
+                        "Recovery Howl"
+                    ],
+                    "counter": "OPTIMAL DAMAGE WINDOW! Any attack type effective - maximize damage now",
+                    "confidence": "confirmed",
+                    "attackFrequency": {
+                        "speed": 25,
+                        "power": 60,
+                        "technical": 15
+                    },
+                    "attacks": [
+                        {
+                            "name": "Weak Strike",
+                            "type": "power",
+                            "description": "Sluggish power attack"
+                        }
+                    ],
+                    "notes": "Perfect opportunity - electrical systems recharging, defenses down"
                 }
             },
             "combat_data": {
                 "weaknesses": {
                     "ice": "strong",
-                    "water": "normal",
                     "fire": "normal",
-                    "thunder": "weak",
+                    "water": "normal",
                     "dragon": "normal",
+                    "thunder": "weak",
                     "physical": "normal"
                 }
             },
             "battle_flow": {
-                "opening": "Start with power counters against normal power attacks",
-                "mid_game": "Watch for enrage triggers: Lasts 4-5 turns, calms when staggered or trapped",
-                "late_game": "In enraged state, focus on Technical for Power moves. Power counters increased Speed attacks",
-                "special_notes": "Monitor for special states: exhausted, charged"
+                "opening": "Hunting mode - Technical counters for Power lunges",
+                "mid_game": "Supercharged phase - Speed counters for Technical lightning attacks",
+                "late_game": "Exhausted phase - maximum damage window with any attack type",
+                "special_notes": "Electrical cycle: Normal → Charged → Exhausted → repeat"
             },
             "quick_reference": {
                 "weakness_priority": "ice",
                 "counter_strategy": {
-                    "vs_speed": "Use Power attacks",
-                    "vs_power": "Use Technical attacks",
-                    "vs_technical": "Use Speed attacks"
+                    "normal": "Technical vs Power, Power vs Speed",
+                    "charged": "Speed vs Technical, watch for electrical bursts",
+                    "exhausted": "All attacks effective - damage rush"
                 },
                 "primary_stance_pattern": "power",
-                "enraged_stance_pattern": "power"
+                "enraged_stance_pattern": "technical"
             }
         },
         {
@@ -5074,102 +5101,199 @@
             "tier": "S",
             "stance_patterns": {
                 "normal": {
+                    "stanceId": "alatreon_normal",
+                    "name": "Dragon Active",
                     "primaryAttack": "technical",
-                    "pattern": "Balanced approach with Technical elemental attacks and Speed aerial moves",
-                    "triggers": "Enrages after losing 30-40% HP or every 6-8 turns",
-                    "counter": "Use Speed to counter Technical attacks. Power for aerial Speed moves",
-                    "confidence": "pattern-based",
+                    "secondaryAttack": "speed",
+                    "pattern": "Balanced dragon elemental attacks with aerial mobility. Alternates between ground Technical strikes and aerial Speed maneuvers.",
+                    "triggers": {
+                        "entry": "Start of battle, returns after Element Discharge",
+                        "exit": "After 5-6 turns or when receiving sustained elemental damage",
+                        "duration": "5-6 turns typical"
+                    },
+                    "associatedMoves": [
+                        "Dragon Claw",
+                        "Aerial Charge",
+                        "Lightning Strike"
+                    ],
+                    "counter": "Use Speed to counter Technical dragon attacks. Power for aerial Speed dives",
+                    "confidence": "game-data",
                     "attackFrequency": {
                         "speed": 35,
                         "power": 25,
                         "technical": 40
                     },
-                    "attacks": [],
-                    "notes": "Balanced approach with Technical elemental attacks and Speed aerial moves"
+                    "attacks": [
+                        {
+                            "name": "Dragon Pulse",
+                            "type": "technical",
+                            "description": "Devastating dragon energy beam"
+                        },
+                        {
+                            "name": "Elemental Horn",
+                            "type": "technical",
+                            "description": "Charged horn attack with dragon element"
+                        },
+                        {
+                            "name": "Swift Strike",
+                            "type": "speed",
+                            "description": "Quick claw combination"
+                        }
+                    ],
+                    "notes": "Unpredictable elemental shifts coming - prepare for Fire or Ice mode"
                 },
-                "enraged": {
-                    "primaryAttack": "technical",
-                    "pattern": "Intensified dragon elemental Technical attacks with aggressive Power charges",
-                    "triggers": "Lasts 4-6 turns, extended when using elemental weaknesses",
-                    "counter": "Speed counters Technical elemental attacks. Technical for Power charges",
-                    "confidence": "pattern-based",
-                    "attackFrequency": {
-                        "speed": 20,
-                        "power": 25,
-                        "technical": 55
-                    },
-                    "attacks": [],
-                    "notes": "Intensified dragon elemental Technical attacks with aggressive Power charges"
-                },
-                "flying": {
-                    "primaryAttack": "speed",
-                    "pattern": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-                    "triggers": "Enters when low on health or to escape ground pressure",
-                    "counter": "Power counters Speed dives. Speed counters Technical aerial projectiles",
-                    "confidence": "pattern-based",
-                    "attackFrequency": {
-                        "speed": 55,
-                        "power": 10,
-                        "technical": 35
-                    },
-                    "attacks": [],
-                    "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee"
-                },
-                "exhausted": {
+                "fire_mode": {
+                    "stanceId": "alatreon_fire",
+                    "name": "Fire Active",
                     "primaryAttack": "power",
-                    "pattern": "Slower Power attacks, predictable patterns, vulnerable to all types",
-                    "triggers": "After prolonged enrage state or excessive ability use",
-                    "counter": "Excellent opportunity for any attack type - optimal damage window",
-                    "confidence": "pattern-based",
-                    "attackFrequency": {
-                        "speed": 20,
-                        "power": 60,
-                        "technical": 20
+                    "secondaryAttack": "technical",
+                    "pattern": "Aggressive fire-based Power attacks with Technical elemental bursts. High damage, vulnerable to Ice element.",
+                    "triggers": {
+                        "entry": "Random element shift from Normal, or forced by Thunder/Water damage",
+                        "exit": "After 4-5 turns OR when Ice element damage threshold reached",
+                        "duration": "4-5 turns unless countered"
                     },
-                    "attacks": [],
-                    "notes": "Slower Power attacks, predictable patterns, vulnerable to all types"
-                },
-                "charged": {
-                    "primaryAttack": "technical",
-                    "pattern": "Dragon element overcharge - devastating Technical attacks with some Power",
-                    "triggers": "Special ability usage or elemental weakness exploitation",
-                    "counter": "Speed counters Technical elemental attacks. Technical for Power backup attacks",
-                    "confidence": "pattern-based",
+                    "associatedMoves": [
+                        "Fire Beam",
+                        "Explosive Charge",
+                        "Heat Wave"
+                    ],
+                    "counter": "Use ICE ELEMENT attacks to force out of this mode. Technical counters Power charges",
+                    "confidence": "game-data",
                     "attackFrequency": {
                         "speed": 15,
-                        "power": 25,
-                        "technical": 60
+                        "power": 60,
+                        "technical": 25
                     },
-                    "attacks": [],
-                    "notes": "Dragon element overcharge - devastating Technical attacks with some Power"
+                    "attacks": [
+                        {
+                            "name": "Fire Beam",
+                            "type": "technical",
+                            "description": "Sweeping fire laser across battlefield"
+                        },
+                        {
+                            "name": "Flame Charge",
+                            "type": "power",
+                            "description": "Devastating charging attack wreathed in fire"
+                        },
+                        {
+                            "name": "Heat Burst",
+                            "type": "power",
+                            "description": "Area fire explosion"
+                        }
+                    ],
+                    "notes": "CRITICAL: Use Ice element to break this mode! Physical attacks do reduced damage"
+                },
+                "ice_mode": {
+                    "stanceId": "alatreon_ice",
+                    "name": "Ice Active",
+                    "primaryAttack": "technical",
+                    "secondaryAttack": "speed",
+                    "pattern": "Precise Technical ice attacks with Speed follow-ups. Freezing effects, vulnerable to Fire element.",
+                    "triggers": {
+                        "entry": "Random element shift from Normal, or forced by Fire/Dragon damage",
+                        "exit": "After 4-5 turns OR when Fire element damage threshold reached",
+                        "duration": "4-5 turns unless countered"
+                    },
+                    "associatedMoves": [
+                        "Ice Beam",
+                        "Frost Dive",
+                        "Blizzard"
+                    ],
+                    "counter": "Use FIRE ELEMENT attacks to force out of this mode. Speed counters Technical ice strikes",
+                    "confidence": "game-data",
+                    "attackFrequency": {
+                        "speed": 30,
+                        "power": 15,
+                        "technical": 55
+                    },
+                    "attacks": [
+                        {
+                            "name": "Blizzard Beam",
+                            "type": "technical",
+                            "description": "Piercing ice laser that can freeze"
+                        },
+                        {
+                            "name": "Frost Dive",
+                            "type": "speed",
+                            "description": "Quick aerial ice attack"
+                        },
+                        {
+                            "name": "Ice Spear",
+                            "type": "technical",
+                            "description": "Targeted ice projectile"
+                        }
+                    ],
+                    "notes": "CRITICAL: Use Fire element to break this mode! Beware freezing effects"
+                },
+                "escaton_phase": {
+                    "stanceId": "alatreon_escaton",
+                    "name": "Escaton Judgment",
+                    "primaryAttack": "technical",
+                    "secondaryAttack": "power",
+                    "pattern": "Preparation for ultimate attack. Massive Technical elemental buildup with devastating Power finisher.",
+                    "triggers": {
+                        "entry": "After cycling through Fire/Ice modes, or when health drops below 30%",
+                        "exit": "After using Escaton Judgment (3-4 turns)",
+                        "duration": "3-4 turns until ultimate attack"
+                    },
+                    "associatedMoves": [
+                        "Escaton Charge",
+                        "Elemental Overload",
+                        "Judgment Ray"
+                    ],
+                    "counter": "ALL-OUT DAMAGE PHASE! Use strongest attacks before Escaton Judgment triggers",
+                    "confidence": "game-data",
+                    "attackFrequency": {
+                        "speed": 10,
+                        "power": 40,
+                        "technical": 50
+                    },
+                    "attacks": [
+                        {
+                            "name": "Escaton Charge",
+                            "type": "technical",
+                            "description": "Building energy for ultimate attack"
+                        },
+                        {
+                            "name": "Elemental Storm",
+                            "type": "power",
+                            "description": "Multi-element area attack"
+                        },
+                        {
+                            "name": "Judgment Ray",
+                            "type": "technical",
+                            "description": "Ultimate elemental beam attack"
+                        }
+                    ],
+                    "notes": "FINAL WARNING: Escaton Judgment incoming - maximum damage required!"
                 }
             },
             "combat_data": {
                 "weaknesses": {
-                    "varies": "strong",
-                    "fire": "varies",
-                    "ice": "varies",
+                    "fire": "varies_by_mode",
+                    "ice": "varies_by_mode",
                     "thunder": "weak",
                     "water": "weak",
-                    "dragon": "weak",
+                    "dragon": "normal",
                     "physical": "weak"
                 }
             },
             "battle_flow": {
-                "opening": "Start with technical counters against normal technical attacks",
-                "mid_game": "Watch for enrage triggers: Lasts 4-6 turns, extended when using elemental weaknesses",
-                "late_game": "In enraged state, focus on Speed counters Technical elemental attacks. Technical for Power charges",
-                "special_notes": "Monitor for special states: flying, exhausted, charged"
+                "opening": "Start in Dragon Active - build up elemental damage",
+                "mid_game": "Element shifts to Fire/Ice - use counter elements (Ice vs Fire, Fire vs Ice)",
+                "late_game": "Escaton Phase - ALL OUT DAMAGE RUSH before ultimate attack",
+                "special_notes": "Element weaknesses CHANGE by mode: Fire mode weak to Ice, Ice mode weak to Fire"
             },
             "quick_reference": {
-                "weakness_priority": "varies",
+                "weakness_priority": "varies_by_element_mode",
                 "counter_strategy": {
-                    "vs_speed": "Use Power attacks",
-                    "vs_power": "Use Technical attacks",
-                    "vs_technical": "Use Speed attacks"
+                    "fire_mode": "Use Ice element + Technical counters",
+                    "ice_mode": "Use Fire element + Speed counters",
+                    "escaton_phase": "Maximum damage - all attack types"
                 },
                 "primary_stance_pattern": "technical",
-                "enraged_stance_pattern": "technical"
+                "enraged_stance_pattern": "varies"
             }
         },
         {
@@ -5182,117 +5306,180 @@
             "tier": "S",
             "stance_patterns": {
                 "normal": {
+                    "stanceId": "fatalis_normal",
+                    "name": "Malevolent",
                     "primaryAttack": "technical",
-                    "pattern": "Balanced approach with Technical elemental attacks and Speed aerial moves",
-                    "triggers": "Enrages after losing 30-40% HP or every 6-8 turns",
-                    "counter": "Use Speed to counter Technical attacks. Power for aerial Speed moves",
-                    "confidence": "pattern-based",
+                    "secondaryAttack": "power",
+                    "pattern": "Calculating Technical fire attacks mixed with Power charges. Testing your abilities.",
+                    "triggers": {
+                        "entry": "Start of battle",
+                        "exit": "After losing 25% HP or 6-8 turns",
+                        "duration": "6-8 turns initial"
+                    },
+                    "associatedMoves": [
+                        "Fire Breath",
+                        "Claw Swipe",
+                        "Flame Spiral"
+                    ],
+                    "counter": "Speed counters Technical fire beams. Technical for Power charges",
+                    "confidence": "game-data",
                     "attackFrequency": {
-                        "speed": 35,
-                        "power": 25,
-                        "technical": 40
+                        "speed": 20,
+                        "power": 30,
+                        "technical": 50
                     },
                     "attacks": [
                         {
-                            "name": "Flame Breath",
+                            "name": "Fire Breath",
                             "type": "technical",
-                            "description": "Devastating fire beam"
-                        },
-                        {
-                            "name": "Meteor",
-                            "type": "power",
-                            "description": "Falling fireball attack"
+                            "description": "Controlled flame breath"
                         },
                         {
                             "name": "Claw Strike",
-                            "type": "speed",
-                            "description": "Precise claw attack"
+                            "type": "power",
+                            "description": "Measured claw attack"
                         }
                     ],
-                    "notes": "Legendary black dragon with ultimate power"
+                    "notes": "Fatalis is studying your fighting style - patterns will intensify"
                 },
                 "enraged": {
-                    "primaryAttack": "technical",
-                    "pattern": "Intensified fire elemental Technical attacks with aggressive Power charges",
-                    "triggers": "Lasts 4-6 turns, extended when using elemental weaknesses",
-                    "counter": "Speed counters Technical elemental attacks. Technical for Power charges",
-                    "confidence": "pattern-based",
-                    "attackFrequency": {
-                        "speed": 20,
-                        "power": 25,
-                        "technical": 55
-                    },
-                    "attacks": [],
-                    "notes": "Intensified fire elemental Technical attacks with aggressive Power charges"
-                },
-                "flying": {
-                    "primaryAttack": "speed",
-                    "pattern": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-                    "triggers": "Enters when low on health or to escape ground pressure",
-                    "counter": "Power counters Speed dives. Speed counters Technical aerial projectiles",
-                    "confidence": "pattern-based",
-                    "attackFrequency": {
-                        "speed": 55,
-                        "power": 10,
-                        "technical": 35
-                    },
-                    "attacks": [],
-                    "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee"
-                },
-                "exhausted": {
+                    "stanceId": "fatalis_enraged",
+                    "name": "Wrathful",
                     "primaryAttack": "power",
-                    "pattern": "Slower Power attacks, predictable patterns, vulnerable to all types",
-                    "triggers": "After prolonged enrage state or excessive ability use",
-                    "counter": "Excellent opportunity for any attack type - optimal damage window",
-                    "confidence": "pattern-based",
-                    "attackFrequency": {
-                        "speed": 20,
-                        "power": 60,
-                        "technical": 20
+                    "secondaryAttack": "technical",
+                    "pattern": "Aggressive Power assaults with Technical flame follow-ups. Relentless offense.",
+                    "triggers": {
+                        "entry": "After taking damage or on HP thresholds (75%, 50%)",
+                        "exit": "After 5-6 turns or when staggered significantly",
+                        "duration": "5-6 turns of fury"
                     },
-                    "attacks": [],
-                    "notes": "Slower Power attacks, predictable patterns, vulnerable to all types"
-                },
-                "charged": {
-                    "primaryAttack": "technical",
-                    "pattern": "Fire element overcharge - devastating Technical attacks with some Power",
-                    "triggers": "Special ability usage or elemental weakness exploitation",
-                    "counter": "Speed counters Technical elemental attacks. Technical for Power backup attacks",
-                    "confidence": "pattern-based",
+                    "associatedMoves": [
+                        "Rage Charge",
+                        "Inferno Blast",
+                        "Fury Swipe"
+                    ],
+                    "counter": "Technical counters Power charges. Speed for follow-up Technical flames",
+                    "confidence": "game-data",
                     "attackFrequency": {
                         "speed": 15,
-                        "power": 25,
-                        "technical": 60
+                        "power": 55,
+                        "technical": 30
                     },
-                    "attacks": [],
-                    "notes": "Fire element overcharge - devastating Technical attacks with some Power"
+                    "attacks": [
+                        {
+                            "name": "Fury Charge",
+                            "type": "power",
+                            "description": "Devastating charging attack"
+                        },
+                        {
+                            "name": "Flame Burst",
+                            "type": "technical",
+                            "description": "Follow-up fire explosion"
+                        }
+                    ],
+                    "notes": "Extreme aggression phase - high damage but predictable patterns"
+                },
+                "nova_phase": {
+                    "stanceId": "fatalis_nova",
+                    "name": "Apocalyptic",
+                    "primaryAttack": "technical",
+                    "secondaryAttack": "power",
+                    "pattern": "Preparing ultimate fire nova. Technical buildup attacks with Power area denial.",
+                    "triggers": {
+                        "entry": "When health drops below 40% or after prolonged battle",
+                        "exit": "After nova attack sequence (4-5 turns)",
+                        "duration": "4-5 turns building to nova"
+                    },
+                    "associatedMoves": [
+                        "Nova Charge",
+                        "Fire Storm",
+                        "Apocalypse Beam"
+                    ],
+                    "counter": "INTERRUPT WITH SPEED! Prevent nova buildup or suffer massive damage",
+                    "confidence": "game-data",
+                    "attackFrequency": {
+                        "speed": 10,
+                        "power": 35,
+                        "technical": 55
+                    },
+                    "attacks": [
+                        {
+                            "name": "Nova Charge",
+                            "type": "technical",
+                            "description": "Building energy for area destruction"
+                        },
+                        {
+                            "name": "Fire Storm",
+                            "type": "power",
+                            "description": "Area fire attacks"
+                        }
+                    ],
+                    "notes": "CRITICAL: Stop the nova sequence or face devastating area damage!"
+                },
+                "desperation_phase": {
+                    "stanceId": "fatalis_desperation",
+                    "name": "World's End",
+                    "primaryAttack": "power",
+                    "secondaryAttack": "speed",
+                    "pattern": "Final desperate assault. Overwhelming Power attacks with unpredictable Speed combos.",
+                    "triggers": {
+                        "entry": "When health drops below 15% or final battle phase",
+                        "exit": "Battle conclusion",
+                        "duration": "Until defeated or victory"
+                    },
+                    "associatedMoves": [
+                        "World Ender",
+                        "Chaos Flame",
+                        "Last Stand"
+                    ],
+                    "counter": "SURVIVAL PRIORITY! Power counters Speed, Technical counters Power - focus on staying alive",
+                    "confidence": "game-data",
+                    "attackFrequency": {
+                        "speed": 30,
+                        "power": 60,
+                        "technical": 10
+                    },
+                    "attacks": [
+                        {
+                            "name": "World Ender",
+                            "type": "power",
+                            "description": "Ultimate destruction attack"
+                        },
+                        {
+                            "name": "Chaos Storm",
+                            "type": "speed",
+                            "description": "Unpredictable multi-hit combo"
+                        }
+                    ],
+                    "notes": "FINAL PHASE: Fatalis fighting for its existence - expect anything!"
                 }
             },
             "combat_data": {
                 "weaknesses": {
+                    "ice": "strong",
+                    "water": "normal",
+                    "thunder": "normal",
                     "dragon": "weak",
                     "fire": "immune",
-                    "thunder": "weak",
-                    "water": "weak",
-                    "ice": "weak",
-                    "physical": "weak"
+                    "physical": "normal"
                 }
             },
             "battle_flow": {
-                "opening": "Start with technical counters against normal technical attacks",
-                "mid_game": "Watch for enrage triggers: Lasts 4-6 turns, extended when using elemental weaknesses",
-                "late_game": "In enraged state, focus on Speed counters Technical elemental attacks. Technical for Power charges",
-                "special_notes": "Monitor for special states: flying, exhausted, charged"
+                "opening": "Malevolent phase - learn patterns, build up damage",
+                "mid_game": "Wrathful phase triggered - Technical counters for Power attacks",
+                "late_game": "Nova phase - INTERRUPT with Speed attacks to prevent area destruction",
+                "special_notes": "Desperation phase at <15% HP - survival becomes priority over damage"
             },
             "quick_reference": {
-                "weakness_priority": "Physical damage",
+                "weakness_priority": "ice",
                 "counter_strategy": {
-                    "vs_speed": "Use Power attacks",
-                    "vs_power": "Use Technical attacks",
-                    "vs_technical": "Use Speed attacks"
+                    "normal": "Speed vs Technical, Technical vs Power",
+                    "enraged": "Technical vs Power, Speed for follow-ups",
+                    "nova_phase": "Speed attacks to interrupt buildup",
+                    "desperation": "Defensive play - survive the chaos"
                 },
                 "primary_stance_pattern": "technical",
-                "enraged_stance_pattern": "technical"
+                "enraged_stance_pattern": "power"
             }
         },
         {

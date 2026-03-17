@@ -650,6 +650,22 @@
             font-weight: 600;
             margin-bottom: var(--spacing-sm);
             color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .card-stance-count {
+            background: var(--accent-color);
+            color: white;
+            padding: 2px 6px;
+            border-radius: var(--border-radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            flex-shrink: 0;
         }
 
         .attack-patterns {
@@ -1825,7 +1841,14 @@
                         </div>
 
                         <div class="combat-preview">
-                            <div class="combat-title">Battle Strategy</div>
+                            <div class="combat-title">
+                                Battle Strategy
+                                ${monster.stance_patterns ? `
+                                    <span class="card-stance-count">
+                                        ${Object.keys(monster.stance_patterns).length} ${Object.keys(monster.stance_patterns).length === 1 ? 'Stance' : 'Stances'}
+                                    </span>
+                                ` : ''}
+                            </div>
                             <div class="stance-summary">
                                 ${monster.quick_reference ? `
                                     <div class="stance-info">
@@ -1880,6 +1903,44 @@
                 return level.charAt(0).toUpperCase() + level.slice(1);
             }
 
+            getStanceCompleteness(monster) {
+                if (!monster.stance_patterns) return 'estimated';
+                
+                // Check if all stances have confirmed data
+                const stances = Object.values(monster.stance_patterns);
+                const allConfirmed = stances.every(stance => 
+                    stance.confidence === 'confirmed' && 
+                    stance.attacks && 
+                    stance.attacks.length > 0 &&
+                    stance.pattern
+                );
+                
+                if (allConfirmed) return 'complete';
+                
+                // Check if we have basic stance structure
+                const hasBasicData = stances.some(stance => 
+                    stance.primaryAttack && stance.pattern
+                );
+                
+                return hasBasicData ? 'partial' : 'estimated';
+            }
+
+            getCompletenessLabel(monster) {
+                const completeness = this.getStanceCompleteness(monster);
+                const stanceCount = monster.stance_patterns ? Object.keys(monster.stance_patterns).length : 0;
+                
+                switch(completeness) {
+                    case 'complete':
+                        return stanceCount === 2 ? '✅ Complete Analysis' : `✅ Complete: ${stanceCount} Phases`;
+                    case 'partial':
+                        return '⚠️ Partial Data';
+                    case 'estimated':
+                        return '📊 Estimated';
+                    default:
+                        return '📊 Analyzed';
+                }
+            }
+
             showMonsterDetails(monsterName) {
                 const monster = this.data.monsters.find(m => m.name === monsterName);
                 if (!monster) return;
@@ -1919,12 +1980,80 @@
                 });
             }
 
+            createStanceFlow(monster) {
+                if (!monster.stance_patterns) return '';
+                
+                const stances = Object.entries(monster.stance_patterns);
+                const stanceCount = stances.length;
+                
+                if (stanceCount <= 2) return '';
+                
+                // Special flow patterns for specific monsters
+                const flowPatterns = {
+                    'Alatreon': ['normal', 'fire_mode', 'ice_mode', 'escaton_phase'],
+                    'Fatalis': ['normal', 'enraged', 'nova_phase', 'desperation_phase'],
+                    'Zinogre': ['normal', 'charged', 'exhausted'],
+                    'Rathalos': ['grounded', 'flying', 'enraged_flying']
+                };
+                
+                const stanceNames = flowPatterns[monster.name] || Object.keys(monster.stance_patterns);
+                
+                return `
+                    <div class="flow-container">
+                        <div class="flow-title">Multi-Phase Combat Flow (${stanceCount} Stances)</div>
+                        <div class="flow-chain">
+                            ${stanceNames.map((stanceName, index) => {
+                                const stance = monster.stance_patterns[stanceName];
+                                if (!stance) return '';
+                                
+                                return `
+                                    <div class="flow-step">
+                                        <div class="step-number">${index + 1}</div>
+                                        <div class="step-content">
+                                            <div class="step-name">${stance.name || stanceName.charAt(0).toUpperCase() + stanceName.slice(1)}</div>
+                                            <div class="step-pattern pattern-${stance.primaryAttack}">
+                                                ${stance.primaryAttack.toUpperCase()}
+                                            </div>
+                                            <div class="step-trigger">${stance.triggers?.entry || stance.triggers || 'Auto progression'}</div>
+                                        </div>
+                                        ${index < stanceNames.length - 1 ? '<div class="flow-arrow">→</div>' : ''}
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                        <div class="flow-note">
+                            <strong>Combat Tip:</strong> ${this.getFlowTip(monster)}
+                        </div>
+                    </div>
+                `;
+            }
+
+            getFlowTip(monster) {
+                const tips = {
+                    'Alatreon': 'Use counter elements (Ice vs Fire Mode, Fire vs Ice Mode) to control elemental shifts!',
+                    'Fatalis': 'Interrupt Nova Phase with Speed attacks to prevent devastating area damage!',
+                    'Zinogre': 'Attack aggressively during Exhausted phase - maximum damage window!',
+                    'Rathalos': 'Force grounding with Technical attacks when flying!'
+                };
+                
+                const stanceCount = Object.keys(monster.stance_patterns).length;
+                return tips[monster.name] || `Complex ${stanceCount}-phase battle - adapt your strategy for each stance!`;
+            }
+
             createMonsterDetailsContent(monster) {
                 return `
                     <div class="monster-details">
                         <!-- Quick Reference Section -->
                         <div class="detail-section quick-reference-section">
-                            <h3>🎯 Quick Reference</h3>
+                            <div class="quick-ref-header">
+                                <h3>🎯 Quick Reference</h3>
+                                ${monster.stance_patterns ? `
+                                    <div class="quick-ref-stance-info">
+                                        <span class="quick-stance-count">${Object.keys(monster.stance_patterns).length} Combat ${Object.keys(monster.stance_patterns).length === 1 ? 'Stance' : 'Stances'}</span>
+                                        <span class="quick-completeness ${this.getStanceCompleteness(monster)}">${this.getCompletenessLabel(monster)}</span>
+                                    </div>
+                                ` : ''}
+                            </div>
                             <div class="quick-ref-grid">
                                 <div class="quick-ref-item">
                                     <strong>Primary Pattern:</strong>
@@ -1970,15 +2099,34 @@
                         <!-- Stances & Behavior Tabbed Section -->
                         ${monster.stance_patterns ? `
                             <div class="detail-section stance-behavior-section">
-                                <h3>🛡️ Stances & Behavior</h3>
+                                <div class="stance-header-with-count">
+                                    <h3>🛡️ Stances & Behavior</h3>
+                                    <div class="stance-count-indicators">
+                                        <div class="stance-count-badge">
+                                            ${Object.keys(monster.stance_patterns).length} Combat ${Object.keys(monster.stance_patterns).length === 1 ? 'Stance' : 'Stances'}
+                                        </div>
+                                        <div class="completeness-badge ${this.getStanceCompleteness(monster)}">
+                                            ${this.getCompletenessLabel(monster)}
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="stance-tabs">
                                     ${Object.entries(monster.stance_patterns).map(([stance, data], index) => `
                                         <button class="stance-tab ${index === 0 ? 'active' : ''}" data-stance="${stance}">
-                                            ${stance.charAt(0).toUpperCase() + stance.slice(1)}
-                                            <span class="stance-indicator pattern-${data.primaryAttack}">${data.primaryAttack.charAt(0).toUpperCase()}</span>
+                                            <div class="tab-content">
+                                                <span class="tab-name">${data.name || stance.charAt(0).toUpperCase() + stance.slice(1)}</span>
+                                                <span class="stance-indicator pattern-${data.primaryAttack}">${data.primaryAttack.charAt(0).toUpperCase()}</span>
+                                                ${data.stanceId ? `<span class="stance-order">${index + 1}</span>` : ''}
+                                            </div>
                                         </button>
                                     `).join('')}
                                 </div>
+                                ${Object.keys(monster.stance_patterns).length > 2 ? `
+                                    <div class="stance-complexity-badge">
+                                        <span class="complexity-icon">🎯</span>
+                                        <span class="complexity-text">Complex ${Object.keys(monster.stance_patterns).length}-Phase Monster</span>
+                                    </div>
+                                ` : ''}
                                 
                                 <div class="stance-content">
                                     ${Object.entries(monster.stance_patterns).map(([stance, data], index) => `
@@ -2015,10 +2163,18 @@
                                                 <p class="counter-advice">${data.counter}</p>
                                             </div>
 
-                                            <!-- Triggers -->
+                                            <!-- Enhanced Triggers -->
                                             <div class="triggers-info">
-                                                <h5>🔄 Triggers:</h5>
-                                                <p class="trigger-details">${data.triggers}</p>
+                                                <h5>🔄 Stance Triggers:</h5>
+                                                ${typeof data.triggers === 'object' ? `
+                                                    <div class="trigger-breakdown">
+                                                        ${data.triggers.entry ? `<div class="trigger-item"><strong>Entry:</strong> ${data.triggers.entry}</div>` : ''}
+                                                        ${data.triggers.exit ? `<div class="trigger-item"><strong>Exit:</strong> ${data.triggers.exit}</div>` : ''}
+                                                        ${data.triggers.duration ? `<div class="trigger-item"><strong>Duration:</strong> ${data.triggers.duration}</div>` : ''}
+                                                    </div>
+                                                ` : `
+                                                    <p class="trigger-details">${data.triggers}</p>
+                                                `}
                                             </div>
 
                                             <!-- Specific Attacks -->
@@ -2039,6 +2195,16 @@
                                             ` : ''}
                                         </div>
                                     `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+
+                        <!-- Stance Progression Flow -->
+                        ${monster.stance_patterns && Object.keys(monster.stance_patterns).length > 2 ? `
+                            <div class="detail-section stance-flow-section">
+                                <h3>🔄 Stance Progression</h3>
+                                <div class="stance-progression">
+                                    ${this.createStanceFlow(monster)}
                                 </div>
                             </div>
                         ` : ''}
@@ -2290,6 +2456,134 @@
 
         /* ===== ENHANCED STANCE SYSTEM CSS ===== */
         
+        /* Stance Progression Flow */
+        .stance-flow-section {
+            background: linear-gradient(135deg, var(--tertiary-bg), var(--secondary-bg));
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .flow-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .flow-chain {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background: var(--primary-bg);
+            border-radius: var(--border-radius);
+        }
+
+        .flow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-xs);
+            min-width: 120px;
+            position: relative;
+        }
+
+        .step-number {
+            background: var(--accent-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .step-content {
+            text-align: center;
+            flex: 1;
+        }
+
+        .step-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.9em;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .step-pattern {
+            padding: 4px 8px;
+            border-radius: var(--border-radius);
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .step-pattern.pattern-speed { 
+            background: #4dabf7; 
+            color: #0c4a6e; 
+        }
+        .step-pattern.pattern-power { 
+            background: #ff6b6b; 
+            color: #7f1d1d; 
+        }
+        .step-pattern.pattern-technical { 
+            background: #ffd43b; 
+            color: #78350f; 
+        }
+
+        .step-trigger {
+            font-size: 0.75em;
+            color: var(--text-secondary);
+            max-width: 100px;
+            line-height: 1.2;
+        }
+
+        .flow-arrow {
+            color: var(--accent-color);
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 var(--spacing-sm);
+        }
+
+        .flow-note {
+            background: rgba(233, 69, 96, 0.1);
+            border: 1px solid var(--accent-color);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-sm);
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        /* Mobile responsiveness for flow */
+        @media (max-width: 768px) {
+            .flow-chain {
+                flex-direction: column;
+            }
+            
+            .flow-arrow {
+                transform: rotate(90deg);
+                margin: var(--spacing-xs) 0;
+            }
+            
+            .step-trigger {
+                max-width: none;
+            }
+        }
+
         /* Quick Reference Section */
         .quick-reference-section {
             background: linear-gradient(135deg, var(--tertiary-bg) 0%, var(--secondary-bg) 100%);
@@ -2297,6 +2591,58 @@
             border-radius: var(--border-radius-lg);
             padding: var(--spacing-lg);
             margin-bottom: var(--spacing-lg);
+        }
+
+        .quick-ref-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-md);
+            gap: var(--spacing-md);
+        }
+
+        .quick-ref-stance-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+            align-items: flex-end;
+        }
+
+        .quick-stance-count {
+            background: var(--accent-color);
+            color: white;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .quick-completeness {
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius);
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+            border: 1px solid;
+        }
+
+        .quick-completeness.complete {
+            background: rgba(35, 134, 54, 0.2);
+            color: var(--success-color);
+            border-color: var(--success-color);
+        }
+
+        .quick-completeness.partial {
+            background: rgba(255, 212, 59, 0.2);
+            color: #fbbf24;
+            border-color: #fbbf24;
+        }
+
+        .quick-completeness.estimated {
+            background: rgba(9, 105, 218, 0.2);
+            color: var(--info-color);
+            border-color: var(--info-color);
         }
 
         .quick-ref-grid {
@@ -2385,6 +2731,60 @@
         .power-icon { color: #ff6b6b; }
         .technical-icon { color: #ffd43b; }
 
+        /* Stance Count & Completeness Indicators */
+        .stance-header-with-count {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-md);
+            gap: var(--spacing-md);
+        }
+
+        .stance-count-indicators {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+            align-items: flex-end;
+        }
+
+        .stance-count-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(233, 69, 96, 0.3);
+        }
+
+        .completeness-badge {
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius);
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+            border: 1px solid;
+        }
+
+        .completeness-badge.complete {
+            background: rgba(35, 134, 54, 0.2);
+            color: var(--success-color);
+            border-color: var(--success-color);
+        }
+
+        .completeness-badge.partial {
+            background: rgba(255, 212, 59, 0.2);
+            color: #fbbf24;
+            border-color: #fbbf24;
+        }
+
+        .completeness-badge.estimated {
+            background: rgba(9, 105, 218, 0.2);
+            color: var(--info-color);
+            border-color: var(--info-color);
+        }
+
         /* Stance Tabs */
         .stance-behavior-section {
             margin-bottom: var(--spacing-lg);
@@ -2395,6 +2795,8 @@
             gap: var(--spacing-xs);
             margin: var(--spacing-md) 0;
             border-bottom: 2px solid var(--border-color);
+            overflow-x: auto;
+            padding-bottom: 4px;
         }
 
         .stance-tab {
@@ -2410,6 +2812,72 @@
             align-items: center;
             gap: var(--spacing-xs);
             position: relative;
+            min-width: 120px;
+            flex-shrink: 0;
+        }
+
+        .tab-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            position: relative;
+        }
+
+        .tab-name {
+            font-weight: 600;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .stance-order {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--accent-color);
+            color: white;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            font-size: 0.7em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .stance-complexity-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-xs);
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.2), rgba(233, 69, 96, 0.1));
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+            font-size: 0.85em;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .complexity-icon {
+            font-size: 1.1em;
+        }
+
+        /* Enhanced Triggers */
+        .trigger-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+        }
+
+        .trigger-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius);
+            border-left: 3px solid var(--accent-color);
+            font-size: 0.9em;
         }
 
         .stance-tab:hover {
@@ -2706,6 +3174,41 @@
             margin-top: var(--spacing-sm);
         }
 
+        .stance-complexity {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .complexity-badge {
+            background: var(--tertiary-bg);
+            color: var(--text-secondary);
+            padding: 2px 8px;
+            border-radius: var(--border-radius);
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+
+        .complex-indicator {
+            background: linear-gradient(135deg, var(--accent-color), #ff6b9d);
+            color: white;
+            padding: 2px 8px;
+            border-radius: var(--border-radius);
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+
+        .card-stance-count {
+            background: rgba(233, 69, 96, 0.2);
+            color: var(--accent-color);
+            padding: 2px 8px;
+            border-radius: var(--border-radius);
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-left: var(--spacing-sm);
+        }
+
         .stance-info {
             display: flex;
             align-items: center;
@@ -2757,6 +3260,44 @@
             .stance-info {
                 justify-content: center;
                 text-align: center;
+            }
+
+            .stance-header-with-count {
+                flex-direction: column;
+                align-items: stretch;
+                gap: var(--spacing-sm);
+            }
+
+            .stance-count-indicators {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: var(--spacing-sm);
+            }
+
+            .stance-count-badge,
+            .completeness-badge {
+                font-size: var(--font-size-xs);
+                padding: calc(var(--spacing-xs) * 0.75) var(--spacing-xs);
+            }
+
+            .quick-ref-header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: var(--spacing-sm);
+            }
+
+            .quick-ref-stance-info {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: var(--spacing-sm);
+            }
+
+            .quick-stance-count,
+            .quick-completeness {
+                font-size: var(--font-size-xs);
+                padding: calc(var(--spacing-xs) * 0.75) var(--spacing-xs);
             }
         }
     </style>
