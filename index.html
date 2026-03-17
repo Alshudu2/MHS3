@@ -1192,47 +1192,17 @@
 
                     <!-- Team Builder Tab -->
                     <div id="teams" class="tab-content">
-                        <div class="page-section">
+                        <div id="teamsContainer" class="page-section">
                             <h2>🛡️ Meta Team Builder</h2>
-                            <p>Build optimal teams with advanced synergy analysis and meta recommendations.</p>
-                            
-                            <div class="feature-grid">
-                                <div class="feature-card">
-                                    <h3>Team Composition</h3>
-                                    <p>Interactive team building with monster selection and synergy analysis.</p>
-                                </div>
-                                <div class="feature-card">
-                                    <h3>Meta Analysis</h3>
-                                    <p>Current meta team recommendations for different content types.</p>
-                                </div>
-                                <div class="feature-card">
-                                    <h3>Synergy Calculator</h3>
-                                    <p>Advanced team synergy calculations and optimization suggestions.</p>
-                                </div>
-                            </div>
+                            <p>Loading team data...</p>
                         </div>
                     </div>
 
                     <!-- Weapons & Builds Tab -->
                     <div id="weapons" class="tab-content">
-                        <div class="page-section">
+                        <div id="weaponsContainer" class="page-section">
                             <h2>⚔️ Weapons & Build Guide</h2>
-                            <p>Complete weapon evolution trees, build optimization, and equipment guides.</p>
-                            
-                            <div class="feature-grid">
-                                <div class="feature-card">
-                                    <h3>Weapon Evolution</h3>
-                                    <p>Complete evolution trees for all weapon categories with requirements.</p>
-                                </div>
-                                <div class="feature-card">
-                                    <h3>Build Optimizer</h3>
-                                    <p>Advanced build optimization for different playstyles and content.</p>
-                                </div>
-                                <div class="feature-card">
-                                    <h3>Equipment Guide</h3>
-                                    <p>Comprehensive equipment guides with stat comparisons and recommendations.</p>
-                                </div>
-                            </div>
+                            <p>Loading weapon data...</p>
                         </div>
                     </div>
 
@@ -1284,24 +1254,9 @@
 
                     <!-- Expert Guides Tab -->
                     <div id="guides" class="tab-content">
-                        <div class="page-section">
+                        <div id="guidesContainer" class="page-section">
                             <h2>🎓 Expert Guides</h2>
-                            <p>Advanced mechanics, meta strategies, and professional gaming techniques.</p>
-                            
-                            <div class="feature-grid">
-                                <div class="feature-card">
-                                    <h3>Combat Mechanics</h3>
-                                    <p>Deep dive into combat mechanics, frame data, and advanced techniques.</p>
-                                </div>
-                                <div class="feature-card">
-                                    <h3>Meta Analysis</h3>
-                                    <p>Current meta analysis with tier lists and competitive strategies.</p>
-                                </div>
-                                <div class="feature-card">
-                                    <h3>Breeding Guide</h3>
-                                    <p>Advanced breeding mechanics, gene inheritance, and optimization.</p>
-                                </div>
-                            </div>
+                            <p>Loading guides data...</p>
                         </div>
                     </div>
                 </div>
@@ -1332,6 +1287,9 @@
                     weapons: {},
                     bosses: {},
                     sideContent: {},
+                    expertGuides: {},
+                    teamData: {},
+                    weaponEvolution: {},
                     favorites: new Set(),
                     comparison: new Set()
                 };
@@ -1378,15 +1336,22 @@
                     
                     // Load other data files if available
                     try {
-                        const [weapons, bosses, sideContent] = await Promise.all([
+                        const [weapons, bosses, sideContent, expertGuides, teamData, weaponEvolution] = await Promise.all([
                             fetch('complete_weapon_guide.json').then(r => r.json()),
                             fetch('boss_strategies_guide.json').then(r => r.json()),
-                            fetch('side_content_guide.json').then(r => r.json())
+                            fetch('side_content_guide.json').then(r => r.json()),
+                            fetch('expert_guides_data.json').then(r => r.json()),
+                            fetch('team_builder_data.json').then(r => r.json()),
+                            fetch('weapon_evolution_data.json').then(r => r.json())
                         ]);
-                        
+
                         this.data.weapons = weapons;
                         this.data.bosses = bosses;
                         this.data.sideContent = sideContent;
+                        this.data.expertGuides = expertGuides;
+                        this.data.teamData = teamData;
+                        this.data.weaponEvolution = weaponEvolution;
+                        console.log('✅ All data files loaded');
                     } catch (error) {
                         console.warn('⚠️ Some data files not loaded:', error);
                     }
@@ -1524,6 +1489,12 @@
                 // Render content for active tab
                 if (tabName === 'monsters') {
                     this.updateDisplay();
+                } else if (tabName === 'teams') {
+                    this.renderTeams();
+                } else if (tabName === 'guides') {
+                    this.renderGuides();
+                } else if (tabName === 'weapons') {
+                    this.renderWeaponEvolution();
                 }
             }
 
@@ -2011,8 +1982,8 @@
                                         <div class="step-number">${index + 1}</div>
                                         <div class="step-content">
                                             <div class="step-name">${stance.name || stanceName.charAt(0).toUpperCase() + stanceName.slice(1)}</div>
-                                            <div class="step-pattern pattern-${stance.primaryAttack}">
-                                                ${stance.primaryAttack.toUpperCase()}
+                                            <div class="step-pattern pattern-${stance.primaryAttack || stance.attackType || 'power'}">
+                                                ${(stance.primaryAttack || stance.attackType || 'power').toUpperCase()}
                                             </div>
                                             <div class="step-trigger">${stance.triggers?.entry || stance.triggers || 'Auto progression'}</div>
                                         </div>
@@ -2115,7 +2086,7 @@
                                         <button class="stance-tab ${index === 0 ? 'active' : ''}" data-stance="${stance}">
                                             <div class="tab-content">
                                                 <span class="tab-name">${data.name || stance.charAt(0).toUpperCase() + stance.slice(1)}</span>
-                                                <span class="stance-indicator pattern-${data.primaryAttack}">${data.primaryAttack.charAt(0).toUpperCase()}</span>
+                                                <span class="stance-indicator pattern-${data.primaryAttack || data.attackType || 'power'}">${(data.primaryAttack || data.attackType || 'P').charAt(0).toUpperCase()}</span>
                                                 ${data.stanceId ? `<span class="stance-order">${index + 1}</span>` : ''}
                                             </div>
                                         </button>
@@ -2135,11 +2106,11 @@
                                             <div class="attack-pattern-display">
                                                 <div class="primary-attack-info">
                                                     <h4>
-                                                        Uses: <span class="attack-type-indicator pattern-${data.primaryAttack}">
-                                                            <i class="attack-icon ${data.primaryAttack}-icon"></i>
-                                                            ${data.primaryAttack.toUpperCase()}
+                                                        Uses: <span class="attack-type-indicator pattern-${data.primaryAttack || data.attackType || 'power'}">
+                                                            <i class="attack-icon ${data.primaryAttack || data.attackType || 'power'}-icon"></i>
+                                                            ${(data.primaryAttack || data.attackType || 'power').toUpperCase()}
                                                         </span>
-                                                        <span class="confidence-badge ${data.confidence}">${data.confidence.toUpperCase()}</span>
+                                                        ${data.confidence ? `<span class="confidence-badge ${data.confidence}">${data.confidence.toUpperCase()}</span>` : ''}
                                                     </h4>
                                                     <div class="attack-frequency">
                                                         ${data.attackFrequency ? Object.entries(data.attackFrequency).map(([type, freq]) => `
@@ -2154,7 +2125,7 @@
 
                                             <!-- Pattern Description -->
                                             <div class="pattern-description">
-                                                <p><strong>Pattern:</strong> ${data.pattern}</p>
+                                                <p><strong>Pattern:</strong> ${data.pattern || data.behavior || ''}</p>
                                             </div>
 
                                             <!-- Counter Recommendation -->
@@ -2272,6 +2243,261 @@
                 if (modal) {
                     modal.classList.remove('show');
                 }
+            }
+
+            renderTeams() {
+                const container = document.getElementById('teamsContainer');
+                if (!container || !this.data.teamData) return;
+                const td = this.data.teamData;
+                const teams = td.meta_teams || {};
+                const tips = td.team_building_tips || {};
+                const roles = td.role_definitions || {};
+
+                const tierColor = { 100: '#ffd700', 90: '#c0c0c0', 80: '#cd7f32', 0: '#888' };
+                const getBar = (val) => {
+                    const color = val >= 90 ? '#ffd700' : val >= 75 ? '#4caf50' : val >= 50 ? '#ff9800' : '#f44336';
+                    return `<div style="background:#333;border-radius:4px;height:8px;width:100%;margin-top:2px">
+                        <div style="background:${color};height:8px;border-radius:4px;width:${val}%"></div></div>`;
+                };
+
+                container.innerHTML = `
+                    <h2>🛡️ Meta Team Builder</h2>
+                    <p>Recommended team compositions with synergy analysis.</p>
+
+                    <h3 style="margin-top:24px">Meta Team Presets</h3>
+                    <div class="feature-grid">
+                        ${Object.values(teams).map(team => `
+                            <div class="feature-card">
+                                <h3>${team.name}</h3>
+                                <p style="font-size:0.85em;color:#aaa">${team.description}</p>
+                                <div style="margin:12px 0">
+                                    ${(team.members || []).map(m => `
+                                        <div style="display:flex;justify-content:space-between;margin:4px 0;font-size:0.85em">
+                                            <strong>${m.monster}</strong>
+                                            <span style="color:#888">${m.role}</span>
+                                        </div>
+                                        <div style="color:#aaa;font-size:0.8em;margin-bottom:6px">${m.reason}</div>
+                                    `).join('')}
+                                </div>
+                                <div style="font-size:0.8em;color:#aaa">Synergy: ${team.synergy_rating}%</div>
+                                ${getBar(team.synergy_rating)}
+                                <div style="display:flex;gap:8px;margin-top:8px;font-size:0.75em">
+                                    <span style="color:#888">Early: ${team.effectiveness?.early_game}%</span>
+                                    <span style="color:#888">Mid: ${team.effectiveness?.mid_game}%</span>
+                                    <span style="color:#888">Late: ${team.effectiveness?.late_game}%</span>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <h3 style="margin-top:32px">Role Definitions</h3>
+                    <div class="feature-grid">
+                        ${Object.entries(roles).map(([role, data]) => `
+                            <div class="feature-card">
+                                <h3>${role.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}</h3>
+                                <p style="font-size:0.85em">${data.description}</p>
+                                <div style="font-size:0.8em;color:#aaa;margin-top:8px">
+                                    <strong>Ideal stats:</strong> ${(data.ideal_stats || []).join(', ')}
+                                </div>
+                                <div style="font-size:0.8em;color:#aaa">
+                                    <strong>Examples:</strong> ${(data.examples || []).join(', ')}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <h3 style="margin-top:32px">Team Building Tips</h3>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Balance</h3>
+                            <ul style="font-size:0.85em;padding-left:16px">
+                                ${(tips.balance_considerations || []).map(t => `<li style="margin:4px 0">${t}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Synergy Factors</h3>
+                            <ul style="font-size:0.85em;padding-left:16px">
+                                ${(tips.synergy_factors || []).map(t => `<li style="margin:4px 0">${t}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Progression Advice</h3>
+                            <ul style="font-size:0.85em;padding-left:16px">
+                                ${(tips.progression_advice || []).map(t => `<li style="margin:4px 0">${t}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            }
+
+            renderGuides() {
+                const container = document.getElementById('guidesContainer');
+                if (!container || !this.data.expertGuides) return;
+                const eg = this.data.expertGuides;
+                const meta = eg.meta_analysis || {};
+                const mechanics = eg.combat_mechanics || {};
+                const breeding = eg.breeding_guide || {};
+                const endgame = eg.endgame_content || {};
+                const tierColors = { s_tier: '#ffd700', a_tier: '#c0c0c0', b_tier: '#cd7f32', c_tier: '#888' };
+
+                container.innerHTML = `
+                    <h2>🎓 Expert Guides</h2>
+
+                    <!-- Tier List -->
+                    ${meta.current_tier_list ? `
+                    <h3 style="margin-top:24px">Monster Tier List</h3>
+                    <div class="feature-grid">
+                        ${Object.entries(meta.current_tier_list).map(([tier, data]) => `
+                            <div class="feature-card">
+                                <h3 style="color:${tierColors[tier] || '#fff'}">${tier.replace('_', ' ').toUpperCase()}</h3>
+                                <div style="font-size:0.85em;margin:8px 0">${(data.monsters || []).join(', ')}</div>
+                                <p style="font-size:0.8em;color:#aaa">${data.reasoning}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                    ` : ''}
+
+                    <!-- Combat Mechanics -->
+                    <h3 style="margin-top:32px">Combat Mechanics</h3>
+                    <div class="feature-grid">
+                        ${Object.values(mechanics).map(section => `
+                            <div class="feature-card">
+                                <h3>${section.title}</h3>
+                                <p style="font-size:0.85em;color:#aaa">${section.description}</p>
+                                ${section.advanced_tips ? `
+                                    <ul style="font-size:0.8em;padding-left:16px;margin-top:8px">
+                                        ${section.advanced_tips.map(t => `<li style="margin:3px 0">${t}</li>`).join('')}
+                                    </ul>
+                                ` : ''}
+                                ${section.optimization_tips ? `
+                                    <ul style="font-size:0.8em;padding-left:16px;margin-top:8px">
+                                        ${section.optimization_tips.map(t => `<li style="margin:3px 0">${t}</li>`).join('')}
+                                    </ul>
+                                ` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <!-- Breeding Guide -->
+                    <h3 style="margin-top:32px">Breeding & Gene Guide</h3>
+                    <div class="feature-grid">
+                        ${breeding.gene_inheritance ? `
+                        <div class="feature-card">
+                            <h3>${breeding.gene_inheritance.title}</h3>
+                            <p style="font-size:0.85em;color:#aaa">${breeding.gene_inheritance.description}</p>
+                            <ul style="font-size:0.8em;padding-left:16px;margin-top:8px">
+                                ${(breeding.gene_inheritance.inheritance_rules || []).map(r => `<li style="margin:3px 0">${r}</li>`).join('')}
+                            </ul>
+                        </div>
+                        ` : ''}
+                        ${Object.values(breeding.optimal_breeding_paths || {}).map(build => `
+                            <div class="feature-card">
+                                <h3>${build.target}</h3>
+                                <div style="font-size:0.8em;color:#aaa;margin-top:4px">Gene priorities: ${(build.gene_priorities || []).join(', ')}</div>
+                                <div style="font-size:0.8em;color:#aaa">${build.recommended_parents}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <!-- Endgame -->
+                    ${endgame.post_game_challenges ? `
+                    <h3 style="margin-top:32px">Endgame Content</h3>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Post-Game Challenges</h3>
+                            ${Object.entries(endgame.post_game_challenges).map(([k, v]) => `
+                                <div style="margin:6px 0">
+                                    <strong style="font-size:0.85em">${k.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}:</strong>
+                                    <span style="font-size:0.8em;color:#aaa"> ${v}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        ${endgame.ultimate_builds ? `
+                        <div class="feature-card">
+                            <h3>Ultimate Builds</h3>
+                            ${Object.entries(endgame.ultimate_builds).map(([k, v]) => `
+                                <div style="margin:6px 0">
+                                    <strong style="font-size:0.85em">${k.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}:</strong>
+                                    <span style="font-size:0.8em;color:#aaa"> ${v}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        ` : ''}
+                    </div>
+                    ` : ''}
+                `;
+            }
+
+            renderWeaponEvolution() {
+                const container = document.getElementById('weaponsContainer');
+                if (!container || !this.data.weaponEvolution) return;
+                const we = this.data.weaponEvolution;
+                const categories = we.weapon_categories || {};
+                const weapons = we.weapons || {};
+                const evoPaths = we.evolution_paths || {};
+
+                container.innerHTML = `
+                    <h2>⚔️ Weapons & Build Guide</h2>
+
+                    <!-- Weapon Categories -->
+                    ${Object.keys(categories).length ? `
+                    <h3 style="margin-top:24px">Weapon Categories</h3>
+                    <div class="feature-grid">
+                        ${Object.entries(categories).map(([key, cat]) => `
+                            <div class="feature-card">
+                                <h3>${cat.name || key}</h3>
+                                <p style="font-size:0.85em;color:#aaa">${cat.description || ''}</p>
+                                ${cat.playstyle ? `<div style="font-size:0.8em;margin-top:4px"><strong>Playstyle:</strong> ${cat.playstyle}</div>` : ''}
+                                ${cat.strengths ? `<div style="font-size:0.8em;color:#aaa"><strong>Strengths:</strong> ${Array.isArray(cat.strengths) ? cat.strengths.join(', ') : cat.strengths}</div>` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                    ` : ''}
+
+                    <!-- Weapon Stats -->
+                    ${Object.keys(we.weapon_stats || {}).length ? `
+                    <h3 style="margin-top:32px">Weapon Stats by Category</h3>
+                    <div class="feature-grid">
+                        ${Object.entries(we.weapon_stats).map(([cat, stats]) => `
+                            <div class="feature-card">
+                                <h3>${cat.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</h3>
+                                ${Object.entries(stats).map(([k,v]) => `
+                                    <div style="display:flex;justify-content:space-between;font-size:0.82em;margin:3px 0">
+                                        <span style="color:#aaa">${k.replace(/_/g,' ')}</span>
+                                        <span>${v}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        `).join('')}
+                    </div>
+                    ` : ''}
+
+                    <!-- Evolution Paths -->
+                    ${Object.keys(evoPaths).length ? `
+                    <h3 style="margin-top:32px">Evolution Paths</h3>
+                    <div class="feature-grid">
+                        ${Object.entries(evoPaths).map(([name, path]) => `
+                            <div class="feature-card">
+                                <h3>${name.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</h3>
+                                ${Array.isArray(path) ? `<div style="font-size:0.82em;color:#aaa">${path.join(' → ')}</div>` : `<p style="font-size:0.82em;color:#aaa">${JSON.stringify(path)}</p>`}
+                            </div>
+                        `).join('')}
+                    </div>
+                    ` : '<p style="color:#aaa">Evolution path data coming soon.</p>'}
+
+                    <!-- Materials -->
+                    ${Object.keys(we.materials || {}).length ? `
+                    <h3 style="margin-top:32px">Key Materials</h3>
+                    <div class="feature-grid">
+                        ${Object.entries(we.materials).map(([mat, data]) => `
+                            <div class="feature-card">
+                                <h3>${mat.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</h3>
+                                <p style="font-size:0.82em;color:#aaa">${typeof data === 'string' ? data : (data.description || data.source || JSON.stringify(data))}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                    ` : ''}
+                `;
             }
 
             updateFilterStats() {

@@ -38,7 +38,7 @@
         "opening": "Start with speed counters against normal speed attacks",
         "mid_game": "Watch for enrage triggers: Lasts 3-4 turns, calms when dealt 25% additional damage",
         "late_game": "In enraged state, focus on Use Technical attacks to counter Power charges. Speed for quick follow-ups",
-        "special_notes": "No special states - focus on normal/enraged patterns | Game 8 confirms: Normal state = Speed attacks, Enraged = Power attacks. Roar counter creates Wyvernsoul opportunity."
+        "special_notes": "No special states - focus on normal/enraged patterns"
       },
       "quick_reference": {
         "weakness_priority": "fire",
@@ -48,7 +48,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "speed",
-        "enraged_stance_pattern": "speed"
+        "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
         {
@@ -102,7 +102,7 @@
         "opening": "Start with technical counters against normal technical attacks",
         "mid_game": "Watch for enrage triggers: Lasts 4-5 turns, extended by fire weakness exploitation",
         "late_game": "In enraged state, focus on Continue using Speed to counter Technical. Watch for Power counterattacks",
-        "special_notes": "Monitor for special states: charged | Ear vulnerability is key - sonic attacks trigger panic state transitions."
+        "special_notes": "Monitor for special states: charged"
       },
       "quick_reference": {
         "weakness_priority": "water, ice",
@@ -111,8 +111,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "speed",
-        "enraged_stance_pattern": "speed"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -166,7 +166,7 @@
         "opening": "Start with power counters against normal power attacks",
         "mid_game": "Watch for enrage triggers: Lasts 3-4 turns, calms when pack members are present",
         "late_game": "In enraged state, focus on Continue Technical for Power attacks. Use Power for Speed thrashing",
-        "special_notes": "No special states - focus on normal/enraged patterns | Alpha predator behavior - swallowing mechanics affect stance transitions."
+        "special_notes": "No special states - focus on normal/enraged patterns"
       },
       "quick_reference": {
         "weakness_priority": "thunder, physical",
@@ -230,7 +230,7 @@
         "opening": "Start with speed counters against normal speed attacks",
         "mid_game": "Watch for enrage triggers: Lasts 3-4 turns, calms when grounded or exhausted",
         "late_game": "In enraged state, focus on Power for Speed attacks. Technical to counter Power dives",
-        "special_notes": "Monitor for special states: flying | Tool-dependent monster - breaking rocks forces stance transitions and creates opportunities."
+        "special_notes": "Monitor for special states: flying"
       },
       "quick_reference": {
         "weakness_priority": "water, physical",
@@ -294,7 +294,7 @@
         "opening": "Start with speed counters against normal speed attacks",
         "mid_game": "Watch for enrage triggers: Lasts 3-4 turns, calms when grounded or exhausted",
         "late_game": "In enraged state, focus on Power for Speed attacks. Technical to counter Power dives",
-        "special_notes": "No special states - focus on normal/enraged patterns | Poison-focused monster - tail targeting affects poison ability and triggers enrage state."
+        "special_notes": "No special states - focus on normal/enraged patterns"
       },
       "quick_reference": {
         "weakness_priority": "thunder",
@@ -358,7 +358,7 @@
         "opening": "Start with power counters against normal power attacks",
         "mid_game": "Watch for enrage triggers: Lasts 4-5 turns, calms when staggered or trapped",
         "late_game": "In enraged state, focus on Technical for Power moves. Power counters increased Speed attacks",
-        "special_notes": "Monitor for special states: charged | Electrical cycle similar to Zinogre - normal → charged → exhausted. Tree terrain affects mobility."
+        "special_notes": "Monitor for special states: charged"
       },
       "quick_reference": {
         "weakness_priority": "water, ice",
@@ -422,7 +422,7 @@
         "opening": "Start with power counters against normal power attacks",
         "mid_game": "Watch for enrage triggers: Lasts 4-5 turns, calms when staggered or trapped",
         "late_game": "In enraged state, focus on Technical for Power moves. Power counters increased Speed attacks",
-        "special_notes": "Monitor for special states: charged | Fire-based brute wyvern. Nostril flare indicates emotional state. Fire system can overheat with recovery window."
+        "special_notes": "Monitor for special states: charged"
       },
       "quick_reference": {
         "weakness_priority": "water, ice",
@@ -490,20 +490,20 @@
         }
       },
       "battle_flow": {
-        "opening": "Grounded phase - Technical vs Power charges",
-        "mid_game": "Flying phase - Technical attacks to force landing",
-        "late_game": "Enraged Flying - defensive play, Power vs Speed dives",
-        "special_notes": "Use Technical attacks to control when Rathalos stays grounded"
+        "opening": "Start with technical counters against normal technical attacks",
+        "mid_game": "Watch for enrage triggers: Lasts 4-6 turns, extended when using elemental weaknesses",
+        "late_game": "In enraged state, focus on Speed counters Technical elemental attacks. Technical for Power charges",
+        "special_notes": "Monitor for special states: flying, exhausted, charged"
       },
       "quick_reference": {
-        "weakness_priority": "dragon",
+        "weakness_priority": "dragon, thunder",
         "counter_strategy": {
-          "grounded": "Technical vs Power, Speed vs Technical",
-          "flying": "Force landing with Technical, Power vs Speed dives",
-          "enraged_flying": "Defensive play, Power vs Speed rushes"
+          "vs_speed": "Use Power attacks",
+          "vs_power": "Use Technical attacks",
+          "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -557,7 +557,7 @@
         "opening": "Start with technical counters against normal technical attacks",
         "mid_game": "Watch for enrage triggers: Lasts 4-6 turns, extended when using elemental weaknesses",
         "late_game": "In enraged state, focus on Speed counters Technical elemental attacks. Technical for Power charges",
-        "special_notes": "Monitor for special states: flying, exhausted, charged | Advanced flying wyvern - aerial mastery with territorial behavior. Technical attacks can force landing."
+        "special_notes": "Monitor for special states: flying, exhausted, charged"
       },
       "quick_reference": {
         "weakness_priority": "dragon, thunder",
@@ -567,7 +567,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -631,7 +631,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -685,7 +685,7 @@
         "opening": "Start with technical counters against normal technical attacks",
         "mid_game": "Watch for enrage triggers: Lasts 4-6 turns, extended when using elemental weaknesses",
         "late_game": "In enraged state, focus on Speed counters Technical elemental attacks. Technical for Power charges",
-        "special_notes": "Monitor for special states: flying, exhausted, charged | Ground-focused flying wyvern with poison specialization. Maternal/territorial instincts affect behavior patterns."
+        "special_notes": "Monitor for special states: flying, exhausted, charged"
       },
       "quick_reference": {
         "weakness_priority": "dragon, thunder",
@@ -694,8 +694,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "speed",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -759,7 +759,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -823,7 +823,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -886,7 +886,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
@@ -1014,7 +1014,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
@@ -1078,8 +1078,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "speed",
-        "enraged_stance_pattern": "speed"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
         {
@@ -1130,20 +1130,20 @@
         }
       },
       "battle_flow": {
-        "opening": "Hunting mode - Technical counters for Power lunges",
-        "mid_game": "Supercharged phase - Speed counters for Technical lightning attacks",
-        "late_game": "Exhausted phase - maximum damage window with any attack type",
-        "special_notes": "Electrical cycle: Normal → Charged → Exhausted → repeat"
+        "opening": "Start with power counters against normal power attacks",
+        "mid_game": "Watch for enrage triggers: Lasts 4-5 turns, calms when staggered or trapped",
+        "late_game": "In enraged state, focus on Technical for Power moves. Power counters increased Speed attacks",
+        "special_notes": "Monitor for special states: exhausted, charged"
       },
       "quick_reference": {
         "weakness_priority": "ice",
         "counter_strategy": {
-          "normal": "Technical vs Power, Power vs Speed",
-          "charged": "Speed vs Technical, watch for electrical bursts",
-          "exhausted": "All attacks effective - damage rush"
+          "vs_speed": "Use Power attacks",
+          "vs_power": "Use Technical attacks",
+          "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "speed",
-        "enraged_stance_pattern": "technical"
+        "primary_stance_pattern": "power",
+        "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
         {
@@ -1271,7 +1271,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -1335,7 +1335,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -1399,7 +1399,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "technical"
+        "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
         {
@@ -1462,7 +1462,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "speed",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
@@ -1654,7 +1654,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
@@ -1718,8 +1718,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -1783,7 +1783,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -1847,7 +1847,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -1911,7 +1911,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -1974,7 +1974,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
@@ -2039,7 +2039,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "technical"
+        "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
         {
@@ -2238,7 +2238,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -2302,7 +2302,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -2365,8 +2365,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -2429,8 +2429,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -2493,8 +2493,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -2557,8 +2557,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -2621,8 +2621,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -2685,8 +2685,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -2737,20 +2737,20 @@
         }
       },
       "battle_flow": {
-        "opening": "Start in Dragon Active - build up elemental damage",
-        "mid_game": "Element shifts to Fire/Ice - use counter elements (Ice vs Fire, Fire vs Ice)",
-        "late_game": "Escaton Phase - ALL OUT DAMAGE RUSH before ultimate attack",
-        "special_notes": "Element weaknesses CHANGE by mode: Fire mode weak to Ice, Ice mode weak to Fire"
+        "opening": "Start with technical counters against normal technical attacks",
+        "mid_game": "Watch for enrage triggers: Lasts 4-6 turns, extended when using elemental weaknesses",
+        "late_game": "In enraged state, focus on Speed counters Technical elemental attacks. Technical for Power charges",
+        "special_notes": "Monitor for special states: flying, exhausted, charged"
       },
       "quick_reference": {
-        "weakness_priority": "varies_by_element_mode",
+        "weakness_priority": "varies",
         "counter_strategy": {
-          "fire_mode": "Use Ice element + Technical counters",
-          "ice_mode": "Use Fire element + Speed counters",
-          "escaton_phase": "Maximum damage - all attack types"
+          "vs_speed": "Use Power attacks",
+          "vs_power": "Use Technical attacks",
+          "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -2801,21 +2801,20 @@
         }
       },
       "battle_flow": {
-        "opening": "Malevolent phase - learn patterns, build up damage",
-        "mid_game": "Wrathful phase triggered - Technical counters for Power attacks",
-        "late_game": "Nova phase - INTERRUPT with Speed attacks to prevent area destruction",
-        "special_notes": "Desperation phase at <15% HP - survival becomes priority over damage"
+        "opening": "Start with technical counters against normal technical attacks",
+        "mid_game": "Watch for enrage triggers: Lasts 4-6 turns, extended when using elemental weaknesses",
+        "late_game": "In enraged state, focus on Speed counters Technical elemental attacks. Technical for Power charges",
+        "special_notes": "Monitor for special states: flying, exhausted, charged"
       },
       "quick_reference": {
-        "weakness_priority": "ice",
+        "weakness_priority": "Physical damage",
         "counter_strategy": {
-          "normal": "Speed vs Technical, Technical vs Power",
-          "enraged": "Technical vs Power, Speed for follow-ups",
-          "nova_phase": "Speed attacks to interrupt buildup",
-          "desperation": "Defensive play - survive the chaos"
+          "vs_speed": "Use Power attacks",
+          "vs_power": "Use Technical attacks",
+          "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -2878,8 +2877,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -2942,7 +2941,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
@@ -3006,8 +3005,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -3070,8 +3069,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -3134,8 +3133,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -3198,8 +3197,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -3263,7 +3262,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -3323,8 +3322,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "technical"
+        "primary_stance_pattern": "power",
+        "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
         {
@@ -3383,7 +3382,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "speed",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
@@ -3443,7 +3442,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "speed",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
@@ -3504,7 +3503,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -3564,7 +3563,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -3623,8 +3622,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -3683,8 +3682,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -3743,7 +3742,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
@@ -3803,8 +3802,8 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
-        "enraged_stance_pattern": "power"
+        "primary_stance_pattern": "technical",
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -3864,7 +3863,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "technical"
+        "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
         {
@@ -3924,7 +3923,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "technical"
+        "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
         {
@@ -3984,7 +3983,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "technical"
+        "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
         {
@@ -4044,7 +4043,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -4464,7 +4463,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "power"
+        "enraged_stance_pattern": "technical"
       },
       "enhancement_log": [
         {
@@ -4524,7 +4523,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "technical"
+        "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
         {
@@ -4584,7 +4583,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "technical"
+        "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
         {
@@ -4764,7 +4763,7 @@
           "vs_technical": "Use Speed attacks"
         },
         "primary_stance_pattern": "technical",
-        "enraged_stance_pattern": "technical"
+        "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
         {
@@ -4823,7 +4822,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
@@ -4883,7 +4882,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
@@ -4943,7 +4942,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
@@ -5003,7 +5002,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
@@ -5063,7 +5062,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "power",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
@@ -5123,7 +5122,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "speed",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
@@ -5183,7 +5182,7 @@
           "vs_power": "Use Technical attacks",
           "vs_technical": "Use Speed attacks"
         },
-        "primary_stance_pattern": "speed",
+        "primary_stance_pattern": "technical",
         "enraged_stance_pattern": "power"
       },
       "enhancement_log": [
