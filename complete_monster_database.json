@@ -63,7 +63,7 @@
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
                                              ],
-                         "image":  "https://img.game8.co/4430058/269d82e9758c278364f54db33bdacdcf.png/show"
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Velocidrome.png"
                      },
                      {
                          "name":  "Yian Kut-Ku",
@@ -128,7 +128,7 @@
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
                                              ],
-                         "image":  "https://img.game8.co/4429674/433fe7b0f37825d90b81403ba6453007.png/show"
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Yian%20Kut-Ku.png"
                      },
                      {
                          "name":  "Great Jagras",
@@ -256,7 +256,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Kulu-Ya-Ku.png"
                      },
                      {
                          "name":  "Pukei-Pukei",
@@ -320,7 +321,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Pukei-Pukei.png"
                      },
                      {
                          "name":  "Tobi-Kadachi",
@@ -385,7 +387,7 @@
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
                                              ],
-                         "image":  "https://img.game8.co/4429672/eb923df6614952b706a01a6ed601f923.png/show"
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Tobi-Kadachi.png"
                      },
                      {
                          "name":  "Anjanath",
@@ -450,7 +452,7 @@
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
                                              ],
-                         "image":  "https://img.game8.co/4431152/86f291388a89f46535a21174594642be.png/show"
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Anjanath.png"
                      },
                      {
                          "name":  "Rathalos",
@@ -521,7 +523,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 3 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Rathalos.png"
                      },
                      {
                          "name":  "Azure Rathalos",
@@ -585,7 +588,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Azure%20Rathalos.png"
                      },
                      {
                          "name":  "Silver Rathalos",
@@ -649,7 +653,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Silver%20Rathalos.png"
                      },
                      {
                          "name":  "Rathian",
@@ -714,7 +719,7 @@
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
                                              ],
-                         "image":  "https://img.game8.co/4430309/dda2dc58a269d5b9762a712f3e63b064.png/show"
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Rathian.png"
                      },
                      {
                          "name":  "Pink Rathian",
@@ -779,7 +784,7 @@
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
                                              ],
-                         "image":  "https://img.game8.co/4438491/ac7da0176083e6e4a7c825195038ded6.png/show"
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Pink%20Rathian.png"
                      },
                      {
                          "name":  "Dreadqueen Rathian",
@@ -844,7 +849,7 @@
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
                                              ],
-                         "image":  "https://img.game8.co/4440579/fc681b152bb5472a0234e5032c2b2984.png/show"
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Dreadqueen%20Rathian.png"
                      },
                      {
                          "name":  "Diablos",
@@ -908,7 +913,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Diablos.png"
                      },
                      {
                          "name":  "Black Diablos",
@@ -972,7 +978,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Black%20Diablos.png"
                      },
                      {
                          "name":  "Tigrex",
@@ -1036,7 +1043,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Tigrex.png"
                      },
                      {
                          "name":  "Nargacuga",
@@ -1100,7 +1108,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Nargacuga.png"
                      },
                      {
                          "name":  "Zinogre",
@@ -1164,7 +1173,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Zinogre.png"
                      },
                      {
                          "name":  "Stygian Zinogre",
@@ -1228,7 +1238,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Stygian%20Zinogre.png"
                      },
                      {
                          "name":  "Boltreaver Astalos",
@@ -1292,7 +1303,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Boltreaver%20Astalos.png"
                      },
                      {
                          "name":  "Astalos",
@@ -1356,7 +1368,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Astalos.png"
                      },
                      {
                          "name":  "Mizutsune",
@@ -1420,7 +1433,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Mizutsune.png"
                      },
                      {
                          "name":  "Gammoth",
@@ -1484,7 +1498,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Gammoth.png"
                      },
                      {
                          "name":  "Glavenus",
@@ -1548,7 +1563,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Glavenus.png"
                      },
                      {
                          "name":  "Seregios",
@@ -1612,7 +1628,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Seregios.png"
                      },
                      {
                          "name":  "Gore Magala",
@@ -1804,7 +1821,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Khezu.png"
                      },
                      {
                          "name":  "Gravios",
@@ -1868,7 +1886,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Gravios.png"
                      },
                      {
                          "name":  "Basarios",
@@ -1932,7 +1951,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Basarios.png"
                      },
                      {
                          "name":  "Nerscylla",
@@ -1997,7 +2017,7 @@
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
                                              ],
-                         "image":  "https://img.game8.co/4430120/adf5774eecbc28a6fc215eee4656b7de.png/show"
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Nerscylla.png"
                      },
                      {
                          "name":  "Royal Ludroth",
@@ -2062,7 +2082,7 @@
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
                                              ],
-                         "image":  "https://img.game8.co/4431191/be921cab61be720bd5759209e0f4f648.png/show"
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Royal%20Ludroth%20(Rise).png"
                      },
                      {
                          "name":  "Purple Gypceros",
@@ -2127,7 +2147,7 @@
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
                                              ],
-                         "image":  "https://img.game8.co/4431128/63e194cf2c9479b780b800bd0ad690f7.png/show"
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Purple%20Gypceros.png"
                      },
                      {
                          "name":  "Deviljho",
@@ -2199,7 +2219,7 @@
                                                      "details":  "Reduced to 3 stances matching Game8"
                                                  }
                                              ],
-                         "image":  "https://img.game8.co/4442630/a010d9ffb24a61e6c0cc150ce531de9f.png/show"
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Deviljho.png"
                      },
                      {
                          "name":  "Bazelgeuse",
@@ -2263,7 +2283,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Bazelgeuse.png"
                      },
                      {
                          "name":  "Legiana",
@@ -2327,7 +2348,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Legiana.png"
                      },
                      {
                          "name":  "Kirin",
@@ -2391,7 +2413,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Kirin.png"
                      },
                      {
                          "name":  "Teostra",
@@ -2455,7 +2478,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Teostra.png"
                      },
                      {
                          "name":  "Kushala Daora",
@@ -2519,7 +2543,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Kushala%20Daora.png"
                      },
                      {
                          "name":  "Vaal Hazak",
@@ -2711,7 +2736,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Kulve%20Taroth.png"
                      },
                      {
                          "name":  "Alatreon",
@@ -3096,7 +3122,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Velkhana.png"
                      },
                      {
                          "name":  "Nergigante",
@@ -3160,7 +3187,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Nergigante.png"
                      },
                      {
                          "name":  "Ruiner Nergigante",
@@ -3349,7 +3377,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Brachydios.png"
                      },
                      {
                          "name":  "Rajang",
@@ -3409,7 +3438,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Rajang.png"
                      },
                      {
                          "name":  "Furious Rajang",
@@ -3891,7 +3921,7 @@
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
                                              ],
-                         "image":  "https://img.game8.co/4438490/b7480c885f0d7a9585aaadf8eed4f5b9.png/show"
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Lagiacrus.png"
                      },
                      {
                          "name":  "Ivory Lagiacrus",
@@ -3951,7 +3981,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Ivory%20Lagiacrus.png"
                      },
                      {
                          "name":  "Abyssal Lagiacrus",
@@ -4071,7 +4102,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-render/Barioth.png"
                      },
                      {
                          "name":  "Sand Barioth",
@@ -4131,7 +4163,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Sand%20Barioth.png"
                      },
                      {
                          "name":  "Qurupeco",
@@ -4191,7 +4224,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Qurupeco.png"
                      },
                      {
                          "name":  "Crimson Qurupeco",
@@ -4251,7 +4285,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Crimson%20Qurupeco.png"
                      },
                      {
                          "name":  "Great Baggi",
@@ -4311,7 +4346,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Great%20Baggi.png"
                      },
                      {
                          "name":  "Great Wroggi",
@@ -4551,7 +4587,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Agnaktor.png"
                      },
                      {
                          "name":  "Glacial Agnaktor",
@@ -4611,7 +4648,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Glacial%20Agnaktor.png"
                      },
                      {
                          "name":  "Duramboros",
@@ -4671,7 +4709,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Duramboros.png"
                      },
                      {
                          "name":  "Rust Duramboros",
@@ -4853,7 +4892,7 @@
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
                                              ],
-                         "image":  "https://img.game8.co/4433642/b2fd108128aa63edb50df86fdb66b07a.png/show"
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Plesioth.png"
                      },
                      {
                          "name":  "Green Plesioth",
@@ -4914,7 +4953,7 @@
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
                                              ],
-                         "image":  "https://img.game8.co/4440831/b3f1570ca35048dc80dbbeb22017b857.png/show"
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Green%20Plesioth.png"
                      },
                      {
                          "name":  "Jyuratodus",
@@ -5154,7 +5193,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Kecha%20Wacha.png"
                      },
                      {
                          "name":  "Ash Kecha Wacha",
@@ -5214,7 +5254,8 @@
                                                      "action":  "simplified_to_match_game8_format",
                                                      "details":  "Reduced to 2 stances matching Game8"
                                                  }
-                                             ]
+                                             ],
+                         "image":  "https://cdn.jsdelivr.net/gh/te1/monsterbuddy-assets@main/monster-icon/png/Ash%20Kecha%20Wacha.png"
                      }
                  ]
 }
