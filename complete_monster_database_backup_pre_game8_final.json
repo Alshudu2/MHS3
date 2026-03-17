@@ -49,8 +49,7 @@
             "torso": "slash_effective",
             "main_body": "all_effective"
           },
-          "enhancement_source_parts": "game8_supplemented",
-          "attackType": "speed"
+          "enhancement_source_parts": "game8_supplemented"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -91,8 +90,7 @@
             "counter_roar": "Uses Roar counter when enraged - creates opening for Wyvernsoul depletion",
             "wyvernsoul_vulnerability": "Roar counter lowers own Wyvernsoul Defense"
           },
-          "enhancement_source_behaviors": "game8_supplemented",
-          "attackType": "power"
+          "enhancement_source_behaviors": "game8_supplemented"
         }
       },
       "combat_data": {
@@ -172,8 +170,7 @@
             "Wing Flap",
             "Peck Attack"
           ],
-          "enhancement_source_moves": "game8_supplemented",
-          "attackType": "technical"
+          "enhancement_source_moves": "game8_supplemented"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -209,8 +206,7 @@
             "Wild Fire",
             "Desperate Charge"
           ],
-          "enhancement_source_moves": "game8_supplemented",
-          "attackType": "technical"
+          "enhancement_source_moves": "game8_supplemented"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -224,8 +220,7 @@
             "technical": 60
           },
           "attacks": [],
-          "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "attackType": "technical"
+          "notes": "Fire element overcharge - devastating Technical attacks with some Power"
         }
       },
       "combat_data": {
@@ -305,8 +300,7 @@
             "Tail Sweep",
             "Body Slam"
           ],
-          "enhancement_source_moves": "game8_supplemented",
-          "attackType": "power"
+          "enhancement_source_moves": "game8_supplemented"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -342,8 +336,7 @@
             "Fury Bite",
             "Defensive Tail"
           ],
-          "enhancement_source_moves": "game8_supplemented",
-          "attackType": "power"
+          "enhancement_source_moves": "game8_supplemented"
         }
       },
       "combat_data": {
@@ -423,8 +416,7 @@
             "Scratch",
             "Rock Search"
           ],
-          "enhancement_source_moves": "game8_supplemented",
-          "attackType": "speed"
+          "enhancement_source_moves": "game8_supplemented"
         },
         "enraged": {
           "primaryAttack": "speed",
@@ -449,8 +441,7 @@
               "description": "Rapid pecking combo"
             }
           ],
-          "notes": "Becomes more creative with rock usage when angry",
-          "attackType": "speed"
+          "notes": "Becomes more creative with rock usage when angry"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -464,8 +455,7 @@
             "technical": 35
           },
           "attacks": [],
-          "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "attackType": "speed"
+          "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee"
         }
       },
       "combat_data": {
@@ -550,8 +540,7 @@
             "poison_storage": "Stores poison in tail bladder for special attacks",
             "defensive_posture": "Uses technical poison attacks for area control"
           },
-          "enhancement_source_elementalBehavior": "game8_supplemented",
-          "attackType": "speed"
+          "enhancement_source_elementalBehavior": "game8_supplemented"
         },
         "enraged": {
           "primaryAttack": "speed",
@@ -587,8 +576,7 @@
             "Toxic Cloud",
             "Rage Spit"
           ],
-          "enhancement_source_moves": "game8_supplemented",
-          "attackType": "speed"
+          "enhancement_source_moves": "game8_supplemented"
         }
       },
       "combat_data": {
@@ -673,8 +661,7 @@
             "tree_mobility": "Uses trees and vertical terrain for electrical charging",
             "charge_accumulation": "Gradually builds electrical energy for supercharged state"
           },
-          "enhancement_source_electricalBehavior": "game8_supplemented",
-          "attackType": "power"
+          "enhancement_source_electricalBehavior": "game8_supplemented"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -699,8 +686,7 @@
               "description": "Charged leap attack"
             }
           ],
-          "notes": "Becomes more aggressive with enhanced mobility",
-          "attackType": "power"
+          "notes": "Becomes more aggressive with enhanced mobility"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -727,8 +713,7 @@
           ],
           "enhancement_source_moves": "game8_supplemented",
           "behaviorChange": "Technical electrical attacks become dominant, increased mobility",
-          "enhancement_source_behaviorChange": "game8_supplemented",
-          "attackType": "technical"
+          "enhancement_source_behaviorChange": "game8_supplemented"
         },
         "exhausted": {
           "triggers": {
@@ -742,9 +727,7 @@
           ],
           "vulnerabilityWindow": "Perfect opportunity for maximum damage - electrical systems recovering",
           "confidence": "game8_supplemented",
-          "source": "game8_research",
-          "attackType": "power",
-          "counter": "use_technical"
+          "source": "game8_research"
         }
       },
       "combat_data": {
@@ -829,8 +812,7 @@
             "nose_flare": "Flares nostril when detecting threats",
             "fire_buildup": "Gradually builds internal fire for stronger attacks"
           },
-          "enhancement_source_territorialBehavior": "game8_supplemented",
-          "attackType": "power"
+          "enhancement_source_territorialBehavior": "game8_supplemented"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -868,8 +850,7 @@
           ],
           "enhancement_source_moves": "game8_supplemented",
           "aggressiveBehavior": "Nostril flare intensifies, fire attacks become more frequent and powerful",
-          "enhancement_source_aggressiveBehavior": "game8_supplemented",
-          "attackType": "power"
+          "enhancement_source_aggressiveBehavior": "game8_supplemented"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -883,8 +864,7 @@
             "technical": 60
           },
           "attacks": [],
-          "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "attackType": "technical"
+          "notes": "Fire element overcharge - devastating Technical attacks with some Power"
         },
         "overheated": {
           "triggers": {
@@ -899,9 +879,7 @@
           ],
           "cooldownBehavior": "Fire systems overheated - reduced fire damage but vulnerable to ice attacks",
           "confidence": "game8_supplemented",
-          "source": "game8_research",
-          "attackType": "technical",
-          "counter": "use_speed"
+          "source": "game8_research"
         }
       },
       "combat_data": {
@@ -983,8 +961,7 @@
             }
           ],
           "notes": "Grounded and vulnerable - easier to predict and counter",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "stanceId": "rathalos_flying",
@@ -1022,8 +999,7 @@
             }
           ],
           "notes": "Focus Technical attacks to force landing. Power melee largely ineffective",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "stanceId": "rathalos_enraged_air",
@@ -1061,8 +1037,7 @@
             }
           ],
           "notes": "Most dangerous aerial phase - focus on survival and counters",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "normal": {
           "attackType": "power",
@@ -1148,8 +1123,7 @@
               "description": "Fire-enhanced talon"
             }
           ],
-          "notes": "Subspecies with improved aerial dominance",
-          "attackType": "technical"
+          "notes": "Subspecies with improved aerial dominance"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -1179,8 +1153,7 @@
               "description": "Devastating fire dive"
             }
           ],
-          "notes": "Enhanced fire power and aerial superiority",
-          "attackType": "technical"
+          "notes": "Enhanced fire power and aerial superiority"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -1205,8 +1178,7 @@
             "Dive Bomb",
             "Sky Patrol"
           ],
-          "enhancement_source_moves": "game8_supplemented",
-          "attackType": "speed"
+          "enhancement_source_moves": "game8_supplemented"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -1230,8 +1202,7 @@
             "Tired Flap",
             "Weak Fireball"
           ],
-          "enhancement_source_moves": "game8_supplemented",
-          "attackType": "power"
+          "enhancement_source_moves": "game8_supplemented"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -1245,8 +1216,7 @@
             "technical": 60
           },
           "attacks": [],
-          "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "attackType": "technical"
+          "notes": "Fire element overcharge - devastating Technical attacks with some Power"
         },
         "grounded": {
           "triggers": {
@@ -1261,9 +1231,7 @@
           ],
           "groundReluctance": "Prefers aerial combat - seeks opportunities to take flight",
           "confidence": "game8_supplemented",
-          "source": "game8_research",
-          "attackType": "speed",
-          "counter": "use_power"
+          "source": "game8_research"
         },
         "enraged_aerial": {
           "triggers": {
@@ -1278,9 +1246,7 @@
           ],
           "maximalAggression": "Most dangerous state - combines speed and power attacks from aerial advantage",
           "confidence": "game8_supplemented",
-          "source": "game8_research",
-          "attackType": "power",
-          "counter": "use_technical"
+          "source": "game8_research"
         },
         "territorial": {
           "triggers": {
@@ -1295,9 +1261,7 @@
           ],
           "protectiveBehavior": "Becomes highly protective of territory - increased aggression but also predictable patterns",
           "confidence": "game8_supplemented",
-          "source": "game8_research",
-          "attackType": "speed",
-          "counter": "use_power"
+          "source": "game8_research"
         }
       },
       "combat_data": {
@@ -1372,8 +1336,7 @@
             }
           ],
           "notes": "Rare species with mastered aerial combat",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -1404,8 +1367,7 @@
             }
           ],
           "notes": "Peak fire power and unmatched aerial mastery",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -1420,8 +1382,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -1436,8 +1397,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -1452,8 +1412,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -1527,8 +1486,7 @@
               "description": "Ground charge attack"
             }
           ],
-          "notes": "Queen of the Land - ground-based combat specialist",
-          "attackType": "technical"
+          "notes": "Queen of the Land - ground-based combat specialist"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -1569,8 +1527,7 @@
             "Rage Fire",
             "Protective Charge"
           ],
-          "enhancement_source_moves": "game8_supplemented",
-          "attackType": "technical"
+          "enhancement_source_moves": "game8_supplemented"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -1595,8 +1552,7 @@
             "Sky Charge",
             "Dive Strike"
           ],
-          "enhancement_source_moves": "game8_supplemented",
-          "attackType": "speed"
+          "enhancement_source_moves": "game8_supplemented"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -1610,8 +1566,7 @@
             "technical": 20
           },
           "attacks": [],
-          "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "attackType": "power"
+          "notes": "Slower Power attacks, predictable patterns, vulnerable to all types"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -1625,8 +1580,7 @@
             "technical": 60
           },
           "attacks": [],
-          "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "attackType": "technical"
+          "notes": "Fire element overcharge - devastating Technical attacks with some Power"
         },
         "grounded": {
           "triggers": {
@@ -1641,9 +1595,7 @@
           ],
           "groundMastery": "More comfortable on ground than Rathalos - poison tail is signature weapon",
           "confidence": "game8_supplemented",
-          "source": "game8_research",
-          "attackType": "speed",
-          "counter": "use_power"
+          "source": "game8_research"
         },
         "poison_depleted": {
           "triggers": {
@@ -1658,9 +1610,7 @@
           ],
           "poisonRecovery": "Poison glands need recovery time - relies more on fire and physical attacks",
           "confidence": "game8_supplemented",
-          "source": "game8_research",
-          "attackType": "power",
-          "counter": "use_technical"
+          "source": "game8_research"
         },
         "nesting": {
           "triggers": {
@@ -1675,9 +1625,7 @@
           ],
           "territorialBehavior": "Highly defensive of nesting area - patterns become more predictable but aggressive",
           "confidence": "game8_supplemented",
-          "source": "game8_research",
-          "attackType": "speed",
-          "counter": "use_power"
+          "source": "game8_research"
         }
       },
       "combat_data": {
@@ -1752,8 +1700,7 @@
             }
           ],
           "notes": "Subspecies with enhanced poison capabilities",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -1784,8 +1731,7 @@
             }
           ],
           "notes": "More aggressive with deadlier poison",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -1800,8 +1746,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -1816,8 +1761,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -1832,8 +1776,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -1908,8 +1851,7 @@
             }
           ],
           "notes": "Deviant with mastered poison and fire fusion",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -1940,8 +1882,7 @@
             }
           ],
           "notes": "Peak poison mastery with enhanced fire power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -1956,8 +1897,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -1972,8 +1912,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -1988,8 +1927,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -2064,8 +2002,7 @@
             }
           ],
           "notes": "Desert tyrant with overwhelming physical power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -2096,8 +2033,7 @@
             }
           ],
           "notes": "Becomes extremely aggressive with enhanced power",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -2112,8 +2048,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -2128,8 +2063,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -2204,8 +2138,7 @@
             }
           ],
           "notes": "Female Diablos in breeding season - extremely aggressive",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -2236,8 +2169,7 @@
             }
           ],
           "notes": "Peak aggression with devastating power",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -2252,8 +2184,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -2268,8 +2199,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -2344,8 +2274,7 @@
             }
           ],
           "notes": "Primitive brute with relentless aggression",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -2376,8 +2305,7 @@
             }
           ],
           "notes": "Becomes extremely aggressive with relentless attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -2392,8 +2320,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -2408,8 +2335,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -2484,8 +2410,7 @@
             }
           ],
           "notes": "Swift predator with exceptional agility",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -2516,8 +2441,7 @@
             }
           ],
           "notes": "Enhanced speed and precision when enraged",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -2532,8 +2456,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -2548,8 +2471,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -2631,8 +2553,7 @@
             }
           ],
           "notes": "Building thunder charge - will become supercharged soon",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "stanceId": "zinogre_charged",
@@ -2670,8 +2591,7 @@
             }
           ],
           "notes": "Peak electrical power - devastating but limited duration",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "stanceId": "zinogre_exhausted",
@@ -2704,8 +2624,7 @@
             }
           ],
           "notes": "Perfect opportunity - electrical systems recharging, defenses down",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "attackType": "technical",
@@ -2792,8 +2711,7 @@
             }
           ],
           "notes": "Dark subspecies with dragon element mastery",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -2808,8 +2726,7 @@
           },
           "attacks": [],
           "notes": "Relentless Power assault with faster Speed combinations",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -2824,8 +2741,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -2856,8 +2772,7 @@
             }
           ],
           "notes": "Supercharged with devastating dragon attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -2932,8 +2847,7 @@
             }
           ],
           "notes": "Deviant with mastered electric manipulation",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -2964,8 +2878,7 @@
             }
           ],
           "notes": "Peak electric mastery with devastating combos",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -2980,8 +2893,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -2996,8 +2908,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -3012,8 +2923,7 @@
           },
           "attacks": [],
           "notes": "Thunder element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -3088,8 +2998,7 @@
             }
           ],
           "notes": "Agile flyer with electric capabilities",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -3104,8 +3013,7 @@
           },
           "attacks": [],
           "notes": "Intensified thunder elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -3120,8 +3028,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -3136,8 +3043,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -3168,8 +3074,7 @@
             }
           ],
           "notes": "Enhanced electric attacks when charged",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -3244,8 +3149,7 @@
             }
           ],
           "notes": "Elegant leviathan with bubble attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -3276,8 +3180,7 @@
             }
           ],
           "notes": "Enhanced bubble production and water mastery",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -3292,8 +3195,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -3308,8 +3210,7 @@
           },
           "attacks": [],
           "notes": "Water element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -3384,8 +3285,7 @@
             }
           ],
           "notes": "Massive beast with overwhelming physical presence",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -3416,8 +3316,7 @@
             }
           ],
           "notes": "Enhanced ice attacks with devastating power",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -3432,8 +3331,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -3448,8 +3346,7 @@
           },
           "attacks": [],
           "notes": "Ice element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -3524,8 +3421,7 @@
             }
           ],
           "notes": "Brute wyvern with sword-like tail mastery",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -3540,8 +3436,7 @@
           },
           "attacks": [],
           "notes": "Relentless Power assault with faster Speed combinations",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -3556,8 +3451,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -3572,8 +3466,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -3648,8 +3541,7 @@
             }
           ],
           "notes": "Agile wyvern with scale-based attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -3680,8 +3572,7 @@
             }
           ],
           "notes": "Enhanced speed and scale production",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -3696,8 +3587,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -3712,8 +3602,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -3788,8 +3677,7 @@
             }
           ],
           "notes": "Mysterious juvenile with frenzy virus",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -3804,8 +3692,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -3820,8 +3707,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -3836,8 +3722,7 @@
           },
           "attacks": [],
           "notes": "Dragon element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -3912,8 +3797,7 @@
             }
           ],
           "notes": "Mature form with mastered frenzy control",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -3944,8 +3828,7 @@
             }
           ],
           "notes": "Peak frenzy mastery with overwhelming power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -3960,8 +3843,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -3976,8 +3858,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -3992,8 +3873,7 @@
           },
           "attacks": [],
           "notes": "Dragon element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -4068,8 +3948,7 @@
             }
           ],
           "notes": "Blind wyvern with electric capabilities",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -4084,8 +3963,7 @@
           },
           "attacks": [],
           "notes": "Intensified thunder elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -4100,8 +3978,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -4132,8 +4009,7 @@
             }
           ],
           "notes": "Enhanced electric output when charged",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -4208,8 +4084,7 @@
             }
           ],
           "notes": "Heavily armored with heat-based attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -4224,8 +4099,7 @@
           },
           "attacks": [],
           "notes": "Intensified fire elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -4240,8 +4114,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -4256,8 +4129,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -4272,8 +4144,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -4348,8 +4219,7 @@
             }
           ],
           "notes": "Young Gravios with developing abilities",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -4364,8 +4234,7 @@
           },
           "attacks": [],
           "notes": "Intensified fire elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -4380,8 +4249,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -4396,8 +4264,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -4472,8 +4339,7 @@
             }
           ],
           "notes": "Spider-like with web-based abilities",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -4504,8 +4370,7 @@
             }
           ],
           "notes": "Enhanced web production and aggression",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -4580,8 +4445,7 @@
             }
           ],
           "notes": "Amphibious leviathan with water attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -4612,8 +4476,7 @@
             }
           ],
           "notes": "Enhanced water attacks when agitated",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -4628,8 +4491,7 @@
           },
           "attacks": [],
           "notes": "Water element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -4704,8 +4566,7 @@
             }
           ],
           "notes": "Subspecies with enhanced poison capabilities",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "speed",
@@ -4736,8 +4597,7 @@
             }
           ],
           "notes": "Increased poison potency and frequency",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -4812,8 +4672,7 @@
             }
           ],
           "notes": "World Eater with overwhelming power",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -4844,8 +4703,7 @@
             }
           ],
           "notes": "Uncontrolled rage with extreme aggression",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -4860,8 +4718,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -4876,8 +4733,7 @@
           },
           "attacks": [],
           "notes": "Dragon element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -4952,8 +4808,7 @@
             }
           ],
           "notes": "B-52 bomber with explosive capabilities",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -4984,8 +4839,7 @@
             }
           ],
           "notes": "Enhanced explosive output and aggression",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -5000,8 +4854,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -5016,8 +4869,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -5032,8 +4884,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -5108,8 +4959,7 @@
             }
           ],
           "notes": "Graceful ice wyvern with freezing attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -5140,8 +4990,7 @@
             }
           ],
           "notes": "Enhanced ice attacks with area effects",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -5156,8 +5005,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -5172,8 +5020,7 @@
           },
           "attacks": [],
           "notes": "Ice element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -5248,8 +5095,7 @@
             }
           ],
           "notes": "Lightning unicorn with extreme speed",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -5264,8 +5110,7 @@
           },
           "attacks": [],
           "notes": "Intensified thunder elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -5280,8 +5125,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -5296,8 +5140,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -5312,8 +5155,7 @@
           },
           "attacks": [],
           "notes": "Thunder element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -5388,8 +5230,7 @@
             }
           ],
           "notes": "Emperor of Flames with explosive power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -5404,8 +5245,7 @@
           },
           "attacks": [],
           "notes": "Intensified fire elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -5420,8 +5260,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -5436,8 +5275,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -5452,8 +5290,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -5528,8 +5365,7 @@
             }
           ],
           "notes": "Steel dragon with wind mastery",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -5560,8 +5396,7 @@
             }
           ],
           "notes": "Peak wind control with storm-level power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -5576,8 +5411,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -5592,8 +5426,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -5608,8 +5441,7 @@
           },
           "attacks": [],
           "notes": "Ice element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -5684,8 +5516,7 @@
             }
           ],
           "notes": "Death dragon with toxic effluvium",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -5716,8 +5547,7 @@
             }
           ],
           "notes": "Peak toxicity with death-inducing attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -5732,8 +5562,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -5748,8 +5577,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -5764,8 +5592,7 @@
           },
           "attacks": [],
           "notes": "Dragon element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -5840,8 +5667,7 @@
             }
           ],
           "notes": "Juvenile sapphire star with energy mastery",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -5856,8 +5682,7 @@
           },
           "attacks": [],
           "notes": "Intensified dragon elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -5872,8 +5697,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -5888,8 +5712,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -5904,8 +5727,7 @@
           },
           "attacks": [],
           "notes": "Dragon element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -5964,8 +5786,7 @@
           },
           "attacks": [],
           "notes": "Balanced approach with Technical elemental attacks and Speed aerial moves",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -5980,8 +5801,7 @@
           },
           "attacks": [],
           "notes": "Intensified fire elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -5996,8 +5816,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -6012,8 +5831,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -6028,8 +5846,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -6116,8 +5933,7 @@
             }
           ],
           "notes": "Unpredictable elemental shifts coming - prepare for Fire or Ice mode",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "fire_mode": {
           "stanceId": "alatreon_fire",
@@ -6160,8 +5976,7 @@
             }
           ],
           "notes": "CRITICAL: Use Ice element to break this mode! Physical attacks do reduced damage",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "ice_mode": {
           "stanceId": "alatreon_ice",
@@ -6204,8 +6019,7 @@
             }
           ],
           "notes": "CRITICAL: Use Fire element to break this mode! Beware freezing effects",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "escaton_phase": {
           "stanceId": "alatreon_escaton",
@@ -6248,8 +6062,7 @@
             }
           ],
           "notes": "FINAL WARNING: Escaton Judgment incoming - maximum damage required!",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "attackType": "varies",
@@ -6343,8 +6156,7 @@
             }
           ],
           "notes": "Fatalis is studying your fighting style - patterns will intensify",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "stanceId": "fatalis_enraged",
@@ -6382,8 +6194,7 @@
             }
           ],
           "notes": "Extreme aggression phase - high damage but predictable patterns",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "nova_phase": {
           "stanceId": "fatalis_nova",
@@ -6421,8 +6232,7 @@
             }
           ],
           "notes": "CRITICAL: Stop the nova sequence or face devastating area damage!",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "desperation_phase": {
           "stanceId": "fatalis_desperation",
@@ -6460,8 +6270,7 @@
             }
           ],
           "notes": "FINAL PHASE: Fatalis fighting for its existence - expect anything!",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -6537,8 +6346,7 @@
             }
           ],
           "notes": "Mature sapphire star with energy mastery",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -6553,8 +6361,7 @@
           },
           "attacks": [],
           "notes": "Intensified dragon elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -6569,8 +6376,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -6585,8 +6391,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -6601,8 +6406,7 @@
           },
           "attacks": [],
           "notes": "Dragon element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -6661,8 +6465,7 @@
           },
           "attacks": [],
           "notes": "Balanced approach with Technical elemental attacks and Speed aerial moves",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -6677,8 +6480,7 @@
           },
           "attacks": [],
           "notes": "Raw Power attacks with brutal physical assaults",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -6693,8 +6495,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -6709,8 +6510,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -6785,8 +6585,7 @@
             }
           ],
           "notes": "Luminous elder with water-thunder fusion",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -6801,8 +6600,7 @@
           },
           "attacks": [],
           "notes": "Intensified water elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -6817,8 +6615,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -6833,8 +6630,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -6865,8 +6661,7 @@
             }
           ],
           "notes": "Peak water-thunder mastery with storm power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -6941,8 +6736,7 @@
             }
           ],
           "notes": "Ice elder with precision and elegance",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -6973,8 +6767,7 @@
             }
           ],
           "notes": "Peak ice mastery with absolute freezing power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -6989,8 +6782,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -7005,8 +6797,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -7021,8 +6812,7 @@
           },
           "attacks": [],
           "notes": "Ice element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -7097,8 +6887,7 @@
             }
           ],
           "notes": "Eater of elders with regenerative spikes",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -7113,8 +6902,7 @@
           },
           "attacks": [],
           "notes": "Intensified dragon elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -7129,8 +6917,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -7145,8 +6932,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -7161,8 +6947,7 @@
           },
           "attacks": [],
           "notes": "Dragon element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -7237,8 +7022,7 @@
             }
           ],
           "notes": "Evolved Nergigante with metallic spikes",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -7253,8 +7037,7 @@
           },
           "attacks": [],
           "notes": "Intensified dragon elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -7269,8 +7052,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -7285,8 +7067,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -7301,8 +7082,7 @@
           },
           "attacks": [],
           "notes": "Dragon element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -7377,8 +7157,7 @@
             }
           ],
           "notes": "Legendary Rathalos with rider bond",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -7393,8 +7172,7 @@
           },
           "attacks": [],
           "notes": "Intensified fire elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -7409,8 +7187,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -7425,8 +7202,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -7441,8 +7217,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -7512,8 +7287,7 @@
             }
           ],
           "notes": "Boxing champion with explosive slime",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -7528,8 +7302,7 @@
           },
           "attacks": [],
           "notes": "Relentless Power assault with faster Speed combinations",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -7544,8 +7317,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -7560,8 +7332,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -7628,8 +7399,7 @@
             }
           ],
           "notes": "Furious ape with lightning powers",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -7644,8 +7414,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -7660,8 +7429,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -7676,8 +7444,7 @@
           },
           "attacks": [],
           "notes": "Thunder element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -7743,8 +7510,7 @@
             }
           ],
           "notes": "Permanently enraged Rajang variant",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -7759,8 +7525,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -7775,8 +7540,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -7791,8 +7555,7 @@
           },
           "attacks": [],
           "notes": "Thunder element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -7858,8 +7621,7 @@
             }
           ],
           "notes": "White god with ice mastery",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -7874,8 +7636,7 @@
           },
           "attacks": [],
           "notes": "Intensified ice elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -7890,8 +7651,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -7906,8 +7666,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -7922,8 +7681,7 @@
           },
           "attacks": [],
           "notes": "Ice element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -7989,8 +7747,7 @@
             }
           ],
           "notes": "Black god with supreme power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -8005,8 +7762,7 @@
           },
           "attacks": [],
           "notes": "Intensified fire elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -8021,8 +7777,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -8037,8 +7792,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -8053,8 +7807,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -8120,8 +7873,7 @@
             }
           ],
           "notes": "Sky octopus with tentacle mastery",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -8136,8 +7888,7 @@
           },
           "attacks": [],
           "notes": "Intensified dragon elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -8152,8 +7903,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -8168,8 +7918,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -8184,8 +7933,7 @@
           },
           "attacks": [],
           "notes": "Dragon element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -8251,8 +7999,7 @@
             }
           ],
           "notes": "Mountain dragon of enormous size",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -8267,8 +8014,7 @@
           },
           "attacks": [],
           "notes": "Intensified fire elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -8283,8 +8029,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -8299,8 +8044,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -8315,8 +8059,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -8382,8 +8125,7 @@
             }
           ],
           "notes": "Desert whale of colossal proportions",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -8398,8 +8140,7 @@
           },
           "attacks": [],
           "notes": "Raw Power attacks with brutal physical assaults",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -8414,8 +8155,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -8430,8 +8170,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -8497,8 +8236,7 @@
             }
           ],
           "notes": "Deep sea elder dragon",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -8513,8 +8251,7 @@
           },
           "attacks": [],
           "notes": "Intensified water elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -8529,8 +8266,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -8545,8 +8281,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -8561,8 +8296,7 @@
           },
           "attacks": [],
           "notes": "Water element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -8628,8 +8362,7 @@
             }
           ],
           "notes": "Lord of the seas with electric mastery",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -8644,8 +8377,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -8660,8 +8392,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -8676,8 +8407,7 @@
           },
           "attacks": [],
           "notes": "Thunder element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -8743,8 +8473,7 @@
             }
           ],
           "notes": "Land-adapted subspecies with ice powers",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -8759,8 +8488,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -8775,8 +8503,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -8791,8 +8518,7 @@
           },
           "attacks": [],
           "notes": "Thunder element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -8858,8 +8584,7 @@
             }
           ],
           "notes": "Deep sea subspecies with enhanced power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -8874,8 +8599,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -8890,8 +8614,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -8906,8 +8629,7 @@
           },
           "attacks": [],
           "notes": "Thunder element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -8973,8 +8695,7 @@
             }
           ],
           "notes": "Ice saber-tooth with incredible agility",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -8989,8 +8710,7 @@
           },
           "attacks": [],
           "notes": "Intensified ice elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -9005,8 +8725,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -9021,8 +8740,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -9037,8 +8755,7 @@
           },
           "attacks": [],
           "notes": "Ice element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -9104,8 +8821,7 @@
             }
           ],
           "notes": "Desert-adapted subspecies with sand attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -9120,8 +8836,7 @@
           },
           "attacks": [],
           "notes": "Raw Power attacks with brutal physical assaults",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -9136,8 +8851,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -9152,8 +8866,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -9219,8 +8932,7 @@
             }
           ],
           "notes": "Support monster that calls allies",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "speed",
@@ -9235,8 +8947,7 @@
           },
           "attacks": [],
           "notes": "Frenzied Speed combinations with Power diving attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -9251,8 +8962,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -9318,8 +9028,7 @@
             }
           ],
           "notes": "Enhanced subspecies with stronger summons",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "speed",
@@ -9334,8 +9043,7 @@
           },
           "attacks": [],
           "notes": "Frenzied Speed combinations with Power diving attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -9350,8 +9058,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -9366,8 +9073,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -9433,8 +9139,7 @@
             }
           ],
           "notes": "Pack leader with sleep abilities",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "speed",
@@ -9449,8 +9154,7 @@
           },
           "attacks": [],
           "notes": "Frenzied Speed combinations with Power diving attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -9465,8 +9169,7 @@
           },
           "attacks": [],
           "notes": "Ice element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -9532,8 +9235,7 @@
             }
           ],
           "notes": "Desert pack leader with poison",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "speed",
@@ -9548,8 +9250,7 @@
           },
           "attacks": [],
           "notes": "Frenzied Speed combinations with Power diving attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -9615,8 +9316,7 @@
             }
           ],
           "notes": "Cave-dwelling poison specialist",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -9631,8 +9331,7 @@
           },
           "attacks": [],
           "notes": "Raw Power attacks with brutal physical assaults",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -9647,8 +9346,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -9714,8 +9412,7 @@
             }
           ],
           "notes": "Electric subspecies with stunning attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "technical",
@@ -9730,8 +9427,7 @@
           },
           "attacks": [],
           "notes": "Intensified thunder elemental Technical attacks with aggressive Power charges",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "flying": {
           "primaryAttack": "speed",
@@ -9746,8 +9442,7 @@
           },
           "attacks": [],
           "notes": "Aerial Speed attacks with Technical projectiles, avoids Power melee",
-          "source": "game8_pattern_applied",
-          "attackType": "speed"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -9762,8 +9457,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -9778,8 +9472,7 @@
           },
           "attacks": [],
           "notes": "Thunder element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -9845,8 +9538,7 @@
             }
           ],
           "notes": "Lava leviathan with burrowing ability",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -9861,8 +9553,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -9877,8 +9568,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -9893,8 +9583,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -9960,8 +9649,7 @@
             }
           ],
           "notes": "Ice-adapted subspecies with freezing attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -9976,8 +9664,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -9992,8 +9679,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -10008,8 +9694,7 @@
           },
           "attacks": [],
           "notes": "Ice element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -10075,8 +9760,7 @@
             }
           ],
           "notes": "Massive brute with hammer-like tail",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -10091,8 +9775,7 @@
           },
           "attacks": [],
           "notes": "Relentless Power assault with faster Speed combinations",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -10107,8 +9790,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -10174,8 +9856,7 @@
             }
           ],
           "notes": "Aged subspecies with rust-based attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -10190,8 +9871,7 @@
           },
           "attacks": [],
           "notes": "Relentless Power assault with faster Speed combinations",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -10206,8 +9886,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -10273,8 +9952,7 @@
             }
           ],
           "notes": "Desert shark with sand-based attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -10289,8 +9967,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -10356,8 +10033,7 @@
             }
           ],
           "notes": "Green water wyvern with deadly hip check",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -10372,8 +10048,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -10388,8 +10063,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -10404,8 +10078,7 @@
           },
           "attacks": [],
           "notes": "Water element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -10471,8 +10144,7 @@
             }
           ],
           "notes": "Subspecies with poison-enhanced attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -10487,8 +10159,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -10503,8 +10174,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -10519,8 +10189,7 @@
           },
           "attacks": [],
           "notes": "Water element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -10586,8 +10255,7 @@
             }
           ],
           "notes": "Mud fish with terrain manipulation",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -10602,8 +10270,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -10618,8 +10285,7 @@
           },
           "attacks": [],
           "notes": "Water element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -10685,8 +10351,7 @@
             }
           ],
           "notes": "Lava fish with fire-based attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -10701,8 +10366,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -10717,8 +10381,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -10733,8 +10396,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -10800,8 +10462,7 @@
             }
           ],
           "notes": "Snow shark with ice manipulation",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -10816,8 +10477,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -10832,8 +10492,7 @@
           },
           "attacks": [],
           "notes": "Ice element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -10899,8 +10558,7 @@
             }
           ],
           "notes": "Acrobatic elephant with water attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -10915,8 +10573,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
@@ -10982,8 +10639,7 @@
             }
           ],
           "notes": "Fire-adapted subspecies with enhanced agility",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         },
         "enraged": {
           "primaryAttack": "power",
@@ -10998,8 +10654,7 @@
           },
           "attacks": [],
           "notes": "More aggressive with increased Power and Speed attacks",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "exhausted": {
           "primaryAttack": "power",
@@ -11014,8 +10669,7 @@
           },
           "attacks": [],
           "notes": "Slower Power attacks, predictable patterns, vulnerable to all types",
-          "source": "game8_pattern_applied",
-          "attackType": "power"
+          "source": "game8_pattern_applied"
         },
         "charged": {
           "primaryAttack": "technical",
@@ -11030,8 +10684,7 @@
           },
           "attacks": [],
           "notes": "Fire element overcharge - devastating Technical attacks with some Power",
-          "source": "game8_pattern_applied",
-          "attackType": "technical"
+          "source": "game8_pattern_applied"
         }
       },
       "combat_data": {
