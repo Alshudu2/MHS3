@@ -1,0 +1,428 @@
+{
+  "weapon_categories": [
+    "swords",
+    "great_swords", 
+    "hammers",
+    "hunting_horns",
+    "lances",
+    "gun_lances"
+  ],
+  "weapons": {
+    "swords": [
+      {
+        "id": "iron_sword",
+        "name": "Iron Sword",
+        "tier": 1,
+        "attack": 65,
+        "element": "none",
+        "element_power": 0,
+        "sharpness": "yellow",
+        "slots": 0,
+        "rarity": 1,
+        "craft_materials": [
+          {"item": "Iron Ore", "quantity": 5},
+          {"item": "Machalite Ore", "quantity": 1}
+        ],
+        "zenny_cost": 750,
+        "evolves_to": ["iron_sword_plus", "bone_blade"],
+        "description": "A basic sword forged from iron ore. Reliable but unremarkable.",
+        "special_abilities": []
+      },
+      {
+        "id": "iron_sword_plus",
+        "name": "Iron Sword+",
+        "tier": 2,
+        "attack": 95,
+        "element": "none",
+        "element_power": 0,
+        "sharpness": "yellow",
+        "slots": 0,
+        "rarity": 2,
+        "upgrade_materials": [
+          {"item": "Iron Ore", "quantity": 8},
+          {"item": "Machalite Ore", "quantity": 3},
+          {"item": "Earth Crystal", "quantity": 2}
+        ],
+        "zenny_cost": 1200,
+        "evolves_from": "iron_sword",
+        "evolves_to": ["steel_sword", "blazing_falchion"],
+        "description": "An improved iron sword with better balance and edge retention.",
+        "special_abilities": []
+      },
+      {
+        "id": "steel_sword",
+        "name": "Steel Sword",
+        "tier": 3,
+        "attack": 125,
+        "element": "none",
+        "element_power": 0,
+        "sharpness": "green",
+        "slots": 1,
+        "rarity": 3,
+        "upgrade_materials": [
+          {"item": "Dragonite Ore", "quantity": 5},
+          {"item": "Machalite Ore", "quantity": 6},
+          {"item": "Iron Ore", "quantity": 10},
+          {"item": "Flame Sac", "quantity": 1}
+        ],
+        "zenny_cost": 2500,
+        "evolves_from": "iron_sword_plus",
+        "evolves_to": ["steel_sword_plus"],
+        "description": "A sturdy steel blade with improved sharpness and durability.",
+        "special_abilities": []
+      },
+      {
+        "id": "bone_blade",
+        "name": "Bone Blade",
+        "tier": 2,
+        "attack": 85,
+        "element": "none",
+        "element_power": 0,
+        "sharpness": "yellow",
+        "slots": 1,
+        "rarity": 2,
+        "upgrade_materials": [
+          {"item": "Monster Bone S", "quantity": 4},
+          {"item": "Monster Bone M", "quantity": 2},
+          {"item": "Sharp Fang", "quantity": 3}
+        ],
+        "zenny_cost": 900,
+        "evolves_from": "iron_sword",
+        "evolves_to": ["bone_blade_plus", "chief_blade"],
+        "description": "A sword carved from sturdy monster bones. Lighter than metal alternatives.",
+        "special_abilities": []
+      },
+      {
+        "id": "blazing_falchion",
+        "name": "Blazing Falchion",
+        "tier": 3,
+        "attack": 115,
+        "element": "fire",
+        "element_power": 220,
+        "sharpness": "yellow",
+        "slots": 1,
+        "rarity": 4,
+        "upgrade_materials": [
+          {"item": "Flame Sac", "quantity": 3},
+          {"item": "Rathalos Scale", "quantity": 4},
+          {"item": "Rathalos Webbing", "quantity": 2},
+          {"item": "Iron Ore", "quantity": 8}
+        ],
+        "zenny_cost": 3200,
+        "evolves_from": "iron_sword_plus",
+        "evolves_to": ["red_wing", "rathalos_falchion"],
+        "description": "A curved blade infused with fire element. Burns enemies on contact.",
+        "special_abilities": ["Fire Boost"]
+      },
+      {
+        "id": "red_wing",
+        "name": "Red Wing",
+        "tier": 4,
+        "attack": 145,
+        "element": "fire",
+        "element_power": 280,
+        "sharpness": "green",
+        "slots": 1,
+        "rarity": 5,
+        "upgrade_materials": [
+          {"item": "Rathalos Ruby", "quantity": 1},
+          {"item": "Rathalos Plate", "quantity": 2},
+          {"item": "Rath Wingtalon", "quantity": 3},
+          {"item": "Inferno Sac", "quantity": 2}
+        ],
+        "zenny_cost": 15000,
+        "evolves_from": "blazing_falchion",
+        "evolves_to": ["silver_rathalos_sword"],
+        "description": "The ultimate fire sword. Its crimson blade burns with the fury of the King of the Skies.",
+        "special_abilities": ["Fire Boost", "Critical Element"]
+      },
+      {
+        "id": "aqua_slasher",
+        "name": "Aqua Slasher",
+        "tier": 3,
+        "attack": 110,
+        "element": "water",
+        "element_power": 240,
+        "sharpness": "yellow",
+        "slots": 1,
+        "rarity": 4,
+        "craft_materials": [
+          {"item": "Lagiacrus Scale", "quantity": 6},
+          {"item": "Lagiacrus Horn", "quantity": 1},
+          {"item": "Electro Sac", "quantity": 2},
+          {"item": "Machalite Ore", "quantity": 8}
+        ],
+        "zenny_cost": 4500,
+        "evolves_to": ["lagiacrus_blade", "abyssal_lagiacrus_sword"],
+        "description": "A blade that channels the power of the sea. Conducts lightning effectively.",
+        "special_abilities": ["Water Attack+"]
+      }
+    ],
+    "great_swords": [
+      {
+        "id": "iron_great_sword",
+        "name": "Iron Great Sword",
+        "tier": 1,
+        "attack": 120,
+        "element": "none",
+        "element_power": 0,
+        "sharpness": "yellow",
+        "slots": 0,
+        "rarity": 1,
+        "craft_materials": [
+          {"item": "Iron Ore", "quantity": 8},
+          {"item": "Machalite Ore", "quantity": 2},
+          {"item": "Monster Bone S", "quantity": 3}
+        ],
+        "zenny_cost": 1200,
+        "evolves_to": ["iron_great_sword_plus", "bone_great_sword"],
+        "description": "A massive iron blade. Slow but devastating when it connects.",
+        "special_abilities": []
+      },
+      {
+        "id": "diablos_great_sword",
+        "name": "Cera Cymmetry",
+        "tier": 4,
+        "attack": 190,
+        "element": "none",
+        "element_power": 0,
+        "sharpness": "blue",
+        "slots": 0,
+        "rarity": 6,
+        "upgrade_materials": [
+          {"item": "Diablos Ridge", "quantity": 3},
+          {"item": "Diablos Marrow", "quantity": 1},
+          {"item": "Twisted Horn", "quantity": 2},
+          {"item": "Diablos Hardhorn", "quantity": 1}
+        ],
+        "zenny_cost": 35000,
+        "evolves_from": "diablos_great_sword_plus",
+        "description": "The ultimate non-elemental great sword. Raw power incarnate.",
+        "special_abilities": ["Non-elemental Boost", "Negative Affinity"]
+      }
+    ],
+    "hammers": [
+      {
+        "id": "iron_hammer",
+        "name": "Iron Hammer",
+        "tier": 1,
+        "attack": 110,
+        "element": "none",
+        "element_power": 0,
+        "sharpness": "n/a",
+        "slots": 0,
+        "rarity": 1,
+        "craft_materials": [
+          {"item": "Iron Ore", "quantity": 6},
+          {"item": "Machalite Ore", "quantity": 1},
+          {"item": "Monster Bone S", "quantity": 4}
+        ],
+        "zenny_cost": 900,
+        "evolves_to": ["iron_hammer_plus", "bone_hammer"],
+        "description": "A basic war hammer forged from iron. Excellent for breaking monster parts.",
+        "special_abilities": []
+      },
+      {
+        "id": "diablos_hammer",
+        "name": "Diablos Hammer",
+        "tier": 4,
+        "attack": 175,
+        "element": "none", 
+        "element_power": 0,
+        "sharpness": "n/a",
+        "slots": 1,
+        "rarity": 5,
+        "upgrade_materials": [
+          {"item": "Diablos Ridge", "quantity": 4},
+          {"item": "Diablos Shell", "quantity": 6},
+          {"item": "Twisted Horn", "quantity": 1},
+          {"item": "Monster Hardbone", "quantity": 3}
+        ],
+        "zenny_cost": 28000,
+        "evolves_from": "diablos_hammer_plus",
+        "evolves_to": ["diablos_maul"],
+        "description": "A hammer carved from Diablos materials. Destroys everything it touches.",
+        "special_abilities": ["KO King", "Negative Affinity"]
+      }
+    ],
+    "hunting_horns": [
+      {
+        "id": "metal_bagpipe",
+        "name": "Metal Bagpipe", 
+        "tier": 1,
+        "attack": 95,
+        "element": "none",
+        "element_power": 0,
+        "sharpness": "yellow",
+        "slots": 0,
+        "rarity": 1,
+        "craft_materials": [
+          {"item": "Iron Ore", "quantity": 4},
+          {"item": "Machalite Ore", "quantity": 1},
+          {"item": "Monster Bone S", "quantity": 2}
+        ],
+        "zenny_cost": 750,
+        "song_list": ["Attack Up S", "Defense Up S"],
+        "evolves_to": ["metal_bagpipe_plus", "bone_horn"],
+        "description": "A basic hunting horn made from metal pipes. Plays simple melodies.",
+        "special_abilities": []
+      },
+      {
+        "id": "fortissimo",
+        "name": "Fortissimo",
+        "tier": 4,
+        "attack": 165,
+        "element": "none",
+        "element_power": 0, 
+        "sharpness": "white",
+        "slots": 2,
+        "rarity": 6,
+        "song_list": ["Attack Up L", "Defense Up L", "Hearing Protection L", "Wind Resistance"],
+        "description": "The ultimate hunting horn. Its songs can turn the tide of any battle.",
+        "special_abilities": ["Maestro", "Horn Maestro"]
+      }
+    ],
+    "lances": [
+      {
+        "id": "iron_lance",
+        "name": "Iron Lance",
+        "tier": 1,
+        "attack": 85,
+        "element": "none",
+        "element_power": 0,
+        "sharpness": "yellow",
+        "slots": 0,
+        "rarity": 1,
+        "craft_materials": [
+          {"item": "Iron Ore", "quantity": 5},
+          {"item": "Machalite Ore", "quantity": 1},
+          {"item": "Monster Bone S", "quantity": 2}
+        ],
+        "zenny_cost": 600,
+        "evolves_to": ["iron_lance_plus", "bone_lance"],
+        "description": "A reliable iron lance. Perfect for defensive fighting styles.",
+        "special_abilities": []
+      }
+    ],
+    "gun_lances": [
+      {
+        "id": "iron_gunlance",
+        "name": "Iron Gunlance",
+        "tier": 1,
+        "attack": 95,
+        "element": "none",
+        "element_power": 0,
+        "sharpness": "yellow", 
+        "shell_type": "normal",
+        "shell_level": 1,
+        "slots": 0,
+        "rarity": 1,
+        "craft_materials": [
+          {"item": "Iron Ore", "quantity": 6},
+          {"item": "Machalite Ore", "quantity": 2},
+          {"item": "Monster Bone S", "quantity": 3}
+        ],
+        "zenny_cost": 900,
+        "evolves_to": ["iron_gunlance_plus"],
+        "description": "A lance combined with explosive shells. Devastating combo potential.",
+        "special_abilities": []
+      }
+    ]
+  },
+  "materials": {
+    "Iron Ore": {
+      "type": "ore",
+      "rarity": 1,
+      "sources": ["Mining", "Quest Rewards"],
+      "description": "Common iron ore found in many locations."
+    },
+    "Machalite Ore": {
+      "type": "ore", 
+      "rarity": 2,
+      "sources": ["Mining", "High Rank Quests"],
+      "description": "Higher quality ore with improved properties."
+    },
+    "Dragonite Ore": {
+      "type": "ore",
+      "rarity": 3, 
+      "sources": ["Mining", "Elder Dragon Quests"],
+      "description": "Rare ore infused with draconic energy."
+    },
+    "Monster Bone S": {
+      "type": "bone",
+      "rarity": 1,
+      "sources": ["Small Monsters", "Gathering"],
+      "description": "Small bones from various monsters."
+    },
+    "Monster Bone M": {
+      "type": "bone",
+      "rarity": 2,
+      "sources": ["Medium Monsters", "Quest Rewards"],
+      "description": "Medium-sized monster bones."
+    },
+    "Rathalos Scale": {
+      "type": "monster_part",
+      "rarity": 3,
+      "monster": "Rathalos",
+      "sources": ["Rathalos Hunt", "Breaking Parts"],
+      "description": "Crimson scales from the King of the Skies."
+    },
+    "Rathalos Ruby": {
+      "type": "rare_material",
+      "rarity": 6,
+      "monster": "Rathalos", 
+      "sources": ["Rathalos Rare Drop", "Quest Rewards"],
+      "description": "An extremely rare gem from Rathalos. Priceless.",
+      "drop_rate": "3%"
+    },
+    "Flame Sac": {
+      "type": "monster_part",
+      "rarity": 2,
+      "sources": ["Fire Monsters", "Breaking Parts"],
+      "description": "Organ that stores flammable liquid."
+    },
+    "Diablos Ridge": {
+      "type": "monster_part", 
+      "rarity": 4,
+      "monster": "Diablos",
+      "sources": ["Diablos Hunt", "Breaking Horns"],
+      "description": "The distinctive ridge from a Diablos horn."
+    }
+  },
+  "weapon_stats": {
+    "attack_tiers": {
+      "tier_1": "50-100",
+      "tier_2": "80-130", 
+      "tier_3": "110-160",
+      "tier_4": "140-200"
+    },
+    "sharpness_levels": ["red", "orange", "yellow", "green", "blue", "white", "purple"],
+    "element_types": ["fire", "water", "thunder", "ice", "dragon", "none"],
+    "rarity_colors": {
+      "1": "#ffffff",
+      "2": "#ffff00", 
+      "3": "#ff8c00",
+      "4": "#ff0000",
+      "5": "#ff00ff",
+      "6": "#00ffff",
+      "7": "#ffd700"
+    }
+  },
+  "evolution_paths": {
+    "iron_weapon_tree": {
+      "name": "Iron Weapon Tree",
+      "description": "The basic upgrade path for iron weapons",
+      "weapons": ["iron_sword", "iron_sword_plus", "steel_sword", "steel_sword_plus"]
+    },
+    "fire_weapon_tree": {
+      "name": "Fire Weapon Tree", 
+      "description": "Weapons infused with fire element",
+      "weapons": ["blazing_falchion", "red_wing", "silver_rathalos_sword"]
+    },
+    "diablos_tree": {
+      "name": "Diablos Weapon Tree",
+      "description": "Weapons forged from the Desert Tyrant",
+      "weapons": ["diablos_great_sword", "diablos_hammer", "diablos_maul"]
+    }
+  }
+}

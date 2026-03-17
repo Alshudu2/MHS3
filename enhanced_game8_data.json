@@ -1,0 +1,515 @@
+{
+  "monsters": [
+    {
+      "name": "Velocidrome",
+      "species": "Bird Wyvern",
+      "element": "none",
+      "threat_level": "low",
+      "location": "Azuria Plains",
+      "category": "regular",
+      "stance_patterns": {
+        "normal": {
+          "attacks": [
+            {
+              "name": "Quick Bite",
+              "type": "speed",
+              "description": "Rapid forward bite"
+            },
+            {
+              "name": "Tail Whip",
+              "type": "speed",
+              "description": "Fast tail sweep"
+            }
+          ],
+          "pattern_type": "speed",
+          "notes": "Focuses on quick speed attacks in normal state"
+        },
+        "enraged": {
+          "attacks": [
+            {
+              "name": "Charging Ram",
+              "type": "power",
+              "description": "Heavy charge with knockback"
+            },
+            {
+              "name": "Fury Combo",
+              "type": "speed",
+              "description": "Multiple rapid strikes"
+            }
+          ],
+          "pattern_type": "power",
+          "notes": "Switches to powerful charge attacks when enraged"
+        },
+        "sleep": {
+          "attacks": [],
+          "pattern_type": "none",
+          "notes": "Vulnerable state, perfect for healing and setup"
+        },
+        "special_phases": {}
+      },
+      "phase_transitions": {
+        "to_enraged": [
+          "health drops below 40%",
+          "after taking multiple hits"
+        ],
+        "to_sleep": [
+          "after extended battle",
+          "when stamina depleted"
+        ],
+        "special_triggers": []
+      },
+      "combat_data": {
+        "weaknesses": {
+          "fire": "weak",
+          "water": "normal",
+          "thunder": "weak",
+          "ice": "normal",
+          "dragon": "normal",
+          "physical": "normal"
+        }
+      }
+    },
+    {
+      "name": "Khezu",
+      "species": "Flying Wyvern",
+      "element": "thunder",
+      "threat_level": "medium",
+      "location": "Cave Systems",
+      "category": "regular",
+      "stance_patterns": {
+        "normal": {
+          "attacks": [
+            {
+              "name": "Thunder Ball",
+              "type": "technical",
+              "description": "Electric projectile attack"
+            },
+            {
+              "name": "Neck Stretch",
+              "type": "power",
+              "description": "Extendable bite attack"
+            }
+          ],
+          "pattern_type": "technical",
+          "notes": "Uses technical thunder attacks and power bites"
+        },
+        "enraged": {
+          "attacks": [
+            {
+              "name": "Lightning Storm",
+              "type": "technical",
+              "description": "Area electric damage"
+            },
+            {
+              "name": "Roar Stun",
+              "type": "technical",
+              "description": "Paralyzing roar attack"
+            }
+          ],
+          "pattern_type": "technical",
+          "notes": "More aggressive technical attacks, increased range"
+        },
+        "sleep": {
+          "attacks": [],
+          "pattern_type": "none",
+          "notes": "Hangs motionless from ceiling when sleeping"
+        },
+        "special_phases": {
+          "ceiling_mode": {
+            "attacks": [
+              {
+                "name": "Drop Attack",
+                "type": "power",
+                "description": "Heavy falling attack from ceiling"
+              }
+            ],
+            "pattern_type": "power",
+            "notes": "Clings to ceiling, uses gravity-based attacks"
+          }
+        }
+      },
+      "phase_transitions": {
+        "to_enraged": [
+          "health drops below 35%",
+          "after thunder attacks are blocked"
+        ],
+        "to_sleep": [
+          "hangs from ceiling when exhausted"
+        ],
+        "special_triggers": [
+          "enters ceiling mode when low stamina",
+          "uses ceiling when cornered"
+        ]
+      },
+      "combat_data": {
+        "weaknesses": {
+          "fire": "vweak",
+          "water": "normal",
+          "thunder": "immune",
+          "ice": "weak",
+          "dragon": "normal",
+          "physical": "normal"
+        }
+      }
+    },
+    {
+      "name": "Glavenus",
+      "species": "Brute Wyvern",
+      "element": "fire",
+      "threat_level": "high",
+      "location": "Tarkuan Desert",
+      "category": "feral",
+      "stance_patterns": {
+        "normal": {
+          "attacks": [
+            {
+              "name": "Tail Slash",
+              "type": "power",
+              "description": "Wide sweeping blade attack"
+            },
+            {
+              "name": "Fire Bite",
+              "type": "technical",
+              "description": "Heated jaw with fire damage"
+            }
+          ],
+          "pattern_type": "power",
+          "notes": "Regular: Uses primarily Power attacks"
+        },
+        "enraged": {
+          "attacks": [
+            {
+              "name": "Heated Tail Combo",
+              "type": "power",
+              "description": "Multiple superheated slashes"
+            },
+            {
+              "name": "Flame Spinner",
+              "type": "technical",
+              "description": "360-degree fire attack"
+            }
+          ],
+          "pattern_type": "power",
+          "notes": "Enraged: More aggressive Power attacks with fire"
+        },
+        "sleep": {
+          "attacks": [],
+          "pattern_type": "none",
+          "notes": "Tail cools down completely when sleeping"
+        },
+        "special_phases": {
+          "overheated_tail": {
+            "attacks": [
+              {
+                "name": "Molten Slash",
+                "type": "technical",
+                "description": "Maximum fire damage tail attack"
+              },
+              {
+                "name": "Heat Blast",
+                "type": "technical",
+                "description": "Explosive fire burst"
+              }
+            ],
+            "pattern_type": "technical",
+            "notes": "Overheated: Technical fire attacks become dominant"
+          }
+        }
+      },
+      "phase_transitions": {
+        "to_enraged": [
+          "health drops below 50%",
+          "tail is targeted repeatedly"
+        ],
+        "to_sleep": [
+          "after overheated phase exhaustion"
+        ],
+        "special_triggers": [
+          "tail overheats after extended fire use",
+          "overheated triggers at 30% health"
+        ]
+      },
+      "combat_data": {
+        "weaknesses": {
+          "fire": "immune",
+          "water": "vweak",
+          "thunder": "normal",
+          "ice": "weak",
+          "dragon": "normal",
+          "physical": "weak"
+        }
+      }
+    },
+    {
+      "name": "Nerscylla",
+      "species": "Temnoceran",
+      "element": "none",
+      "threat_level": "medium",
+      "location": "Canalta Timberland",
+      "category": "regular",
+      "stance_patterns": {
+        "normal": {
+          "attacks": [
+            {
+              "name": "Web Shot",
+              "type": "technical",
+              "description": "Binding web projectile"
+            },
+            {
+              "name": "Claw Swipe",
+              "type": "speed",
+              "description": "Quick multi-hit claws"
+            }
+          ],
+          "pattern_type": "technical",
+          "notes": "Normal: Technical web attacks and speed combos"
+        },
+        "enraged": {
+          "attacks": [
+            {
+              "name": "Poison Web",
+              "type": "technical",
+              "description": "Toxic web with status effect"
+            },
+            {
+              "name": "Rage Slash",
+              "type": "power",
+              "description": "Heavy claw attack with poison"
+            }
+          ],
+          "pattern_type": "technical",
+          "notes": "Enraged: Poison-enhanced technical attacks"
+        },
+        "sleep": {
+          "attacks": [],
+          "pattern_type": "none",
+          "notes": "Hangs motionless in web when sleeping"
+        },
+        "special_phases": {
+          "web_mode": {
+            "attacks": [
+              {
+                "name": "Web Trap",
+                "type": "technical",
+                "description": "Area control web placement"
+              },
+              {
+                "name": "Web Swing",
+                "type": "speed",
+                "description": "Aerial mobility attack"
+              }
+            ],
+            "pattern_type": "technical",
+            "notes": "Web Mode: Enhanced technical control and mobility"
+          }
+        }
+      },
+      "phase_transitions": {
+        "to_enraged": [
+          "health below 40%",
+          "web attacks are destroyed"
+        ],
+        "to_sleep": [
+          "after web mode exhaustion"
+        ],
+        "special_triggers": [
+          "enters web mode when surrounded",
+          "web mode at low health"
+        ]
+      },
+      "combat_data": {
+        "weaknesses": {
+          "fire": "vweak",
+          "water": "normal",
+          "thunder": "weak",
+          "ice": "normal",
+          "dragon": "normal",
+          "physical": "strong"
+        }
+      }
+    }
+  ],
+  "bosses": [
+    {
+      "name": "Honed Glavenus",
+      "species": "Brute Wyvern",
+      "element": "fire",
+      "threat_level": "elder",
+      "location": "Azuria Castle Border",
+      "category": "boss",
+      "mission": "Gathering Storm",
+      "stance_patterns": {
+        "normal": {
+          "attacks": [
+            {
+              "name": "Tail Sweep",
+              "type": "speed",
+              "description": "Wide horizontal sweep"
+            },
+            {
+              "name": "Charge Bite",
+              "type": "speed",
+              "description": "Forward rushing bite"
+            }
+          ],
+          "pattern_type": "speed",
+          "notes": "Regular: Uses Speed attacks primarily"
+        },
+        "enraged": {
+          "attacks": [
+            {
+              "name": "Heated Combo",
+              "type": "technical",
+              "description": "Fire-enhanced multi-hit"
+            },
+            {
+              "name": "Flame Burst",
+              "type": "technical",
+              "description": "Area fire explosion"
+            }
+          ],
+          "pattern_type": "technical",
+          "notes": "Enraged: Switches to Technical fire attacks"
+        },
+        "sleep": {
+          "attacks": [],
+          "pattern_type": "none",
+          "notes": "Boss does not sleep during battle"
+        },
+        "special_phases": {
+          "overheated_throat": {
+            "attacks": [
+              {
+                "name": "Continuous Flame",
+                "type": "technical",
+                "description": "Sustained fire breath"
+              }
+            ],
+            "pattern_type": "technical",
+            "notes": "Overheated Throat: Technical attacks become primary"
+          },
+          "overheated_tail": {
+            "attacks": [
+              {
+                "name": "Molten Slam",
+                "type": "power",
+                "description": "Devastating heated tail strike"
+              }
+            ],
+            "pattern_type": "power",
+            "notes": "Overheated Tail: Power attacks dominate"
+          }
+        }
+      },
+      "phase_transitions": {
+        "to_enraged": [
+          "health drops below 50%"
+        ],
+        "to_sleep": [
+          "never sleeps in boss battle"
+        ],
+        "special_triggers": [
+          "overheated throat after multiple fire attacks",
+          "overheated tail when heated for extended time"
+        ]
+      },
+      "combat_data": {
+        "weaknesses": {
+          "fire": "immune",
+          "water": "vweak",
+          "thunder": "normal",
+          "ice": "weak",
+          "dragon": "vweak",
+          "physical": "normal"
+        }
+      }
+    },
+    {
+      "name": "Invasive Yian Garuga",
+      "species": "Flying Wyvern",
+      "element": "fire",
+      "threat_level": "high",
+      "location": "Azuria - Sunpetal Plains",
+      "category": "invasive",
+      "stance_patterns": {
+        "normal": {
+          "attacks": [
+            {
+              "name": "Fireball",
+              "type": "technical",
+              "description": "Fire projectile attack"
+            },
+            {
+              "name": "Claw Rake",
+              "type": "speed",
+              "description": "Quick claw combo"
+            }
+          ],
+          "pattern_type": "technical",
+          "notes": "Normal: Mix of Technical fire and Speed attacks"
+        },
+        "enraged": {
+          "attacks": [
+            {
+              "name": "Poison Tail",
+              "type": "technical",
+              "description": "Venomous tail strike"
+            },
+            {
+              "name": "Rage Fireball",
+              "type": "technical",
+              "description": "Enhanced fire attack"
+            }
+          ],
+          "pattern_type": "technical",
+          "notes": "Enraged: Technical attacks with poison and fire"
+        },
+        "sleep": {
+          "attacks": [],
+          "pattern_type": "none",
+          "notes": "Invasive monsters rarely sleep"
+        },
+        "special_phases": {
+          "retreat_mode": {
+            "attacks": [
+              {
+                "name": "Escape Fireball",
+                "type": "technical",
+                "description": "Fire attack while fleeing"
+              }
+            ],
+            "pattern_type": "technical",
+            "notes": "Retreat: Uses fire attacks while trying to escape"
+          }
+        }
+      },
+      "phase_transitions": {
+        "to_enraged": [
+          "health below 60%",
+          "legs are targeted with slash weapons"
+        ],
+        "to_sleep": [
+          "rarely sleeps during invasive encounters"
+        ],
+        "special_triggers": [
+          "enters retreat mode when retreat conditions met"
+        ]
+      },
+      "combat_data": {
+        "weaknesses": {
+          "fire": "strong",
+          "water": "weak",
+          "thunder": "normal",
+          "ice": "normal",
+          "dragon": "normal",
+          "physical": "normal"
+        }
+      }
+    }
+  ],
+  "meta": {
+    "extracted_at": "2026-03-15T22:40:37.143608",
+    "source": "game8.co",
+    "version": "Enhanced_Stances_2.0"
+  }
+}
