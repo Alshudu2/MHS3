@@ -2347,6 +2347,15 @@
                 this.updateDisplay();
             }
 
+
+            clearComparison() {
+                this.data.comparison.clear();
+                document.querySelectorAll('[data-action="compare"]').forEach(b => b.classList.remove('active'));
+                const bar = document.getElementById('compareStatusBar');
+                if (bar) bar.remove();
+                this.closeModal();
+            }
+
             showComparisonPanel() {
                 const names = Array.from(this.data.comparison);
                 if (names.length < 2) {
@@ -2379,7 +2388,7 @@
                     </table>
                     </div>
                     <div style="margin-top:16px;text-align:right">
-                        <button onclick="window.mhs3Guide.data.comparison.clear();window.mhs3Guide.closeModal();" style="background:#444;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer">Clear Comparison</button>
+                        <button onclick="window.mhs3Guide.clearComparison();" style="background:#444;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer">Clear Comparison</button>
                     </div>
                 `;
                 modal.classList.add('show');
