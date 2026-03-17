@@ -1633,7 +1633,7 @@
                      },
                      {
                          "name":  "Gore Magala",
-                         "species":  "???",
+                         "species":  "Frenzy Wyvern",
                          "element":  "dragon",
                          "threat_level":  "high",
                          "location":  "Ancestral Steppe",
@@ -1697,7 +1697,7 @@
                      },
                      {
                          "name":  "Shagaru Magala",
-                         "species":  "Elder Dragon",
+                         "species":  "Frenzy Wyvern",
                          "element":  "dragon",
                          "threat_level":  "extreme",
                          "location":  "Sanctuary",
