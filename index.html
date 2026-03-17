@@ -1,2018 +1,609 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>MHS3: Enhanced Battle Stances Companion</title>
-<link rel="manifest" href="manifest.json">
-<style>
-:root {
-  /* Enhanced dark theme for battle reference */
-  --bg: #0a0a0f;
-  --surface: #1a1a2e;
-  --card: #16213e;
-  --accent: #e94560;
-  --accent2: #533483;
-  --text: #eee;
-  --text2: #aab;
-  --gold: #ffd700;
-  --red: #ff4444;
-  --orange: #ff8c00;
-  --green: #44ff88;
-  --blue: #4488ff;
-  --purple: #bb88ff;
-  
-  /* Status indicators */
-  --immune: #ff4444;
-  --strong: #ff8c00;
-  --weak: #44ff88;
-  --vweak: #ffd700;
-  --normal: #666;
-  
-  /* CRITICAL: Stance indicators for battle reference */
-  --stance-normal: #4488ff;
-  --stance-enraged: #ff4444;
-  --stance-sleep: #bb88ff;
-  --stance-special: #ffd700;
-  
-  /* Attack type indicators */
-  --power-attack: #ff4444;
-  --speed-attack: #44ff88;
-  --technical-attack: #4488ff;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  padding-bottom: 70px;
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Header - Enhanced for battle focus */
-.header {
-  background: linear-gradient(135deg, var(--surface), var(--accent));
-  padding: 15px;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 4px 15px rgba(0,0,0,.7);
-  border-bottom: 2px solid var(--accent);
-}
-
-.header h1 {
-  font-size: 1.2em;
-  margin-bottom: 6px;
-  color: var(--text);
-  text-shadow: 0 2px 4px rgba(0,0,0,.5);
-}
-
-.header .subtitle {
-  font-size: .75em;
-  color: var(--text2);
-  opacity: 0.95;
-}
-
-/* CRITICAL: Stance-focused navigation */
-.tab-bar {
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--surface);
-  z-index: 100;
-  box-shadow: 0 -4px 15px rgba(0,0,0,.7);
-  border-top: 2px solid rgba(233, 69, 96, 0.4);
-}
-
-.tab-btn {
-  flex: 1;
-  padding: 10px 6px;
-  text-align: center;
-  background: none;
-  border: none;
-  color: var(--text2);
-  font-size: .65em;
-  cursor: pointer;
-  transition: all .4s;
-  white-space: nowrap;
-  line-height: 1.2;
-}
-
-.tab-btn.active {
-  color: var(--accent);
-  border-top: 4px solid var(--accent);
-  background: rgba(233, 69, 96, 0.15);
-  transform: translateY(-3px);
-  box-shadow: 0 -2px 8px rgba(233, 69, 96, 0.3);
-}
-
-.tab-btn span {
-  display: block;
-  font-size: 1.3em;
-  margin-bottom: 3px;
-}
-
-/* Enhanced search with battle focus */
-.search-container {
-  padding: 12px;
-  background: var(--surface);
-  border-bottom: 1px solid rgba(255,255,255,.15);
-  position: sticky;
-  top: 75px;
-  z-index: 90;
-}
-
-.search-box {
-  width: 100%;
-  padding: 12px 40px 12px 15px;
-  background: var(--card);
-  border: 2px solid transparent;
-  border-radius: 10px;
-  color: var(--text);
-  font-size: .9em;
-  transition: all .4s;
-  box-shadow: 0 2px 8px rgba(0,0,0,.3);
-}
-
-.search-box:focus {
-  border-color: var(--accent);
-  outline: none;
-  box-shadow: 0 0 12px rgba(233, 69, 96, 0.4);
-  transform: translateY(-2px);
-}
-
-/* Filter bar enhanced for stance filtering */
-.filter-bar {
-  display: flex;
-  padding: 10px 12px;
-  background: var(--surface);
-  gap: 8px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.filter-bar::-webkit-scrollbar {
-  display: none;
-}
-
-.filter-btn {
-  padding: 8px 15px;
-  background: var(--card);
-  border: 2px solid transparent;
-  border-radius: 20px;
-  color: var(--text2);
-  font-size: .75em;
-  cursor: pointer;
-  transition: all .4s;
-  white-space: nowrap;
-  flex-shrink: 0;
-  box-shadow: 0 2px 6px rgba(0,0,0,.2);
-}
-
-.filter-btn.active {
-  background: var(--accent);
-  color: white;
-  border-color: var(--accent);
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(233, 69, 96, 0.4);
-}
-
-.filter-btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* Tab content containers */
-.tab-content {
-  display: none;
-  padding: 0 12px 15px;
-  margin-top: 12px;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-/* CRITICAL: Enhanced Monster Cards with Prominent Stance Display */
-.monster-card {
-  background: var(--card);
-  border-radius: 12px;
-  margin-bottom: 15px;
-  border: 3px solid transparent;
-  transition: all .4s;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,.3);
-}
-
-.monster-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
-  transform: translateY(-3px);
-}
-
-.monster-card.open {
-  border-color: var(--accent);
-  box-shadow: 0 12px 30px rgba(233, 69, 96, 0.4);
-  transform: translateY(-2px);
-}
-
-/* CRITICAL: Stance-focused header layout */
-.monster-header {
-  padding: 15px;
-  cursor: pointer;
-  border-bottom: 2px solid rgba(255,255,255,.1);
-  background: linear-gradient(135deg, var(--card), rgba(233, 69, 96, 0.08));
-  transition: all .3s;
-}
-
-.monster-header:hover {
-  background: linear-gradient(135deg, var(--card), rgba(233, 69, 96, 0.15));
-}
-
-.monster-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.monster-name {
-  font-size: 1em;
-  font-weight: bold;
-  color: var(--text);
-  flex: 1;
-  min-width: 160px;
-  text-shadow: 0 1px 3px rgba(0,0,0,.3);
-}
-
-.monster-badges {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.element-badge, .threat-level {
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: .65em;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-shadow: 0 1px 2px rgba(0,0,0,.5);
-}
-
-.element-fire { background: var(--red); color: white; }
-.element-water { background: var(--blue); color: white; }
-.element-thunder { background: var(--gold); color: black; }
-.element-ice { background: var(--purple); color: white; }
-.element-dragon { background: var(--accent2); color: white; }
-.element-none { background: var(--normal); color: white; }
-
-.threat-elder { background: var(--accent); color: white; }
-.threat-high { background: var(--red); color: white; }
-.threat-medium { background: var(--orange); color: white; }
-.threat-low { background: var(--green); color: black; }
-
-/* CRITICAL: Stance Quick Preview - MOST IMPORTANT FEATURE */
-.stance-preview {
-  display: flex;
-  gap: 6px;
-  margin-top: 8px;
-  flex-wrap: wrap;
-}
-
-.stance-indicator {
-  padding: 6px 10px;
-  border-radius: 8px;
-  font-size: .65em;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  border: 2px solid rgba(255,255,255,.2);
-  text-shadow: 0 1px 2px rgba(0,0,0,.5);
-  transition: all .3s;
-}
-
-.stance-indicator:hover {
-  transform: scale(1.1);
-  box-shadow: 0 2px 8px rgba(0,0,0,.4);
-}
-
-.stance-normal { background: var(--stance-normal); color: white; }
-.stance-enraged { background: var(--stance-enraged); color: white; }
-.stance-sleep { background: var(--stance-sleep); color: white; }
-.stance-special { background: var(--stance-special); color: black; }
-
-.attack-type-icon {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  display: inline-block;
-  border: 1px solid rgba(255,255,255,.3);
-}
-
-.attack-power { background: var(--power-attack); }
-.attack-speed { background: var(--speed-attack); }
-.attack-technical { background: var(--technical-attack); }
-
-.chevron {
-  color: var(--accent);
-  font-size: 1.4em;
-  transition: transform .4s;
-  text-shadow: 0 1px 3px rgba(0,0,0,.3);
-}
-
-.monster-card.open .chevron {
-  transform: rotate(180deg);
-}
-
-/* CRITICAL: Enhanced monster body with stance-first layout */
-.monster-body {
-  padding: 0;
-  display: none;
-}
-
-.monster-card.open .monster-body {
-  display: block;
-}
-
-/* CRITICAL: Battle Stance Section - PRIMARY FOCUS */
-.stance-section {
-  background: linear-gradient(135deg, rgba(68, 136, 255, 0.12), rgba(68, 136, 255, 0.06));
-  padding: 18px;
-  border-bottom: 2px solid rgba(255,255,255,.1);
-}
-
-.stance-title {
-  font-size: .85em;
-  font-weight: bold;
-  color: var(--accent);
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-shadow: 0 1px 2px rgba(0,0,0,.3);
-}
-
-.stance-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-}
-
-.stance-card {
-  background: rgba(255,255,255,.08);
-  border-radius: 10px;
-  padding: 12px;
-  border-left: 5px solid transparent;
-  transition: all .3s;
-  box-shadow: 0 2px 6px rgba(0,0,0,.2);
-}
-
-.stance-card:hover {
-  background: rgba(255,255,255,.12);
-  transform: translateX(5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,.3);
-}
-
-.stance-card.normal { border-left-color: var(--stance-normal); }
-.stance-card.enraged { border-left-color: var(--stance-enraged); }
-.stance-card.sleep { border-left-color: var(--stance-sleep); }
-.stance-card.special { border-left-color: var(--stance-special); }
-
-.stance-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.stance-name {
-  font-size: .8em;
-  font-weight: bold;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.stance-pattern {
-  font-size: .7em;
-  padding: 3px 8px;
-  border-radius: 12px;
-  font-weight: bold;
-  text-shadow: 0 1px 2px rgba(0,0,0,.5);
-}
-
-.pattern-power { background: var(--power-attack); color: white; }
-.pattern-speed { background: var(--speed-attack); color: white; }
-.pattern-technical { background: var(--technical-attack); color: white; }
-
-.stance-attacks {
-  font-size: .7em;
-  color: var(--text2);
-  line-height: 1.4;
-  margin-top: 6px;
-}
-
-.attack-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 4px 0;
-  padding: 4px 8px;
-  background: rgba(255,255,255,.05);
-  border-radius: 6px;
-}
-
-.attack-type-badge {
-  font-size: .6em;
-  padding: 2px 6px;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-/* Phase Transitions - Critical Battle Information */
-.transitions-section {
-  background: rgba(255, 212, 0, 0.12);
-  padding: 15px 18px;
-  border-bottom: 2px solid rgba(255,255,255,.1);
-}
-
-.transition-item {
-  font-size: .75em;
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 10px;
-  background: rgba(255,255,255,.05);
-  border-radius: 8px;
-}
-
-.transition-trigger {
-  color: var(--gold);
-  font-weight: bold;
-  text-shadow: 0 1px 2px rgba(0,0,0,.3);
-}
-
-/* Weakness section - simplified for quick reference */
-.weakness-section {
-  padding: 15px 18px;
-}
-
-.weakness-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 8px;
-  margin-top: 8px;
-}
-
-.weakness-item {
-  text-align: center;
-  padding: 8px 6px;
-  border-radius: 8px;
-  font-size: .7em;
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  transition: all .3s;
-  box-shadow: 0 2px 4px rgba(0,0,0,.2);
-}
-
-.weakness-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,.3);
-}
-
-.weakness-immune { background: var(--immune); color: white; }
-.weakness-strong { background: var(--strong); color: white; }
-.weakness-normal { background: var(--normal); color: white; }
-.weakness-weak { background: var(--weak); color: black; }
-.weakness-vweak { background: var(--vweak); color: black; }
-
-.element-icon {
-  font-size: 1em;
-}
-
-/* Section titles */
-.section-title {
-  font-size: .8em;
-  font-weight: bold;
-  color: var(--accent);
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-shadow: 0 1px 2px rgba(0,0,0,.3);
-}
-
-/* Strategy section - condensed for quick reading */
-.strategy-section {
-  padding: 15px 18px;
-  background: rgba(233, 69, 96, 0.08);
-}
-
-.strategy-text {
-  font-size: .75em;
-  line-height: 1.5;
-  color: var(--text2);
-}
-
-.strategy-highlight {
-  color: var(--accent);
-  font-weight: bold;
-}
-
-/* Loading and error states */
-.loading {
-  text-align: center;
-  padding: 40px;
-  color: var(--text2);
-  font-size: .85em;
-}
-
-.loading::after {
-  content: "...";
-  animation: dots 2s steps(5, end) infinite;
-}
-
-@keyframes dots {
-  0%, 20% { color: transparent; text-shadow: .25em 0 0 transparent, .5em 0 0 transparent; }
-  40% { color: var(--accent); text-shadow: .25em 0 0 transparent, .5em 0 0 transparent; }
-  60% { text-shadow: .25em 0 0 var(--accent), .5em 0 0 transparent; }
-  80%, 100% { text-shadow: .25em 0 0 var(--accent), .5em 0 0 var(--accent); }
-}
-
-.error {
-  background: rgba(255, 68, 68, 0.15);
-  border: 2px solid var(--red);
-  color: var(--red);
-  padding: 18px;
-  border-radius: 10px;
-  margin: 18px 0;
-  font-size: .85em;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(255, 68, 68, 0.2);
-}
-
-/* Responsive design for mobile battle use */
-@media (max-width: 480px) {
-  .header h1 { font-size: 1.1em; }
-  .header .subtitle { font-size: .7em; }
-  .tab-btn { font-size: .6em; padding: 8px 4px; }
-  .monster-header { padding: 12px; }
-  .monster-name { font-size: .9em; }
-  .stance-grid { grid-template-columns: 1fr; }
-  .weakness-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
-  .stance-section { padding: 15px; }
-  .transitions-section { padding: 12px 15px; }
-}
-
-/* High contrast mode for outdoor gaming */
-@media (prefers-contrast: high) {
-  :root {
-    --bg: #000;
-    --surface: #111;
-    --card: #222;
-    --text: #fff;
-    --accent: #ff6b7d;
-  }
-}
-
-/* CRITICAL: Weapon Evolution Tree Styles */
-.weapon-card {
-  background: var(--card);
-  border-radius: 12px;
-  margin-bottom: 15px;
-  border: 3px solid transparent;
-  transition: all .4s;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,.3);
-}
-
-.weapon-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
-  transform: translateY(-3px);
-}
-
-.weapon-card.open {
-  border-color: var(--accent);
-  box-shadow: 0 12px 30px rgba(233, 69, 96, 0.4);
-}
-
-/* Weapon header with stats preview */
-.weapon-header {
-  padding: 15px;
-  cursor: pointer;
-  border-bottom: 2px solid rgba(255,255,255,.1);
-  background: linear-gradient(135deg, var(--card), rgba(233, 69, 96, 0.08));
-  transition: all .3s;
-}
-
-.weapon-header:hover {
-  background: linear-gradient(135deg, var(--card), rgba(233, 69, 96, 0.15));
-}
-
-.weapon-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.weapon-name-section {
-  flex: 1;
-  min-width: 200px;
-}
-
-.weapon-name {
-  font-size: 1em;
-  font-weight: bold;
-  color: var(--text);
-  margin-bottom: 4px;
-  text-shadow: 0 1px 3px rgba(0,0,0,.3);
-}
-
-.weapon-type {
-  font-size: .7em;
-  color: var(--text2);
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.weapon-stats-preview {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.stat-badge {
-  padding: 4px 8px;
-  border-radius: 8px;
-  font-size: .65em;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  text-shadow: 0 1px 2px rgba(0,0,0,.5);
-}
-
-.attack-stat { 
-  background: var(--red); 
-  color: white; 
-}
-
-.element-stat { 
-  background: var(--blue); 
-  color: white; 
-}
-
-.sharpness-stat { 
-  background: var(--green); 
-  color: black; 
-}
-
-.rarity-badge {
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: .6em;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: white;
-  text-shadow: 0 1px 2px rgba(0,0,0,.5);
-}
-
-.rarity-1 { background: #888; }
-.rarity-2 { background: #ffff00; color: black; }
-.rarity-3 { background: #ff8c00; }
-.rarity-4 { background: #ff0000; }
-.rarity-5 { background: #ff00ff; }
-.rarity-6 { background: #00ffff; color: black; }
-.rarity-7 { background: #ffd700; color: black; }
-
-/* Weapon evolution body */
-.weapon-body {
-  padding: 0;
-  display: none;
-}
-
-.weapon-card.open .weapon-body {
-  display: block;
-}
-
-/* Weapon stats section */
-.weapon-stats-section {
-  background: linear-gradient(135deg, rgba(68, 136, 255, 0.12), rgba(68, 136, 255, 0.06));
-  padding: 18px;
-  border-bottom: 2px solid rgba(255,255,255,.1);
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 12px;
-  margin-top: 12px;
-}
-
-.stat-item {
-  background: rgba(255,255,255,.08);
-  border-radius: 8px;
-  padding: 10px;
-  text-align: center;
-  border-left: 4px solid transparent;
-  transition: all .3s;
-}
-
-.stat-item:hover {
-  background: rgba(255,255,255,.12);
-  transform: translateY(-2px);
-}
-
-.stat-item.attack { border-left-color: var(--red); }
-.stat-item.element { border-left-color: var(--blue); }
-.stat-item.sharpness { border-left-color: var(--green); }
-.stat-item.slots { border-left-color: var(--purple); }
-
-.stat-label {
-  font-size: .7em;
-  color: var(--text2);
-  margin-bottom: 4px;
-  text-transform: uppercase;
-}
-
-.stat-value {
-  font-size: .9em;
-  font-weight: bold;
-  color: var(--text);
-}
-
-/* Evolution tree section */
-.evolution-section {
-  background: rgba(255, 212, 0, 0.12);
-  padding: 18px;
-  border-bottom: 2px solid rgba(255,255,255,.1);
-}
-
-.evolution-tree {
-  margin-top: 12px;
-}
-
-.evolution-branch {
-  margin-bottom: 15px;
-}
-
-.evolution-path {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  background: rgba(255,255,255,.05);
-  border-radius: 10px;
-  transition: all .3s;
-  cursor: pointer;
-}
-
-.evolution-path:hover {
-  background: rgba(255,255,255,.12);
-  transform: translateX(5px);
-}
-
-.evolution-arrow {
-  color: var(--gold);
-  font-size: 1.2em;
-  margin: 0 8px;
-}
-
-.evolution-weapon {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.evolution-name {
-  font-size: .8em;
-  font-weight: bold;
-  color: var(--text);
-}
-
-.evolution-stats {
-  font-size: .7em;
-  color: var(--text2);
-  display: flex;
-  gap: 8px;
-}
-
-/* Materials section */
-.materials-section {
-  padding: 18px;
-  background: rgba(233, 69, 96, 0.08);
-}
-
-.materials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
-  margin-top: 12px;
-}
-
-.materials-category {
-  background: rgba(255,255,255,.05);
-  border-radius: 10px;
-  padding: 12px;
-}
-
-.materials-title {
-  font-size: .8em;
-  font-weight: bold;
-  color: var(--accent);
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.material-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6px 8px;
-  margin: 4px 0;
-  background: rgba(255,255,255,.03);
-  border-radius: 6px;
-  font-size: .75em;
-  transition: all .3s;
-}
-
-.material-item:hover {
-  background: rgba(255,255,255,.08);
-  transform: translateX(3px);
-}
-
-.material-name {
-  color: var(--text);
-  flex: 1;
-}
-
-.material-quantity {
-  color: var(--gold);
-  font-weight: bold;
-  background: rgba(255, 212, 0, 0.2);
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-
-.zenny-cost {
-  font-size: .75em;
-  color: var(--gold);
-  margin-top: 8px;
-  padding: 6px 10px;
-  background: rgba(255, 212, 0, 0.15);
-  border-radius: 8px;
-  text-align: center;
-  font-weight: bold;
-}
-
-/* Weapon abilities section */
-.abilities-section {
-  padding: 15px 18px;
-  background: rgba(187, 136, 255, 0.12);
-}
-
-.ability-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  margin: 6px 0;
-  background: rgba(255,255,255,.05);
-  border-radius: 8px;
-  font-size: .75em;
-}
-
-.ability-icon {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--purple);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: .8em;
-}
-
-.ability-name {
-  font-weight: bold;
-  color: var(--purple);
-}
-
-.ability-description {
-  color: var(--text2);
-  font-style: italic;
-}
-
-/* Element-specific colors */
-.element-fire { 
-  background: linear-gradient(135deg, var(--red), rgba(255, 68, 68, 0.3)); 
-  border-left-color: var(--red);
-}
-
-.element-water { 
-  background: linear-gradient(135deg, var(--blue), rgba(68, 136, 255, 0.3)); 
-  border-left-color: var(--blue);
-}
-
-.element-thunder { 
-  background: linear-gradient(135deg, var(--gold), rgba(255, 212, 0, 0.3)); 
-  border-left-color: var(--gold);
-}
-
-.element-ice { 
-  background: linear-gradient(135deg, var(--purple), rgba(187, 136, 255, 0.3)); 
-  border-left-color: var(--purple);
-}
-
-.element-dragon { 
-  background: linear-gradient(135deg, var(--accent2), rgba(83, 52, 131, 0.3)); 
-  border-left-color: var(--accent2);
-}
-
-.element-none { 
-  background: linear-gradient(135deg, var(--normal), rgba(102, 102, 102, 0.3)); 
-  border-left-color: var(--normal);
-}
-
-/* Print styles for offline reference cards */
-@media print {
-  body { background: white; color: black; }
-  .tab-bar, .search-container, .filter-bar { display: none; }
-  .monster-card, .weapon-card { border: 2px solid #333; break-inside: avoid; }
-  .monster-body, .weapon-body { display: block !important; }
-  .stance-section, .weapon-stats-section { background: #f5f5f5; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHS3: Master Mohammed's Complete Guide</title>
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --surface: #1a1a2e;
+            --card: #16213e;
+            --accent: #e94560;
+            --accent2: #533483;
+            --text: #eee;
+            --text2: #aab;
+            --gold: #ffd700;
+            --red: #ff4444;
+            --orange: #ff8c00;
+            --green: #44ff88;
+            --blue: #4488ff;
+            --purple: #bb88ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding-bottom: 70px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--surface), var(--accent));
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,.7);
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            color: var(--text2);
+        }
+
+        .tab-bar {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--surface);
+            z-index: 100;
+            box-shadow: 0 -4px 15px rgba(0,0,0,.7);
+            border-top: 2px solid rgba(233, 69, 96, 0.4);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px 6px;
+            text-align: center;
+            background: none;
+            border: none;
+            color: var(--text2);
+            font-size: .65em;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .tab-btn.active {
+            color: var(--accent);
+            border-top: 3px solid var(--accent);
+            background: rgba(233, 69, 96, 0.1);
+        }
+
+        .tab-btn span {
+            display: block;
+            font-size: 1.8em;
+            margin-bottom: 3px;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Tier System */
+        .tier-section {
+            margin-bottom: 40px;
+        }
+
+        .tier-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        .tier-s { background: linear-gradient(135deg, #ffd700, #ffed4e); color: #333; }
+        .tier-a { background: linear-gradient(135deg, #ff6b6b, #ee5a52); color: white; }
+        .tier-b { background: linear-gradient(135deg, #4ecdc4, #44a08d); color: white; }
+
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .team-card {
+            background: var(--card);
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid rgba(255,255,255,.1);
+            transition: all .3s;
+        }
+
+        .team-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+
+        .team-name {
+            font-size: 1.2em;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .team-description {
+            color: var(--text2);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .monster-list {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .monster-list li {
+            padding: 8px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 6px;
+            margin-bottom: 6px;
+            border-left: 4px solid var(--accent2);
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .pros, .cons {
+            padding: 10px;
+            border-radius: 8px;
+            font-size: .9em;
+        }
+
+        .pros {
+            background: rgba(68, 255, 136, 0.1);
+            border: 1px solid var(--green);
+        }
+
+        .cons {
+            background: rgba(255, 68, 68, 0.1);
+            border: 1px solid var(--red);
+        }
+
+        .pros h4, .cons h4 {
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .pros h4 { color: var(--green); }
+        .cons h4 { color: var(--red); }
+
+        /* Monster Database */
+        .monster-search {
+            background: var(--surface);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: var(--card);
+            color: var(--text);
+            font-size: 1em;
+        }
+
+        .monster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .monster-card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid rgba(255,255,255,.1);
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .monster-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 25px rgba(0,0,0,.4);
+        }
+
+        .monster-header-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .monster-name-info {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--text);
+        }
+
+        .element-badge {
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: .8em;
+            font-weight: bold;
+        }
+
+        .fire { background: var(--red); color: white; }
+        .thunder { background: var(--gold); color: black; }
+        .ice { background: var(--blue); color: white; }
+        .non-elemental { background: #666; color: white; }
+
+        .stance-info {
+            margin-top: 15px;
+        }
+
+        .stance-title {
+            font-weight: bold;
+            color: var(--accent2);
+            margin-bottom: 8px;
+        }
+
+        .stance-pattern {
+            padding: 8px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 6px;
+            margin-bottom: 6px;
+            font-size: .9em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .tier-grid, .monster-grid { grid-template-columns: 1fr; }
+            .pros-cons { grid-template-columns: 1fr; }
+            .tab-btn { font-size: .6em; padding: 10px 4px; }
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>⚔️ MHS3: Enhanced Battle & Weapon Companion</h1>
-    <p class="subtitle">Master Mohammed's Complete Monster Stances & Weapon Evolution Reference</p>
-  </div>
-
-  <!-- Enhanced Tab Navigation - Battle-focused -->
-  <div class="tab-bar">
-    <button class="tab-btn active" data-tab="monsters">
-      <span>👹</span>
-      Monsters
-    </button>
-    <button class="tab-btn" data-tab="bosses">
-      <span>💀</span>
-      Bosses
-    </button>
-    <button class="tab-btn" data-tab="weapons">
-      <span>⚔️</span>
-      Weapons
-    </button>
-    <button class="tab-btn" data-tab="search">
-      <span>🔍</span>
-      Search
-    </button>
-    <button class="tab-btn" data-tab="reference">
-      <span>📋</span>
-      Reference
-    </button>
-  </div>
-
-  <!-- CRITICAL: Monster Stances Database -->
-  <div id="monsters" class="tab-content active">
-    <div class="search-container">
-      <input type="text" class="search-box" placeholder="🔍 Search monster by name or stance pattern..." id="monster-search">
-    </div>
-    
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All Monsters</button>
-      <button class="filter-btn" data-filter="power">Power Pattern</button>
-      <button class="filter-btn" data-filter="speed">Speed Pattern</button>
-      <button class="filter-btn" data-filter="technical">Technical Pattern</button>
-      <button class="filter-btn" data-filter="multi-phase">Multi-Phase</button>
-      <button class="filter-btn" data-filter="enrage-change">Enrage Change</button>
+    <div class="header">
+        <h1>🏆 Monster Hunter Stories 3</h1>
+        <p>Master Mohammed's Complete Strategy Guide</p>
     </div>
 
-    <div id="monster-list">
-      <div class="loading">Loading enhanced monster stance data</div>
-    </div>
-  </div>
-
-  <!-- Boss Patterns Tab -->
-  <div id="bosses" class="tab-content">
-    <div class="search-container">
-      <input type="text" class="search-box" placeholder="🔍 Search boss attack patterns..." id="boss-search">
-    </div>
-    
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All Bosses</button>
-      <button class="filter-btn" data-filter="main">Main Story</button>
-      <button class="filter-btn" data-filter="invasive">Invasive</button>
-      <button class="filter-btn" data-filter="elder">Elder Dragons</button>
-      <button class="filter-btn" data-filter="feral">Feral</button>
-    </div>
-
-    <div id="boss-list">
-      <div class="loading">Loading enhanced boss patterns</div>
-    </div>
-  </div>
-
-  <!-- CRITICAL: Weapon Evolution Trees Tab -->
-  <div id="weapons" class="tab-content">
-    <div class="search-container">
-      <input type="text" class="search-box" placeholder="🔍 Search weapons by name, element, or materials..." id="weapon-search">
-    </div>
-    
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All Weapons</button>
-      <button class="filter-btn" data-filter="swords">Swords</button>
-      <button class="filter-btn" data-filter="great_swords">Great Swords</button>
-      <button class="filter-btn" data-filter="hammers">Hammers</button>
-      <button class="filter-btn" data-filter="hunting_horns">Horns</button>
-      <button class="filter-btn" data-filter="lances">Lances</button>
-      <button class="filter-btn" data-filter="gun_lances">Gunlances</button>
+    <div class="tab-bar">
+        <button class="tab-btn active" data-tab="teams">
+            <span>🏆</span>
+            Teams
+        </button>
+        <button class="tab-btn" data-tab="monsters">
+            <span>👹</span>
+            Monsters
+        </button>
+        <button class="tab-btn" data-tab="weapons">
+            <span>⚔️</span>
+            Weapons
+        </button>
+        <button class="tab-btn" data-tab="guide">
+            <span>📖</span>
+            Guide
+        </button>
     </div>
 
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all-elements">All Elements</button>
-      <button class="filter-btn" data-filter="fire">Fire</button>
-      <button class="filter-btn" data-filter="water">Water</button>
-      <button class="filter-btn" data-filter="thunder">Thunder</button>
-      <button class="filter-btn" data-filter="ice">Ice</button>
-      <button class="filter-btn" data-filter="dragon">Dragon</button>
-      <button class="filter-btn" data-filter="none">Non-Elemental</button>
-    </div>
-
-    <div id="weapon-evolution-view">
-      <div class="section-title">⚔️ Weapon Evolution Trees</div>
-      <div id="weapon-list">
-        <div class="loading">Loading weapon evolution data</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Universal Search Tab -->
-  <div id="search" class="tab-content">
-    <div class="search-container">
-      <input type="text" class="search-box" placeholder="🔍 Universal search across all stance data..." id="universal-search">
-    </div>
-    
-    <div style="padding: 18px;">
-      <div class="section-title">⚡ Quick Battle Lookup</div>
-      <div style="display: grid; gap: 12px; margin-top: 12px;">
+    <!-- TEAMS TAB WITH TIER SYSTEM -->
+    <div id="teams" class="tab-content active">
         
-        <div style="background: var(--card); padding: 15px; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,.3);">
-          <h4 style="color: var(--accent); font-size: .85em; margin-bottom: 8px;">🎯 By Attack Pattern</h4>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <button class="filter-btn" onclick="quickSearch('power')">Power Attacks</button>
-            <button class="filter-btn" onclick="quickSearch('speed')">Speed Attacks</button>
-            <button class="filter-btn" onclick="quickSearch('technical')">Technical Attacks</button>
-          </div>
+        <!-- S-TIER TEAMS -->
+        <div class="tier-section">
+            <div class="tier-header tier-s">
+                <span style="font-size: 2em;">🥇</span>
+                <span>S-TIER TEAMS - Optimal Performance</span>
+            </div>
+            
+            <div class="tier-grid">
+                <div class="team-card">
+                    <div class="team-name">💀 Status Control Supremacy</div>
+                    <div class="team-description">Complete battlefield domination through status effects and DoT damage</div>
+                    <ul class="monster-list">
+                        <li>Dreadqueen Rathian - Poison + Burn DoT</li>
+                        <li>Boltreaver Astalos - Paralysis + Self-buff</li>
+                        <li>Purple Gypceros - Stun + Flash control</li>
+                        <li>Nerscylla - Sleep + Setup</li>
+                        <li>Seregios - Bleed + Consistent damage</li>
+                        <li>Velkhana - Skill Seal + Tank</li>
+                    </ul>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>✅ Strengths</h4>
+                            <div>• Complete status lockdown<br>• Solar Cry chain combos<br>• DoT stacking mastery</div>
+                        </div>
+                        <div class="cons">
+                            <h4>⚠️ Requirements</h4>
+                            <div>• S-rank + A-rank mutations<br>• Late game completion<br>• High skill investment</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-name">⚡ Solar Cry Chain Masters</div>
+                    <div class="team-description">60% kinship generation for constant ultimate abilities</div>
+                    <ul class="monster-list">
+                        <li>Dreadqueen Rathian - Solar Cry foundation</li>
+                        <li>Boltreaver Astalos - Solar Cry combo</li>
+                        <li>Purple Gypceros - Emergency control</li>
+                        <li>Rathalos - Fire support</li>
+                        <li>Velkhana - Skill Seal protection</li>
+                        <li>Nerscylla - Sleep utility</li>
+                    </ul>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>✅ Strengths</h4>
+                            <div>• Instant ultimates<br>• Perfect synergy<br>• Maximum damage output</div>
+                        </div>
+                        <div class="cons">
+                            <h4>⚠️ Requirements</h4>
+                            <div>• Mutation unlocks needed<br>• Specific skill timing<br>• Late game optimal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- A-TIER TEAMS -->
+        <div class="tier-section">
+            <div class="tier-header tier-a">
+                <span style="font-size: 2em;">🥈</span>
+                <span>A-TIER TEAMS - Excellent Performance</span>
+            </div>
+            
+            <div class="tier-grid">
+                <div class="team-card">
+                    <div class="team-name">🔥 Fire Dominance Squad</div>
+                    <div class="team-description">Double fire coverage with strong elemental synergy</div>
+                    <ul class="monster-list">
+                        <li>Rathalos - Primary fire damage</li>
+                        <li>Dreadqueen Rathian - Fire DoT master</li>
+                        <li>Purple Gypceros - Control support</li>
+                        <li>Boltreaver Astalos - Thunder counter</li>
+                        <li>Velkhana - Ice balance</li>
+                        <li>Nerscylla - Utility support</li>
+                    </ul>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>✅ Strengths</h4>
+                            <div>• Strong vs ice enemies<br>• Good elemental coverage<br>• Mid-game viable</div>
+                        </div>
+                        <div class="cons">
+                            <h4>⚠️ Weaknesses</h4>
+                            <div>• Fire overlap inefficiency<br>• Vulnerable to water<br>• Less status control</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-name">⚖️ Balanced Progression</div>
+                    <div class="team-description">Well-rounded team for story progression and exploration</div>
+                    <ul class="monster-list">
+                        <li>Rathalos - Fire + aerial coverage</li>
+                        <li>Mizutsune - Water + support buffs</li>
+                        <li>Boltreaver Astalos - Thunder burst</li>
+                        <li>Purple Gypceros - Power control</li>
+                        <li>Nerscylla - Sleep + exploration</li>
+                        <li>Seregios - Normal element safety</li>
+                    </ul>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>✅ Strengths</h4>
+                            <div>• Complete element coverage<br>• Good for all content<br>• Flexible adaptation</div>
+                        </div>
+                        <div class="cons">
+                            <h4>⚠️ Weaknesses</h4>
+                            <div>• No specialization<br>• Less synergy<br>• Jack-of-all-trades</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- B-TIER TEAMS -->
+        <div class="tier-section">
+            <div class="tier-header tier-b">
+                <span style="font-size: 2em;">🥉</span>
+                <span>B-TIER TEAMS - Good for Early Game</span>
+            </div>
+            
+            <div class="tier-grid">
+                <div class="team-card">
+                    <div class="team-name">🌱 Early Game Starter</div>
+                    <div class="team-description">Accessible team for Chapters 1-4 progression</div>
+                    <ul class="monster-list">
+                        <li>Ratha - Starter Rathalos</li>
+                        <li>Purple Gypceros - Early control</li>
+                        <li>Royal Ludroth - Swimming + debuffs</li>
+                        <li>Nerscylla - Sleep utility</li>
+                        <li>Tobi-Kadachi - Thunder coverage</li>
+                        <li>Anjanath - Power fire option</li>
+                    </ul>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>✅ Strengths</h4>
+                            <div>• Immediate availability<br>• No mutations needed<br>• Good for learning</div>
+                        </div>
+                        <div class="cons">
+                            <h4>⚠️ Weaknesses</h4>
+                            <div>• Lower stats<br>• Limited synergy<br>• Falls off late game</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-name">💰 Budget Build</div>
+                    <div class="team-description">Minimal investment team for casual players</div>
+                    <ul class="monster-list">
+                        <li>Base Rathian - Standard fire</li>
+                        <li>Base Astalos - Thunder without mutation</li>
+                        <li>Purple Gypceros - Still excellent control</li>
+                        <li>Nerscylla - Essential utility</li>
+                        <li>Royal Ludroth - Water coverage</li>
+                        <li>Seregios - Normal damage</li>
+                    </ul>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h4>✅ Strengths</h4>
+                            <div>• Low time investment<br>• No ecosystem grinding<br>• Still functional</div>
+                        </div>
+                        <div class="cons">
+                            <h4>⚠️ Weaknesses</h4>
+                            <div>• Missing key abilities<br>• Lower damage output<br>• No Solar Cry chains</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MONSTERS TAB -->
+    <div id="monsters" class="tab-content">
+        <div class="monster-search">
+            <input type="text" class="search-box" placeholder="🔍 Search monsters by name, element, or attack pattern...">
         </div>
         
-        <div style="background: var(--card); padding: 15px; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,.3);">
-          <h4 style="color: var(--accent); font-size: .85em; margin-bottom: 8px;">🔄 By Stance Changes</h4>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <button class="filter-btn" onclick="quickSearch('enraged')">Enrage Mode</button>
-            <button class="filter-btn" onclick="quickSearch('overheated')">Overheated</button>
-            <button class="filter-btn" onclick="quickSearch('ceiling')">Special Phases</button>
-            <button class="filter-btn" onclick="quickSearch('sleep')">Sleep State</button>
-          </div>
+        <div class="monster-grid" id="monster-container">
+            <!-- Monsters will be loaded here -->
         </div>
-        
-      </div>
     </div>
 
-    <div id="search-results">
-      <!-- Universal search results will appear here -->
+    <!-- WEAPONS TAB -->
+    <div id="weapons" class="tab-content">
+        <div style="text-align: center; padding: 60px; color: var(--text2);">
+            <h2>⚔️ Weapons System</h2>
+            <p>Weapon evolution trees and upgrade paths coming soon...</p>
+            <p>Focus on monster team optimization for maximum impact.</p>
+        </div>
     </div>
-  </div>
 
-  <!-- Quick Reference Tab -->
-  <div id="reference" class="tab-content">
-    <div style="padding: 18px;">
-      
-      <div class="section-title">⚔️ Attack Type Quick Reference</div>
-      <div style="background: var(--card); padding: 15px; border-radius: 10px; margin-bottom: 18px; box-shadow: 0 3px 8px rgba(0,0,0,.3);">
-        <div style="display: grid; gap: 10px;">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div class="attack-type-icon attack-power"></div>
-            <strong style="color: var(--power-attack); font-size: .85em;">POWER:</strong>
-            <span style="font-size: .75em;">Heavy hits, breaks parts, slow but devastating</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div class="attack-type-icon attack-speed"></div>
-            <strong style="color: var(--speed-attack); font-size: .85em;">SPEED:</strong>
-            <span style="font-size: .75em;">Fast combos, multiple hits, interrupt attacks</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div class="attack-type-icon attack-technical"></div>
-            <strong style="color: var(--technical-attack); font-size: .85em;">TECHNICAL:</strong>
-            <span style="font-size: .75em;">Elemental damage, status effects, special abilities</span>
-          </div>
+    <!-- GUIDE TAB -->
+    <div id="guide" class="tab-content">
+        <div style="background: var(--card); padding: 30px; border-radius: 15px; margin-bottom: 30px;">
+            <h2 style="color: var(--accent); margin-bottom: 20px;">📖 Master Mohammed's Complete Guide</h2>
+            
+            <h3 style="color: var(--accent2); margin: 25px 0 15px 0;">🎯 Quick Start Recommendations</h3>
+            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <p><strong>Chapter 1-2:</strong> Get Purple Gypceros + Nerscylla immediately</p>
+                <p><strong>Chapter 3-4:</strong> Add Rathalos, start ecosystem work</p>
+                <p><strong>Mid Game:</strong> Work on Dreadqueen + Boltreaver mutations</p>
+                <p><strong>End Game:</strong> Complete S-tier team with Velkhana</p>
+            </div>
+
+            <h3 style="color: var(--accent2); margin: 25px 0 15px 0;">⚡ Solar Cry Chain Mastery</h3>
+            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <p><strong>Step 1:</strong> Dreadqueen Rathian Solar Cry (+30% kinship)</p>
+                <p><strong>Step 2:</strong> Boltreaver Astalos Solar Cry (+30% = 60% total)</p>
+                <p><strong>Result:</strong> Instant ultimate abilities every other turn</p>
+            </div>
+
+            <h3 style="color: var(--accent2); margin: 25px 0 15px 0;">🔗 Status Control Strategy</h3>
+            <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
+                <p><strong>Turn 1:</strong> Purple Gypceros Flash/Stun</p>
+                <p><strong>Turn 2:</strong> Nerscylla Sleep vulnerable targets</p>
+                <p><strong>Turn 3:</strong> Apply all DoT effects (Poison + Burn + Bleed)</p>
+                <p><strong>Result:</strong> Enemies defeat themselves while controlled</p>
+            </div>
         </div>
-      </div>
-      
-      <div class="section-title">🎯 Critical Stance Information</div>
-      <div style="background: var(--card); padding: 15px; border-radius: 10px; margin-bottom: 18px; box-shadow: 0 3px 8px rgba(0,0,0,.3);">
-        <div style="font-size: .75em; line-height: 1.5; color: var(--text2);">
-          <div style="margin-bottom: 8px;"><span class="strategy-highlight">NORMAL STANCE:</span> Monster's default behavior and attack patterns</div>
-          <div style="margin-bottom: 8px;"><span class="strategy-highlight">ENRAGED STANCE:</span> Triggered by health loss or damage - often changes attack types</div>
-          <div style="margin-bottom: 8px;"><span class="strategy-highlight">SPECIAL PHASES:</span> Unique transformations with different attack patterns</div>
-          <div style="margin-bottom: 8px;"><span class="strategy-highlight">PATTERN CHANGES:</span> Many monsters switch between Power/Speed/Technical when enraged</div>
-        </div>
-      </div>
-      
-      <div class="section-title">🔄 Phase Transition Triggers</div>
-      <div style="background: var(--card); padding: 15px; border-radius: 10px; margin-bottom: 18px; box-shadow: 0 3px 8px rgba(0,0,0,.3);">
-        <div style="font-size: .75em; line-height: 1.5; color: var(--text2);">
-          <div style="margin-bottom: 6px;"><span style="color: var(--stance-enraged); font-weight: bold;">ENRAGE:</span> Usually health drops below 30-50%, or after heavy damage</div>
-          <div style="margin-bottom: 6px;"><span style="color: var(--stance-special); font-weight: bold;">OVERHEATED:</span> Fire monsters after multiple fire attacks or extended combat</div>
-          <div style="margin-bottom: 6px;"><span style="color: var(--stance-sleep); font-weight: bold;">SLEEP:</span> Extended battles, stamina depletion, or natural rest cycles</div>
-          <div style="margin-bottom: 6px;"><span style="color: var(--stance-special); font-weight: bold;">SPECIAL:</span> Unique triggers like ceiling mode, web mode, retreat conditions</div>
-        </div>
-      </div>
-      
-      <div class="section-title">💡 Master Mohammed's Battle Tips</div>
-      <div style="background: var(--card); padding: 15px; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,.3);">
-        <div style="font-size: .75em; line-height: 1.5; color: var(--text2);">
-          <div style="margin-bottom: 5px;">• <span class="strategy-highlight">Watch stance indicators</span> to predict incoming attack types</div>
-          <div style="margin-bottom: 5px;">• <span class="strategy-highlight">Enraged ≠ stronger:</span> Pattern changes matter more than raw damage</div>
-          <div style="margin-bottom: 5px;">• <span class="strategy-highlight">Special phases</span> often have brief vulnerability windows</div>
-          <div style="margin-bottom: 5px;">• <span class="strategy-highlight">Sleep state</span> is perfect for healing, buffs, and positioning</div>
-          <div style="margin-bottom: 5px;">• <span class="strategy-highlight">Pattern switches</span> can completely change optimal strategy</div>
-          <div>• <span class="strategy-highlight">Phase transitions</span> are the most important moments in battle</div>
-        </div>
-      </div>
-      
     </div>
-  </div>
 
-<script>
-// Global variables for enhanced app
-let enhancedGameData = null;
-let stanceDatabase = null;
-let weaponEvolutionData = null;
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active classes
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class
+                    btn.classList.add('active');
+                    document.getElementById(btn.dataset.tab).classList.add('active');
+                });
+            });
 
-// Enhanced App with real Game8.co stance data
-const enhancedApp = {
-  currentTab: 'monsters',
-  searchTerms: {},
-  activeFilters: { 
-    monsters: 'all', 
-    bosses: 'all', 
-    weapons: 'all',
-    search: 'all'
-  },
-  weaponElementFilter: 'all-elements',
-  settings: {
-    autoExpand: false, // Changed to false for better mobile performance
-    showImages: false,
-    battleMode: true
-  },
-
-  async init() {
-    this.showLoading();
-    await this.loadEnhancedData();
-    this.setupEventListeners();
-    this.populateMonsters();
-    this.populateBosses();
-    this.populateWeapons();
-    this.hideLoading();
-  },
-
-  async loadEnhancedData() {
-    try {
-      // Load the enhanced Game8.co data with stance information
-      const response = await fetch('enhanced_game8_data.json');
-      enhancedGameData = await response.json();
-      
-      // Load stance database for quick lookups
-      const stanceResponse = await fetch('stance_database.json');
-      stanceDatabase = await stanceResponse.json();
-      
-      // Load weapon evolution data
-      const weaponResponse = await fetch('weapon_evolution_data.json');
-      weaponEvolutionData = await weaponResponse.json();
-      
-      console.log('Enhanced data loaded:', enhancedGameData);
-      console.log('Stance database loaded:', stanceDatabase);
-      console.log('Weapon evolution data loaded:', weaponEvolutionData);
-      
-    } catch (error) {
-      console.error('Failed to load enhanced data:', error);
-      this.showError('Failed to load enhanced stance data. Using offline fallback.');
-    }
-  },
-
-  showLoading() {
-    document.querySelectorAll('.loading').forEach(el => {
-      el.style.display = 'block';
-    });
-  },
-
-  hideLoading() {
-    document.querySelectorAll('.loading').forEach(el => {
-      el.style.display = 'none';
-    });
-  },
-
-  showError(message) {
-    const errorDiv = document.createElement('div');
-    errorDiv.className = 'error';
-    errorDiv.textContent = message;
-    
-    document.getElementById('monster-list').innerHTML = '';
-    document.getElementById('monster-list').appendChild(errorDiv);
-  },
-
-  setupEventListeners() {
-    // Tab switching
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        this.switchTab(btn.dataset.tab);
-      });
-    });
-
-    // Search functionality
-    ['monster', 'boss', 'weapon', 'universal'].forEach(type => {
-      const searchBox = document.getElementById(`${type}-search`);
-      if (searchBox) {
-        searchBox.addEventListener('input', (e) => {
-          this.handleSearch(type, e.target.value);
+            // Load monster data
+            loadMonsters();
         });
-      }
-    });
 
-    // Filter functionality
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        if (!btn.onclick) { // Skip buttons with onclick handlers
-          this.handleFilter(btn);
+        // Monster data (simplified for demo)
+        function loadMonsters() {
+            const monsters = [
+                {
+                    name: 'Dreadqueen Rathian',
+                    element: 'fire',
+                    stances: {
+                        normal: 'Uses: SPEED attacks with poison application',
+                        enraged: 'Uses: SPEED + POWER with enhanced burn DoT'
+                    }
+                },
+                {
+                    name: 'Boltreaver Astalos',
+                    element: 'thunder', 
+                    stances: {
+                        normal: 'Uses: TECHNICAL attacks with paralysis chance',
+                        enraged: 'Uses: TECHNICAL + self-buffing loop activation'
+                    }
+                },
+                {
+                    name: 'Purple Gypceros',
+                    element: 'non-elemental',
+                    stances: {
+                        normal: 'Uses: POWER attacks with flash blind',
+                        enraged: 'Uses: POWER + tail stun priority interrupt'
+                    }
+                }
+            ];
+
+            const container = document.getElementById('monster-container');
+            container.innerHTML = '';
+
+            monsters.forEach(monster => {
+                const card = document.createElement('div');
+                card.className = 'monster-card';
+                card.innerHTML = `
+                    <div class="monster-header-info">
+                        <div class="monster-name-info">${monster.name}</div>
+                        <div class="element-badge ${monster.element}">${monster.element.toUpperCase()}</div>
+                    </div>
+                    <div class="stance-info">
+                        <div class="stance-title">Combat Stances:</div>
+                        <div class="stance-pattern"><strong>Normal:</strong> ${monster.stances.normal}</div>
+                        <div class="stance-pattern"><strong>Enraged:</strong> ${monster.stances.enraged}</div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
         }
-      });
-    });
-  },
-
-  switchTab(tabName) {
-    // Update active tab button
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.classList.remove('active');
-    });
-    document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
-
-    // Update active content
-    document.querySelectorAll('.tab-content').forEach(content => {
-      content.classList.remove('active');
-    });
-    document.getElementById(tabName).classList.add('active');
-
-    this.currentTab = tabName;
-  },
-
-  handleSearch(type, term) {
-    this.searchTerms[type] = term.toLowerCase();
-    this.filterContent(type);
-  },
-
-  handleFilter(btn) {
-    const parentFilter = btn.closest('.filter-bar');
-    parentFilter.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const tabContent = btn.closest('.tab-content');
-    const tabId = tabContent.id;
-    
-    // Handle weapon element filters separately
-    if (tabId === 'weapons' && ['all-elements', 'fire', 'water', 'thunder', 'ice', 'dragon', 'none'].includes(btn.dataset.filter)) {
-      this.weaponElementFilter = btn.dataset.filter;
-    } else {
-      this.activeFilters[tabId] = btn.dataset.filter;
-    }
-    
-    this.filterContent(tabId);
-  },
-
-  filterContent(type) {
-    const containers = {
-      monster: 'monster-list',
-      monsters: 'monster-list',
-      boss: 'boss-list', 
-      bosses: 'boss-list',
-      weapon: 'weapon-list',
-      weapons: 'weapon-list',
-      universal: ['monster-list', 'boss-list', 'weapon-list']
-    };
-
-    const containerIds = Array.isArray(containers[type]) ? containers[type] : [containers[type]];
-    
-    containerIds.forEach(containerId => {
-      if (!containerId) return;
-      
-      const container = document.getElementById(containerId);
-      if (!container) return;
-      
-      const items = container.querySelectorAll('.monster-card');
-      const searchTerm = this.searchTerms[type] || '';
-      const activeFilter = this.activeFilters[type] || 'all';
-
-      items.forEach(item => {
-        const text = item.textContent.toLowerCase();
-        const matchesSearch = !searchTerm || text.includes(searchTerm);
-        const matchesFilter = this.checkFilterMatch(item, activeFilter, type);
-        const matchesElementFilter = this.checkElementFilterMatch(item, type);
-        
-        item.style.display = (matchesSearch && matchesFilter && matchesElementFilter) ? 'block' : 'none';
-      });
-    });
-  },
-
-  checkFilterMatch(item, filter, type = 'monsters') {
-    if (filter === 'all') return true;
-    
-    const itemData = JSON.parse(item.dataset.monster || item.dataset.weapon || '{}');
-    
-    switch (filter) {
-      case 'power':
-        return this.hasAttackType(itemData, 'power');
-      case 'speed':
-        return this.hasAttackType(itemData, 'speed');
-      case 'technical':
-        return this.hasAttackType(itemData, 'technical');
-      case 'multi-phase':
-        return itemData.stance_patterns?.special_phases && 
-               Object.keys(itemData.stance_patterns.special_phases).length > 0;
-      case 'enrage-change':
-        return itemData.stance_patterns?.normal?.pattern_type !== 
-               itemData.stance_patterns?.enraged?.pattern_type;
-      case 'main':
-        return itemData.mission !== undefined;
-      case 'invasive':
-        return itemData.category === 'invasive';
-      case 'elder':
-        return itemData.threat_level === 'elder' || itemData.category === 'elder';
-      case 'feral':
-        return itemData.category === 'feral';
-      // Weapon-specific filters
-      case 'swords':
-      case 'great_swords':
-      case 'hammers':
-      case 'hunting_horns':
-      case 'lances':
-      case 'gun_lances':
-        return itemData.weapon_type === filter;
-      case 'fire':
-      case 'water':
-      case 'thunder':
-      case 'ice':
-      case 'dragon':
-      case 'none':
-        return itemData.element === filter;
-      case 'all-elements':
-        return true;
-      default:
-        return true;
-    }
-  },
-
-  checkElementFilterMatch(item, type) {
-    // Only apply element filtering to weapons
-    if (type !== 'weapons' && type !== 'weapon') return true;
-    if (this.weaponElementFilter === 'all-elements') return true;
-    
-    const itemData = JSON.parse(item.dataset.weapon || '{}');
-    return itemData.element === this.weaponElementFilter;
-  },
-
-  hasAttackType(monster, attackType) {
-    if (!monster.stance_patterns) return false;
-    
-    const stances = ['normal', 'enraged'];
-    return stances.some(stance => 
-      monster.stance_patterns[stance]?.pattern_type === attackType ||
-      monster.stance_patterns[stance]?.attacks?.some(attack => attack.type === attackType)
-    );
-  },
-
-  populateMonsters() {
-    const container = document.getElementById('monster-list');
-    container.innerHTML = '';
-
-    if (!enhancedGameData || !enhancedGameData.monsters) {
-      this.showError('Enhanced monster data not available');
-      return;
-    }
-
-    enhancedGameData.monsters.forEach(monster => {
-      const card = this.createEnhancedMonsterCard(monster);
-      container.appendChild(card);
-    });
-  },
-
-  populateBosses() {
-    const container = document.getElementById('boss-list');
-    container.innerHTML = '';
-
-    if (!enhancedGameData || !enhancedGameData.bosses) {
-      container.innerHTML = '<div class="error">Enhanced boss data not available</div>';
-      return;
-    }
-
-    enhancedGameData.bosses.forEach(boss => {
-      const card = this.createEnhancedMonsterCard(boss);
-      container.appendChild(card);
-    });
-  },
-
-  populateWeapons() {
-    const container = document.getElementById('weapon-list');
-    container.innerHTML = '';
-
-    if (!weaponEvolutionData || !weaponEvolutionData.weapons) {
-      container.innerHTML = '<div class="error">Weapon evolution data not available</div>';
-      return;
-    }
-
-    // Organize weapons by category for better display
-    weaponEvolutionData.weapon_categories.forEach(category => {
-      if (weaponEvolutionData.weapons[category] && weaponEvolutionData.weapons[category].length > 0) {
-        // Add category header
-        const categoryHeader = document.createElement('div');
-        categoryHeader.className = 'section-title';
-        categoryHeader.style.marginTop = '20px';
-        categoryHeader.innerHTML = `⚔️ ${this.formatWeaponCategory(category)}`;
-        container.appendChild(categoryHeader);
-
-        // Add weapons in this category
-        weaponEvolutionData.weapons[category].forEach(weapon => {
-          weapon.weapon_type = category; // Add type for filtering
-          const card = this.createWeaponCard(weapon);
-          container.appendChild(card);
-        });
-      }
-    });
-  },
-
-  formatWeaponCategory(category) {
-    const names = {
-      swords: 'Swords & Shields',
-      great_swords: 'Great Swords',
-      hammers: 'Hammers',
-      hunting_horns: 'Hunting Horns',
-      lances: 'Lances',
-      gun_lances: 'Gunlances'
-    };
-    return names[category] || category.replace('_', ' ').toUpperCase();
-  },
-
-  createEnhancedMonsterCard(monster) {
-    const card = document.createElement('div');
-    card.className = 'monster-card';
-    card.dataset.filter = monster.category;
-    card.dataset.monster = JSON.stringify(monster);
-
-    // Create stance preview indicators
-    const stancePreview = this.createStancePreview(monster.stance_patterns);
-    
-    card.innerHTML = `
-      <div class="monster-header">
-        <div class="monster-info">
-          <div class="monster-name">
-            ${monster.name}
-          </div>
-          <div class="monster-badges">
-            <span class="element-badge element-${monster.element}">${monster.element}</span>
-            <span class="threat-level threat-${monster.threat_level}">${monster.threat_level.toUpperCase()}</span>
-          </div>
-          ${stancePreview}
-        </div>
-        <div class="chevron">▼</div>
-      </div>
-      <div class="monster-body">
-        
-        <!-- CRITICAL: Battle Stance Section - PRIMARY FOCUS -->
-        <div class="stance-section">
-          <div class="stance-title">⚔️ Battle Stances & Attack Patterns</div>
-          <div class="stance-grid">
-            ${this.createStanceCards(monster.stance_patterns)}
-          </div>
-        </div>
-        
-        <!-- Phase Transitions Section -->
-        ${monster.phase_transitions && (
-          monster.phase_transitions.to_enraged.length > 0 ||
-          monster.phase_transitions.special_triggers.length > 0
-        ) ? `
-          <div class="transitions-section">
-            <div class="section-title">🔄 Phase Transition Triggers</div>
-            ${monster.phase_transitions.to_enraged.map(trigger => 
-              `<div class="transition-item">
-                <span class="transition-trigger">ENRAGE:</span> ${trigger}
-              </div>`
-            ).join('')}
-            ${monster.phase_transitions.special_triggers.map(trigger => 
-              `<div class="transition-item">
-                <span class="transition-trigger">SPECIAL:</span> ${trigger}
-              </div>`
-            ).join('')}
-            ${monster.phase_transitions.to_sleep.map(trigger => 
-              `<div class="transition-item">
-                <span class="transition-trigger">SLEEP:</span> ${trigger}
-              </div>`
-            ).join('')}
-          </div>
-        ` : ''}
-        
-        <!-- Weakness Reference -->
-        ${monster.combat_data?.weaknesses ? `
-          <div class="weakness-section">
-            <div class="section-title">⚔️ Elemental Weaknesses</div>
-            <div class="weakness-grid">
-              ${Object.entries(monster.combat_data.weaknesses).map(([element, resistance]) => 
-                `<div class="weakness-item weakness-${resistance}">
-                  <span class="element-icon">${this.getElementIcon(element)}</span>
-                  <span>${resistance.charAt(0).toUpperCase()}</span>
-                </div>`
-              ).join('')}
-            </div>
-          </div>
-        ` : ''}
-        
-        <!-- Quick Strategy -->
-        <div class="strategy-section">
-          <div class="section-title">🛡️ Quick Strategy Notes</div>
-          <div class="strategy-text">
-            <div style="margin-bottom: 6px;"><span class="strategy-highlight">Normal:</span> ${monster.stance_patterns.normal.notes}</div>
-            <div style="margin-bottom: 6px;"><span class="strategy-highlight">Enraged:</span> ${monster.stance_patterns.enraged.notes}</div>
-            ${monster.stance_patterns.special_phases && Object.keys(monster.stance_patterns.special_phases).length > 0 ? 
-              '<div><span class="strategy-highlight">Special Phases:</span> ' + Object.keys(monster.stance_patterns.special_phases).join(', ') + '</div>' : ''}
-          </div>
-        </div>
-        
-      </div>
-    `;
-
-    // Toggle functionality
-    const header = card.querySelector('.monster-header');
-    header.addEventListener('click', () => {
-      card.classList.toggle('open');
-    });
-
-    // Auto-expand if setting enabled
-    if (this.settings.autoExpand) {
-      setTimeout(() => card.classList.add('open'), 100);
-    }
-
-    return card;
-  },
-
-  createStancePreview(stancePatterns) {
-    if (!stancePatterns) return '';
-    
-    const stances = ['normal', 'enraged'];
-    const specialPhases = Object.keys(stancePatterns.special_phases || {});
-    
-    let preview = '<div class="stance-preview">';
-    
-    // Normal and enraged stances
-    stances.forEach(stance => {
-      const pattern = stancePatterns[stance];
-      if (pattern && pattern.pattern_type !== 'unknown' && pattern.pattern_type !== 'none') {
-        const attackTypes = this.getStanceAttackTypes(pattern);
-        const attackDisplay = attackTypes.length > 0 ? attackTypes.join(' + ') : pattern.pattern_type;
-        
-        preview += `
-          <div class="stance-indicator stance-${stance}" title="${stance.charAt(0).toUpperCase() + stance.slice(1)}: Uses ${attackDisplay} attacks">
-            ${stance === 'normal' ? '🛡️' : '😡'} Uses: ${attackDisplay.toUpperCase()}
-            <div class="attack-type-icon attack-${attackTypes[0] || pattern.pattern_type}"></div>
-          </div>
-        `;
-      }
-    });
-    
-    // Special phases
-    specialPhases.forEach(phase => {
-      const pattern = stancePatterns.special_phases[phase];
-      if (pattern && pattern.pattern_type !== 'unknown') {
-        const attackTypes = this.getStanceAttackTypes(pattern);
-        const attackDisplay = attackTypes.length > 0 ? attackTypes.join(' + ') : pattern.pattern_type;
-        
-        preview += `
-          <div class="stance-indicator stance-special" title="${phase.replace('_', ' ')}: Uses ${attackDisplay} attacks">
-            ⭐ ${phase.replace('_', ' ').toUpperCase()}
-            <div class="attack-type-icon attack-${attackTypes[0] || pattern.pattern_type}"></div>
-          </div>
-        `;
-      }
-    });
-    
-    preview += '</div>';
-    return preview;
-  },
-
-  createStanceCards(stancePatterns) {
-    if (!stancePatterns) return '<div class="error">No stance data available</div>';
-    
-    let cards = '';
-    
-    // Normal stance
-    if (stancePatterns.normal) {
-      cards += this.createIndividualStanceCard('normal', stancePatterns.normal, '🛡️');
-    }
-    
-    // Enraged stance
-    if (stancePatterns.enraged) {
-      cards += this.createIndividualStanceCard('enraged', stancePatterns.enraged, '😡');
-    }
-    
-    // Sleep stance (if it has meaningful data)
-    if (stancePatterns.sleep && stancePatterns.sleep.notes && stancePatterns.sleep.notes.length > 0) {
-      cards += this.createIndividualStanceCard('sleep', stancePatterns.sleep, '💤');
-    }
-    
-    // Special phases
-    Object.entries(stancePatterns.special_phases || {}).forEach(([phaseName, phaseData]) => {
-      cards += this.createIndividualStanceCard(phaseName.replace('_', ' '), phaseData, '⭐', 'special');
-    });
-    
-    return cards;
-  },
-
-  getStanceAttackTypes(stanceData) {
-    if (!stanceData.attacks || stanceData.attacks.length === 0) {
-      return [];
-    }
-    
-    // Get unique attack types from the attacks array
-    const attackTypes = [...new Set(stanceData.attacks.map(attack => attack.type))];
-    return attackTypes.filter(type => type && type !== 'unknown');
-  },
-
-  createIndividualStanceCard(stanceName, stanceData, icon, stanceClass = stanceName.toLowerCase()) {
-    const attacks = stanceData.attacks || [];
-    const attackTypes = this.getStanceAttackTypes(stanceData);
-    
-    let attacksDisplay = '';
-    if (attacks.length > 0) {
-      attacksDisplay = attacks.map(attack => 
-        `<div class="attack-item">
-          <span>${attack.name}</span>
-          <span class="attack-type-badge pattern-${attack.type}">${attack.type.toUpperCase()}</span>
-        </div>`
-      ).join('');
-    } else if (stanceData.pattern_type !== 'none') {
-      attacksDisplay = '<div class="attack-item"><span>Attack data not available</span></div>';
-    }
-    
-    // Create attack type summary
-    let attackTypeSummary = '';
-    if (attackTypes.length > 0) {
-      const typeDisplay = attackTypes.join(' + ');
-      attackTypeSummary = `<span class="stance-pattern pattern-${attackTypes[0]}">Uses: ${typeDisplay.toUpperCase()} attacks</span>`;
-    } else if (stanceData.pattern_type !== 'unknown' && stanceData.pattern_type !== 'none') {
-      attackTypeSummary = `<span class="stance-pattern pattern-${stanceData.pattern_type}">${stanceData.pattern_type.toUpperCase()}</span>`;
-    }
-    
-    return `
-      <div class="stance-card ${stanceClass.replace(' ', '-')}">
-        <div class="stance-header">
-          <div class="stance-name">
-            ${icon} ${stanceName.toUpperCase()}
-            ${attackTypeSummary}
-          </div>
-        </div>
-        ${attacksDisplay}
-        ${stanceData.notes ? `
-          <div style="font-size: .65em; color: var(--text2); margin-top: 6px; font-style: italic; border-top: 1px solid rgba(255,255,255,.1); padding-top: 6px;">
-            ${stanceData.notes}
-          </div>
-        ` : ''}
-      </div>
-    `;
-  },
-
-  getElementIcon(element) {
-    const icons = {
-      fire: '🔥',
-      water: '💧', 
-      thunder: '⚡',
-      ice: '❄️',
-      dragon: '🐉',
-      physical: '⚔️',
-      none: '⚪'
-    };
-    return icons[element] || '⚪';
-  },
-
-  createWeaponCard(weapon) {
-    const card = document.createElement('div');
-    card.className = `weapon-card element-${weapon.element}`;
-    card.dataset.weapon = JSON.stringify(weapon);
-
-    // Get evolution paths
-    const evolutionPaths = this.getEvolutionPaths(weapon);
-    const materials = this.getWeaponMaterials(weapon);
-
-    card.innerHTML = `
-      <div class="weapon-header">
-        <div class="weapon-info">
-          <div class="weapon-name-section">
-            <div class="weapon-name">${weapon.name}</div>
-            <div class="weapon-type">
-              ${this.getWeaponTypeIcon(weapon.weapon_type)} ${this.formatWeaponCategory(weapon.weapon_type)}
-            </div>
-          </div>
-          <div class="weapon-stats-preview">
-            <div class="stat-badge attack-stat">
-              ⚔️ ${weapon.attack}
-            </div>
-            ${weapon.element !== 'none' ? `
-              <div class="stat-badge element-stat">
-                ${this.getElementIcon(weapon.element)} ${weapon.element_power}
-              </div>
-            ` : ''}
-            <div class="stat-badge sharpness-stat">
-              🔪 ${weapon.sharpness}
-            </div>
-            <div class="rarity-badge rarity-${weapon.rarity}">
-              ★${weapon.rarity}
-            </div>
-          </div>
-        </div>
-        <div class="chevron">▼</div>
-      </div>
-      <div class="weapon-body">
-        
-        <!-- Weapon Stats Section -->
-        <div class="weapon-stats-section">
-          <div class="section-title">📊 Weapon Statistics</div>
-          <div class="stats-grid">
-            <div class="stat-item attack">
-              <div class="stat-label">Attack Power</div>
-              <div class="stat-value">${weapon.attack}</div>
-            </div>
-            ${weapon.element !== 'none' ? `
-              <div class="stat-item element">
-                <div class="stat-label">${weapon.element.charAt(0).toUpperCase() + weapon.element.slice(1)}</div>
-                <div class="stat-value">${weapon.element_power}</div>
-              </div>
-            ` : ''}
-            <div class="stat-item sharpness">
-              <div class="stat-label">Sharpness</div>
-              <div class="stat-value">${weapon.sharpness}</div>
-            </div>
-            <div class="stat-item slots">
-              <div class="stat-label">Decoration Slots</div>
-              <div class="stat-value">${weapon.slots || 0}</div>
-            </div>
-            ${weapon.shell_type ? `
-              <div class="stat-item">
-                <div class="stat-label">Shell Type</div>
-                <div class="stat-value">${weapon.shell_type} Lv.${weapon.shell_level}</div>
-              </div>
-            ` : ''}
-          </div>
-          ${weapon.description ? `
-            <div style="margin-top: 12px; font-size: .75em; color: var(--text2); font-style: italic; text-align: center;">
-              "${weapon.description}"
-            </div>
-          ` : ''}
-        </div>
-        
-        <!-- Evolution Paths Section -->
-        ${evolutionPaths.length > 0 ? `
-          <div class="evolution-section">
-            <div class="section-title">🔄 Evolution Paths</div>
-            <div class="evolution-tree">
-              ${evolutionPaths.map(path => `
-                <div class="evolution-branch">
-                  ${path}
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        ` : ''}
-        
-        <!-- Materials Section -->
-        <div class="materials-section">
-          <div class="section-title">🔨 ${weapon.craft_materials ? 'Crafting' : 'Upgrade'} Materials</div>
-          <div class="materials-grid">
-            ${materials}
-          </div>
-          ${weapon.zenny_cost ? `
-            <div class="zenny-cost">
-              💰 ${weapon.zenny_cost.toLocaleString()} Zenny
-            </div>
-          ` : ''}
-        </div>
-        
-        <!-- Special Abilities Section -->
-        ${weapon.special_abilities && weapon.special_abilities.length > 0 ? `
-          <div class="abilities-section">
-            <div class="section-title">✨ Special Abilities</div>
-            ${weapon.special_abilities.map(ability => `
-              <div class="ability-item">
-                <div class="ability-icon">⭐</div>
-                <div class="ability-name">${ability}</div>
-                <div class="ability-description">${this.getAbilityDescription(ability)}</div>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
-        
-        ${weapon.song_list ? `
-          <div class="abilities-section">
-            <div class="section-title">🎵 Song List</div>
-            ${weapon.song_list.map(song => `
-              <div class="ability-item">
-                <div class="ability-icon">🎵</div>
-                <div class="ability-name">${song}</div>
-              </div>
-            `).join('')}
-          </div>
-        ` : ''}
-        
-      </div>
-    `;
-
-    // Toggle functionality
-    const header = card.querySelector('.weapon-header');
-    header.addEventListener('click', () => {
-      card.classList.toggle('open');
-    });
-
-    return card;
-  },
-
-  getWeaponTypeIcon(type) {
-    const icons = {
-      swords: '⚔️',
-      great_swords: '🗡️',
-      hammers: '🔨',
-      hunting_horns: '🎺',
-      lances: '🔱',
-      gun_lances: '💥'
-    };
-    return icons[type] || '⚔️';
-  },
-
-  getEvolutionPaths(weapon) {
-    const paths = [];
-    
-    // Show what this weapon evolves to
-    if (weapon.evolves_to && weapon.evolves_to.length > 0) {
-      weapon.evolves_to.forEach(targetId => {
-        const targetWeapon = this.findWeaponById(targetId);
-        if (targetWeapon) {
-          paths.push(`
-            <div class="evolution-path" data-target="${targetId}">
-              <div class="evolution-weapon">
-                <div class="evolution-name">
-                  <span class="evolution-arrow">➤</span>
-                  ${targetWeapon.name}
-                </div>
-                <div class="evolution-stats">
-                  <span>ATK: ${targetWeapon.attack}</span>
-                  ${targetWeapon.element !== 'none' ? 
-                    `<span>${this.getElementIcon(targetWeapon.element)} ${targetWeapon.element_power}</span>` : ''}
-                  <span class="rarity-badge rarity-${targetWeapon.rarity}">★${targetWeapon.rarity}</span>
-                </div>
-              </div>
-            </div>
-          `);
-        }
-      });
-    }
-    
-    // Show what this weapon evolves from
-    if (weapon.evolves_from) {
-      const sourceWeapon = this.findWeaponById(weapon.evolves_from);
-      if (sourceWeapon) {
-        paths.unshift(`
-          <div class="evolution-path" data-target="${weapon.evolves_from}">
-            <div class="evolution-weapon">
-              <div class="evolution-name">
-                <span class="evolution-arrow">⬅</span>
-                ${sourceWeapon.name}
-              </div>
-              <div class="evolution-stats">
-                <span>ATK: ${sourceWeapon.attack}</span>
-                ${sourceWeapon.element !== 'none' ? 
-                  `<span>${this.getElementIcon(sourceWeapon.element)} ${sourceWeapon.element_power}</span>` : ''}
-                <span class="rarity-badge rarity-${sourceWeapon.rarity}">★${sourceWeapon.rarity}</span>
-              </div>
-            </div>
-          </div>
-        `);
-      }
-    }
-    
-    return paths;
-  },
-
-  findWeaponById(weaponId) {
-    if (!weaponEvolutionData || !weaponEvolutionData.weapons) return null;
-    
-    for (const category of Object.values(weaponEvolutionData.weapons)) {
-      const weapon = category.find(w => w.id === weaponId);
-      if (weapon) return weapon;
-    }
-    return null;
-  },
-
-  getWeaponMaterials(weapon) {
-    const materials = weapon.craft_materials || weapon.upgrade_materials || [];
-    
-    if (materials.length === 0) {
-      return '<div class="material-item"><span class="material-name">No materials data available</span></div>';
-    }
-    
-    return `
-      <div class="materials-category">
-        <div class="materials-title">
-          🔨 Required Materials
-        </div>
-        ${materials.map(material => `
-          <div class="material-item">
-            <span class="material-name">${material.item}</span>
-            <span class="material-quantity">×${material.quantity}</span>
-          </div>
-        `).join('')}
-      </div>
-    `;
-  },
-
-  getAbilityDescription(ability) {
-    const descriptions = {
-      'Fire Boost': 'Increases fire element damage',
-      'Critical Element': 'Elemental damage gains critical hits',
-      'Non-elemental Boost': 'Boosts raw attack when no element',
-      'Negative Affinity': 'Reduced critical hit chance',
-      'KO King': 'Increases stun damage',
-      'Maestro': 'Extends song duration',
-      'Horn Maestro': 'Improves horn performance',
-      'Water Attack+': 'Increases water element damage'
-    };
-    return descriptions[ability] || 'Special weapon ability';
-  }
-};
-
-// Quick search function for reference tab
-function quickSearch(term) {
-  document.getElementById('universal-search').value = term;
-  enhancedApp.handleSearch('universal', term);
-  enhancedApp.switchTab('search');
-}
-
-// Initialize enhanced app when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  enhancedApp.init();
-});
-
-// Enhanced service worker registration
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').then(reg => {
-    console.log('MHS3 Enhanced Battle & Weapon Companion registered for offline use');
-  }).catch(err => {
-    console.log('ServiceWorker registration failed: ', err);
-  });
-}
-
-// Performance monitoring for battle use
-window.addEventListener('load', () => {
-  console.log('MHS3 Enhanced Stances Companion loaded in', Math.round(performance.now()), 'ms');
-  
-  // Add loading performance to UI
-  const loadTime = Math.round(performance.now());
-  if (loadTime > 3000) {
-    console.warn('App loaded slowly. Consider optimizing for battle use.');
-  }
-});
-</script>
+    </script>
 </body>
 </html>
