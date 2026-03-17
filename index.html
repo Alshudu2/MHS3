@@ -2064,7 +2064,7 @@
                                 <div class="stance-tabs">
                                     ${Object.entries(monster.stance_patterns).map(([stance, data], index) => `
                                         <button class="stance-tab ${index === 0 ? 'active' : ''}" data-stance="${stance}">
-                                            <div class="tab-content">
+                                            <div class="stance-tab-content">
                                                 <span class="tab-name">${data.name || stance.charAt(0).toUpperCase() + stance.slice(1)}</span>
                                                 <span class="stance-indicator pattern-${data.primaryAttack || data.attackType || 'power'}">${(data.primaryAttack || data.attackType || 'P').charAt(0).toUpperCase()}</span>
                                                 ${data.stanceId ? `<span class="stance-order">${index + 1}</span>` : ''}
@@ -3096,7 +3096,7 @@
             flex-shrink: 0;
         }
 
-        .tab-content {
+        .stance-tab-content {
             display: flex;
             flex-direction: column;
             align-items: center;
