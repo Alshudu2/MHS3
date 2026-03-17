@@ -1048,11 +1048,11 @@
                 <div class="nav-section">
                     <div class="nav-section-title">Quick Navigation</div>
                     <div class="quick-links">
-                        <a href="#tier-list" data-scroll="tier-list">Tier Rankings</a>
-                        <a href="#meta-builds" data-scroll="meta-builds">Meta Teams</a>
-                        <a href="#combat-guide" data-scroll="combat-guide">Combat Mechanics</a>
-                        <a href="#breeding-guide" data-scroll="breeding-guide">Breeding Guide</a>
-                        <a href="#endgame-content" data-scroll="endgame-content">Endgame Content</a>
+                        <a href="#guides" data-tab="guides">Tier Rankings</a>
+                        <a href="#teams" data-tab="teams">Meta Teams</a>
+                        <a href="#guides" data-tab="guides">Combat Mechanics</a>
+                        <a href="#guides" data-tab="guides">Breeding Guide</a>
+                        <a href="#guides" data-tab="guides">Endgame Content</a>
                     </div>
                 </div>
             </div>
@@ -1634,9 +1634,10 @@
 
             handleQuickNavigation(e) {
                 e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
+                const tab = e.currentTarget.getAttribute('data-tab');
+                if (tab) this.switchTab(tab);
 
+            }
             handleViewChange(e) {
                 const view = e.currentTarget.getAttribute('data-view');
                 this.state.view = view;
@@ -1717,7 +1718,7 @@
                                 break;
                             case 'compare':
                                 this.addToComparison(monsterName);
-                                this.showComparisonPanel();
+                                // comparison bar handles panel display
                                 break;
                         }
                     });
@@ -2677,14 +2678,40 @@
             }
 
             addToComparison(monsterName) {
-                if (this.data.comparison.size >= 3) {
-                    alert('Maximum 3 monsters can be compared at once.');
-                    return;
+                if (this.data.comparison.has(monsterName)) {
+                    this.data.comparison.delete(monsterName);
+                } else {
+                    if (this.data.comparison.size >= 3) {
+                        alert('Maximum 3 monsters can be compared at once. Remove one first.');
+                        return;
+                    }
+                    this.data.comparison.add(monsterName);
                 }
-                
-                this.data.comparison.add(monsterName);
-                console.log('Added to comparison:', monsterName, 'Total:', this.data.comparison.size);
+
+                // Update compare button active state
+                document.querySelectorAll(`[data-action="compare"][data-monster="${monsterName}"]`).forEach(btn => {
+                    btn.classList.toggle('active', this.data.comparison.has(monsterName));
+                });
+
+                // Update compare button tooltip text on all cards
+                const count = this.data.comparison.size;
+                const sortBtn = document.getElementById('sortBtn');
+                if (count > 0) {
+                    const existing = document.getElementById('compareStatusBar');
+                    if (!existing) {
+                        const bar = document.createElement('div');
+                        bar.id = 'compareStatusBar';
+                        bar.style.cssText = 'position:fixed;bottom:16px;right:16px;background:#1e3a5f;color:#fff;padding:10px 16px;border-radius:8px;font-size:0.85em;z-index:1000;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.4)';
+                        bar.onclick = () => window.mhs3Guide.showComparisonPanel();
+                        document.body.appendChild(bar);
+                    }
+                    document.getElementById('compareStatusBar').textContent = `⚖ ${count} monster${count>1?'s':''} selected${count >= 2 ? ' — click to compare' : ' — add 1 more'}`;
+                } else {
+                    const bar = document.getElementById('compareStatusBar');
+                    if (bar) bar.remove();
+                }
             }
+
 
             loadUserPreferences() {
                 try {
