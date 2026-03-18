@@ -796,6 +796,264 @@
             padding: var(--spacing-lg);
         }
 
+        /* ===== MUTATION SECTION ===== */
+        .mutation-section {
+            margin-top: var(--spacing-lg);
+        }
+
+        .mutation-section h3 {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+        }
+
+        .mutation-card {
+            background: var(--tertiary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            transition: var(--transition);
+        }
+
+        .mutation-card:hover {
+            border-color: var(--border-hover);
+        }
+
+        .mutation-card-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .mutation-images {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            flex-shrink: 0;
+        }
+
+        .mutation-img-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .mutation-img-wrap img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            border-radius: var(--border-radius);
+            background: var(--primary-bg);
+            border: 1px solid var(--border-color);
+            padding: 4px;
+        }
+
+        .mutation-img-wrap span {
+            font-size: var(--font-size-xs);
+            color: var(--text-muted);
+            text-align: center;
+            max-width: 60px;
+        }
+
+        .mutation-arrow {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            flex-shrink: 0;
+        }
+
+        .mutation-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .mutation-name {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .mutation-rank-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(233, 69, 96, 0.15);
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            color: var(--accent-color);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .mutation-chain-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(66, 165, 245, 0.1);
+            border: 1px solid rgba(66, 165, 245, 0.3);
+            color: #42a5f5;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+            margin-left: var(--spacing-xs);
+        }
+
+        .mutation-how-to-get {
+            margin: var(--spacing-sm) 0;
+        }
+
+        .mutation-how-to-get h5 {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xs);
+            font-weight: 600;
+        }
+
+        .mutation-steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mutation-steps li {
+            display: flex;
+            gap: var(--spacing-sm);
+            align-items: flex-start;
+            font-size: var(--font-size-sm);
+            color: var(--text-primary);
+            padding: 3px 0;
+        }
+
+        .mutation-step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.65rem;
+            font-weight: 700;
+            margin-top: 1px;
+        }
+
+        .mutation-requirements {
+            margin-top: var(--spacing-sm);
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+        }
+
+        .mutation-req-tag {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2px 8px;
+            font-size: var(--font-size-xs);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .mutation-req-tag.rank {
+            border-color: rgba(255, 193, 7, 0.4);
+            color: #ffc107;
+        }
+
+        .mutation-req-tag.condition {
+            border-color: rgba(156, 39, 176, 0.4);
+            color: #ce93d8;
+        }
+
+        .mutation-stats {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+
+        .mutation-stat-item {
+            background: var(--primary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 4px 10px;
+            font-size: var(--font-size-xs);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .mutation-stat-item strong {
+            color: var(--text-secondary);
+        }
+
+        .mutation-stat-item span {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .mutation-notes {
+            margin-top: var(--spacing-sm);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            font-style: italic;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-left: 2px solid var(--border-color);
+        }
+
+        .mutation-origin-banner {
+            background: linear-gradient(135deg, rgba(233,69,96,0.08) 0%, rgba(255,138,128,0.05) 100%);
+            border: 1px solid rgba(233,69,96,0.2);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .mutation-origin-banner h4 {
+            color: var(--accent-color);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .mutation-origin-banner .origin-base {
+            font-size: var(--font-size-md);
+            font-weight: 700;
+            color: var(--text-primary);
+            cursor: pointer;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .mutation-origin-banner .origin-base:hover {
+            color: var(--accent-hover);
+        }
+
+        @media (max-width: 480px) {
+            .mutation-img-wrap img {
+                width: 44px;
+                height: 44px;
+            }
+            .mutation-stats {
+                gap: 4px;
+            }
+        }
+
         /* ===== CONTROL BUTTONS ===== */
         .controls-row {
             display: flex;
@@ -1298,6 +1556,7 @@
                     expertGuides: {},
                     teamData: {},
                     weaponEvolution: {},
+                    mutations: {},
                     favorites: new Set(),
                     comparison: new Set()
                 };
@@ -1344,13 +1603,14 @@
                     
                     // Load other data files if available
                     try {
-                        const [weapons, bosses, sideContent, expertGuides, teamData, weaponEvolution] = await Promise.all([
+                        const [weapons, bosses, sideContent, expertGuides, teamData, weaponEvolution, mutationData] = await Promise.all([
                             fetch('complete_weapon_guide.json').then(r => r.json()),
                             fetch('boss_strategies_guide.json').then(r => r.json()),
                             fetch('side_content_guide.json').then(r => r.json()),
                             fetch('expert_guides_data.json').then(r => r.json()),
                             fetch('team_builder_data.json').then(r => r.json()),
-                            fetch('weapon_evolution_data.json').then(r => r.json())
+                            fetch('weapon_evolution_data.json').then(r => r.json()),
+                            fetch('mutation_database.json').then(r => r.json())
                         ]);
 
                         this.data.weapons = weapons;
@@ -1359,6 +1619,7 @@
                         this.data.expertGuides = expertGuides;
                         this.data.teamData = teamData;
                         this.data.weaponEvolution = weaponEvolution;
+                        this.data.mutations = mutationData;
                         console.log('✅ All data files loaded');
                     } catch (error) {
                         console.warn('⚠️ Some data files not loaded:', error);
@@ -1937,6 +2198,122 @@
                 }
             }
 
+            getMutationsForMonster(monsterName) {
+                if (!this.data.mutations || !this.data.mutations.mutationIndex) return [];
+                const ids = this.data.mutations.mutationIndex[monsterName] || [];
+                return ids.map(id => this.data.mutations.mutations.find(m => m.id === id)).filter(Boolean);
+            }
+
+            getMutationOrigin(monsterName) {
+                if (!this.data.mutations || !this.data.mutations.mutationOrigin) return null;
+                const id = this.data.mutations.mutationOrigin[monsterName];
+                if (!id) return null;
+                return this.data.mutations.mutations.find(m => m.id === id) || null;
+            }
+
+            createMutationSection(monster) {
+                const mutations = this.getMutationsForMonster(monster.name);
+                const origin = this.getMutationOrigin(monster.name);
+                if (!mutations.length && !origin) return '';
+
+                let html = `<div class="detail-section mutation-section">
+                    <h3><i class="fas fa-dna" style="color:#ce93d8;margin-right:6px"></i> Mutation System</h3>`;
+
+                // If this monster IS a mutation — show where it comes from
+                if (origin) {
+                    html += `
+                    <div class="mutation-origin-banner">
+                        <h4><i class="fas fa-arrow-circle-left"></i> This is a Mutated Form</h4>
+                        <div>
+                            Base monster:
+                            <span class="origin-base" data-monster="${origin.baseMonster}">${origin.baseMonster}</span>
+                            &nbsp;&rarr;&nbsp;
+                            <strong>${monster.name}</strong>
+                            ${origin.chainStep ? `<span class="mutation-chain-badge"><i class="fas fa-link"></i> ${origin.chainStep}</span>` : ''}
+                        </div>
+                        <div class="mutation-requirements" style="margin-top:8px">
+                            <span class="mutation-req-tag rank"><i class="fas fa-star"></i> ${origin.requirements.ecosystemRank}</span>
+                            ${origin.requirements.habitatConditions.map(c => `<span class="mutation-req-tag condition"><i class="fas fa-leaf"></i> ${c}</span>`).join('')}
+                        </div>
+                    </div>`;
+                }
+
+                // Show mutations available FROM this monster
+                if (mutations.length) {
+                    html += `<div style="font-size:var(--font-size-sm);color:var(--text-secondary);margin-bottom:var(--spacing-md)">
+                        ${mutations.length === 1 ? 'This monster can mutate into 1 form via Habitat Restoration:' : `This monster has ${mutations.length} mutation paths via Habitat Restoration:`}
+                    </div>`;
+
+                    mutations.forEach(mut => {
+                        const stats = mut.stats?.mutation;
+                        html += `
+                        <div class="mutation-card">
+                            <div class="mutation-card-header">
+                                <div class="mutation-images">
+                                    <div class="mutation-img-wrap">
+                                        <img src="${mut.images.base}" alt="${mut.baseMonster}"
+                                             onerror="this.src='';this.style.display='none'">
+                                        <span>${mut.baseMonster}</span>
+                                    </div>
+                                    <div class="mutation-arrow">&#8594;</div>
+                                    <div class="mutation-img-wrap">
+                                        <img src="${mut.images.mutation}" alt="${mut.mutation}"
+                                             onerror="this.src='';this.style.display='none'">
+                                        <span>${mut.mutation}</span>
+                                    </div>
+                                </div>
+                                <div class="mutation-info">
+                                    <div class="mutation-name">${mut.mutation}</div>
+                                    <span class="mutation-rank-badge">
+                                        <i class="fas fa-arrow-up"></i>
+                                        ${mut.baseRank} &rarr; ${mut.mutationRank}
+                                    </span>
+                                    ${mut.chainStep ? `<span class="mutation-chain-badge"><i class="fas fa-link"></i> Chain</span>` : ''}
+                                </div>
+                            </div>
+
+                            <div class="mutation-how-to-get">
+                                <h5><i class="fas fa-list-ol" style="margin-right:4px"></i> How to Unlock</h5>
+                                <ol class="mutation-steps">
+                                    ${mut.howToGet.map((step, i) => `
+                                        <li>
+                                            <span class="mutation-step-num">${i + 1}</span>
+                                            <span>${step}</span>
+                                        </li>`).join('')}
+                                </ol>
+                            </div>
+
+                            <div class="mutation-requirements">
+                                <span class="mutation-req-tag rank">
+                                    <i class="fas fa-star"></i> ${mut.requirements.ecosystemRank}
+                                </span>
+                                ${mut.requirements.habitatConditions.map(c => `
+                                    <span class="mutation-req-tag condition">
+                                        <i class="fas fa-leaf"></i> ${c}
+                                    </span>`).join('')}
+                                ${mut.requirements.progression.map(p => `
+                                    <span class="mutation-req-tag">
+                                        <i class="fas fa-unlock"></i> ${p}
+                                    </span>`).join('')}
+                            </div>
+
+                            ${stats ? `
+                            <div class="mutation-stats">
+                                ${stats.hp !== undefined ? `<div class="mutation-stat-item"><strong>HP:</strong><span>${stats.hp}</span></div>` : ''}
+                                ${stats.atk !== undefined ? `<div class="mutation-stat-item"><strong>ATK:</strong><span>${stats.atk}</span></div>` : ''}
+                                ${stats.spd !== undefined ? `<div class="mutation-stat-item"><strong>SPD:</strong><span>${stats.spd}</span></div>` : ''}
+                                ${stats.def !== undefined ? `<div class="mutation-stat-item"><strong>DEF:</strong><span>${stats.def}</span></div>` : ''}
+                            </div>` : ''}
+
+                            ${mut.notes ? `<div class="mutation-notes">${mut.notes}</div>` : ''}
+                        </div>`;
+                    });
+                }
+
+                html += `</div>`;
+                return html;
+            }
+
             showMonsterDetails(monsterName) {
                 const monster = this.data.monsters.find(m => m.name === monsterName);
                 if (!monster) return;
@@ -1947,9 +2324,16 @@
 
                 modalTitle.textContent = monster.name;
                 modalBody.innerHTML = this.createMonsterDetailsContent(monster);
-                
+
                 // Add event listeners for stance tabs
                 this.attachStanceTabListeners();
+
+                // Add click handlers for mutation origin links
+                modalBody.querySelectorAll('.origin-base[data-monster]').forEach(el => {
+                    el.addEventListener('click', () => {
+                        this.showMonsterDetails(el.getAttribute('data-monster'));
+                    });
+                });
                 
                 modal.classList.add('show');
             }
@@ -2280,6 +2664,8 @@
                                 </div>
                             </div>
                         ` : ''}
+
+                        ${this.createMutationSection(monster)}
                     </div>
                 `;
             }

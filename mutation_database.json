@@ -1,0 +1,486 @@
+{
+  "mutations": [
+    {
+      "id": "rathalos_azure",
+      "baseMonster": "Rathalos",
+      "mutation": "Azure Rathalos",
+      "baseRank": "5★",
+      "mutationRank": "6★",
+      "images": {
+        "base": "assets/mutations/rathalos_base.png",
+        "mutation": "assets/mutations/rathalos_azure.png"
+      },
+      "howToGet": [
+        "Obtain Rathalos eggs from Tarkuan habitat dens",
+        "Release Rathalos into a habitat and begin Habitat Restoration",
+        "Reach Rank A in the Rathalos ecosystem",
+        "Azure Rathalos eggs will appear in that habitat's Retreat Den"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank A",
+        "habitatConditions": [],
+        "progression": ["Tarkuan region access required"]
+      },
+      "stats": {
+        "base": { "note": "Standard Flying Wyvern stats" },
+        "mutation": { "note": "Improved thunder weakness added" }
+      },
+      "notes": "Mid-chain mutation. Unlocked by reaching Rank A in Rathalos habitat restoration. Both dragon and thunder become strong weaknesses."
+    },
+    {
+      "id": "rathalos_silver",
+      "baseMonster": "Rathalos",
+      "mutation": "Silver Rathalos",
+      "baseRank": "5★",
+      "mutationRank": "7★",
+      "images": {
+        "base": "assets/mutations/rathalos_base.png",
+        "mutation": "assets/mutations/rathalos_silver.png"
+      },
+      "howToGet": [
+        "Obtain Rathalos eggs from Tarkuan habitat dens",
+        "Release Rathalos into a habitat and begin Habitat Restoration",
+        "Reach High Rank in the Rathalos ecosystem",
+        "Silver Rathalos eggs become available in the habitat den"
+      ],
+      "requirements": {
+        "ecosystemRank": "High Rank",
+        "habitatConditions": [],
+        "progression": ["High Rank progression required"]
+      },
+      "notes": "Rare High Rank mutation of Rathalos. Dramatically increased stats and new silver coloring."
+    },
+    {
+      "id": "rathalos_dreadking",
+      "baseMonster": "Rathalos",
+      "mutation": "Dreadking Rathalos",
+      "baseRank": "5★",
+      "mutationRank": "7★",
+      "images": {
+        "base": "assets/mutations/rathalos_base.png",
+        "mutation": "assets/mutations/rathalos_dreadking.png"
+      },
+      "howToGet": [
+        "Obtain Rathalos eggs from Tarkuan habitat dens",
+        "Release Rathalos into a habitat and begin Habitat Restoration",
+        "Ensure the habitat contains 4 or more different Flying Wyvern species",
+        "Reach Rank S in the Rathalos ecosystem",
+        "Dreadking Rathalos eggs will appear once all conditions are met"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank S",
+        "habitatConditions": ["4+ Flying Wyvern species in same habitat"],
+        "progression": ["Post-game access recommended"]
+      },
+      "stats": {
+        "mutation": { "hp": 8, "atk": 9, "spd": 6, "def": 6 }
+      },
+      "notes": "Deviant mutation of Rathalos. Requires a Flying Wyvern-rich habitat to unlock. One of the strongest fire-element monsties."
+    },
+    {
+      "id": "rathian_pink",
+      "baseMonster": "Rathian",
+      "mutation": "Pink Rathian",
+      "baseRank": "4★",
+      "mutationRank": "5★",
+      "images": {
+        "base": "assets/mutations/rathian_base.png",
+        "mutation": "assets/mutations/rathian_pink.png"
+      },
+      "howToGet": [
+        "Obtain Rathian eggs from Azuria habitat dens (Sunpetal Plains)",
+        "Release Rathian into a habitat and begin Habitat Restoration",
+        "Reach Rank B in the Rathian ecosystem",
+        "Pink Rathian eggs will appear in that habitat's den"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank B",
+        "habitatConditions": [],
+        "progression": []
+      },
+      "stats": {
+        "base": { "hp": 5, "atk": 6, "spd": 7, "def": 6 },
+        "mutation": { "hp": 6, "atk": 7, "spd": 7, "def": 7 }
+      },
+      "notes": "First step in the Rathian mutation chain. Rank B is the earliest ecosystem milestone, making this an accessible early upgrade."
+    },
+    {
+      "id": "rathian_dreadqueen",
+      "baseMonster": "Rathian",
+      "mutation": "Dreadqueen Rathian",
+      "baseRank": "4★",
+      "mutationRank": "7★",
+      "chainStep": "Rathian → Pink Rathian → Dreadqueen Rathian",
+      "images": {
+        "base": "assets/mutations/rathian_base.png",
+        "mutation": "assets/mutations/rathian_dreadqueen.png"
+      },
+      "howToGet": [
+        "Complete the Pink Rathian mutation step first (Rank B habitat)",
+        "Continue restoring the Rathian habitat — aim for Sunpetal Plains",
+        "Ensure 3 or more Poisonous Monsters are present in the same habitat",
+        "Reach Rank S in the Rathian ecosystem",
+        "Dreadqueen Rathian eggs will appear once all conditions are met"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank S",
+        "habitatConditions": ["3+ Poisonous Monsters in the same habitat", "Sunpetal Plains recommended"],
+        "progression": ["Pink Rathian mutation must be unlocked first"]
+      },
+      "stats": {
+        "base": { "hp": 5, "atk": 6, "spd": 7, "def": 6 },
+        "mutation": { "hp": 8, "atk": 8, "spd": 7, "def": 7 }
+      },
+      "notes": "Deviant mutation at the end of the Rathian chain. Requires a poison-focused habitat. Very powerful final form with high HP and ATK."
+    },
+    {
+      "id": "zinogre_stygian",
+      "baseMonster": "Zinogre",
+      "mutation": "Stygian Zinogre",
+      "baseRank": "5★",
+      "mutationRank": "6★",
+      "images": {
+        "base": "assets/mutations/zinogre_base.png",
+        "mutation": "assets/mutations/zinogre_stygian.png"
+      },
+      "howToGet": [
+        "Obtain Zinogre eggs (repel Invasive Odogaron to unlock Retreat Den)",
+        "Release Zinogre into a habitat and begin Habitat Restoration",
+        "Reach Rank A in the Zinogre ecosystem",
+        "Stygian Zinogre eggs will appear in that habitat's den"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank A",
+        "habitatConditions": [],
+        "progression": ["Zinogre must be unlocked via Odogaron invasion first"]
+      },
+      "notes": "Mid-chain mutation of Zinogre. Switches from thunder to dragon element. Required step to reach Thunderlord Zinogre."
+    },
+    {
+      "id": "zinogre_thunderlord",
+      "baseMonster": "Zinogre",
+      "mutation": "Thunderlord Zinogre",
+      "baseRank": "5★",
+      "mutationRank": "7★",
+      "chainStep": "Zinogre → Stygian Zinogre → Thunderlord Zinogre",
+      "images": {
+        "base": "assets/mutations/zinogre_base.png",
+        "mutation": "assets/mutations/zinogre_thunderlord.png"
+      },
+      "howToGet": [
+        "Unlock and obtain Zinogre and Stygian Zinogre first",
+        "Continue restoring the Zinogre habitat to Rank S",
+        "Reach Rank S in the Zinogre ecosystem",
+        "Thunderlord Zinogre eggs will appear in the Retreat Den"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank S",
+        "habitatConditions": [],
+        "progression": ["Stygian Zinogre mutation must be unlocked first"]
+      },
+      "stats": {
+        "mutation": { "hp": 8, "atk": 10, "spd": 7, "def": 7 }
+      },
+      "notes": "Deviant mutation at the end of the Zinogre chain. Exceptional ATK stat of 10. One of the strongest thunder-type monsties available."
+    },
+    {
+      "id": "astalos_boltreaver",
+      "baseMonster": "Astalos",
+      "mutation": "Boltreaver Astalos",
+      "baseRank": "5★",
+      "mutationRank": "7★",
+      "images": {
+        "base": "assets/mutations/astalos_base.png",
+        "mutation": "assets/mutations/astalos_boltreaver.png"
+      },
+      "howToGet": [
+        "Obtain Astalos eggs (force Invasive Seregios to retreat to unlock Retreat Den)",
+        "Release Astalos into a habitat and begin Habitat Restoration",
+        "Ensure the habitat contains 3 or more Lightning-type Monsters",
+        "Reach Rank S in the Astalos ecosystem",
+        "Boltreaver Astalos eggs will appear once all conditions are met"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank S",
+        "habitatConditions": ["3+ Lightning-type Monsters in same habitat"],
+        "progression": ["Astalos must be unlocked via Seregios invasion first"]
+      },
+      "stats": {
+        "mutation": { "hp": 6, "atk": 9, "spd": 8, "def": 8 }
+      },
+      "notes": "Deviant Astalos — jumps directly to Rank S (no mid-chain mutation). Requires lightning-rich habitat. Excellent ATK and SPD combo."
+    },
+    {
+      "id": "lagiacrus_ivory",
+      "baseMonster": "Lagiacrus",
+      "mutation": "Ivory Lagiacrus",
+      "baseRank": "5★",
+      "mutationRank": "6★",
+      "images": {
+        "base": "assets/mutations/lagiacrus_base.png",
+        "mutation": "assets/mutations/lagiacrus_ivory.png"
+      },
+      "howToGet": [
+        "Obtain Lagiacrus eggs — force Invasive Plesioth to retreat from Mirror Lake",
+        "Navigate the hidden cave (swim north through narrow channel from Catavan Stand island)",
+        "Release Lagiacrus into a habitat and begin Habitat Restoration",
+        "Reach Rank A in the Lagiacrus ecosystem",
+        "Ivory Lagiacrus eggs will appear in that habitat's den"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank A",
+        "habitatConditions": [],
+        "progression": ["Lagiacrus requires navigating a hidden cave in Mirror Lake"]
+      },
+      "notes": "Subspecies/mutation of Lagiacrus obtained at Rank A. Switches from thunder to ice element. Notable for its hidden unlock location."
+    },
+    {
+      "id": "barioth_sand",
+      "baseMonster": "Barioth",
+      "mutation": "Sand Barioth",
+      "baseRank": "5★",
+      "mutationRank": "6★",
+      "images": {
+        "base": "assets/mutations/barioth_base.png",
+        "mutation": "assets/mutations/barioth_sand.png"
+      },
+      "howToGet": [
+        "Obtain Barioth eggs from Serathis Glacial Caps (repel Invasive Khezu to unlock Retreat Den)",
+        "Release Barioth into a habitat and begin Habitat Restoration",
+        "Reach Rank S in the Barioth ecosystem",
+        "Sand Barioth eggs will appear in that habitat's den"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank S",
+        "habitatConditions": [],
+        "progression": ["Barioth must be unlocked via Khezu invasion first"]
+      },
+      "stats": {
+        "mutation": { "hp": 5, "atk": 7, "spd": 8, "def": 8 }
+      },
+      "notes": "High-speed subspecies mutation of Barioth. Excellent SPD and DEF stats at 8 each. Switches from ice to neutral element."
+    },
+    {
+      "id": "tigrex_brute",
+      "baseMonster": "Tigrex",
+      "mutation": "Brute Tigrex",
+      "baseRank": "5★",
+      "mutationRank": "6★",
+      "images": {
+        "base": "assets/mutations/tigrex_base.png",
+        "mutation": "assets/mutations/tigrex_brute.png"
+      },
+      "howToGet": [
+        "Obtain Tigrex eggs from Canalta Timberland (repel Invasive Diablos to unlock Retreat Den)",
+        "Release Tigrex into a habitat and begin Habitat Restoration",
+        "Reach Rank A in the Tigrex ecosystem",
+        "Brute Tigrex eggs will appear in that habitat's den"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank A",
+        "habitatConditions": [],
+        "progression": ["Tigrex must be unlocked via Diablos invasion first"]
+      },
+      "stats": {
+        "mutation": { "hp": 6, "atk": 9, "spd": 7, "def": 7 }
+      },
+      "notes": "Mid-chain mutation with greatly boosted ATK. Required step to unlock Grimclaw Tigrex."
+    },
+    {
+      "id": "tigrex_grimclaw",
+      "baseMonster": "Tigrex",
+      "mutation": "Grimclaw Tigrex",
+      "baseRank": "5★",
+      "mutationRank": "7★",
+      "chainStep": "Tigrex → Brute Tigrex → Grimclaw Tigrex",
+      "images": {
+        "base": "assets/mutations/tigrex_base.png",
+        "mutation": "assets/mutations/tigrex_grimclaw.png"
+      },
+      "howToGet": [
+        "Unlock Brute Tigrex first (Rank A Tigrex habitat)",
+        "Continue habitat restoration to Rank S",
+        "Ensure 4 Power-type Monsters each reach Rank S in the ecosystem",
+        "Reach Rank S in the Tigrex ecosystem with all conditions met",
+        "Grimclaw Tigrex eggs will appear once all Power-type conditions are fulfilled"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank S",
+        "habitatConditions": ["4 Power-type Monsters must each reach Rank S in the habitat"],
+        "progression": ["Brute Tigrex mutation must be unlocked first"]
+      },
+      "stats": {
+        "mutation": { "hp": 7, "atk": 10, "spd": 7, "def": 7 }
+      },
+      "notes": "Deviant mutation at the end of the Tigrex chain. Requires four Power-type Monsters to all reach Rank S — the most demanding habitat condition of any mutation."
+    },
+    {
+      "id": "nargacuga_green",
+      "baseMonster": "Nargacuga",
+      "mutation": "Green Nargacuga",
+      "baseRank": "4★",
+      "mutationRank": "5★",
+      "images": {
+        "base": "assets/mutations/nargacuga_base.png",
+        "mutation": "assets/mutations/nargacuga_green.png"
+      },
+      "howToGet": [
+        "Obtain Nargacuga eggs from Canalta Timberland (repel Invasive Nerscylla to unlock Retreat Den)",
+        "Release Nargacuga into a habitat and begin Habitat Restoration",
+        "Reach Rank A in the Nargacuga ecosystem",
+        "Green Nargacuga eggs will appear in that habitat's den"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank A",
+        "habitatConditions": [],
+        "progression": ["Nargacuga must be unlocked via Nerscylla invasion first"]
+      },
+      "notes": "Mid-chain mutation of Nargacuga. Improved stats over base form. Required step to unlock Silverwind Nargacuga."
+    },
+    {
+      "id": "nargacuga_silverwind",
+      "baseMonster": "Nargacuga",
+      "mutation": "Silverwind Nargacuga",
+      "baseRank": "4★",
+      "mutationRank": "7★",
+      "chainStep": "Nargacuga → Green Nargacuga → Silverwind Nargacuga",
+      "images": {
+        "base": "assets/mutations/nargacuga_base.png",
+        "mutation": "assets/mutations/nargacuga_silverwind.png"
+      },
+      "howToGet": [
+        "Unlock Green Nargacuga first (Rank A Nargacuga habitat)",
+        "Continue habitat restoration to Rank S",
+        "Ensure 3 or more wind-focused Monsters are present in the same habitat",
+        "Reach Rank S in the Nargacuga ecosystem",
+        "Silverwind Nargacuga eggs will appear once all conditions are met"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank S",
+        "habitatConditions": ["3+ wind-focused Monsters in same habitat"],
+        "progression": ["Green Nargacuga mutation must be unlocked first"]
+      },
+      "stats": {
+        "mutation": { "hp": 6, "atk": 7, "spd": 10, "def": 10 }
+      },
+      "notes": "Deviant mutation with extraordinary SPD and DEF scores of 10 each. The fastest monstie in its class. Ideal for speed-focused teams."
+    },
+    {
+      "id": "glavenus_hellblade",
+      "baseMonster": "Glavenus",
+      "mutation": "Hellblade Glavenus",
+      "baseRank": "5★",
+      "mutationRank": "7★",
+      "images": {
+        "base": "assets/mutations/glavenus_base.png",
+        "mutation": "assets/mutations/glavenus_hellblade.png"
+      },
+      "howToGet": [
+        "Obtain Glavenus eggs from Canalta Timberland habitat dens",
+        "Release Glavenus into a habitat and begin Habitat Restoration",
+        "Reach Rank S in the Glavenus ecosystem — no special habitat conditions required",
+        "Hellblade Glavenus eggs will appear in that habitat's den"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank S",
+        "habitatConditions": [],
+        "progression": ["Post-game Rank S access required"]
+      },
+      "stats": {
+        "mutation": { "hp": 7, "atk": 10, "spd": 5, "def": 5 }
+      },
+      "notes": "Straightforward Rank S mutation with no special habitat requirements. One of the highest ATK monsties (10). Glass-cannon profile — low SPD and DEF offset by maximum ATK."
+    },
+    {
+      "id": "diablos_bloodbath",
+      "baseMonster": "Diablos",
+      "mutation": "Bloodbath Diablos",
+      "baseRank": "5★",
+      "mutationRank": "7★",
+      "images": {
+        "base": "assets/mutations/diablos_base.png",
+        "mutation": "assets/mutations/diablos_bloodbath.png"
+      },
+      "howToGet": [
+        "Obtain Diablos eggs from Tarkuan Rococo Rocks",
+        "Release Diablos specifically into the Bountiful Dunes habitat in Tarkuan",
+        "Begin Habitat Restoration in Bountiful Dunes — this specific location is required",
+        "Reach Rank S in the Diablos ecosystem within Bountiful Dunes",
+        "Bloodbath Diablos eggs will appear once all conditions are met"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank S",
+        "habitatConditions": ["Must be restored in Bountiful Dunes habitat specifically"],
+        "progression": ["Tarkuan Bountiful Dunes region access required"]
+      },
+      "stats": {
+        "mutation": { "hp": 9, "atk": 10, "spd": 7, "def": 7 }
+      },
+      "notes": "Location-locked mutation — MUST be unlocked in Bountiful Dunes. Exceptional HP (9) and ATK (10) combination makes this one of the most powerful monsties in the game."
+    },
+    {
+      "id": "mizutsune_soulseer",
+      "baseMonster": "Mizutsune",
+      "mutation": "Soulseer Mizutsune",
+      "baseRank": "5★",
+      "mutationRank": "7★",
+      "images": {
+        "base": "assets/mutations/mizutsune_base.png",
+        "mutation": "assets/mutations/mizutsune_soulseer.png"
+      },
+      "howToGet": [
+        "Obtain Mizutsune eggs (repel Invasive Shogun Ceanataur to unlock Retreat Den)",
+        "Obtain Zinogre eggs (required co-inhabitant)",
+        "Release BOTH Mizutsune AND Zinogre into the same habitat",
+        "Perform Habitat Restoration until both species reach Rank S in that shared habitat",
+        "Soulseer Mizutsune eggs will appear once both conditions are simultaneously met"
+      ],
+      "requirements": {
+        "ecosystemRank": "Rank S (for both Mizutsune and Zinogre)",
+        "habitatConditions": ["Zinogre must be present in the same habitat at Rank S"],
+        "progression": ["Both Mizutsune and Zinogre must be unlocked and placed in same habitat"]
+      },
+      "stats": {
+        "mutation": { "hp": 7, "atk": 8, "spd": 5, "def": 5 }
+      },
+      "notes": "Unique dual-species unlock — the only mutation requiring a second monster species (Zinogre) to also reach Rank S in the same habitat. Most complex unlock condition in the game."
+    }
+  ],
+  "mutationIndex": {
+    "Rathalos": ["rathalos_azure", "rathalos_silver", "rathalos_dreadking"],
+    "Rathian": ["rathian_pink", "rathian_dreadqueen"],
+    "Zinogre": ["zinogre_stygian", "zinogre_thunderlord"],
+    "Astalos": ["astalos_boltreaver"],
+    "Lagiacrus": ["lagiacrus_ivory"],
+    "Barioth": ["barioth_sand"],
+    "Tigrex": ["tigrex_brute", "tigrex_grimclaw"],
+    "Nargacuga": ["nargacuga_green", "nargacuga_silverwind"],
+    "Glavenus": ["glavenus_hellblade"],
+    "Diablos": ["diablos_bloodbath"],
+    "Mizutsune": ["mizutsune_soulseer"],
+    "Azure Rathalos": ["rathalos_dreadking"],
+    "Pink Rathian": ["rathian_dreadqueen"],
+    "Stygian Zinogre": ["zinogre_thunderlord"],
+    "Brute Tigrex": ["tigrex_grimclaw"],
+    "Green Nargacuga": ["nargacuga_silverwind"]
+  },
+  "mutationOrigin": {
+    "Azure Rathalos": "rathalos_azure",
+    "Silver Rathalos": "rathalos_silver",
+    "Dreadking Rathalos": "rathalos_dreadking",
+    "Pink Rathian": "rathian_pink",
+    "Dreadqueen Rathian": "rathian_dreadqueen",
+    "Stygian Zinogre": "zinogre_stygian",
+    "Thunderlord Zinogre": "zinogre_thunderlord",
+    "Boltreaver Astalos": "astalos_boltreaver",
+    "Ivory Lagiacrus": "lagiacrus_ivory",
+    "Sand Barioth": "barioth_sand",
+    "Brute Tigrex": "tigrex_brute",
+    "Grimclaw Tigrex": "tigrex_grimclaw",
+    "Green Nargacuga": "nargacuga_green",
+    "Silverwind Nargacuga": "nargacuga_silverwind",
+    "Hellblade Glavenus": "glavenus_hellblade",
+    "Bloodbath Diablos": "diablos_bloodbath",
+    "Soulseer Mizutsune": "mizutsune_soulseer"
+  }
+}
